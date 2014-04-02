@@ -1678,7 +1678,8 @@ Item number <xsl:value-of select="$num"/>:
 							</ul>
 							</div>
 							<div class="begin">
-								<a href="http://datashare-ingest.ucsf.edu"><img src="assets/img/begin2.gif" width="149" height="42" alt="Begin"/></a>
+								<!-- <a href="http://datashare-ingest.ucsf.edu"><img src="assets/img/begin2.gif" width="149" height="42" alt="Begin"/></a> -->
+								<a href="http://dash-dev.cdlib.org:8085"><img src="assets/img/begin2.gif" width="149" height="42" alt="Begin"/></a>
 							</div>
 							</div>
 							<div id="right-container">
