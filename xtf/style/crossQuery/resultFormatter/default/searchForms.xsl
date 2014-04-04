@@ -271,7 +271,7 @@
 					  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
 					  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
 					  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
-					  <div id="my-datasets-nav" class="menu"><a href="http://dash-dev.cdlib.org:8080">My Datasets</a></div>
+					  <div id="my-datasets-nav" class="menu"><a href="http://dash-dev.cdlib.org">My Datasets</a></div>
 					</div>
 	</xsl:template>
 	
