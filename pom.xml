@@ -14,6 +14,7 @@
           <webXml>xtf/WEB-INF/web.xml</webXml>
 	  <includeEmptyDirectories>true</includeEmptyDirectories>
 	  <warSourceDirectory>xtf</warSourceDirectory>
+         <warName>${project.artifactId}-${project.version}-${maven.build.timestamp}</warName>
         </configuration>
       </plugin>
     </plugins>
