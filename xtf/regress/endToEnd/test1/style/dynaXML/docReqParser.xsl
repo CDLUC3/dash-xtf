@@ -41,7 +41,7 @@
          <xsl:variable name="query" select="/parameters/param[@name='query']"/>
          <xsl:variable name="sectionType" select="/parameters/param[@name='sectionType']"/>
          
-         <query indexPath="index" termLimit="1000" workLimit="500000">
+         <query indexPath="/apps/dash/xtf-data/index" termLimit="1000" workLimit="500000">
             <xsl:apply-templates select="$query"/>
          </query>
       </xsl:if>

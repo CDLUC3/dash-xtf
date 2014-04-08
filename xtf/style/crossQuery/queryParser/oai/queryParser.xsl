@@ -289,7 +289,7 @@
    
    <!-- construct query -->
    <xsl:template name="query">
-      <query indexPath="index" maxDocs="{$maxDocs}" startDoc="{$startDoc}" sortMetaFields="dateStamp" style="style/crossQuery/resultFormatter/oai/resultFormatter.xsl" termLimit="1000" workLimit="1000000">
+      <query indexPath="/apps/dash/xtf-data/index" maxDocs="{$maxDocs}" startDoc="{$startDoc}" sortMetaFields="dateStamp" style="style/crossQuery/resultFormatter/oai/resultFormatter.xsl" termLimit="1000" workLimit="1000000">
          <xsl:choose>
             <xsl:when test="$verb='GetRecord'">
                <and field="identifier">
