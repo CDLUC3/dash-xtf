@@ -270,7 +270,7 @@
 					  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
 					  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
 					  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
-					  <div id="my-datasets-nav" class="menu"><a href="/">My Datasets</a></div>
+					  <div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
 					</div>
 	</xsl:template>
 	
