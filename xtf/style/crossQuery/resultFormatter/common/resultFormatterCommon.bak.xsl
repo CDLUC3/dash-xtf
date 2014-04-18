@@ -92,11 +92,11 @@
    <xsl:param name="description-exclude"/>
    <xsl:param name="description-max"/>
    
-   <xsl:param name="campus"/>
-   <xsl:param name="campus-join"/>
-   <xsl:param name="campus-prox"/>
-   <xsl:param name="campus-exclude"/>
-   <xsl:param name="campus-max"/>
+   <xsl:param name="publisher"/>
+   <xsl:param name="publisher-join"/>
+   <xsl:param name="publisher-prox"/>
+   <xsl:param name="publisher-exclude"/>
+   <xsl:param name="publisher-max"/>
    
    <xsl:param name="contributor"/>
    <xsl:param name="f1-contributor"/>
@@ -185,7 +185,7 @@
    <xsl:param name="browse-labs"/>
    <xsl:param name="browse-researcher"/>
    <xsl:param name="browse-researchers"/>
-   <xsl:param name="browse-campus"/>
+
 
    <!-- Search and Result Behavior URL Parameters -->
    <xsl:param name="style"/>
@@ -480,16 +480,7 @@
          <xsl:text> | </xsl:text>
       </xsl:if>
   </xsl:template>
-
-   <xsl:template match="campus">
-      <a href="{$xtfURL}{$crossqueryPath}?campus={normalize-space(editURL:protectValue(.))}">
-          <xsl:value-of select="replace(string(.),'::', '-')"/>
-      </a>
-      <xsl:if test="not(position() = last())">
-         <xsl:text> | </xsl:text>
-      </xsl:if>
-  </xsl:template>
-  
+   
    <!-- ====================================================================== -->
    <!-- Subject Links                                                          -->
    <!-- ====================================================================== -->

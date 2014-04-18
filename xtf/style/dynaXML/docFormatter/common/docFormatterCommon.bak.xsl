@@ -3,6 +3,7 @@
    xmlns:xtf="http://cdlib.org/xtf"
    xmlns="http://www.w3.org/1999/xhtml"
    xmlns:session="java:org.cdlib.xtf.xslt.Session"
+   xmlns:editURL="http://cdlib.org/xtf/editURL"
    extension-element-prefixes="session"
    exclude-result-prefixes="#all">
    
@@ -66,7 +67,7 @@
    
    <xsl:param name="docId"/>
    <xsl:param name="docPath" select="replace($docId, '[^/]+\.xml$', '')"/>
-   
+   <xsl:param name="n2t" select="'http://n2t.net/'"/>
    <!-- If an external 'source' document was specified, include it in the
       query string of links we generate. -->
    <xsl:param name="source" select="''"/>
@@ -75,7 +76,7 @@
       <xsl:if test="$source">;source=<xsl:value-of select="$source"/></xsl:if>
    </xsl:variable>
    
-   <xsl:param name="query.string" select="concat('docId=', $docId, $sourceStr)"/>
+   <xsl:param name="query.string" select="concat('docId=', editURL:protectValue($docId), $sourceStr)"/>
    
    <xsl:param name="doc.path"><xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$query.string"/></xsl:param>
    
@@ -173,8 +174,6 @@
                   </title>
                   <link rel="stylesheet" type="text/css" href="{$css.path}bbar.css"/>
                   <link rel="shortcut icon" href="icons/default/favicon.ico" />
-
-
                </head>
                <body>
                   <div class="bbar">
@@ -185,31 +184,23 @@
                            </td>
                         </tr>
                         <tr>
-                           <td class="left">
-                              <a href="{$xtfURL}search" target="_top">Home</a><xsl:text> | </xsl:text>
-                              <xsl:choose>
-                                 <xsl:when test="session:getData('queryURL')">
-                                    <a href="{session:getData('queryURL')}" target="_top">Return to Search Results</a>
-                                 </xsl:when>
-                                 <xsl:otherwise>
-                                    <span class="notActive">Return to Search Results</span>
-                                 </xsl:otherwise>
-                              </xsl:choose>
-                           </td>
-                           <td width="34%" class="center">
+							<td class="left">
+                              <a href="{$xtfURL}search?browse-all=yes" target="_top">Home</a>
+							</td>
+							<td width="34%" class="center">
                               <form action="{$xtfURL}{$dynaxmlPath}" target="_top" method="get">
                                  <input name="query" type="text" size="15"/>
                                  <input type="hidden" name="docId" value="{$docId}"/>
                                  <input type="hidden" name="chunk.id" value="{$chunk.id}"/>
                                  <input type="submit" value="Search this Item"/>
                               </form>
-                           </td>
-                           <td class="right">
+							</td>
+							<td class="right">
                               <a>
                                  <xsl:attribute name="href">javascript://</xsl:attribute>
                                  <xsl:attribute name="onclick">
                                     <xsl:text>javascript:window.open('</xsl:text><xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/><xsl:text>?docId=</xsl:text><xsl:value-of
-                                       select="$docId"/><xsl:text>;doc.view=citation</xsl:text><xsl:text>','popup','width=800,height=400,resizable=yes,scrollbars=no')</xsl:text>
+                                       select="editURL:protectValue($docId)"/><xsl:text>;doc.view=citation</xsl:text><xsl:text>','popup','width=800,height=400,resizable=yes,scrollbars=no')</xsl:text>
                                  </xsl:attribute>
                                  <xsl:text>Citation</xsl:text>
                               </a>
@@ -217,7 +208,7 @@
                               <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View</a>
                               <xsl:text> | </xsl:text>
                               <a href="javascript://" onclick="javascript:window.open('/xtf/search?smode=getLang','popup','width=500,height=200,resizable=no,scrollbars=no')">Choose Language</a>
-                           </td>
+							</td>
                         </tr>
                      </table>
                   </div>
@@ -228,39 +219,159 @@
    </xsl:template>
    
    <!-- ====================================================================== -->
+   <!-- Keyword Links                                                          -->
+   <!-- ====================================================================== -->
+   <xsl:template match="*:subject">
+      <a href="/xtf/search?keyword={editURL:protectValue(.)}">
+         <xsl:choose>
+         <xsl:when test="contains(string(.),'::')">
+            <xsl:value-of select="tokenize(string(.),'::')[last()]"/>
+         </xsl:when>
+         <xsl:otherwise>
+				<xsl:if test="position() = last()">
+            		<xsl:apply-templates/> 
+				</xsl:if>
+				<xsl:if test="position() != last()">
+            		<xsl:apply-templates/> |
+				</xsl:if>
+         </xsl:otherwise>
+         </xsl:choose>
+      </a>
+   </xsl:template>
+
+   <!-- ====================================================================== -->
+   <!-- Citations                                                              -->
+   <!-- ====================================================================== -->
+   <xsl:template match="*:relation">
+         <xsl:choose>
+         <xsl:when test="contains(string(.),'::')">
+            <xsl:value-of select="tokenize(string(.),'::')[last()]"/>
+         </xsl:when>
+         <xsl:otherwise>
+            <xsl:apply-templates/> 
+         </xsl:otherwise>
+         </xsl:choose>
+      	 <p/>
+   </xsl:template>
+
+   <!-- ====================================================================== -->
+   <!-- Contributor                                                            -->
+   <!-- ====================================================================== -->
+   <xsl:template match="*:contributor">
+	  <a href="/xtf/search?f1-contributor={normalize-space(editURL:protectValue(.))}">
+         <xsl:choose>
+         <xsl:when test="contains(string(.),'::')">
+            <xsl:value-of select="replace(string(.),'::', '-')"/> |
+         </xsl:when>
+         <xsl:otherwise>
+              <xsl:value-of select="normalize-space(string(.))"/>
+         </xsl:otherwise>
+         </xsl:choose>
+		</a>
+   </xsl:template>
+
+
+   <!-- ====================================================================== -->
+   <!-- author Links                                                          -->
+   <!-- ====================================================================== -->
+   <xsl:template match="*:creator">
+      <a href="/xtf/search?f1-creator={normalize-space(editURL:protectValue(.))}">
+         <xsl:choose>
+         <xsl:when test="contains(string(.),'::')">
+            <xsl:value-of select="tokenize(string(.),'::')[last()]"/>
+         </xsl:when>
+         <xsl:otherwise>
+				<xsl:if test="position() = last()">
+            		<xsl:apply-templates/> 
+				</xsl:if>
+				<xsl:if test="position() != last()">
+            		<xsl:apply-templates/> |
+				</xsl:if>
+         </xsl:otherwise>
+         </xsl:choose>
+      </a>
+   </xsl:template>
+
+   <xsl:template match="*:date">
+		 <xsl:choose>
+        <xsl:when test="contains(string(.),'::')">
+			<xsl:value-of select="tokenize(string(.),'::')[1]"/>
+        </xsl:when>
+        <xsl:otherwise>
+           <xsl:apply-templates/> 
+        </xsl:otherwise>
+        </xsl:choose>   
+	</xsl:template>
+	
+	<xsl:template match="*:added">
+		 <xsl:choose>
+        <xsl:when test="contains(string(.),'::')">
+	       <xsl:value-of select="tokenize(string(.),'::')[2]"/>&#47;<xsl:value-of select="tokenize(string(.),'::')[3]"/>&#47;<xsl:value-of select="tokenize(string(.),'::')[1]"/>
+        </xsl:when>
+        <xsl:otherwise>
+           <xsl:apply-templates/> 
+        </xsl:otherwise>
+        </xsl:choose>   
+	</xsl:template>
+
+
+   <!-- ====================================================================== -->
    <!-- Citation Template                                                      -->
    <!-- ====================================================================== -->
    
    <xsl:template name="citation">
       
-      <html xml:lang="en" lang="en">
-         <head>
-            <title>
-               <xsl:value-of select="$doc.title"/>
-            </title>
-            <link rel="stylesheet" type="text/css" href="{$css.path}bbar.css"/>
-            <link rel="shortcut icon" href="icons/default/favicon.ico" />
+      <html xmlns="http://www.w3.org/1999/xhtml">
+			<title>DataShare: <xsl:apply-templates select="//title"/></title>
+			<xsl:call-template name="header_links"/>
+	  <body>
 
-         </head>
-         <body>
-            <xsl:copy-of select="$brand.header"/>
-            <div class="container">
-               <h2>Citation</h2>
+			<div id="dataset-description-page"> 
+			<!-- begin outer container -->  
+			  <div id="outer-container"> 
+			    <!-- begin inner container -->
+			    <div id="inner-container"> 
+			       <!-- begin header -->
+
+			 <xsl:call-template name="ucsf_header"/>
+
+		    <div class="content content-dataset" id="content">
+
+				<div class="single-column">
+               <h1>Citation</h1>
+
                <div class="citation">
-                  <p><xsl:value-of select="/*/*:meta/*:creator[1]"/>. 
-                     <xsl:value-of select="/*/*:meta/*:title[1]"/>. 
-                     <xsl:value-of select="/*/*:meta/*:year[1]"/>.<br/>
-                     [<xsl:value-of select="concat($xtfURL,$dynaxmlPath,'?docId=',$docId)"/>]</p>
-                  <a>
-                     <xsl:attribute name="href">javascript://</xsl:attribute>
-                     <xsl:attribute name="onClick">
-                        <xsl:text>javascript:window.close('popup')</xsl:text>
-                     </xsl:attribute>
-                     <span class="down1">Close this Window</span>
-                  </a>
+                  <p>	
+					<xsl:for-each select="/*/*:meta/*:creator">
+                       <xsl:value-of select="normalize-space(.)"/>
+                       <xsl:if test="not(position() = last())">
+                          <xsl:text>; </xsl:text>
+                       </xsl:if>
+                    </xsl:for-each>
+
+					<xsl:choose>
+					  <xsl:when test="/*/*:meta/*:publicationYear">
+						(<xsl:apply-templates select="/*/*:meta/*:publicationYear"/>):
+					  </xsl:when>
+					  <xsl:otherwise>. </xsl:otherwise>
+					</xsl:choose>
+
+ 					<xsl:value-of select="normalize-space(/*/*:meta/*:title)"/>.
+                    <xsl:value-of select="/*/*:meta/*:publisher"/>.
+                    <xsl:value-of select="/*/*:meta/*:resourceType"/>.
+ 					http://dx.doi.org/<xsl:value-of select="/*/*:meta/*:doi"/>
+                     </p>
                </div>
             </div>
-         </body>
+
+	     	
+			    </div>
+			    <xsl:call-template name="footer"/>
+
+			</div></div></div>
+        </body>
+
+
       </html>
      
    </xsl:template>
@@ -288,5 +399,75 @@
    <xsl:template match="text()" mode="robot">
       <xsl:value-of select="."/><xsl:text> </xsl:text>
    </xsl:template>
+
+	<xsl:template name="header_links">
+			<head>
+				<title>Search: DataShare - Open data for the global research community</title>
+			    <meta http-equiv="Content-Type" content="text/html; charset=utf-8; charset=UTF-8" />
+
+				<link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+				<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+				<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+				<meta name="description" content="" />
+				<meta name="keywords" content="" />
+				
+				<script>var less = {env: "development"};</script>
+
+			    <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+			    <script src="assets/js/datashare.js" type="text/javascript"></script>
+				<script type="text/javascript">
+
+				  var _gaq = _gaq || [];
+				  _gaq.push(['_setAccount', 'UA-34221926-1']);
+				  _gaq.push(['_trackPageview']);
+
+				  (function() {
+				    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				  })();
+
+				</script>
+			  </head>
+	</xsl:template>
+	
+	<!-- duplicate header and footer from searchforms, unfortunately hard avoid because of conflicting names -->
+	<xsl:template name="ucsf_header">
+	   	<div id="header">
+			<div id="logo"> <a href="/"> <img src="assets/img/datashare-logo3.gif" width="320" height="63" alt="DataShare: Open data for the global research community" title="DataShare: Open data for the global research community" /> </a> </div>
+			<!--<div id="login"> <a href="login.html"> <img src="assets/img/login2.gif" width="92" height="21" alt="Login"/></a> </div>-->
+		</div> 
+			  <!-- end header -->
+				<!-- begin navigation-->
+		<div id="nav-home-menu">
+		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
+		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
+		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
+		  <div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
+		</div>
+	</xsl:template>
+
+
+	<xsl:template name="footer">
+			<div id="footer">
+				<div id="footer-container" class="shading">
+					<div id="terms"><a href="/xtf/search?smode=termsPage">Terms of Use</a></div>
+					<div id="faq-footer" ><a href="/xtf/search?smode=faqPage">FAQ</a></div>
+					<div id="contact-us" ><a href="/xtf/search?smode=contactPage">Contact Us</a></div>
+					<div id="copyrights">
+						<p>DataShare was made possible through a partnership between the California Digital Library, </p>
+						<p>UCSF Clinical &amp; Translational Science Institute, and UCSF Library.  &#169; 2013 The Regents of the University of California</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- end footer -->
+			<!-- begin footer logos -->    
+			<div id="footer-logos">
+				<div id="cdl-logo-sm"><a href="http://www.cdlib.org/"><img src="assets/img/cdl-logo.jpg" width="72" height="26" alt="California Digital Library" title="California Digital Library" /></a></div>
+				<div id="ucsf-lib"><a href="http://www.library.ucsf.edu/"><img src="assets/img/ucsflib-logo.jpg" width="111" height="27" alt="UCSF library" title="UCSF library" /></a></div>
+				<div id="ctsi"><a href="http://ctsi.ucsf.edu/"><img src="assets/img/CTSI_logo.png" width="143" height="27" alt="CTSI" title="CTSI" /></a></div>
+			</div>
+	</xsl:template>
    
 </xsl:stylesheet>

@@ -135,7 +135,8 @@
 		    <div id="inner-container"> 
 		       <!-- begin header -->
 
-		 <xsl:call-template name="ucsf_header"/>
+		 <xsl:copy-of select="$brand.header"/>
+		 <xsl:call-template name="nav-header"/> 
 	
 	    <div class="content content-dataset" id="content">
 

@@ -1,0 +1,46 @@
+<campuses>
+<campus>
+<id>UCB</id>
+<label>UC Berkeley</label>
+</campus>
+<campus>
+<id>UCD</id>
+<label>UC Davis</label>
+</campus>
+<campus>
+<id>UCI</id>
+<label>UC Irvine</label>
+</campus>
+<campus>
+<id>UCLA</id>
+<label>UC Los Angeles</label>
+</campus>
+<campus>
+<id>UCM</id>
+<label>UC Merced</label>
+</campus>
+<campus>
+<id>UCR</id>
+<label>UC Riverside</label>
+</campus>
+<campus>
+<id>UCSD</id>
+<label>UC San Diego</label>
+</campus>
+<campus>
+<id>University of California, San Francisco</id>
+<label>UC San Francisco</label>
+</campus>
+<campus>
+<id>UCSF</id>
+<label>UC San Francisco</label>
+</campus>
+<campus>
+<id>UCSB</id>
+<label>UC Santa Barbara</label>
+</campus>
+<campus>
+<id>UCSC</id>
+<label>UC Santa Cruz</label>
+</campus>
+</campuses>

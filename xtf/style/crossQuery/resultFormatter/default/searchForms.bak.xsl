@@ -174,8 +174,7 @@
 		    <!-- begin inner container -->
 		    <div id="inner-container"> 
 		      <!-- begin header -->
-		    <xsl:copy-of select="$brand.header"/>
-			<xsl:call-template name="nav-header"/>
+		    <xsl:call-template name="ucsf_header"/>
 
 
 					<div id="banner">
@@ -258,16 +257,23 @@
 		
 	</xsl:template>
 
-	<xsl:template name="nav-header">
-		<div id="nav-home-menu">
-		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
-		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
-		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
-		  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
-		  <div id="my-datasets-nav" class="menu"><a href="http://dash-dev.cdlib.org">My Datasets</a></div>
-		</div>
+	<xsl:template name="ucsf_header">
+			
+	
+		<div id="header">
+			<div id="logo"> <a href="/"> <img src="assets/img/datashare-logo3.gif" width="320" height="63" alt="DataShare: Open data for the global research community" title="DataShare: Open data for the global research community" /> </a> </div>
+			<!--<div id="login"> <a href="login.html"> <img src="assets/img/login2.gif" width="92" height="21" alt="Login"/></a> </div>-->
+		</div> 
+			  <!-- end header -->
+				<!-- begin navigation-->
+					<div id="nav-home-menu">
+					  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
+					  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
+					  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
+					  <div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
+					</div>
 	</xsl:template>
-
+	
 	<xsl:template name="header_links">
 			<head>
 				<title>Search: DataShare - Open data for the global research community</title>
@@ -331,8 +337,7 @@
 					<title>DataShare: Browse by Lab</title>
 					<xsl:call-template name="header_links"/>
 				</head>			
-				<xsl:copy-of select="$brand.header"/>
-				<xsl:call-template name="nav-header"/>
+				<xsl:call-template name="ucsf_header"/>
 			  <body>
 			    <div class="content">
 
@@ -356,9 +361,7 @@
 				<head>
 					<title>DataShare: Browse by Researcher</title>
 					<xsl:call-template name="header_links"/>
-				</head>			
-				<xsl:copy-of select="$brand.header"/>
-				<xsl:call-template name="nav_header"/> 
+				</head>			<xsl:call-template name="ucsf_header"/>
 			  <body>
 			    <div class="content">
 

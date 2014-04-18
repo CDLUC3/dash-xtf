@@ -77,7 +77,7 @@
       <!-- The top-level query element tells what stylesheet will be used to
          format the results, which document to start on, and how many documents
          to display on this page. -->
-      <query indexPath="./index" termLimit="1000" workLimit="1000000" style="{$stylesheet}" startDoc="{$startDoc}" maxDocs="{$docsPerPage}">
+      <query indexPath="/apps/dash/xtf-data/index" termLimit="1000" workLimit="1000000" style="{$stylesheet}" startDoc="{$startDoc}" maxDocs="{$docsPerPage}">
          
          <!-- sort attribute -->
          <xsl:if test="$sort">
@@ -119,7 +119,7 @@
 <!-- pw add: creator facet -->
          <xsl:call-template name="facet">
             <xsl:with-param name="field" select="'facet-creator'"/>
-            <xsl:with-param name="topGroups" select="'*[1-6]'"/>
+            <xsl:with-param name="topGroups" select="'*[1-5]'"/>
             <xsl:with-param name="sort" select="'totalDocs'"/>
          </xsl:call-template>
 
@@ -130,11 +130,6 @@
             <xsl:with-param name="sort" select="'totalDocs'"/>
          </xsl:call-template>
 
-         <xsl:call-template name="facet">
-            <xsl:with-param name="field" select="'facet-campus'"/>
-            <xsl:with-param name="topGroups" select="'*[1-5]'"/>
-            <xsl:with-param name="sort" select="'totalDocs'"/>
-         </xsl:call-template>
          
          <!-- keyword facet, normally shows top 10 sorted by count, but user can select 'more' 
               to see all sorted by subject. 
@@ -167,7 +162,7 @@
          </xsl:if>
 
          <!-- to support keyword browse pages -->
-         <xsl:if test="//param[@name='browse-keyword']">
+         <xsl:if test="//param[@name='browse-keword']">
             <xsl:variable name="page" select="//param[@name='browse-keyword']/@value"/>
             <xsl:variable name="pageSel" select="if ($page = 'first') then '*[1]' else $page"/>
             <facet field="browse-keyword" sortGroupsBy="value" sortDocsBy="sort-keyword,sort-title,sort-creator,sort-contributor,sort-year" select="{concat('*|',$pageSel,'#all')}"/>
@@ -185,12 +180,6 @@
             <xsl:variable name="page" select="//param[@name='browse-contributor']/@value"/> 
             <xsl:variable name="pageSel" select="if ($page = 'first') then '*[1]' else $page"/>
             <facet field="browse-contributor" sortGroupsBy="value" sortDocsBy="sort-contributor,sort-title,sort-creator,sort-year" select="{concat('*|',$pageSel,'#all')}"/>
-         </xsl:if>
-
-         <xsl:if test="//param[@name='browse-campus']">
-            <xsl:variable name="page" select="//param[@name='browse-campus']/@value"/> 
-            <xsl:variable name="pageSel" select="if ($page = 'first') then '*[1]' else $page"/>
-            <facet field="browse-campus" sortGroupsBy="value" sortDocsBy="sort-contributor,sort-title,sort-creator,sort-year" select="{concat('*|',$pageSel,'#all')}"/>
          </xsl:if>
 
          <!-- to support lab pages -->

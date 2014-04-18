@@ -51,7 +51,7 @@
    <xsl:import href="../common/resultFormatterCommon.xsl"/>
    <xsl:import href="rss.xsl"/>
    <xsl:include href="searchForms.xsl"/>
-
+   
    <!-- ====================================================================== -->
    <!-- Output                                                                 -->
    <!-- ====================================================================== -->
@@ -169,7 +169,7 @@
             </xsl:call-template>
          </xsl:when>
          <!-- browse pages -->
-         <xsl:when test="$browse-title or $browse-creator or $browse-contributor or $browse-keyword or $browse-campus">
+         <xsl:when test="$browse-title or $browse-creator or $browse-contributor or $browse-keyword">
             <xsl:call-template name="translate">
                <xsl:with-param name="resultTree">
                   <xsl:apply-templates select="crossQueryResult" mode="browse"/>
@@ -254,11 +254,10 @@
 			    <div id="inner-container"> 
 			       <!-- begin header -->
 			
-			<xsl:copy-of select="$brand.header"/>
-			<xsl:call-template name="nav-header"/> 
+			<xsl:call-template name="ucsf_header"/>
 		
 			<!-- begin content -->
-			<div id="content"> 
+			<div id="content"> 	
 				<div id="browse-all-container">
 				<h1>Select a Dataset...</h1>
 				<div class="search-refine">
@@ -267,8 +266,7 @@
 							<tr>
 								<td>
 									<div class="facet">
-										<xsl:apply-templates select="facet[@field='facet-campus']"/>
-<!--										<xsl:apply-templates select="facet[@field='facet-contributor']"/> -->
+										<xsl:apply-templates select="facet[@field='facet-contributor']"/>
 			     						<xsl:apply-templates select="facet[@field='facet-creator']"/>
 			     						<xsl:apply-templates select="facet[@field='facet-keyword']"/>
 										<!--
@@ -413,8 +411,7 @@ Item number <xsl:value-of select="$num"/>:
             
             <!-- header -->
             <xsl:copy-of select="$brand.header"/>
-            <xsl:call-template name="nav-header"/> 
-			
+            
             <!-- result header -->
             <div class="resultsHeader">
                <table>
@@ -433,7 +430,6 @@ Item number <xsl:value-of select="$num"/>:
                            <xsl:when test="$browse-title">Title</xsl:when>
                            <xsl:when test="$browse-creator">Author</xsl:when>
 						   <xsl:when test="$browse-contributor">Contributor</xsl:when>
-						   <xsl:when test="$browse-campus">Campus</xsl:when>
                            <xsl:otherwise>All Items</xsl:otherwise>
                         </xsl:choose>
                      </td>
@@ -495,9 +491,6 @@ Item number <xsl:value-of select="$num"/>:
                            <xsl:when test="$browse-contributor">
                               <xsl:apply-templates select="facet[@field='browse-contributor']/group/docHit"/>
                            </xsl:when>
-						   <xsl:when test="$browse-campus">
-                              <xsl:apply-templates select="facet[@field='browse-campus']/group/docHit"/>
-                           </xsl:when>
 						   </xsl:choose>
                      </td>
                   </tr>
@@ -528,8 +521,7 @@ Item number <xsl:value-of select="$num"/>:
 	  <body>
 
 	    <div class="header">
-			<xsl:copy-of select="$brand.header"/>
-			<xsl:call-template name="nav-header"/> 
+	     	<xsl:call-template name="ucsf_header"/>
 	    </div>
 	    <div class="content content-researchgroup">
 	
@@ -591,8 +583,7 @@ Item number <xsl:value-of select="$num"/>:
 	  <body>
 
 	    <div class="header">
-	     	<xsl:copy-of select="$brand.header"/>
-			<xsl:call-template name="nav-header"/> 
+	     	<xsl:call-template name="ucsf_header"/>
 	    </div>
 	    <div class="content content-researchgroup">
 	
@@ -659,8 +650,7 @@ Item number <xsl:value-of select="$num"/>:
 	  <body>
 
 	    <div class="header">
-	     	<xsl:copy-of select="$brand.header"/>
-			<xsl:call-template name="nav-header"/> 
+	     	<xsl:call-template name="ucsf_header"/>
 	    </div>
 	    <div class="content content-researchgroup">
 	
@@ -718,8 +708,7 @@ Item number <xsl:value-of select="$num"/>:
 	  <body>
 
 	    <div class="header">
-	     	<xsl:copy-of select="$brand.header"/>
-			<xsl:call-template name="nav-header"/> 
+	     	<xsl:call-template name="ucsf_header"/>
 	    </div>
 	    <div class="content content-researchgroup">
 
@@ -890,7 +879,7 @@ Item number <xsl:value-of select="$num"/>:
 			
 			      </span>, <span class="DC-Publisher">
 			      	
-					<xsl:apply-templates select="meta/campus"/>
+					<xsl:apply-templates select="meta/publisher"/>
 		
 			      </span>
 			    </li>
@@ -1124,8 +1113,7 @@ Item number <xsl:value-of select="$num"/>:
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
       					<div class="header">
-				     		<xsl:copy-of select="$brand.header"/>
-							<xsl:call-template name="nav-header"/> 
+				     		<xsl:call-template name="ucsf_header"/>
 				    	</div>
 						<!-- begin content -->
 						<div id="content"> 	
@@ -1202,8 +1190,7 @@ Item number <xsl:value-of select="$num"/>:
 				    <div id="inner-container"> 
 					
 							<div class="header">
-					     		<xsl:copy-of select="$brand.header"/>
-								<xsl:call-template name="nav-header"/> 
+					     		<xsl:call-template name="ucsf_header"/>
 					    	</div>
 				       <!-- begin header -->
 						<!--#include virtual="includes/header.html" --> 
@@ -1322,8 +1309,7 @@ Item number <xsl:value-of select="$num"/>:
 				    <div id="inner-container"> 
 					
 							<div class="header">
-					     		<xsl:copy-of select="$brand.header"/>
-								<xsl:call-template name="nav-header"/> 
+					     		<xsl:call-template name="ucsf_header"/>
 					    	</div>
 				       <!-- begin header -->
 						<!--#include virtual="includes/header.html" --> 
@@ -1380,8 +1366,7 @@ Item number <xsl:value-of select="$num"/>:
 				    <div id="inner-container"> 
 					
 							<div class="header">
-					     		<xsl:copy-of select="$brand.header"/>
-								<xsl:call-template name="nav-header"/> 
+					     		<xsl:call-template name="ucsf_header"/>
 					    	</div>
 				       <!-- begin header -->
 						<!--#include virtual="includes/header.html" --> 
@@ -1439,8 +1424,7 @@ Item number <xsl:value-of select="$num"/>:
 				    <div id="inner-container"> 
 					
 							<div class="header">
-					     		<xsl:copy-of select="$brand.header"/>
-								<xsl:call-template name="nav-header"/> 
+					     		<xsl:call-template name="ucsf_header"/>
 					    	</div>
 				       <!-- begin header -->
 						<!--#include virtual="includes/header.html" --> 
@@ -1508,8 +1492,7 @@ Item number <xsl:value-of select="$num"/>:
 				    <div id="inner-container"> 
 					
 							<div class="header">
-					     		<xsl:copy-of select="$brand.header"/>
-								<xsl:call-template name="nav-header"/> 
+					     		<xsl:call-template name="ucsf_header"/>
 					    	</div>
 				       <!-- begin header -->
 						<!--#include virtual="includes/header.html" --> 
@@ -1563,8 +1546,7 @@ Item number <xsl:value-of select="$num"/>:
 				    <div id="inner-container"> 
 					
 							<div class="header">
-					     		<xsl:copy-of select="$brand.header"/>
-								<xsl:call-template name="nav-header"/> 
+					     		<xsl:call-template name="ucsf_header"/>
 					    	</div>
 				       <!-- begin header -->
 						<!--#include virtual="includes/header.html" --> 
@@ -1670,8 +1652,7 @@ Item number <xsl:value-of select="$num"/>:
 				    <div id="inner-container"> 
 					
 							<div class="header">
-					     		<xsl:copy-of select="$brand.header"/>
-								<xsl:call-template name="nav-header"/> 
+					     		<xsl:call-template name="ucsf_header"/>
 					    	</div>
 				       <!-- begin header -->
 						<!--#include virtual="includes/header.html" --> 
@@ -1751,8 +1732,7 @@ Item number <xsl:value-of select="$num"/>:
 					    <div id="inner-container"> 
 
 								<div class="header">
-						     		<xsl:copy-of select="$brand.header"/>
-									<xsl:call-template name="nav-header"/> 
+						     		<xsl:call-template name="ucsf_header"/>
 						    	</div>
 					       <!-- begin header -->
 							<!--#include virtual="includes/header.html" --> 
@@ -1802,8 +1782,7 @@ Item number <xsl:value-of select="$num"/>:
 
  		<body>
 	    	<div class="header">
-	     		<xsl:copy-of select="$brand.header"/>
-				<xsl:call-template name="nav-header"/> 
+	     		<xsl:call-template name="ucsf_header"/>
 	    	</div>
 	
 			<div class="content content-longtext">
@@ -1881,8 +1860,7 @@ Item number <xsl:value-of select="$num"/>:
 		  <body>
 
 		    <div class="header">
-		     	<xsl:copy-of select="$brand.header"/>
-				<xsl:call-template name="nav-header"/> 
+		     	<xsl:call-template name="ucsf_header"/>
 		    </div>
 		
 			<div class="content content-upload">

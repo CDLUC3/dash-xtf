@@ -39,8 +39,7 @@
       POSSIBILITY OF SUCH DAMAGE.
    -->
 	<xsl:key name="id-token" match="tokenized" use="abbr"/>
-	<xsl:key name="campus-id" match="campus" use="id"/>
-	<xsl:variable name="abbr-lookup" select="document('../../textIndexer/mapping/uccampuses.xml')"/>
+	<xsl:variable name="abbr-lookup" select="document('../../textIndexer/mapping/affiliation.xml')/orgs/organization/laboratory"/>
 	<!-- ====================================================================== -->
    <!-- Templates                                                              -->
    <!-- ====================================================================== -->
@@ -146,20 +145,13 @@
 				</xsl:for-each>
             </xsl:when>
 
-<!--            <xsl:when test="matches(name(),'contributors')">
+            <xsl:when test="matches(name(),'contributors')">
       			<xsl:for-each select="./*">
                		<contributor xtf:meta="true" xtf:tokenize="no">
                  	<xsl:copy-of select="@*"/>
                   	<xsl:value-of select="string()"/>
                		</contributor>
 				</xsl:for-each>
-            </xsl:when>
--->
-            <xsl:when test="matches(name(),'publisher')">
-           		<campus xtf:meta="true" xtf:tokenize="no">
-              	<xsl:copy-of select="@*"/>
-				<xsl:call-template name="lookupCampusLabel"><xsl:with-param name="uc-id" select="string(.)"/></xsl:call-template>
-           		</campus>
             </xsl:when>
 
             <xsl:otherwise>
@@ -187,12 +179,9 @@
             </xsl:when>
          </xsl:choose>
       </xsl:for-each>
+      
    </xsl:template>
-
-   <xsl:template name="lookupCampusLabel">
-	<xsl:param name="uc-id" />
-		<xsl:value-of select="$abbr-lookup/key('campus-id',$uc-id)/label"/>
-   </xsl:template>
+   
    <!-- Add sort fields to DC meta-data -->
    <xsl:template name="add-fields">
       <xsl:param name="meta"/>
@@ -213,10 +202,9 @@
          <!-- Create sort fields -->
          <xsl:apply-templates select="$meta/*:title[1]" mode="sort"/>    
          <xsl:apply-templates select="$meta/*:creator" mode="sort"/>
-<!--         <xsl:apply-templates select="$meta/*:contributor" mode="sort"/> -->
+         <xsl:apply-templates select="$meta/*:contributor" mode="sort"/>
          <xsl:apply-templates select="$meta/*:dc-date[1]" mode="sort"/>
          <xsl:apply-templates select="$meta/*:added[1]" mode="sort"/>
-		 <xsl:apply-templates select="$meta/*:campus" mode="sort"/>
 
 <!--pw add facet for creator, contributor -->                  
          <!-- Create facets -->
@@ -224,16 +212,15 @@
          <xsl:apply-templates select="$meta/*:added" mode="facet"/>
          <xsl:apply-templates select="$meta/*:creator" mode="facet"/>
          <xsl:apply-templates select="$meta/*:subject" mode="facet"/>
-<!--		 <xsl:apply-templates select="$meta/*:contributor" mode="facet"/> -->
-		 <xsl:apply-templates select="$meta/*:campus" mode="facet"/>
+		 <xsl:apply-templates select="$meta/*:contributor" mode="facet"/>
+		
 		
 <!--pw add browse for creator, contributor -->
-<!--		 <xsl:apply-templates select="$meta/*:contributor" mode="browse"/> -->
+		 <xsl:apply-templates select="$meta/*:contributor" mode="browse"/>
          <xsl:apply-templates select="$meta/*:creator" mode="browse"/>
          <xsl:apply-templates select="$meta/*:subject" mode="browse"/>
          <xsl:apply-templates select="$meta/*:title[1]" mode="browse"/>    
-		 <xsl:apply-templates select="$meta/*:campus" mode="browse"/>
-	 </xtf:meta>
+      </xtf:meta>
    </xsl:template>
 
    <!-- Parse the date to determine the year (or range of years) -->
@@ -262,12 +249,6 @@
       <sort-contributor xtf:meta="yes" xtf:tokenize="no">
          <xsl:copy-of select="parse:name(string(.))[0]"/>
       </sort-contributor>
-   </xsl:template>
-
-   <xsl:template match="*:campus" mode="sort">
-      <sort-campus xtf:meta="yes" xtf:tokenize="no">
-         <xsl:copy-of select="string(.)"/>
-      </sort-campus>
    </xsl:template>
    
    <!-- Generate sort-year (if range, only use first year) -->
@@ -345,14 +326,7 @@
 			<xsl:value-of select="string(.)"/>
 		</facet-contributor>
    </xsl:template>
-   <xsl:template match="*:campus" mode="facet">
-		<facet-campus>
-			<xsl:attribute name="xtf:meta" select="'true'"/>
-			<xsl:attribute name="xtf:facet" select="'yes'"/>
-			<xsl:value-of select="string(.)"/>
-		</facet-campus>
-
-	</xsl:template>	
+	
 	<!-- Generate browse-title -->
    <xsl:template match="*:title" mode="browse">
       <browse-title>
@@ -387,14 +361,6 @@
          <xsl:attribute name="xtf:tokenize" select="'no'"/>
 		 <xsl:value-of select="parse:alpha(parse:title(.))"/>
       </browse-contributor>
-   </xsl:template>
-
-   <xsl:template match="*:campus" mode="browse">
-      <browse-campus>
-         <xsl:attribute name="xtf:meta" select="'true'"/>
-         <xsl:attribute name="xtf:tokenize" select="'no'"/>
-		 <xsl:value-of select="parse:alpha(parse:title(.))"/>
-      </browse-campus>
    </xsl:template>
 
    

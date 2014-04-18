@@ -82,6 +82,7 @@
    
    <xsl:param name="doc.title" select="/title"/>
    <xsl:param name="css.path" select="'css/default/'"/>
+
    
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
@@ -121,54 +122,186 @@
    <!-- ====================================================================== -->
    
    <xsl:template name="frameset">
-      <xsl:variable name="bbar.href"><xsl:value-of select="$query.string"/>;doc.view=bbar;brand=<xsl:value-of select="$brand"/><xsl:value-of select="$search"/></xsl:variable> 
-      <xsl:variable name="toc.href"><xsl:value-of select="$query.string"/>;doc.view=toc;brand=<xsl:value-of select="$brand"/>;chunk.id=<xsl:value-of select="$chunk.id"/>;<xsl:value-of select="$search"/>#X</xsl:variable> 
-      <xsl:variable name="content.href"><xsl:value-of select="$query.string"/>;doc.view=content;brand=<xsl:value-of select="$brand"/>;chunk.id=<xsl:value-of select="$chunk.id"/><xsl:value-of select="$search"/></xsl:variable>
-      <xsl:variable name="canonicalURL">http://n2t-wf.cdlib.org/<xsl:value-of select="//identifier"/></xsl:variable>
-	  
-      <xsl:result-document format="frameset" exclude-result-prefixes="#all">
-         <html xml:lang="en" lang="en">
-            <head>
-                <link rel="shortcut icon" href="icons/default/favicon.ico" />
-				<link rel="canonical" href="{$canonicalURL}"/>
-				
-				<title>
-                  <xsl:value-of select="normalize-space(meta/title)"/>
-                  <xsl:text>  </xsl:text>
-				</title>
-            </head>
-            
-            <frameset rows="150,*">
-               <frame frameborder="1" scrolling="no" title="Navigation Bar">
-                  <xsl:attribute name="name">bbar</xsl:attribute>
-                  <xsl:attribute name="src"><xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$bbar.href"/></xsl:attribute>
-               </frame>
-               <frameset cols="20%,80%">
-                  <frame frameborder="1" title="Table of Contents">
-                     <xsl:attribute name="name">toc</xsl:attribute>
-                     <xsl:attribute name="src"><xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$toc.href"/></xsl:attribute>
-                  </frame>
-                  <frame frameborder="1" title="Content">
-                     <xsl:attribute name="name">content</xsl:attribute>
-                     <xsl:attribute name="src"><xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/>?<xsl:value-of select="$content.href"/>#X</xsl:attribute>
-                  </frame>
-               </frameset>
-               <noframes>
-                  <body>
-                     <h1>Sorry, your browser doesn't support frames...</h1>
-                  </body>
-               </noframes>
-            </frameset>
-         </html>
-      </xsl:result-document>
+
+	<html xmlns="http://www.w3.org/1999/xhtml">
+			<title>DataShare: <xsl:apply-templates select="//title"/></title>
+			<xsl:call-template name="header_links"/>
+	  <body>
+
+		<div id="dataset-description-page"> 
+		<!-- begin outer container -->  
+		  <div id="outer-container"> 
+		    <!-- begin inner container -->
+		    <div id="inner-container"> 
+		       <!-- begin header -->
+
+		 <xsl:call-template name="ucsf_header"/>
+	
+	    <div class="content content-dataset" id="content">
+
+			<div class="single-column">
+
+	      <h1><xsl:apply-templates select="//title"/></h1>
+
+	      <div class="dataset-description">
+
+			<dl>
+		       <xsl:if test="//title"> 
+				<dt>Title</dt>
+			  	<dd><span class="DC-Title"><xsl:apply-templates select="//title"/></span></dd>
+		  	    </xsl:if>
+
+		       <xsl:if test="//*/*:meta/*:creator"> 
+			  	<dt>By</dt>
+			  	<dd class="DC-Creator">
+	           		<xsl:apply-templates select="//*/*:meta/*:creator"/>
+			  	</dd>
+	      	  </xsl:if>
+
+
+		       <xsl:if test="//*/*:meta/*:contributor"> 
+			  <dt>At</dt>
+				  <dd>
+				    <span class="DC-Contributor"><xsl:apply-templates select="//*/*:meta/*:contributor"/>,&#160;</span>
+				    <span class="DC-Publisher"><xsl:apply-templates select="//*/*:meta/*:publisher"/></span>
+				  </dd>
+			  </xsl:if>
+
+			 <xsl:if test="//*/*:meta/*:description[@descriptionType='SeriesInformation']"> 
+				<dt>Papers</dt>
+
+				<xsl:if test="count(//*/*:meta/*:description[@descriptionType='SeriesInformation']) > 1">
+
+				  	<dd>
+					    <div class="collapsible">
+					      <div class="collapse-control"><span class="indicator"></span> publications associated with data</div>
+					      <div class="collapse-content">
+					      	<xsl:for-each select="//*/*:meta/*:description[@descriptionType='SeriesInformation']">
+						    	<span class="DC-Type">
+									<xsl:value-of select="."/>
+								</span>
+								<p/>
+							</xsl:for-each>
+					      </div>
+					    </div>
+				  	</dd>
+				</xsl:if>
+
+				<xsl:if test="count(//*/*:meta/*:description[@descriptionType='SeriesInformation']) = 1">
+					  <dd>
+					    <span class="DC-Type"><xsl:apply-templates select="//*/*:meta/*:description[@descriptionType='SeriesInformation']"/></span>
+					  </dd>
+				</xsl:if>
+			  </xsl:if>
+
+			  <xsl:for-each select="//*/*:meta/*:description[@descriptionType='Abstract']">
+				<xsl:if test="//*/*:meta/*:description[@descriptionType='Abstract']">
+			  		<dt>Description</dt>
+					<dd>
+				    	<span class="DC-Type">
+							<xsl:value-of select="."/>
+						</span>
+				</dd>
+			   </xsl:if>
+			</xsl:for-each>
+
+			  <xsl:for-each select="//*/*:meta/*:description[@descriptionType='Methods']">
+			   <xsl:if test="//*/*:meta/*:description[@descriptionType='Methods']">
+				<dt>Methods</dt>
+			  		<dd>
+					    <div class="collapsible">
+					      <div class="collapse-control"><span class="indicator"></span> Methods</div>
+					      <div class="collapse-content">
+							<xsl:value-of select="."/>
+						  </div>
+					    </div>
+				  	</dd>
+			    </xsl:if>
+			  </xsl:for-each>
+
+
+	       <xsl:if test="//*/*:meta/*:type"> 
+			  <dt>Type</dt>
+			  <dd>
+			    <span class="DC-Type"><xsl:apply-templates select="//*/*:meta/*:type"/></span>
+			  </dd>
+			</xsl:if>
+
+			<xsl:if test="//*/*:meta/*:size"> 
+			  <dt>Size</dt>
+			  <dd>
+			    <span class="DC-Type"><xsl:apply-templates select="//*/*:meta/*:size"/></span>
+			  </dd>
+			</xsl:if>
+
+			<xsl:if test="/*/*:meta/*:date"> 
+			  <dt>Date</dt>
+			  <dd>
+				<xsl:if test="//*/*:meta/*:collected">
+			    	Collected <span class="DC-Coverage"><xsl:apply-templates select="//*/*:meta/*:collected"/></span>
+				</xsl:if>
+				<xsl:if test="//*/*:meta/*:date">
+			    	Analyzed <span class="DC-Date-Created"><xsl:apply-templates select="//*/*:meta/*:date"/></span>
+				</xsl:if>
+				<xsl:if test="//*/*:meta/*:added">
+			    	Uploaded <span class="DC-Date"><xsl:apply-templates select="//*/*:meta/*:added"/></span>
+				</xsl:if>
+			  </dd>
+			</xsl:if>
+
+			 <xsl:if test="//*/*:meta/*:subject"> 
+			  <dt>Keywords</dt>
+			  <dd>
+			    <span class="DC-Subject">
+		              <xsl:apply-templates select="//*/*:meta/*:subject"/>
+			    </span>
+			  </dd>
+			  </xsl:if>
+
+			 <xsl:if test="//doi"> 
+			  <dt>Identifier</dt>
+			  <dd><span class="DC-Identifier"><xsl:apply-templates select="//doi"/></span></dd>
+			 </xsl:if>
+			</dl>
+	      </div>
+	
+		<div class="dataset-actions">
+			<div class="dataset-action-buttons">
+				<a class="dataset-action-download">
+	               <xsl:attribute name="href">
+	                    <xsl:value-of select="normalize-space(//target)"/>
+	               </xsl:attribute> 
+	               <xsl:attribute name="target">
+	                    <xsl:value-of select="'_target'"/>
+	               </xsl:attribute>
+	             <b>
+	             Download <xsl:apply-templates select="//objectsize"/> dataset
+	             </b></a>
+
+				 <a class="dataset-action-cite" href="{$doc.path}&#038;doc.view=citation" target="_top">Cite this dataset</a>
+			</div>
+		</div>
+		
+	</div>
+
+
+	    </div>
+	    <xsl:call-template name="footer"/>
+	
+	</div></div></div>
+	
+	
+	</body>
+	</html>
    </xsl:template>
+
 
    <!-- ====================================================================== -->
    <!-- Content Template                                                       -->
    <!-- ====================================================================== -->
     <xsl:template name="body">
         <body>
-         <table>    
+         <table>   
 	
 			<tr>
                <td>
@@ -456,6 +589,9 @@
 		 <li>UCSF Center for the Imaging of Neurodegenerative Diseases (CIND)</li>
 		 </ul>
          </body>
-   </xsl:template>            
+   </xsl:template>      
+
+
+      
 
 </xsl:stylesheet>

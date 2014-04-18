@@ -322,7 +322,7 @@
    <xsl:template name="citation">
       
       <html xmlns="http://www.w3.org/1999/xhtml">
-			<title>DataShare: <xsl:apply-templates select="//title"/></title>
+			<title>Dash: <xsl:apply-templates select="//title"/></title>
 			<xsl:call-template name="header_links"/>
 	  <body>
 
@@ -333,7 +333,8 @@
 			    <div id="inner-container"> 
 			       <!-- begin header -->
 
-			 <xsl:call-template name="ucsf_header"/>
+			 <xsl:copy-of select="$brand.header"/>
+			 <!-- <xsl:call-template name="ucb_header"/> -->
 
 		    <div class="content content-dataset" id="content">
 
@@ -366,7 +367,8 @@
 
 	     	
 			    </div>
-			    <xsl:call-template name="footer"/>
+			    <xsl:copy-of select="$brand.footer"/>
+				<!-- <xsl:call-template name="footer"/> -->
 
 			</div></div></div>
         </body>
@@ -432,9 +434,33 @@
 	</xsl:template>
 	
 	<!-- duplicate header and footer from searchforms, unfortunately hard avoid because of conflicting names -->
-	<xsl:template name="ucsf_header">
+	<xsl:template name="nav-header">
+		<div id="nav-home-menu">
+		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
+		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
+		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
+		  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
+		  <div id="my-datasets-nav" class="menu"><a href="http://dash-dev.cdlib.org/xtf/search">My Datasets</a></div>
+		</div>
+	</xsl:template>
+	<xsl:template name="ucsf_header"> 
 	   	<div id="header">
-			<div id="logo"> <a href="/"> <img src="assets/img/datashare-logo3.gif" width="320" height="63" alt="DataShare: Open data for the global research community" title="DataShare: Open data for the global research community" /> </a> </div>
+			<div id="logo"> <a href="/"> <img src="assets/img/datashare-logo3.gif" width="320" height="63" alt="DataShare: Open data for the global research community" title="DataShare: Open data for the global research community" /><xsl:value-of select="$http.URL"/> </a> </div>
+			<!-- <div id="login"> <a href="login.html"> <img src="assets/img/login2.gif" width="92" height="21" alt="Login"/></a> </div> -->
+		</div> 
+			  <!-- end header -->
+				<!-- begin navigation-->
+		<div id="nav-home-menu">
+		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
+		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
+		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
+		  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
+		  <div id="my-datasets-nav" class="menu"><a href="http://dash-dev.cdlib.org/xtf/search">My Datasets</a></div>
+		</div>
+	</xsl:template>
+	<xsl:template name="ucb_header">
+	   	<div id="header">
+			<div id="logo"> <a href="/"> <img src="assets/img/berkeley-text-brand.gif" width="320" height="63" alt="UCB DataShare: Open data for the global research community" title="UCB DataShare: Open data for the global research community" /> </a> </div>
 			<!--<div id="login"> <a href="login.html"> <img src="assets/img/login2.gif" width="92" height="21" alt="Login"/></a> </div>-->
 		</div> 
 			  <!-- end header -->
@@ -443,7 +469,23 @@
 		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
 		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
 		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
-		  <div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
+		  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
+		  <div id="my-datasets-nav" class="menu"><a href="http://localhost:8080/xtf/search?f1-publisher=UC%20Berkeley">My Datasets</a></div>
+		</div>
+	</xsl:template>
+	<xsl:template name="ucla_header">
+	   	<div id="header">
+			<div id="logo"> <a href="/"> <img src="assets/img/ubla-box-blu-rgb-108.png" width="320" height="63" alt="UCLA DataShare: Open data for the global research community" title="UCLA DataShare: Open data for the global research community" /> </a> </div>
+			<!--<div id="login"> <a href="login.html"> <img src="assets/img/login2.gif" width="92" height="21" alt="Login"/></a> </div>-->
+		</div> 
+			  <!-- end header -->
+				<!-- begin navigation-->
+		<div id="nav-home-menu">
+		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
+		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
+		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
+		  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
+		  <div id="my-datasets-nav" class="menu"><a href="http://localhost:8080/xtf/search?f1-publisher=UC%20Los%20Angeles">My Datasets</a></div>
 		</div>
 	</xsl:template>
 

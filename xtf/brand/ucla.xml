@@ -16,7 +16,7 @@
    
    <header>
       <div class="header">
-         <a href="/xtf/search"><img src="assets/img/uc_wordmark_stacked_gray.png" alt="UCOP Dash logo" width="200" class="your-logo"/></a>
+         <a href="/xtf/search"><img src="assets/img/ucla-box-blu-rgb-108.png" alt="UCLA DASH logo" class="your-logo"/></a>
 <!--         <img src="icons/default/logo_green_noUCSF.gif" alt="CIND logo" class="your-logo" />
 -->         <br class="clear" />
       </div>
@@ -24,7 +24,7 @@
    
    <dynaxml.header>
       <div class="header">
-         <a href="/xtf/search"><img src="assets/img/uc_wordmark_stacked_gray.png" alt="Berkeley Dash logo" width="200" class="your-logo"/></a>
+         <img src="assets/img/berkeley-text-brand.gif" alt="UCLA Dash logo" class="your-logo"/>
 <!--         <img src="icons/default/logo_green_noUCSF.gif" width="100" height="40" alt="CIND logo" class="your-logo" /> -->
          <br class="clear" />
       </div>
