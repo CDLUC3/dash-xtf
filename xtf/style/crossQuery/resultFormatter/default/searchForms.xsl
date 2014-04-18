@@ -358,7 +358,7 @@
 					<xsl:call-template name="header_links"/>
 				</head>			
 				<xsl:copy-of select="$brand.header"/>
-				<xsl:call-template name="nav_header"/> 
+				<xsl:call-template name="nav-header"/> 
 			  <body>
 			    <div class="content">
 
