@@ -71,7 +71,17 @@
    <!-- If an external 'source' document was specified, include it in the
       query string of links we generate. -->
    <xsl:param name="source" select="''"/>
-   
+   <xsl:choose>
+   <xsl:when test="contains($http.URL,'berkeley')">
+	<xsl:param name="brand" select="berkeley"/>
+   </xsl:when>
+   <xsl:when test="contains($http.URL,'ucla')">
+	<xsl:param name="brand" select="ucla"/>
+   </xsl:when>
+   <xsl:otherwise>
+	<xsl:param name="brand" select="ucop"/>
+   </xsl:otherwise>
+   </xsl:choose>
    <xsl:variable name="sourceStr">
       <xsl:if test="$source">;source=<xsl:value-of select="$source"/></xsl:if>
    </xsl:variable>
@@ -137,7 +147,7 @@
    
    <!-- Branding Parameters -->
    
-   <xsl:param name="brand" select="'default'"/>
+   <xsl:param name="brand"/>
    
    <xsl:variable name="brand.file">
       <xsl:choose>
