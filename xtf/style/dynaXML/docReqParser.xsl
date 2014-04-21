@@ -80,17 +80,7 @@
    <xsl:param name="query-join" select="'0'"/>
    <xsl:param name="query-exclude" select="'0'"/>
    <xsl:param name="sectionType" select="'0'"/>
-   <xsl:choose>
-   <xsl:when test="contains($http.URL,'berkeley')">
-	<xsl:param name="brand" select="berkeley"/>
-   </xsl:when>
-   <xsl:when test="contains($http.URL,'ucla')">
-	<xsl:param name="brand" select="ucla"/>
-   </xsl:when>
-   <xsl:otherwise>
-	<xsl:param name="brand" select="ucop"/>
-   </xsl:otherwise>
-   </xsl:choose>
+
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
    <!-- ====================================================================== -->
