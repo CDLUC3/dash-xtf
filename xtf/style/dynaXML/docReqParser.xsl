@@ -99,7 +99,7 @@
          "for-each" is a bit of a misnomer, since the stub is a single document
          so the code below runs only once.
       -->
-      <xsl:variable name="file" select="concat('../../../../xtf-data/data/',$docId)"/>
+      <xsl:variable name="file" select="concat('/dash/xtf-data/data/',$docId)"/>
       <xsl:variable name="stub" select="if ($docId and FileUtils:exists($file)) then FileUtils:readXMLStub($file) else ()"/>
 	<xsl:message>The value of docId is <xsl:copy-of select="$docId"/></xsl:message>
 	<xsl:message>The value of file is <xsl:copy-of select="$file"/></xsl:message>
@@ -164,7 +164,7 @@
          base directory), or an HTTP URL. The referenced XML document is
          parsed and fed into the display stylesheet.
       -->   
-      <source path="{concat('data/',$docId)}"/>
+      <source path="{concat('/dash/xtf-data/data/',$docId)}"/>
       
       <!-- ==================================================================
          The optional "brand" tag specifies a filesystem path (relative to the
