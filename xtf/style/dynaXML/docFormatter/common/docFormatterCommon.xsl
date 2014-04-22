@@ -439,8 +439,7 @@
 		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
 		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
 		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
-		  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
-		  <div id="my-datasets-nav" class="menu"><a href="http://dash-dev.cdlib.org/xtf/search">My Datasets</a></div>
+                  <div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
 		</div>
 	</xsl:template>
 	<xsl:template name="ucsf_header"> 
@@ -454,8 +453,7 @@
 		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
 		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
 		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
-		  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
-		  <div id="my-datasets-nav" class="menu"><a href="http://dash-dev.cdlib.org/xtf/search">My Datasets</a></div>
+                  <div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
 		</div>
 	</xsl:template>
 	<xsl:template name="ucb_header">
@@ -469,8 +467,7 @@
 		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
 		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
 		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
-		  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
-		  <div id="my-datasets-nav" class="menu"><a href="http://localhost:8080/xtf/search?f1-publisher=UC%20Berkeley">My Datasets</a></div>
+                  <div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
 		</div>
 	</xsl:template>
 	<xsl:template name="ucla_header">
@@ -484,8 +481,7 @@
 		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
 		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
 		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
-		  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
-		  <div id="my-datasets-nav" class="menu"><a href="http://localhost:8080/xtf/search?f1-publisher=UC%20Los%20Angeles">My Datasets</a></div>
+                  <div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
 		</div>
 	</xsl:template>
 
