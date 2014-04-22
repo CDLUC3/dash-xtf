@@ -101,8 +101,8 @@
       -->
       <xsl:variable name="file" select="concat('../../../../xtf-data/data/',$docId)"/>
       <xsl:variable name="stub" select="if ($docId and FileUtils:exists($file)) then FileUtils:readXMLStub($file) else ()"/>
-	<xsl:message>The value of docId is <xsl:copy-of select="$docId"/>
-	<xsl:message>The value of file is <xsl:copy-of select="$file"/>
+	<xsl:message>The value of docId is <xsl:copy-of select="$docId"/></xsl:message>
+	<xsl:message>The value of file is <xsl:copy-of select="$file"/></xsl:message>
       <xsl:variable name="fileType">
          <xsl:for-each select="$stub">
             
