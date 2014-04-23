@@ -83,7 +83,7 @@
    <!-- ====================================================================== -->
    
    <xsl:template match="/" exclude-result-prefixes="#all">
-      <xsl:choose>
+	   <xsl:choose>
 		 <xsl:when test="$smode = 'uploadPage'">   	 
 		 	<xsl:call-template name="uploadPage"/>
 		 </xsl:when>
@@ -1697,7 +1697,7 @@ Item number <xsl:value-of select="$num"/>:
 							</div>
 							<div class="begin">
 								<!-- <a href="http://datashare-ingest.ucsf.edu"><img src="assets/img/begin2.gif" width="149" height="42" alt="Begin"/></a> -->
-								<a href="http://dash-dev.cdlib.org/xtf/search"><img src="assets/img/begin2.gif" width="149" height="42" alt="Begin"/></a>
+								<a href="/login"><img src="assets/img/begin2.gif" width="149" height="42" alt="Begin"/></a>
 							</div>
 							</div>
 							<div id="right-container">
