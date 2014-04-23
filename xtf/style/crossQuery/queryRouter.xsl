@@ -1,4 +1,5 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+   xmlns:session="java:org.cdlib.xtf.xslt.Session"
    exclude-result-prefixes="#all"
    version="2.0">
    
@@ -53,9 +54,19 @@
    <!-- ====================================================================== -->
    
    <xsl:param name="http.URL"/>
-   
+    
    <xsl:template match="/">
-      
+   <xsl:choose>
+   <xsl:when test="contains($http.URL, 'berkeley')">
+		<xsl:value-of select="session:setData('brand', 'berkeley')"/>
+	</xsl:when>
+	<xsl:when test="contains($http.URL, 'ucla')">
+		<xsl:value-of select="session:setData('brand', 'ucla')"/>
+	</xsl:when>
+	<xsl:otherwise>
+		<xsl:value-of select="session:setData('brand', 'default')"/>
+	</xsl:otherwise>
+	</xsl:choose>
       <route>
          <xsl:choose>
             <!-- oai -->

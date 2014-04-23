@@ -51,7 +51,6 @@
    <xsl:import href="../common/resultFormatterCommon.xsl"/>
    <xsl:import href="rss.xsl"/>
    <xsl:include href="searchForms.xsl"/>
-
    <!-- ====================================================================== -->
    <!-- Output                                                                 -->
    <!-- ====================================================================== -->
@@ -1734,13 +1733,13 @@ Item number <xsl:value-of select="$num"/>:
 	
 	
 	<xsl:template name="aboutPage">
-			<html>
+	<html>
 
-				<head>
+<!--				<head>
 					<title>FAQ: DataShare - Open data for the global research community</title>
-					<xsl:call-template name="header_links"/>
-				</head>
-
+-->					<xsl:call-template name="header_links"/>
+<!--				</head>
+-->
 		 		<body>
 
 					<!-- begin page id -->
@@ -1750,10 +1749,10 @@ Item number <xsl:value-of select="$num"/>:
 					    <!-- begin inner container -->
 					    <div id="inner-container"> 
 
-								<div class="header">
+<!--								<div class="header"> -->
 						     		<xsl:copy-of select="$brand.header"/>
 									<xsl:call-template name="nav-header"/> 
-						    	</div>
+<!--						    	</div> -->
 					       <!-- begin header -->
 							<!--#include virtual="includes/header.html" --> 
 						  <!-- end header -->

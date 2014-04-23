@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
    xmlns="http://www.w3.org/1999/xhtml"
    xmlns:editURL="http://cdlib.org/xtf/editURL"
+   xmlns:session="java:org.cdlib.xtf.xslt.Session"
    version="2.0">
    
    
@@ -53,14 +54,10 @@
    <!-- main form page -->
    <xsl:template match="crossQueryResult" mode="form" exclude-result-prefixes="#all">
       <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-		
 			<xsl:call-template name="header_links"/>
-
-		     	
-		
-            <div class="searchPage">
-               <div class="forms">
-                  
+<!--           <div class="searchPage">
+             <div class="forms"> 
+-->                  
 					<!--
                      <tr>
                         <td class="{if(matches($smode,'simple')) then 'tab-select' else 'tab'}"><a href="search?smode=simple">Keyword</a></td>
@@ -69,7 +66,7 @@
                         <td class="{if(matches($smode,'browse')) then 'tab-select' else 'tab'}"><a href="search?smode=browse">Browse</a></td>
                      </tr>
 					-->
-                           <div class="form">
+<!--                           <div class="form"> -->
                               <xsl:choose>
                                  <xsl:when test="matches($smode,'simple')">
                                     <xsl:call-template name="simpleForm"/>
@@ -88,9 +85,9 @@
                                  </xsl:when>
 								-->
                               </xsl:choose>
-                           </div>
+<!--                           </div>
                </div>
-            </div>
+            </div>  -->
       </html>
    </xsl:template>
 
@@ -164,17 +161,20 @@
 		
 	</xsl:template>
    
- 	<xsl:template name="simpleForm" exclude-result-prefixes="#all">
+<!-- 	<xsl:template name="simpleForm" exclude-result-prefixes="#all"> -->
+ 	<xsl:template name="simpleForm">
+    <xsl:value-of select="session:setData('brand', 'berkeley')"/>
 		
 		<body>
 		<!-- begin page id -->
-		<div id="home"> 
+<!--		<div id="home">   -->
+
 		<!-- begin outer container -->  
 		  <div id="outer-container"> 
 		    <!-- begin inner container -->
 		    <div id="inner-container"> 
 		      <!-- begin header -->
-		    <xsl:copy-of select="$brand.header"/>
+		    <xsl:copy-of select="$brand.header"/> 
 			<xsl:call-template name="nav-header"/>
 
 
@@ -244,7 +244,7 @@
 							</div>
 							</div>
 						</div>
-					</div> <!-- end content-->
+<!--					</div> --> <!-- end content-->
 			<!-- begin footer-->
 		    <xsl:call-template name="footer"/>
 
@@ -263,7 +263,8 @@
 		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
 		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
 		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
-                  <div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
+		  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
+		  <div id="my-datasets-nav" class="menu"><a href="http://dash-dev.cdlib.org">My Datasets</a></div>
 		</div>
 	</xsl:template>
 
