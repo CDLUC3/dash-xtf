@@ -99,8 +99,10 @@
          "for-each" is a bit of a misnomer, since the stub is a single document
          so the code below runs only once.
       -->
+<!--for local environment -->
+<!--    <xsl:variable name="file" select="concat('../../data/',$docId)"/> -->
 <!--for online environment -->
-    <xsl:variable name="file" select="concat('/apps/dash/xtf-data/data/',$docId)"/> 
+      <xsl:variable name="file" select="concat('/dash/xtf-data/data/',$docId)"/> 
       <xsl:variable name="stub" select="if ($docId and FileUtils:exists($file)) then FileUtils:readXMLStub($file) else ()"/>
       <xsl:variable name="fileType">
          <xsl:for-each select="$stub">
