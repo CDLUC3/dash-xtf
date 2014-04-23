@@ -54,13 +54,13 @@
    <!-- ====================================================================== -->
    
    <xsl:param name="http.URL"/>
-    
+   <xsl:param name="http.referer"/>
    <xsl:template match="/">
    <xsl:choose>
-   <xsl:when test="contains($http.URL, 'berkeley')">
+   <xsl:when test="contains($http.referer, 'berkeley.edu')">
 		<xsl:value-of select="session:setData('brand', 'berkeley')"/>
 	</xsl:when>
-	<xsl:when test="contains($http.URL, 'ucla')">
+	<xsl:when test="contains($http.referer, 'ucla.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucla')"/>
 	</xsl:when>
 	<xsl:otherwise>

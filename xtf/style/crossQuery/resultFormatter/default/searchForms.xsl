@@ -163,8 +163,7 @@
    
 <!-- 	<xsl:template name="simpleForm" exclude-result-prefixes="#all"> -->
  	<xsl:template name="simpleForm">
-    <xsl:value-of select="session:setData('brand', 'berkeley')"/>
-		
+<xsl:message>Brand is <xsl:copy-of select="$brand"/></xsl:message>		
 		<body>
 		<!-- begin page id -->
 <!--		<div id="home">   -->

@@ -10,22 +10,18 @@
    <dynaxml.links>
       <link rel="stylesheet" href="css/default/content.css" type="text/css"/>
       <link rel="shortcut icon" href="icons/default/favicon.ico" />
-
-
    </dynaxml.links>
    
    <header>
       <div class="header">
          <a href="/xtf/search"><img src="assets/img/uc3.png" alt="UC3 logo" width="200" class="your-logo"/></a>
-<!--         <img src="icons/default/logo_green_noUCSF.gif" alt="CIND logo" class="your-logo" />
--->         <br class="clear" />
+         <br class="clear" />
       </div>
    </header>
    
    <dynaxml.header>
       <div class="header">
          <a href="/xtf/search"><img src="assets/img/uc3.png" alt="UC3 logo" width="200" class="your-logo"/></a>
-<!--         <img src="icons/default/logo_green_noUCSF.gif" width="100" height="40" alt="CIND logo" class="your-logo" /> -->
          <br class="clear" />
       </div>
    </dynaxml.header>
