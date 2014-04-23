@@ -166,9 +166,9 @@
          parsed and fed into the display stylesheet.
       -->   
 <!--for local environment -->
-      <source path="{concat('data/',$docId)}"/>
+      <!-- <source path="{concat('data/',$docId)}"/> -->
 <!--for online environment -->
-	<!-- <source path="{contact('/dash/xtf-data/data/',$docId)}"/> -->
+	<source path="{concat('/dash/xtf-data/data/',$docId)}"/> 
       <!-- ==================================================================
          The optional "brand" tag specifies a filesystem path (relative to the
          servlet base directory) that is a simple stylesheet. It should produce
