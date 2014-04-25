@@ -53,6 +53,7 @@
    <!-- Root Template                                                          -->
    <!-- ====================================================================== -->
    
+   <xsl:param name="http.URL"/>
    <xsl:param name="http.x-forwarded-host"/>
    <xsl:template match="/">
    <xsl:choose>
