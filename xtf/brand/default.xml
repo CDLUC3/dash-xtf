@@ -125,4 +125,10 @@
 		<p class="para">Please contact us with any questions about the data. Your message will be directed to an appropriate source to answer any questions about the data. We cannot guarantee that the source will be able to obtain an answer to your specific question.</p>
 		</div>
 	</faq>
+	<promo-img>
+		<img class="headshot" alt="Dr. Michael Weiner, UCSF" width="60" height="81" src="assets/img/promo/weiner.jpg" />
+	</promo-img>
+	<promo-quote>
+		<p>"Making data transparent and available is going to accelerate all of science. It's a relatively inexpensive way to get more value out of all of the work that we do." &#8212;Dr. Michael Weiner, UCSF</p>
+	</promo-quote>
 </brand>

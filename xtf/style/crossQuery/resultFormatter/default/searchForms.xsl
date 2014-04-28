@@ -115,9 +115,9 @@
 			<div class="featured-sharer">
 				<div class="promo-box">
 					<h3>Researcher voices</h3>
-					<img class="headshot" src="assets/img/promo/weiner.jpg" />
+					<xsl:copy-of select="$brand.promo-img"/>
 					<br/>
-					<p>"Making data transparent and available is going to accelerate all of science. It's a relatively inexpensive way to get more value out of all of the work that we do." &#8212;Dr. Michael Weiner, UCSF</p>
+					<xsl:copy-of select="$brand.promo-quote"/>
 				</div>
 			</div>
 		</div>
@@ -183,12 +183,12 @@
 								</div>
 								<div id="reasercher-voice">
 									<div class="researcher-header">
-										<p >Researcher Voice</p>
+										<p>Researcher Voice</p>
 									</div>
 									<div class="voice-container">
-										<img src="assets/img/researcher-pic.jpg" width="60" height="81" alt="Researcher - Dr. Michael Weiner"/>
+										<xsl:copy-of select="$brand.promo-img"/>
 										<div class="voice">
-											<p>“Making data transparent and available is going to accelerate all of science. It’s a relatively inexpensive way to get more value out of all of the work that we do.” <br/>-Dr. Michael Weiner, UCSF</p>
+											<xsl:copy-of select="$brand.promo-quote"/>
 										</div>
 									</div>
 								</div>

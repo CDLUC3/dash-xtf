@@ -129,4 +129,10 @@
 		<p class="para">Please contact us with any questions about the data. Your message will be directed to an appropriate source to answer any questions about the data. We cannot guarantee that the source will be able to obtain an answer to your specific question.</p>
 		</div>
 	</faq>
+	<promo-img>
+		<img class="headshot" width="60" height="81" src="assets/img/promo/sbeckett01.jpg" />
+	</promo-img>
+	<promo-quote>
+		<p>"Quotation from UC Berkeley researcher." &#8212;Dr. Famous Researcher, UC Berkeley</p>
+	</promo-quote>
 </brand>
