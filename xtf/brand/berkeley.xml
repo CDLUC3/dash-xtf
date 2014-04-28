@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <brand xmlns="http://www.w3.org/1999/xhtml">
+	<htmlhead>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8; charset=UTF-8" />
+		<link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+		<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script>var less = {env: "development"};</script>
+	    <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+	    <script src="assets/js/datashare.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-34221926-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+	</htmlhead>
    
    <links>
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
       <link rel="stylesheet" href="css/default/results.css" type="text/css"/>
 	  <link rel="shortcut icon" href="icons/default/favicon.ico" />
    </links>
@@ -25,14 +48,32 @@
          <br class="clear" />
       </div>
    </dynaxml.header>
-   
+ <!--
    <footer>
     <div class="footer">
 		<a href="http://www.cdlib.org/services/uc3/contact.html" target="_blank">Comments? Questions?</a> | 
 		<a href="http://www.cdlib.org/about/privacy.html">Privacy policy</a> |
 		<b>Powered by</b>: <a href="http://www.cdlib.org/uc3/merritt" target="_blank">Merritt</a> &amp; <a href="http://xtf.cdlib.org/" target="_blank">XTF</a> @ <a href="http://www.cdlib.org" target="_blank">California Digital Library</a> | 
-		Copyright &#169; 2012 The Regents of the University of California <br />
+		Copyright &#169; 2014 The Regents of the University of California <br />
 	</div>
    </footer>
-   
+-->
+   <footer>
+		<div id="footer">
+			<div id="footer-container" class="shading">
+				<div id="terms"><a href="/xtf/search?smode=termsPage">Terms of Use</a></div>
+				<div id="faq-footer" ><a href="/xtf/search?smode=faqPage">FAQ</a></div>
+				<div id="contact-us" ><a href="/xtf/search?smode=contactPage">Contact Us</a></div>
+				<div id="copyrights">
+					<p>Dash was made possible through a partnership between the California Digital Library, </p>
+					<p>UCSF Clinical &amp; Translational Science Institute, and UCSF Library.  &#169; 2013 The Regents of the University of California</p>
+				</div>
+			</div>
+		</div>   
+		<div id="footer-logos">
+			<div id="cdl-logo-sm"><a href="http://www.cdlib.org/"><img src="assets/img/cdl-logo.jpg" width="72" height="26" alt="California Digital Library" title="California Digital Library" /></a></div>
+			<div id="ucsf-lib"><a href="http://www.library.ucsf.edu/"><img src="assets/img/ucsflib-logo.jpg" width="111" height="27" alt="UCSF library" title="UCSF library" /></a></div>
+			<div id="ctsi"><a href="http://ctsi.ucsf.edu/"><img src="assets/img/CTSI_logo.png" width="143" height="27" alt="CTSI" title="CTSI" /></a></div>
+		</div>
+	</footer>
 </brand>
