@@ -210,7 +210,7 @@
       </xsl:choose>
    </xsl:variable>
 
-   <!--Branding parameters -->
+   <!-- Branding parameters -->
    <xsl:param name="brand.links" select="$brand.file//links/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.header" select="$brand.file//header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.footer" select="$brand.file//footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
@@ -219,7 +219,7 @@
    <xsl:param name="brand.faq" select="$brand.file//faq/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
    <xsl:param name="brand.promo-img" select="$brand.file//promo-img/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
    <xsl:param name="brand.promo-quote" select="$brand.file//promo-quote/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
-   <xsl:param name="brand.contactus" select="$brand.file//contactus/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
+   <xsl:param name="brand.contactus-form" select="$brand.file//contactus-form/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
    <xsl:param name="brand.contactus-script" select="$brand.file//contactus-script/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
 
    <!-- Paging Parameters-->  

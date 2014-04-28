@@ -985,7 +985,7 @@
 									<xsl:otherwise>
 										<h1>Contact us</h1>
 										<div class="contact-us-form">
-											<xsl:copy-of select="$brand.contactus"/>
+											<xsl:copy-of select="$brand.contactus-form"/>
 										</div>
 									</xsl:otherwise>
 								</xsl:choose>
