@@ -8,7 +8,7 @@
 		<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<script>var less = {env: "development"};</script>
+		<script type="text/javascript">var less = {env: "development"};</script>
 	    <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
 	    <script src="assets/js/datashare.js" type="text/javascript"></script>
 		<script type="text/javascript">
@@ -71,4 +71,58 @@
 			<div id="ctsi"><a href="http://ctsi.ucsf.edu/"><img src="assets/img/CTSI_logo.png" width="143" height="27" alt="CTSI" title="CTSI" /></a></div>
 		</div>
 	</footer>   
+	<faq>
+		<div class="text-container">
+		<p class="title">Who can deposit data here?</p>
+		<p class="para">Any UCSF-affiliated researcher (faculty, postdoc, student, or staff) can use this resource to archive and share research data sets, provided they have appropriate permission. Data that is collected at research sites is under the stewardship of the Principal Investigator (PI) named on the resource provided to collect the data, and this PI may grant permission to deposit data.</p>
+		<p class="title">Why only UCSF?</p>
+		<p class="para">This system is being piloted at UCSF and therefore currently it is only configured to accept data submissions authenticated through UCSF's secure sign-on, MyAccess. We hope this system will be used by other institutions in future phases of the project.</p>
+		<p class="title">Who can access these data?</p>
+		<p class="para">The descriptive metadata associated with each data set is publicly available. Any member of the public may discover these data and request access to them. Access to the data will be granted in accordance with the terms specified by the data depositor.</p>
+		<p class="title">Will I have control of the data?</p>
+		<p class="para">You will have the ability to control access to your data (see below). Once data is deposited, you will have control over the versioning of the data set as well as the metadata indexing fields.</p>
+		<p class="title">How can I control who sees/accesses the data?</p>
+		<p class="para">Anyone will be able to view the descriptive metadata used to index your data set, this information is publicly available to allow for maximum discoverability. You will have the ability to specify terms of use for your data set via a 'Data Use Agreement' (DUA) prior to allowing access. Default DUAs are set at the collection level (e.g. all of the data sets entered under the Lab X collection will be assigned the default DUA specified by Lab X), however this DUA may be over-written if a different set of terms is required for a specific data set.</p>
+		<p class="title">What do I need to submit the data?</p>
+			<ul>
+				<li>Permission from the appropriate PI(s)</li>
+				<li>Information about the data set (this descriptive metadata will be used to index your data set, so the more information you can provide - the better)</li>
+				<li>Access to files comprising the data set</li>
+				</ul>
+		<p class="title">Are there any file format requirements?</p>
+		<p class="para">No. Files of any type are acceptable for deposit. However, please ensure that any files of a specialized or proprietary nature are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the data set files, or could be entered in the 'Technical Description' section of the metadata.</p>
+		<p class="title">What best practices can I follow for data preparation?</p>
+		<p class="para">There are a variety of best practices depending on your field of research, but generally:</p>
+			<ul>
+				<li>Ensure data files are the most up-to-date and complete versions</li>
+				<li>Ensure the integrity of data files (check if corrupted)</li>
+				<li>Ensure that all data relating to human subjects has been properly <a href="http://www.hhs.gov/ocr/privacy/hipaa/understanding/coveredentities/De-identification/guidance.html">de-identified</a></li>
+				<li>Double-check the accuracy of the descriptive metadata</li>
+				<li>Enter as much descriptive metadata as possible in the indexing fields</li>
+				<li>Ensure that any information critical to the proper viewing and/or usage of the data is included in the submission (either as a separate 'Readme' file or within the 'Technical Description' metadata field)</li>
+			</ul>
+		<p class="title">For how long will the data be available?</p>
+		<p class="para">Once you have deposited data, it is permanently archived and available through the California Digital Library; however the DataShare website is currently supported as a pilot project and therefore we cannot guarantee availability through DataShare for any length of time.</p>
+		<p class="title">Will I know if someone uses/views the data?</p>
+		<p class="para">Yes, DataShare provides tools to access the metrics associated with each data set. This includes number of page views and data set downloads. We request notification from data re-users when analysis of data made available through DataShare leads to publications or conference presentations, however we cannot guarantee this.</p>
+		<p class="title">How do I get credit for the data if someone uses it?</p>
+		<p class="para">Data re-users are provided with a simple 'Cite this data set' button which provides the proper data citation (including persistent identifier) and can be exported to a reference manager. Your data use agreement contains a term requiring data re-users to provide proper attribution, thus, they must cite your data when and where it is appropriate.</p>
+		<p class="title">What if I never published anything using these data?</p>
+		<p class="para">It is not required that the data deposited in DataShare be associated with a publication. It is only required that these data are collected in a manner that adheres to the standards set forth by the affiliated institution and institutional review board.</p>
+		<p class="title">Who created these data?</p>
+		<p class="para">The data are collected and/or processed by the individuals specified as 'Data creators' in association with the individual(s) designated as 'Principal Investigator'.</p>
+		<p class="title">How can the data on this site be used?</p>
+		<p class="para">The data made available through DataShare can be used in any manner consistent with the general goal of advancing scientific knowledge; either by serving as training materials or testing materials.</p>
+		<p class="title">Is there anything I can't use the data for?</p>
+		<p class="para">The data cannot be used for disreputable purposes, and no attempts must ever be made to re-identify human subjects based on their data. Any additional constraints on data use will be outlined in a 'Data Use Agreement' (DUA) specified by the data provider. You will need to view and agree to the DUA terms prior to being granted access to the data.</p>
+		<p class="title">Are there requirements if I use data?</p>
+		<p class="para">We require only that the data set be cited appropriately when used, this ensures that data providers receive proper credit for their contribution to any works derived from the data. Any additional requirements for data use will be outlined in a 'Data Use Agreement' (DUA) specified by the data provider. You will need to view and agree to the DUA terms prior to being granted access to the data.</p>
+		<p class="title">Do I need to sign-in to get data?</p>
+		<p class="para">Persons requesting data are not required to sign-in in order to do so. Most data sets will be made available immediately following acceptance of the Data Use Agreement terms (requiring entry of name and a valid email address). However, data providers reserve the right to enforce additional controls on access to the data.</p>
+		<p class="title">Do I have to pay for data?</p>
+		<p class="para">No, these data are made publicly available free of charge.</p>
+		<p class="title">What if I have questions about the data?</p>
+		<p class="para">Please contact us with any questions about the data. Your message will be directed to an appropriate source to answer any questions about the data. We cannot guarantee that the source will be able to obtain an answer to your specific question.</p>
+		</div>
+	</faq>
 </brand>
