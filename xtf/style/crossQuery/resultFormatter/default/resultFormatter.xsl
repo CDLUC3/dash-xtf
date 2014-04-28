@@ -960,11 +960,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 		<head>
 			<title>Dash: Contact Us - Open data for the global research community</title>
-			<script type='text/javascript'>
-				function resetMe(){
-				document.getElementByName("afm_form_e71bf67c").reset();
-				};
-			</script>
+			<xsl:copy-of select="$brand.contactus-script"/>
 			<xsl:copy-of select="$brand.htmlhead"/>
 		</head>
 		<body>
@@ -989,21 +985,7 @@
 									<xsl:otherwise>
 										<h1>Contact us</h1>
 										<div class="contact-us-form">
-											<form name="afm_form_e71bf67c" id="afm_form_e71bf67c" action="http://free.allforms.mailjol.net/u/e71bf67c.php" method="post" >
-												<label for="name">Name:</label>
-												<input class="input-text" type="text" name="Name:" id="name" /> 
-												<label for="affiliation">Affiliation:</label>
-												<input class="input-text" type="text" name="Lab/Department" id="affiliation" /> 
-												<label for="email">Email:</label>
-												<input class="input-text" type="text" name="Email:" id="email" /> 
-												<label for="message">Message:</label>
-												<textarea rows="10" cols="50" name="Message:" id="message"></textarea> 
-												<input type="hidden" name="feedback-type" value="contact" />
-												<div class="button-container">
-													<input class="input-button" type="image" src="assets/img/submit-button.png" name="submit" value="Submit" alt="Submit"/>  
-													<input class="input-button" type="image" src="assets/img/reset-button.png" name="reset" value="Reset" onclick='document.afm_form_e71bf67c.reset();return false;' alt="Reset"/>
-												</div>
-											</form>
+											<xsl:copy-of select="$brand.contactus"/>
 										</div>
 									</xsl:otherwise>
 								</xsl:choose>
