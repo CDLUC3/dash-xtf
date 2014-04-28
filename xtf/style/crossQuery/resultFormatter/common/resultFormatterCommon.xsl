@@ -3,6 +3,7 @@
    xmlns:xtf="http://cdlib.org/xtf" 
    xmlns:editURL="http://cdlib.org/xtf/editURL"
    xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:session="java:org.cdlib.xtf.xslt.Session"
    exclude-result-prefixes="#all"
    version="2.0">
    
@@ -47,7 +48,7 @@
    <xsl:import href="../../../xtfCommon/xtfCommon.xsl"/>
    <xsl:import href="format-query.xsl"/>
    <xsl:import href="spelling.xsl"/>
-   
+   <xsl:variable name="brand" select="session:getData('brand')"/> 
    <!-- ====================================================================== -->
    <!-- Parameters                                                             -->
    <!-- ====================================================================== -->
@@ -191,7 +192,7 @@
    <xsl:param name="style"/>
    <xsl:param name="smode" select="'simple'"/>
    <xsl:param name="rmode" select="'none'"/>
-   <xsl:param name="brand" select="'default'"/>
+   <!-- <xsl:param name="brand" select="'default'"/> -->
    <xsl:param name="sort"/>
    
    <!-- XML Output Parameter -->
@@ -212,7 +213,9 @@
    <xsl:param name="brand.links" select="$brand.file//links/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.header" select="$brand.file//header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.footer" select="$brand.file//footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-   
+   <xsl:param name="brand.contact" select="$brand.file//contact/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:param name="brand.htmlhead" select="$brand.file//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
+
    <!-- Paging Parameters-->  
    <xsl:param name="startDoc" as="xs:integer" select="1"/>
    <!-- Documents per Page -->
