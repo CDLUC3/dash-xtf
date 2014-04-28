@@ -140,7 +140,7 @@
 		</script>
 	</contactus-script>
 
-	<contactus>
+	<contactus-form>
 		<form name="afm_form_e71bf67c" id="afm_form_e71bf67c" action="http://free.allforms.mailjol.net/u/e71bf67c.php" method="post" >
 			<label for="name">Name:</label>
 			<input class="input-text" type="text" name="Name:" id="name" /> 
@@ -156,6 +156,6 @@
 				<input class="input-button" type="image" src="assets/img/reset-button.png" name="reset" value="Reset" onclick='document.afm_form_e71bf67c.reset();return false;' alt="Reset"/>
 			</div>
 		</form>
-	</contactus>
+	</contactus-form>
 
 </brand>
