@@ -1265,51 +1265,51 @@
 								<div class="text-container">
 									<p>Metadata, simply put, is data about data. Any descriptive information that helps people understand the data resource can be considered metadata. Metadata is important not only to help people understand and make proper use of a data resource, but metadata also makes the resource discoverable (for example through internet searches or data indexing services). Dash requires only a few key pieces of metadata, however the more metadata available, the more useful and discoverable the resource becomes.</p>
 									<p class="secondary-para">Dash employs a metadata schema developed by DataCite, an international organization devoted to promoting best practices around data re-use. Each metadata field on the 'Describe your Data' page serves a purpose, and therefore some of these fields have specifications for acceptable entries. See below for a full list of metadata accepted by Dash.</p>
-									<table width="641">
+									<table>
 											<tr>
-												<td width="157" valign="top"><p align="center"><strong>Metadata Fieldname</strong></p></td>
-												<td width="484" valign="top"><p align="center"><strong>Description</strong></p></td>
+												<td width="25%" valign="top"><p align="center"><strong>Metadata Fieldname</strong></p></td>
+												<td width="75%" valign="top"><p align="center"><strong>Description</strong></p></td>
 											</tr>
 											<tr>
-												<td width="157" valign="top">Title*</td>
-												<td width="484" valign="top">Title of the data resource</td>
+												<td width="25%" valign="top">Title*</td>
+												<td width="75%" valign="top">Title of the data resource</td>
 											</tr>
 											<tr>
-												<td width="157" valign="top">Data Creator(s)*</td>
-												<td width="484" valign="top">Main researcher(s) involved in producing the data, or the authors of the publication, in priority order. (Last Name, First Name)</td>
+												<td width="25%" valign="top">Data Creator(s)*</td>
+												<td width="75%" valign="top">Main researcher(s) involved in producing the data, or the authors of the publication, in priority order. (Last Name, First Name)</td>
 											</tr>
 											<tr>
-												<td width="157" valign="top">Description*</td>
-												<td width="484" valign="top">An abstract or general description of the data resource </td>
+												<td width="25%" valign="top">Description*</td>
+												<td width="75%" valign="top">An abstract or general description of the data resource </td>
 											</tr>
 											<tr>
-												<td width="157" valign="top">Institution</td>
-												<td width="484" valign="top">Name of the institution that supported creation of the resource (Dash currently pre-populates this field)</td>
+												<td width="25%" valign="top">Institution</td>
+												<td width="75%" valign="top">Name of the institution that supported creation of the resource (Dash currently pre-populates this field)</td>
 											</tr>
 											<tr>
-												<td width="157" valign="top">Date</td>
-												<td width="484" valign="top">Date the data resource was shared <br />
+												<td width="25%" valign="top">Date</td>
+												<td width="75%" valign="top">Date the data resource was shared <br />
 										      (Dash currently pre-populates this field)</td>
 											</tr>
 											<tr>
-												<td width="157" valign="top">Methods</td>
-												<td width="484" valign="top">Any technical or methodological info that helps to understand how the data were generated and/or how they may be properly re-used</td>
+												<td width="25%" valign="top">Methods</td>
+												<td width="75%" valign="top">Any technical or methodological info that helps to understand how the data were generated and/or how they may be properly re-used</td>
 											</tr>
 											<tr>
-												<td width="157" valign="top">Keywords</td>
-												<td width="484" valign="top">Any keywords that help identify data domain(s) (Dash <strong>highly recommends </strong>using    a controlled vocabulary, such as <a href="http://www.ncbi.nlm.nih.gov/mesh">MeSH</a>) </td>
+												<td width="25%" valign="top">Keywords</td>
+												<td width="75%" valign="top">Any keywords that help identify data domain(s) (Dash <strong>highly recommends </strong>using    a controlled vocabulary, such as <a href="http://www.ncbi.nlm.nih.gov/mesh">MeSH</a>) </td>
 											</tr>
 											<tr>
-												<td width="157" valign="top">Lab / Department</td>
-												<td width="484" valign="top">Lab or department responsible for collecting,    creating, or otherwise contributing to the development of the dataset </td>
+												<td width="25%" valign="top">Lab / Department</td>
+												<td width="75%" valign="top">Lab or department responsible for collecting,    creating, or otherwise contributing to the development of the dataset </td>
 											</tr>
 											<tr>
-												<td width="157" valign="top">Funder</td>
-												<td width="484" valign="top">Agency responsible for funding the data generation </td>
+												<td width="25%" valign="top">Funder</td>
+												<td width="75%" valign="top">Agency responsible for funding the data generation </td>
 											</tr>
 											<tr>
-												<td width="157" valign="top">Related Resources</td>
-												<td width="484" valign="top">This field may be used to indicate the existence of    any other resources that are associated with the data, for example    publications or grant numbers (All formats are acceptable, however for    publications an identifier is preferred e.g. PMID or DOI)</td>
+												<td width="25%" valign="top">Related Resources</td>
+												<td width="75%" valign="top">This field may be used to indicate the existence of    any other resources that are associated with the data, for example publications or grant numbers (All formats are acceptable, however for publications an identifier is preferred e.g. PMID or DOI)</td>
 											</tr>
 										</table>
 									<p class="secondary-para">* Required for submission</p>

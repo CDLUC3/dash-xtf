@@ -36,33 +36,20 @@
    </dynaxml.links>
    
    <header>
-      <div class="header">
-         <a href="/xtf/search"><img src="assets/img/berkeley-text-brand.gif" alt="UCB DASH logo" class="your-logo"/></a>
-         <br class="clear" />
-      </div>
+      <a href="/xtf/search"><img src="assets/img/berkeley-text-brand.gif" alt="UCB DASH logo" class="your-logo"/></a>
+      <br class="clear" />
    </header>
    
    <dynaxml.header>
-      <div class="header">
-         <a href="/xtf/search"><img src="assets/img/berkeley-text-brand.gif" alt="UCB DASH logo" class="your-logo"/></a>
-         <br class="clear" />
-      </div>
+      <a href="/xtf/search"><img src="assets/img/berkeley-text-brand.gif" alt="UCB DASH logo" class="your-logo"/></a>
+      <br class="clear" />
    </dynaxml.header>
- <!--
-   <footer>
-    <div class="footer">
-		<a href="http://www.cdlib.org/services/uc3/contact.html" target="_blank">Comments? Questions?</a> | 
-		<a href="http://www.cdlib.org/about/privacy.html">Privacy policy</a> |
-		<b>Powered by</b>: <a href="http://www.cdlib.org/uc3/merritt" target="_blank">Merritt</a> &amp; <a href="http://xtf.cdlib.org/" target="_blank">XTF</a> @ <a href="http://www.cdlib.org" target="_blank">California Digital Library</a> | 
-		Copyright &#169; 2014 The Regents of the University of California <br />
-	</div>
-   </footer>
--->
+
    <footer>
 		<div id="footer">
 			<div id="footer-container" class="shading">
 				<div id="terms"><a href="/xtf/search?smode=termsPage">Terms of Use</a></div>
-				<div id="faq-footer" ><a href="/xtf/search?smode=faqPage">FAQ</a></div>
+				<div id="faq-footer" ><a href="/xtf/search?smode=faqPage" title="Frequently Asked Questions">FAQ</a></div>
 				<div id="contact-us" ><a href="/xtf/search?smode=contactPage">Contact Us</a></div>
 				<div id="copyrights">
 					<p>Dash was made possible through a partnership between the California Digital Library, </p>
@@ -92,7 +79,7 @@
 				<li>Permission from the appropriate PI(s)</li>
 				<li>Information about the data set (this descriptive metadata will be used to index your data set, so the more information you can provide - the better)</li>
 				<li>Access to files comprising the data set</li>
-				</ul>
+			</ul>
 		<p class="title">Are there any file format requirements?</p>
 		<p class="para">No. Files of any type are acceptable for deposit. However, please ensure that any files of a specialized or proprietary nature are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the data set files, or could be entered in the 'Technical Description' section of the metadata.</p>
 		<p class="title">What best practices can I follow for data preparation?</p>
@@ -129,6 +116,9 @@
 		<p class="para">Please contact us with any questions about the data. Your message will be directed to an appropriate source to answer any questions about the data. We cannot guarantee that the source will be able to obtain an answer to your specific question.</p>
 		</div>
 	</faq>
+
+
+
 	<promo-img>
 		<img class="headshot" width="60" height="81" alt="Dr. Famous Researcher, UC Berkeley" src="assets/img/promo/sbeckett01.jpg" />
 	</promo-img>
@@ -145,7 +135,7 @@
 	</contactus-script>
 
 	<contactus-form>
-		<form name="afm_form_e71bf67c" id="afm_form_e71bf67c" action="http://free.allforms.mailjol.net/u/e71bf67c.php" method="post" >
+		<form name="afm_form_e71bf67c" id="afm_form_e71bf67c" action="http://free.allforms.mailjol.net/u/e71bf67c.php" method="post">
 			<label for="name">Name:</label>
 			<input class="input-text" type="text" name="Name:" id="name" /> 
 			<label for="affiliation">Affiliation:</label>
