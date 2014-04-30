@@ -131,8 +131,7 @@
             <xsl:when test="matches(name(),'creators')">
       			<xsl:for-each select="./*">
                		<creator xtf:meta="true" xtf:tokenize="no">
-                 	<xsl:copy-of select="@*"/>
-                  	<xsl:value-of select="string()"/>
+                  	<xsl:value-of select="*:creatorName"/>
                		</creator>
 				</xsl:for-each>
             </xsl:when>
