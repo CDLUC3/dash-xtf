@@ -43,4 +43,16 @@
 <id>UCSC</id>
 <label>UC Santa Cruz</label>
 </campus>
+<campus>
+<id>University of California, Berkeley</id>
+<label>UC Berkeley</label>
+</campus>
+<campus>
+<id>CDL</id>
+<label>UC Office of the President</label>
+</campus>
+<campus>
+<id>UCOP</id>
+<label>UC Office of the President</label>
+</campus>
 </campuses>
