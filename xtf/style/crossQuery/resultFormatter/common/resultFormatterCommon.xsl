@@ -492,7 +492,7 @@
   </xsl:template>
 
    <xsl:template match="campus">
-      <a href="{$xtfURL}{$crossqueryPath}?campus={normalize-space(editURL:protectValue(.))}">
+      <a href="{$xtfURL}{$crossqueryPath}?f1-campus={normalize-space(editURL:protectValue(.))}">
           <xsl:value-of select="replace(string(.),'::', '-')"/>
       </a>
       <xsl:if test="not(position() = last())">
