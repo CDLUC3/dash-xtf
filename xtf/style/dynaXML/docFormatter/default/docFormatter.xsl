@@ -45,7 +45,6 @@
    <!-- ====================================================================== -->
    
    <xsl:import href="../common/docFormatterCommon.xsl"/>
-
    <!-- ====================================================================== -->
    <!-- Output Format                                                          -->
    <!-- ====================================================================== -->
@@ -56,14 +55,12 @@
       doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" 
       exclude-result-prefixes="#all"
       omit-xml-declaration="yes"/>
-
    <xsl:output name="frameset" method="xhtml" indent="no" 
       encoding="UTF-8" media-type="text/html; charset=UTF-8" 
       doctype-public="-//W3C//DTD XHTML 1.0 Frameset//EN" 
       doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd" 
       omit-xml-declaration="yes"
       exclude-result-prefixes="#all"/>
-
    
    <!-- ====================================================================== -->
    <!-- Global parameters and variables                                        -->
@@ -75,14 +72,12 @@
       <!-- Normally this is a URL parameter, but in ERC mode it's part of the main URL. -->
       <!-- <xsl:value-of select="replace($http.URL, $ercPat, '$2')"/> -->
    </xsl:param>
-
    <!-- ====================================================================== -->
    <!-- Define Parameters                                                      -->
    <!-- ====================================================================== -->
    
    <xsl:param name="doc.title" select="/title"/>
    <xsl:param name="css.path" select="'css/default/'"/>
-
    
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
@@ -143,6 +138,7 @@
 							<div class="single-column">
 								<h1><xsl:apply-templates select="//title"/></h1>
 								<div class="dataset-description">
+									<dl>
 										<xsl:if test="//title"> 
 											<dt>Title</dt>
 											<dd><span class="DC-Title"><xsl:apply-templates select="//title"/></span></dd>
@@ -288,8 +284,6 @@
 		</body>
 	</html>
  </xsl:template>
-
-
    <!-- ====================================================================== -->
    <!-- Content Template                                                       -->
    <!-- ====================================================================== -->
@@ -556,7 +550,6 @@
 		</table>
 	</body>
 </xsl:template>            
-
    <!-- ====================================================================== -->
    <!-- TOC Template                                                       -->
    <!-- ====================================================================== -->
@@ -570,5 +563,5 @@
 		</ul>
 	</body>
 </xsl:template>      
-
 </xsl:stylesheet>
+
