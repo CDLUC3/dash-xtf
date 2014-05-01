@@ -72,7 +72,7 @@
    <!-- If an external 'source' document was specified, include it in the
       query string of links we generate. -->
    <xsl:param name="source" select="''"/>
- 
+   
    <xsl:variable name="sourceStr">
       <xsl:if test="$source">;source=<xsl:value-of select="$source"/></xsl:if>
    </xsl:variable>
@@ -101,15 +101,10 @@
    <!-- navigation parameters -->
    
    <xsl:param name="doc.view" select="'0'"/>
-   
    <xsl:param name="toc.depth" select="1"/>
-   
    <xsl:param name="anchor.id" select="'0'"/>
-   
    <xsl:param name="set.anchor" select="'0'"/>
-   
    <xsl:param name="chunk.id"/>
-      
    <xsl:param name="toc.id"/>
    
    <!-- search parameters -->
@@ -137,8 +132,8 @@
    <xsl:param name="hit.rank" select="'0'"/>
    
    <!-- Branding Parameters -->
-   
-   <xsl:param name="brand"/>
+   <xsl:variable name="brand" select="session:getData('brand')"/> 
+<!--   <xsl:param name="brand"/> -->
    
    <xsl:variable name="brand.file">
       <xsl:choose>
@@ -154,6 +149,7 @@
    <xsl:param name="brand.links" select="$brand.file/brand/dynaxml.links/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.header" select="$brand.file/brand/dynaxml.header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.footer" select="$brand.file/brand/footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:param name="brand.htmlhead" select="$brand.file//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    
    <!-- Special Robot Parameters -->
    
@@ -165,352 +161,243 @@
    <!-- Button Bar Templates                                                   -->
    <!-- ====================================================================== -->
    
-   <xsl:template name="bbar">
-      <xsl:call-template name="translate">
-         <xsl:with-param name="resultTree">
-            <html xml:lang="en" lang="en">
-               <head>
-                  <title>
-                     <xsl:value-of select="$doc.title"/>
-                  </title>
-                  <link rel="stylesheet" type="text/css" href="{$css.path}bbar.css"/>
-                  <link rel="shortcut icon" href="icons/default/favicon.ico" />
-               </head>
-               <body>
-                  <div class="bbar">
-                     <table border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                           <td colspan="3" align="center">
-                              <xsl:copy-of select="$brand.header"/>
-                           </td>
-                        </tr>
-                        <tr>
+<xsl:template name="bbar">
+	<xsl:call-template name="translate">
+		<xsl:with-param name="resultTree">
+		<html xml:lang="en" lang="en">
+			<head>
+				<title>
+					<xsl:value-of select="$doc.title"/>
+				</title>
+				<link rel="stylesheet" type="text/css" href="{$css.path}bbar.css"/>
+				<link rel="shortcut icon" href="icons/default/favicon.ico" />
+			</head>
+			<body>
+				<div class="bbar">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td colspan="3" align="center">
+								<xsl:copy-of select="$brand.header"/>
+							</td>
+						</tr>
+						<tr>
 							<td class="left">
-                              <a href="{$xtfURL}search?browse-all=yes" target="_top">Home</a>
+								<a href="{$xtfURL}search?browse-all=yes" target="_top">Home</a>
 							</td>
 							<td width="34%" class="center">
-                              <form action="{$xtfURL}{$dynaxmlPath}" target="_top" method="get">
-                                 <input name="query" type="text" size="15"/>
-                                 <input type="hidden" name="docId" value="{$docId}"/>
-                                 <input type="hidden" name="chunk.id" value="{$chunk.id}"/>
-                                 <input type="submit" value="Search this Item"/>
-                              </form>
+								<form action="{$xtfURL}{$dynaxmlPath}" target="_top" method="get">
+									<input name="query" type="text" size="15"/>
+									<input type="hidden" name="docId" value="{$docId}"/>
+									<input type="hidden" name="chunk.id" value="{$chunk.id}"/>
+									<input type="submit" value="Search this Item"/>
+								</form>
 							</td>
 							<td class="right">
-                              <a>
-                                 <xsl:attribute name="href">javascript://</xsl:attribute>
-                                 <xsl:attribute name="onclick">
-                                    <xsl:text>javascript:window.open('</xsl:text><xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/><xsl:text>?docId=</xsl:text><xsl:value-of
-                                       select="editURL:protectValue($docId)"/><xsl:text>;doc.view=citation</xsl:text><xsl:text>','popup','width=800,height=400,resizable=yes,scrollbars=no')</xsl:text>
-                                 </xsl:attribute>
-                                 <xsl:text>Citation</xsl:text>
-                              </a>
-                              <xsl:text> | </xsl:text>
-                              <a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View</a>
-                              <xsl:text> | </xsl:text>
-                              <a href="javascript://" onclick="javascript:window.open('/xtf/search?smode=getLang','popup','width=500,height=200,resizable=no,scrollbars=no')">Choose Language</a>
+								<a>
+								<xsl:attribute name="href">javascript://</xsl:attribute>
+								<xsl:attribute name="onclick">
+									<xsl:text>javascript:window.open('</xsl:text><xsl:value-of select="$xtfURL"/><xsl:value-of select="$dynaxmlPath"/><xsl:text>?docId=</xsl:text><xsl:value-of select="editURL:protectValue($docId)"/><xsl:text>;doc.view=citation</xsl:text><xsl:text>','popup','width=800,height=400,resizable=yes,scrollbars=no')</xsl:text>
+								</xsl:attribute>
+								<xsl:text>Citation</xsl:text>
+								</a>
+								<xsl:text> | </xsl:text>
+								<a href="{$doc.path}&#038;doc.view=print;chunk.id={$chunk.id}" target="_top">Print View</a>
+								<xsl:text> | </xsl:text>
+								<a href="javascript://" onclick="javascript:window.open('/xtf/search?smode=getLang','popup','width=500,height=200,resizable=no,scrollbars=no')">Choose Language</a>
 							</td>
-                        </tr>
-                     </table>
-                  </div>
-               </body>
-            </html>
-         </xsl:with-param>
-      </xsl:call-template>
-   </xsl:template>
+						</tr>
+					</table>
+				</div>
+			</body>
+		</html>
+		</xsl:with-param>
+	</xsl:call-template>
+</xsl:template>
    
    <!-- ====================================================================== -->
    <!-- Keyword Links                                                          -->
    <!-- ====================================================================== -->
-   <xsl:template match="*:subject">
-      <a href="/xtf/search?keyword={editURL:protectValue(.)}">
-         <xsl:choose>
-         <xsl:when test="contains(string(.),'::')">
-            <xsl:value-of select="tokenize(string(.),'::')[last()]"/>
-         </xsl:when>
-         <xsl:otherwise>
-				<xsl:if test="position() = last()">
-            		<xsl:apply-templates/> 
-				</xsl:if>
-				<xsl:if test="position() != last()">
-            		<xsl:apply-templates/> |
-				</xsl:if>
-         </xsl:otherwise>
-         </xsl:choose>
-      </a>
-   </xsl:template>
+<xsl:template match="*:subject">
+	<a href="/xtf/search?keyword={editURL:protectValue(.)}">
+	<xsl:choose>
+		<xsl:when test="contains(string(.),'::')">
+			<xsl:value-of select="tokenize(string(.),'::')[last()]"/>
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:if test="position() = last()">
+				<xsl:apply-templates/> 
+			</xsl:if>
+			<xsl:if test="position() != last()">
+				<xsl:apply-templates/> |
+			</xsl:if>
+		</xsl:otherwise>
+	</xsl:choose>
+	</a>
+</xsl:template>
 
    <!-- ====================================================================== -->
    <!-- Citations                                                              -->
    <!-- ====================================================================== -->
-   <xsl:template match="*:relation">
-         <xsl:choose>
-         <xsl:when test="contains(string(.),'::')">
-            <xsl:value-of select="tokenize(string(.),'::')[last()]"/>
-         </xsl:when>
-         <xsl:otherwise>
-            <xsl:apply-templates/> 
-         </xsl:otherwise>
-         </xsl:choose>
-      	 <p/>
-   </xsl:template>
+<xsl:template match="*:relation">
+	<xsl:choose>
+		<xsl:when test="contains(string(.),'::')">
+			<xsl:value-of select="tokenize(string(.),'::')[last()]"/>
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:apply-templates/> 
+		</xsl:otherwise>
+	</xsl:choose>
+    <br/>
+</xsl:template>
 
    <!-- ====================================================================== -->
    <!-- Contributor                                                            -->
    <!-- ====================================================================== -->
-   <xsl:template match="*:contributor">
-	  <a href="/xtf/search?f1-contributor={normalize-space(editURL:protectValue(.))}">
-         <xsl:choose>
-         <xsl:when test="contains(string(.),'::')">
-            <xsl:value-of select="replace(string(.),'::', '-')"/> |
-         </xsl:when>
-         <xsl:otherwise>
-              <xsl:value-of select="normalize-space(string(.))"/>
-         </xsl:otherwise>
-         </xsl:choose>
-		</a>
-   </xsl:template>
+<xsl:template match="*:contributor">
+	<a href="/xtf/search?f1-contributor={normalize-space(editURL:protectValue(.))}">
+	<xsl:choose>
+		<xsl:when test="contains(string(.),'::')">
+			<xsl:value-of select="replace(string(.),'::', '-')"/> |
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:value-of select="normalize-space(string(.))"/>
+		</xsl:otherwise>
+	</xsl:choose>
+	</a>
+</xsl:template>
 
 
    <!-- ====================================================================== -->
    <!-- author Links                                                          -->
    <!-- ====================================================================== -->
-   <xsl:template match="*:creator">
-      <a href="/xtf/search?f1-creator={normalize-space(editURL:protectValue(.))}">
-         <xsl:choose>
-         <xsl:when test="contains(string(.),'::')">
-            <xsl:value-of select="tokenize(string(.),'::')[last()]"/>
-         </xsl:when>
-         <xsl:otherwise>
-				<xsl:if test="position() = last()">
-            		<xsl:apply-templates/> 
-				</xsl:if>
-				<xsl:if test="position() != last()">
-            		<xsl:apply-templates/> |
-				</xsl:if>
-         </xsl:otherwise>
-         </xsl:choose>
-      </a>
-   </xsl:template>
+<xsl:template match="*:creator">
+	<a href="/xtf/search?f1-creator={normalize-space(editURL:protectValue(.))}">
+	<xsl:choose>
+		<xsl:when test="contains(string(.),'::')">
+			<xsl:value-of select="tokenize(string(.),'::')[last()]"/>
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:if test="position() = last()">
+				<xsl:apply-templates/> 
+			</xsl:if>
+			<xsl:if test="position() != last()">
+				<xsl:apply-templates/> |
+			</xsl:if>
+		</xsl:otherwise>
+	</xsl:choose>
+	</a>
+</xsl:template>
 
-   <xsl:template match="*:date">
-		 <xsl:choose>
-        <xsl:when test="contains(string(.),'::')">
+<xsl:template match="*:date">
+	<xsl:choose>
+		<xsl:when test="contains(string(.),'::')">
 			<xsl:value-of select="tokenize(string(.),'::')[1]"/>
-        </xsl:when>
-        <xsl:otherwise>
-           <xsl:apply-templates/> 
-        </xsl:otherwise>
-        </xsl:choose>   
-	</xsl:template>
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:apply-templates/>
+		</xsl:otherwise>
+	</xsl:choose>   
+</xsl:template>
 	
-	<xsl:template match="*:added">
-		 <xsl:choose>
-        <xsl:when test="contains(string(.),'::')">
-	       <xsl:value-of select="tokenize(string(.),'::')[2]"/>&#47;<xsl:value-of select="tokenize(string(.),'::')[3]"/>&#47;<xsl:value-of select="tokenize(string(.),'::')[1]"/>
-        </xsl:when>
-        <xsl:otherwise>
-           <xsl:apply-templates/> 
-        </xsl:otherwise>
-        </xsl:choose>   
-	</xsl:template>
+<xsl:template match="*:added">
+	<xsl:choose>
+		<xsl:when test="contains(string(.),'::')">
+			<xsl:value-of select="tokenize(string(.),'::')[2]"/>&#47;<xsl:value-of select="tokenize(string(.),'::')[3]"/>&#47;<xsl:value-of select="tokenize(string(.),'::')[1]"/>
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:apply-templates/> 
+		</xsl:otherwise>
+	</xsl:choose>
+</xsl:template>
 
 
    <!-- ====================================================================== -->
    <!-- Citation Template                                                      -->
    <!-- ====================================================================== -->
    
-   <xsl:template name="citation">
-      
-      <html xmlns="http://www.w3.org/1999/xhtml">
+<xsl:template name="citation">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
 			<title>Dash: <xsl:apply-templates select="//title"/></title>
-			<xsl:call-template name="header_links"/>
-	  <body>
-
+			<xsl:copy-of select="$brand.htmlhead"/>
+		</head>
+		<body>
 			<div id="dataset-description-page"> 
 			<!-- begin outer container -->  
-			  <div id="outer-container"> 
-			    <!-- begin inner container -->
-			    <div id="inner-container"> 
-			       <!-- begin header -->
+				<div id="outer-container"> 
+					<!-- begin inner container -->
+					<div id="inner-container"> 
+					<!-- begin header -->
+						<div class="header">
+							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="nav-header"/>
+						</div>
+						<div class="content content-dataset" id="content">
+							<div class="single-column">
+							<h1>Citation</h1>
+								<div class="citation">
+									<p>	
+									<xsl:for-each select="/*/*:meta/*:creator">
+										<xsl:value-of select="normalize-space(.)"/>
+										<xsl:if test="not(position() = last())">
+											<xsl:text>; </xsl:text>
+										</xsl:if>
+									</xsl:for-each>
 
-			 <xsl:copy-of select="$brand.header"/>
-			 <!-- <xsl:call-template name="ucb_header"/> -->
-
-		    <div class="content content-dataset" id="content">
-
-				<div class="single-column">
-               <h1>Citation</h1>
-
-               <div class="citation">
-                  <p>	
-					<xsl:for-each select="/*/*:meta/*:creator">
-                       <xsl:value-of select="normalize-space(.)"/>
-                       <xsl:if test="not(position() = last())">
-                          <xsl:text>; </xsl:text>
-                       </xsl:if>
-                    </xsl:for-each>
-
-					<xsl:choose>
-					  <xsl:when test="/*/*:meta/*:publicationYear">
-						(<xsl:apply-templates select="/*/*:meta/*:publicationYear"/>):
-					  </xsl:when>
-					  <xsl:otherwise>. </xsl:otherwise>
-					</xsl:choose>
-
- 					<xsl:value-of select="normalize-space(/*/*:meta/*:title)"/>.
-                    <xsl:value-of select="/*/*:meta/*:publisher"/>.
-                    <xsl:value-of select="/*/*:meta/*:resourceType"/>.
- 					http://dx.doi.org/<xsl:value-of select="/*/*:meta/*:doi"/>
-                     </p>
-               </div>
-            </div>
-
-	     	
-			    </div>
-			    <xsl:copy-of select="$brand.footer"/>
-				<!-- <xsl:call-template name="footer"/> -->
-
-			</div></div></div>
+									<xsl:choose>
+										<xsl:when test="/*/*:meta/*:publicationYear">
+											(<xsl:apply-templates select="/*/*:meta/*:publicationYear"/>):
+										</xsl:when>
+										<xsl:otherwise>. </xsl:otherwise>
+									</xsl:choose>
+									<xsl:value-of select="normalize-space(/*/*:meta/*:title)"/>.
+									<xsl:value-of select="/*/*:meta/*:publisher"/>.
+									<xsl:value-of select="/*/*:meta/*:resourceType"/>.
+									http://dx.doi.org/<xsl:value-of select="/*/*:meta/*:doi"/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<xsl:copy-of select="$brand.footer"/>
+					</div>
+				</div>
+			</div>
         </body>
-
-
-      </html>
-     
-   </xsl:template>
+	</html>
+</xsl:template>
    
    <!-- ====================================================================== -->
    <!-- Robot Template                                                         -->
    <!-- ====================================================================== -->
    
-   <xsl:template name="robot">
-      <html>
-         <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-            <title><xsl:value-of select="//xtf:meta/title[1]"/></title>
-            <link rel="shortcut icon" href="icons/default/favicon.ico" />
-
-         </head>
-         <body>
-            <div>
-               <xsl:apply-templates select="//text()" mode="robot"/>
-            </div>
-         </body>
-      </html>
-   </xsl:template>
+<xsl:template name="robot">
+	<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+			<title><xsl:value-of select="//xtf:meta/title[1]"/></title>
+			<link rel="shortcut icon" href="icons/default/favicon.ico" />
+		</head>
+		<body>
+			<div>
+				<xsl:apply-templates select="//text()" mode="robot"/>
+			</div>
+		</body>
+	</html>
+</xsl:template>
    
-   <xsl:template match="text()" mode="robot">
-      <xsl:value-of select="."/><xsl:text> </xsl:text>
-   </xsl:template>
+<xsl:template match="text()" mode="robot">
+	<xsl:value-of select="."/><xsl:text> </xsl:text>
+</xsl:template>
 
-	<xsl:template name="header_links">
-			<head>
-				<title>Search: DataShare - Open data for the global research community</title>
-			    <meta http-equiv="Content-Type" content="text/html; charset=utf-8; charset=UTF-8" />
-
-				<link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
-				<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
-				<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
-				<meta name="description" content="" />
-				<meta name="keywords" content="" />
-				
-				<script>var less = {env: "development"};</script>
-
-			    <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
-			    <script src="assets/js/datashare.js" type="text/javascript"></script>
-				<script type="text/javascript">
-
-				  var _gaq = _gaq || [];
-				  _gaq.push(['_setAccount', 'UA-34221926-1']);
-				  _gaq.push(['_trackPageview']);
-
-				  (function() {
-				    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-				    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-				  })();
-
-				</script>
-			  </head>
-	</xsl:template>
-	
-	<!-- duplicate header and footer from searchforms, unfortunately hard avoid because of conflicting names -->
-	<xsl:template name="nav-header">
-		<div id="nav-home-menu">
-		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
-		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
-		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
-		  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
-		  <div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
-		</div>
-	</xsl:template>
-	<xsl:template name="ucsf_header"> 
-	   	<div id="header">
-			<div id="logo"> <a href="/"> <img src="assets/img/datashare-logo3.gif" width="320" height="63" alt="DataShare: Open data for the global research community" title="DataShare: Open data for the global research community" /><xsl:value-of select="$http.URL"/> </a> </div>
-			<!-- <div id="login"> <a href="login.html"> <img src="assets/img/login2.gif" width="92" height="21" alt="Login"/></a> </div> -->
-		</div> 
-			  <!-- end header -->
-				<!-- begin navigation-->
-		<div id="nav-home-menu">
-		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
-		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
-		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
-		  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
-		  <div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
-		</div>
-	</xsl:template>
-	<xsl:template name="ucb_header">
-	   	<div id="header">
-			<div id="logo"> <a href="/"> <img src="assets/img/berkeley-text-brand.gif" width="320" height="63" alt="UCB DataShare: Open data for the global research community" title="UCB DataShare: Open data for the global research community" /> </a> </div>
-			<!--<div id="login"> <a href="login.html"> <img src="assets/img/login2.gif" width="92" height="21" alt="Login"/></a> </div>-->
-		</div> 
-			  <!-- end header -->
-				<!-- begin navigation-->
-		<div id="nav-home-menu">
-		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
-		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
-		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
-		  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
-		  <div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
-		</div>
-	</xsl:template>
-	<xsl:template name="ucla_header">
-	   	<div id="header">
-			<div id="logo"> <a href="/"> <img src="assets/img/ubla-box-blu-rgb-108.png" width="320" height="63" alt="UCLA DataShare: Open data for the global research community" title="UCLA DataShare: Open data for the global research community" /> </a> </div>
-			<!--<div id="login"> <a href="login.html"> <img src="assets/img/login2.gif" width="92" height="21" alt="Login"/></a> </div>-->
-		</div> 
-			  <!-- end header -->
-				<!-- begin navigation-->
-		<div id="nav-home-menu">
-		  <div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
-		  <div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
-		  <div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
-		  <!-- <div id="my-datasets-nav" class="menu"><a href="http://datashare-ingest.ucsf.edu">My Datasets</a></div> -->
-		  <div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
-		</div>
-	</xsl:template>
-
-
-	<xsl:template name="footer">
-			<div id="footer">
-				<div id="footer-container" class="shading">
-					<div id="terms"><a href="/xtf/search?smode=termsPage">Terms of Use</a></div>
-					<div id="faq-footer" ><a href="/xtf/search?smode=faqPage">FAQ</a></div>
-					<div id="contact-us" ><a href="/xtf/search?smode=contactPage">Contact Us</a></div>
-					<div id="copyrights">
-						<p>DataShare was made possible through a partnership between the California Digital Library, </p>
-						<p>UCSF Clinical &amp; Translational Science Institute, and UCSF Library.  &#169; 2013 The Regents of the University of California</p>
-					</div>
-				</div>
-			</div>
-
-			<!-- end footer -->
-			<!-- begin footer logos -->    
-			<div id="footer-logos">
-				<div id="cdl-logo-sm"><a href="http://www.cdlib.org/"><img src="assets/img/cdl-logo.jpg" width="72" height="26" alt="California Digital Library" title="California Digital Library" /></a></div>
-				<div id="ucsf-lib"><a href="http://www.library.ucsf.edu/"><img src="assets/img/ucsflib-logo.jpg" width="111" height="27" alt="UCSF library" title="UCSF library" /></a></div>
-				<div id="ctsi"><a href="http://ctsi.ucsf.edu/"><img src="assets/img/CTSI_logo.png" width="143" height="27" alt="CTSI" title="CTSI" /></a></div>
-			</div>
-	</xsl:template>
+<!-- duplicate header and footer from searchforms, unfortunately hard to avoid	-->
+<!-- because of conflicting names 												-->
+<xsl:template name="nav-header">
+	<div id="nav-home-menu">
+		<div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
+		<div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
+		<div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data (Beta)</a></div>
+		<div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
+	</div>
+</xsl:template>
    
 </xsl:stylesheet>
