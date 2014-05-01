@@ -752,15 +752,16 @@
 				</span>
 			</li>
 			<li>at
-				<span class="DC-Contributor">
 				<xsl:choose>
 					<xsl:when test="meta/contributor">
-						<xsl:apply-templates select="meta/contributor"/>
+						<span class="DC-Contributor">
+							<xsl:apply-templates select="meta/contributor"/>
+					    </span>
+						, 	
 					</xsl:when>
 				</xsl:choose>
-			    </span>
-			, 	<span class="DC-Publisher">
-				<xsl:apply-templates select="meta/campus"/>
+			    <span class="DC-Publisher">
+					<xsl:apply-templates select="meta/campus"/>
 				</span>
 			</li>
 			<li>
