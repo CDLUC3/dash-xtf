@@ -215,7 +215,7 @@
    <xsl:param name="brand.header" select="$brand.file//header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.footer" select="$brand.file//footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.contact" select="$brand.file//contact/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-   <xsl:param name="brand.htmlhead" select="$brand.file//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
+   <xsl:param name="brand.htmlhead" select="$brand.file//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.faq" select="$brand.file//faq/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
    <xsl:param name="brand.promo-img" select="$brand.file//promo-img/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
    <xsl:param name="brand.promo-quote" select="$brand.file//promo-quote/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
@@ -471,7 +471,8 @@
    <!-- Author Links                                                           -->
    <!-- ====================================================================== -->
    <xsl:template match="*:creator">
-      <a href="{$xtfURL}{$crossqueryPath}?f1-creator={editURL:protectValue(.)}">
+
+	<a href="{$xtfURL}{$crossqueryPath}?f1-creator={editURL:protectValue(.)}">
          <xsl:apply-templates/>
       </a>
       <xsl:if test="not(position() = last())">
@@ -777,10 +778,10 @@
       <xsl:if test="$sectionType">
          <xsl:value-of select="concat(';sectionType=', $sectionType)"/>
       </xsl:if>
-      <xsl:if test="$brand">
+<!--      <xsl:if test="$brand">
          <xsl:value-of select="concat(';brand=',$brand)"/>
       </xsl:if>
-      
+-->      
    </xsl:template>
    
    <!-- ====================================================================== -->
