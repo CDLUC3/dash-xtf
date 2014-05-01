@@ -143,9 +143,6 @@
 							<div class="single-column">
 								<h1><xsl:apply-templates select="//title"/></h1>
 								<div class="dataset-description">
-									<dl>
-										<dt>What?</dt>
-										<dd>The value of docId is <xsl:copy-of select="$docId"/></dd>
 										<xsl:if test="//title"> 
 											<dt>Title</dt>
 											<dd><span class="DC-Title"><xsl:apply-templates select="//title"/></span></dd>
