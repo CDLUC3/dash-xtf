@@ -351,8 +351,12 @@
 										<xsl:otherwise>. </xsl:otherwise>
 									</xsl:choose>
 									<xsl:value-of select="normalize-space(/*/*:meta/*:title)"/>.
-									<xsl:value-of select="/*/*:meta/*:publisher"/>.
-									<xsl:value-of select="/*/*:meta/*:resourceType"/>.
+									<xsl:if test="/*/*:meta/*:publisher">
+										<xsl:value-of select="/*/*:meta/*:publisher"/>.
+									</xsl:if>
+									<xsl:if test="/*/*:meta/*:resourceType">
+										<xsl:value-of select="/*/*:meta/*:resourceType"/>.
+									</xsl:if>
 									http://dx.doi.org/<xsl:value-of select="/*/*:meta/*:doi"/>
 									</p>
 								</div>
