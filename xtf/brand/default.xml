@@ -51,17 +51,23 @@
 				<div id="terms"><a href="/xtf/search?smode=termsPage">Terms of Use</a></div>
 				<div id="faq-footer" ><a href="/xtf/search?smode=faqPage" title="Frequently Asked Questions">FAQ</a></div>
 				<div id="contact-us" ><a href="/xtf/search?smode=contactPage">Contact Us</a></div>
-				<div id="copyrights">
+<!--				<div id="copyrights">
 					<p>Dash was made possible through a partnership between the California Digital Library, </p>
 					<p>UCSF Clinical &amp; Translational Science Institute, and UCSF Library.  &#169; 2013 The Regents of the University of California</p>
-				</div>
+				</div> -->
 			</div>
 		</div>   
 		<div id="footer-logos">
-			<div id="cdl-logo-sm"><a href="http://www.cdlib.org/"><img src="assets/img/cdl-logo.jpg" width="72" height="26" alt="California Digital Library" title="California Digital Library" /></a></div>
+<!--			<div id="cdl-logo-sm"><a href="http://www.cdlib.org/"><img src="assets/img/cdl-logo.jpg" width="72" height="26" alt="California Digital Library" title="California Digital Library" /></a></div>
 			<div id="ucsf-lib"><a href="http://www.library.ucsf.edu/"><img src="assets/img/ucsflib-logo.jpg" width="111" height="27" alt="UCSF library" title="UCSF library" /></a></div>
 			<div id="ctsi"><a href="http://ctsi.ucsf.edu/"><img src="assets/img/CTSI_logo.png" width="143" height="27" alt="CTSI" title="CTSI" /></a></div>
-		</div>
+ -->
+			<div id="cdl-logo-sm"><a href="http://www.cdlib.org/"><img src="assets/img/cdl-logo.jpg" width="72" height="26" alt="California Digital Library" title="California Digital Library" /></a></div>
+			<div id="cdl-logo-text">Dash is a service of the University of California Digital Library. Copyright &#169; 2014 The Regents of the University of California</div>
+			<div id="local-lib-sm"><a href="http://libraries.universityofcalifornia.edu/"><img src="assets/img/uc_logo.png" width="72" alt="UC Libraries" title="UC Libraries"/></a></div>
+			<div id="local-lib-text">Dash is a collaborative project between the UC Libraries and the UC Curation Center.</div>
+
+		</div> 
 	</footer>   
 
 	<faq>

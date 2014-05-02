@@ -58,9 +58,8 @@
 			</div>
 		</div>   
 		<div id="footer-logos">
-			<div id="cdl-logo-sm"><a href="http://www.cdlib.org/"><img src="assets/img/cdl-logo.jpg" width="72" height="26" alt="California Digital Library" title="California Digital Library" /></a></div>
-			<div id="ucsf-lib"><a href="http://www.library.ucsf.edu/"><img src="assets/img/ucsflib-logo.jpg" width="111" height="27" alt="UCSF library" title="UCSF library" /></a></div>
-			<div id="ctsi"><a href="http://ctsi.ucsf.edu/"><img src="assets/img/CTSI_logo.png" width="143" height="27" alt="CTSI" title="CTSI" /></a></div>
+			<div id="cdl-logo-sm"><a href="http://www.cdlib.org/"><img src="assets/img/cdl-logo.jpg" width="72" height="26" alt="California Digital Library" title="California Digital Library" /></a> Dash is a service of the University of California Digital Library. Copyright &#169; 2014 The Regents of the University of California</div>
+			<div id="local-lib"><a href="http://lib.berkeley.edu/"><img scr="assets/img/berkeley-text-brand.gif" width="72" alt="UC Berkeley Library" title="UC Berkeley Library"/></a></div>
 		</div>
 	</footer>
 

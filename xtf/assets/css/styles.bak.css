@@ -158,29 +158,21 @@ height: 49px;
 	margin: 0 0 0 0;
 }
 
-/* PW changed */
+/* ES changed */
 #footer-logos {
-	/* float: right; */
+	float: right;
 	overflow: hidden;
 	margin: 14px 0 0 0;
 	/*border: 1px green solid;*/
 }
 
-/* PW changed */
+/* ES changed */
 #footer-logos #cdl-logo-sm {
 	float: left;
 	width: 73px;
 	padding-right: 10px;
 	margin-right: 10px;
 	border-right: 1px #c5c4c7 solid;
-}
-
-#footer-logos #cdl-logo-text {
-	float: left;
-	width: 300px;
-	padding-right: 10px;
-	margin-right: 10px;
-	font-size: 10px;
 }
 
 /* ES changed */
@@ -190,22 +182,6 @@ height: 49px;
 	padding-right: 10px;
 	margin-right: 10px;
 	border-right: 1px #c5c4c7 solid;
-}
-
-#footer-logos #local-lib-sm {
-	float: right;
-	width: 73px;
-	padding-right: 10px;
-	margin-right: 10px;
-}
-
-#footer-logos #local-lib-text {
-	float: right;
-	width: 250px;
-	padding-right: 0px;
-	margin-right: 10px;
-	border-right: 1px #c5c4c7 solid;
-	font-size: 10px;
 }
 
 /* ES changed */
@@ -276,15 +252,14 @@ height: 49px;
 #left-column {
 	float:left;
 	overflow: hidden;
-	height: 330px;
+	height: 430px;
 	width: 437px;
 }
 
 #search-container {
-	padding-top: 30px;
 	margin: 36px auto 0 77px;
 	width: 359px;
-	height: 300px;
+	height: 370px;
 	border-right: 1px #c5c4c7 solid;
 }
 
@@ -350,10 +325,9 @@ height: 49px;
 }
 
 #publish-data {
-	padding-top: 30px;
 	margin: 36px auto 0 50px;
 	width: 458px;
-	height: 295px;
+	height: 370px;
 	float:left;
 }
 
