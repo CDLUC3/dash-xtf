@@ -155,14 +155,14 @@
 									<p id="or">or</p>
 									<a href="/xtf/search?browse-all=yes"><input type="image" src="assets/img/browse.png" id="browse" alt="Browse all data"/></a>
 								</div>
-								<div id="featured-dataset">
+<!--								<div id="featured-dataset">
 									<div class="header">
 										<p class="title">Featured Dataset</p>
 									</div>
 									<div class="para">
 										<p><a href="/xtf/view?docId=erc/ark%2B%3Db7272%3Dq6cc0xmh/mrt-datacite.xml;query=;brand=default">White matter damage in frontotemporal dementia and Alzheimer’s disease measured by diffusion MRI.</a></p>
 									</div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 						<div id="right-column">
@@ -181,7 +181,7 @@
 									</ul>
 									<a href="/xtf/search?smode=stepsPage"><img src="assets/img/learn-more.gif" width="125" height="27" alt="Learn more"/></a>
 								</div>
-								<div id="reasercher-voice">
+<!--								<div id="reasercher-voice">
 									<div class="researcher-header">
 										<p>Researcher Voice</p>
 									</div>
@@ -191,7 +191,7 @@
 											<xsl:copy-of select="$brand.promo-quote"/>
 										</div>
 									</div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>  <!-- end content-->
