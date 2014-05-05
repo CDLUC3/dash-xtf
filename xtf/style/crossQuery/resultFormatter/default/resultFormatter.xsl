@@ -230,7 +230,7 @@
 </xsl:template>
 
 <xsl:template match="crossQueryResult" mode="results" exclude-result-prefixes="#all">
-	<html xmlns="http://www.w3.org/1999/xhtml">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
@@ -291,7 +291,7 @@
    <!-- ====================================================================== -->
    
 <xsl:template name="getAddress" exclude-result-prefixes="#all">
-	<html xml:lang="en" lang="en">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>E-mail My Bookbag: Get Address</title>
 			<xsl:copy-of select="$brand.links"/>
@@ -329,7 +329,7 @@
 		Your XTF Bookbag:
 		<xsl:apply-templates select="$bookbagContents/savedDoc" mode="emailFolder"/>
 	</mail:send>
-	<html xml:lang="en" lang="en">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>E-mail My Citations: Success</title>
             <xsl:copy-of select="$brand.links"/>
@@ -376,7 +376,7 @@
    
 <xsl:template match="crossQueryResult" mode="browse" exclude-result-prefixes="#all">
 	<xsl:variable name="alphaList" select="'A B C D E F G H I J K L M N O P Q R S T U V W Y Z OTHER'"/>
-	<html xml:lang="en" lang="en">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>XTF: Search Results</title>
 			<xsl:copy-of select="$brand.links"/>
@@ -478,7 +478,7 @@
 <!-- Lab Template		                                                  	-->
 <!-- ====================================================================== -->
 <xsl:template match="crossQueryResult" mode="lab" exclude-result-prefixes="#all">
-	<html xmlns="http://www.w3.org/1999/xhtml">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   		<head>
 			<title>Datasets from <xsl:value-of select="replace($f1-contributor, '::', '-')"/> (Dash)</title>
 			<xsl:copy-of select="$brand.links"/>
@@ -519,7 +519,7 @@
 <!-- List Lab Template		                                                -->
 <!-- ====================================================================== -->
 <xsl:template match="crossQueryResult" mode="labs" exclude-result-prefixes="#all">
-	<html xmlns="http://www.w3.org/1999/xhtml">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   		<head>
 			<title>Dash: Browse by Lab</title>
 			<xsl:copy-of select="$brand.links"/>
@@ -566,7 +566,7 @@
 <!-- Researcher Template		                                            -->
 <!-- ====================================================================== -->
 <xsl:template match="crossQueryResult" mode="researcher" exclude-result-prefixes="#all">
-	<html xmlns="http://www.w3.org/1999/xhtml">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	  	<head>
 			<title>Datasets from 	<xsl:value-of select="$f1-creator"/> (Dash)</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
@@ -606,7 +606,7 @@
 <!-- Researchers Template (list all researchers)                            -->
 <!-- ====================================================================== -->
 <xsl:template match="crossQueryResult" mode="researchers" exclude-result-prefixes="#all">
-	<html xmlns="http://www.w3.org/1999/xhtml">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   		<head>
 			<title>Dash: Browse by Researcher</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
@@ -930,7 +930,7 @@
 <!-- ====================================================================== -->
 <xsl:template name="oru">
 	<xsl:param name="orgName"/>
-	<html>
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head><title>Dash Organizations</title>
 			<xsl:copy-of select="$brand.links"/>
 			<!-- AJAX support -->
@@ -1007,7 +1007,7 @@
 <!-- faqPage Template		                                           		-->
 <!-- ====================================================================== -->
 <xsl:template name="faqPage">
-	<html>
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: FAQ - Open data for the global research community</title>
 				<xsl:copy-of select="$brand.htmlhead"/>
@@ -1045,7 +1045,7 @@
 <!-- termsPage Template		                                           		-->
 <!-- ====================================================================== -->
 <xsl:template name="termsPage">
-	<html>
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Terms of use - Open data for the global research community</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
@@ -1086,7 +1086,7 @@
 <!-- preparePage Template		                                           	-->
 <!-- ====================================================================== -->
 <xsl:template name="preparePage">
-	<html>
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Preparing to submit - Open data for the global research community</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
@@ -1132,7 +1132,7 @@
 <!-- uploadFaqPage Template		                                           	-->
 <!-- ====================================================================== -->
 <xsl:template name="uploadFaqPage">
-	<html>
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Upload FAQ - Open data for the global research community</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
@@ -1188,7 +1188,7 @@
 <!-- dataUseAgreementPage Template                                         	-->
 <!-- ====================================================================== -->
 <xsl:template name="dataUseAgreement">
-	<html>
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Data Use Agreement - Open data for the global research community</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
@@ -1243,7 +1243,7 @@
 <!-- metadataBasicsPage Template                                         	-->
 <!-- ====================================================================== -->
 <xsl:template name="metadataBasicsPage">
-	<html>
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Metadata basics - Open data for the global research community</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
@@ -1268,8 +1268,8 @@
 									<p class="secondary-para">Dash employs a metadata schema developed by DataCite, an international organization devoted to promoting best practices around data re-use. Each metadata field on the 'Describe your Data' page serves a purpose, and therefore some of these fields have specifications for acceptable entries. See below for a full list of metadata accepted by Dash.</p>
 									<table>
 											<tr>
-												<td width="25%" valign="top"><p align="center"><strong>Metadata Fieldname</strong></p></td>
-												<td width="75%" valign="top"><p align="center"><strong>Description</strong></p></td>
+												<th width="25%" valign="top"><p align="center"><strong>Metadata Fieldname</strong></p></th>
+												<th width="75%" valign="top"><p align="center"><strong>Description</strong></p></th>
 											</tr>
 											<tr>
 												<td width="25%" valign="top">Title*</td>
@@ -1332,7 +1332,7 @@
 <!-- stepsPage Template			                                         	-->
 <!-- ====================================================================== -->	
 <xsl:template name="stepsPage">
-	<html>
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Steps to publish your data - Open data for the global research community</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
@@ -1400,7 +1400,7 @@
 <!-- aboutPage Template			                                         	-->
 <!-- ====================================================================== -->	
 <xsl:template name="aboutPage">
-	<html>
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Open data for the global research community</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
@@ -1448,7 +1448,7 @@
 <!-- whyShareDataPage Template	                                         	-->
 <!-- ====================================================================== -->	
 <xsl:template name="whyShareDataPage">
-	<html>
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Why Share Data?</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
