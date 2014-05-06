@@ -1107,13 +1107,13 @@
 							<div class="single-column">
 								<h1>Preparing to submit</h1>
 								<div class="text-container">
-									<ul>
+									<ol>
 										<li>Ensure permission is granted from the appropriate PI(s)</li>
 										<li>Ensure data files are the most up-to-date and complete versions</li>
 										<li>Ensure that all data relating to human subjects has been properly de-identified</li>
 										<li>Collect as much descriptive metadata as possible (more info here)</li>
 										<li>Ensure that any information critical to the proper viewing and/or usage of the data is included in the submission (either as a separate 'Readme' file or within the 'Technical Description' metadata field)</li>
-									</ul>
+									</ol>
 								</div>
 							</div>
 						</div> <!-- end content-->
@@ -1268,8 +1268,8 @@
 									<p class="secondary-para">Dash employs a metadata schema developed by DataCite, an international organization devoted to promoting best practices around data re-use. Each metadata field on the 'Describe your Data' page serves a purpose, and therefore some of these fields have specifications for acceptable entries. See below for a full list of metadata accepted by Dash.</p>
 									<table>
 											<tr>
-												<th width="25%" valign="top"><p align="center"><strong>Metadata Fieldname</strong></p></th>
-												<th width="75%" valign="top"><p align="center"><strong>Description</strong></p></th>
+												<th width="25%" valign="top"><strong>Metadata Fieldname</strong></th>
+												<th width="75%" valign="top"><strong>Description</strong></th>
 											</tr>
 											<tr>
 												<td width="25%" valign="top">Title*</td>
@@ -1310,7 +1310,7 @@
 											</tr>
 											<tr>
 												<td width="25%" valign="top">Related Resources</td>
-												<td width="75%" valign="top">This field may be used to indicate the existence of    any other resources that are associated with the data, for example publications or grant numbers (All formats are acceptable, however for publications an identifier is preferred e.g. PMID or DOI)</td>
+												<td width="75%" valign="top">This field may be used to indicate the existence of any other resources that are associated with the data, for example publications or grant numbers (All formats are acceptable, however for publications an identifier is preferred e.g. PMID or DOI)</td>
 											</tr>
 										</table>
 									<p class="secondary-para">* Required for submission</p>

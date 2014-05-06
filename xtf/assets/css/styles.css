@@ -753,7 +753,7 @@ width: 190px;
 
 #my-datasets-page .dataset-table table, td, th, #metadata-basics-page table, td, th{
 		border: 1px solid #58585a;
-		text-align: center;
+		/* text-align: center; */
 		padding: 4px;
 }
 
