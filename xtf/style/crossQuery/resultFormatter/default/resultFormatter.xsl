@@ -1047,7 +1047,7 @@
 <xsl:template name="termsPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Terms of use - Open data for the global research community</title>
+			<title>Dash: Terms of Use - Open data for the global research community</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
 		</head>
  		<body>
@@ -1088,7 +1088,7 @@
 <xsl:template name="preparePage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Preparing to submit - Open data for the global research community</title>
+			<title>Dash: Preparing to Submit - Open data for the global research community</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
 		</head>
  		<body>
@@ -1105,7 +1105,7 @@
 						<!-- begin content -->
 						<div id="content"> 	
 							<div class="single-column">
-								<h1>Preparing to submit</h1>
+								<h1>Preparing to Submit</h1>
 								<div class="text-container">
 									<ol>
 										<li>Ensure permission is granted from the appropriate PI(s)</li>
@@ -1245,7 +1245,7 @@
 <xsl:template name="metadataBasicsPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Metadata basics - Open data for the global research community</title>
+			<title>Dash: Metadata Basics - Open data for the global research community</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
 		</head>
  		<body>
@@ -1262,7 +1262,7 @@
 							<!-- begin content -->
 						<div id="content"> 	
 							<div class="single-column">
-								<h1>Metadata basics</h1>
+								<h1>Metadata Basics</h1>
 								<div class="text-container">
 									<p>Metadata, simply put, is data about data. Any descriptive information that helps people understand the data resource can be considered metadata. Metadata is important not only to help people understand and make proper use of a data resource, but metadata also makes the resource discoverable (for example through internet searches or data indexing services). Dash requires only a few key pieces of metadata, however the more metadata available, the more useful and discoverable the resource becomes.</p>
 									<p class="secondary-para">Dash employs a metadata schema developed by DataCite, an international organization devoted to promoting best practices around data re-use. Each metadata field on the 'Describe your Data' page serves a purpose, and therefore some of these fields have specifications for acceptable entries. See below for a full list of metadata accepted by Dash.</p>
@@ -1334,7 +1334,7 @@
 <xsl:template name="stepsPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Steps to publish your data - Open data for the global research community</title>
+			<title>Dash: Steps to Share your Data - Open data for the global research community</title>
 			<xsl:copy-of select="$brand.htmlhead"/>
 		</head>
  		<body>
@@ -1421,13 +1421,13 @@
 							<div id="terms-content">
 								<h1>About</h1>
 								<div class="text-container">
-									<h2>Our mission</h2>
+									<h2>Our Mission</h2>
 									<p>Dash enables individual researchers to share research data sets with the global community.</p>
-									<h2>Our vision</h2>
+									<h2>Our Vision</h2>
 									<p>Data sharing is critical for the advancement of scientific knowledge. Researchers benefit from increased collaborations, validation, and recognition of their work; institutions and funders benefit from the measurable increase in the impact of their resources; and society benefits from the faster pace at which science can progress. There are several barriers to providing access to data, and currently data sharing is mostly done by large, well funded multi-investigator projects. If these barriers were addressed, allowing individual investigators to easily and quickly share their primary research data, we could create a new culture of transparency and efficiency - likely resulting in major impacts on scientific advancement.</p>
 									<p>The goal of the Dash project is to catalyze widespread sharing of scientific research data. To this end, we have created tools, such as the Dash repository and website, to reduce the barriers to data sharing. These tools can be used by individual investigators to provide the global research community with access to research data sets generated in their research environment. We hope these open-source tools will be adopted by any and all investigators interested in supporting Open Data.</p>
 									<p>Dash will not only provide storage, security, and replication services for data, but will also provide links to tools and information that will help scientists properly organize, manage, and document their datasets.</p>
-									<h2>Who we are</h2>
+									<h2>Who We Are</h2>
 									<p>The Dash project is a collaboration between University of California San Francisco’s Clinical and Translational Science Institute (CTSI), the UCSF Library, and the UC Curation Center (UC3) at the California Digital Library.</p>
 									<p>UCSF's <strong><a href="http://ctsi.ucsf.edu/">Clinical &amp; Translational Science Institute</a></strong> facilitates the rapid translation of research to improvements in patient and community health. It is a cross-school, campus-wide institute with scientist leaders at its helm. To achieve its goal of accelerating research to advance health, CTSI provides infrastructure, services, and training to support clinical and translational research. To advance its mission, it also develops broad coalitions and partnerships at the local and national levels to enable a transformation of the research environment. Established in 2006, the Institute was among the first of the now 60-member, National Institutes of Health-funded, Clinical and Translational Science Awards (CTSA) consortium.</p>
 									<p>The mission of the <strong><a href="http://www.library.ucsf.edu/">UCSF Library</a> and <a href="http://www.library.ucsf.edu/about/ckm">Center for Knowledge Management</a></strong> is to advance science, foster excellence in teaching and learning, and promote health through the collection, development, organization, and dissemination of the world's health sciences knowledge base. It delivers services to the UCSF community and works with faculty on a number of collaborative projects in both education and research. On May 21, 2012 the UCSF faculty approved an Open Access policy for journal articles and the Library is developing systems and strategies to comply with the policy.</p>
