@@ -616,50 +616,43 @@
    <xsl:template name="sort.options">
       <select size="1" name="sort">
          <xsl:choose>
-            <xsl:when test="$smode='showBag'">
+            <xsl:when test="$browse-all='yes'">
                <xsl:choose>
                   <xsl:when test="$sort = ''">
                      <option value="title" selected="selected">title</option>
                      <option value="creator">author</option>
                      <option value="year">publication date</option>
-                     <option value="added">added</option>
                      <option value="reverse-year">reverse date</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'title'">
                      <option value="title" selected="selected">title</option>
                      <option value="creator">author</option>
                      <option value="year">publication date</option>
-                     <option value="added">added</option>
                      <option value="reverse-year">reverse date</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'creator'">
                      <option value="title">title</option>
                      <option value="creator" selected="selected">author</option>
                      <option value="year">publication date</option>
-                     <option value="added">added</option>
                      <option value="reverse-year">reverse date</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'year'">
                      <option value="title">title</option>
                      <option value="creator">author</option>
                      <option value="year" selected="selected">publication date</option>
-                     <option value="added">added</option>
                      <option value="reverse-year">reverse date</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'reverse-year'">
                      <option value="title">title</option>
                      <option value="creator">author</option>
                      <option value="year">publication date</option>
-                     <option value="added">added</option>
                      <option value="reverse-year" selected="selected">reverse date</option>
                   </xsl:when>
 				  <xsl:when test="$sort = 'added'">
                      <option value="title">title</option>
                      <option value="creator">author</option>
                      <option value="year">publication date</option>
-                     <option value="added" selected="selected">added</option>
                      <option value="reverse-year">reverse date</option>
-
                   </xsl:when>
                </xsl:choose>
             </xsl:when>
@@ -670,7 +663,6 @@
                      <option value="title">title</option>
                      <option value="creator">author</option>
                      <option value="year">publication date</option>
-                     <option value="added">added</option>
                      <option value="reverse-year">reverse date</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'title'">
@@ -678,7 +670,6 @@
                      <option value="title" selected="selected">title</option>
                      <option value="creator">author</option>
                      <option value="year">publication date</option>
-                     <option value="added">added</option>
                      <option value="reverse-year">reverse date</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'creator'">
@@ -686,7 +677,6 @@
                      <option value="title">title</option>
                      <option value="creator" selected="selected">author</option>
                      <option value="year">publication date</option>
-                     <option value="added">added</option>
                      <option value="reverse-year">reverse date</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'year'">
@@ -694,7 +684,6 @@
                      <option value="title">title</option>
                      <option value="creator">author</option>
                      <option value="year" selected="selected">publication date</option>
-                     <option value="added">added</option>
                      <option value="reverse-year">reverse date</option>
                   </xsl:when>
                   <xsl:when test="$sort = 'reverse-year'">
@@ -702,16 +691,7 @@
                      <option value="title">title</option>
                      <option value="creator">author</option>
                      <option value="year">publication date</option>
-                     <option value="added">added</option>
                      <option value="reverse-year" selected="selected">reverse date</option>
-                  </xsl:when>
-                  <xsl:when test="$sort = 'added'">
-                     <option value="">relevance</option>
-                     <option value="title">title</option>
-                     <option value="creator">author</option>
-                     <option value="year">publication date</option>
-                     <option value="added" selected="selected">added</option>
-                     <option value="reverse-year">reverse date</option>
                   </xsl:when>
                </xsl:choose>
             </xsl:otherwise>
