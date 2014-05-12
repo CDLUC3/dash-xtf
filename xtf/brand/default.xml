@@ -37,12 +37,12 @@
    </dynaxml.links>
    
    <header>
-      <a href="/xtf/search"><img src="assets/img/uc_wordmark_stacked_gray.png" alt="UCOP Dash logo" width="100" class="your-logo"/></a>
+      <a href="/xtf/search"><img src="assets/img/Dash_UCOP.png" alt="UCOP Dash logo" width="326" class="your-logo"/></a>
       <br class="clear" />
    </header>
    
    <dynaxml.header>
-      <a href="/xtf/search"><img src="assets/img/uc_wordmark_stacked_gray.png" alt="UCOP Dash logo" width="100" class="your-logo"/></a>
+      <a href="/xtf/search"><img src="assets/img/Dash_UCOP.png" alt="UCOP Dash logo" width="326" class="your-logo"/></a>
       <br class="clear" />
    </dynaxml.header>
 
