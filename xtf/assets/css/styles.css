@@ -1,4 +1,5 @@
 .collapsible .collapse-control .indicator:after{content:"▹ Show";}
+.collapsible .collapse-control .indicator:after{content:"▹ Show";}
 .collapsible .collapse-control.active .indicator:after{content:"▿ Hide";}
 .collapsible .collapse-content{margin:0.3em 0 0 0;}
 
@@ -72,6 +73,7 @@ h1 {
 #header {
 	width: 952px;
 	height: 65px;
+	/*differs from dash-ingest*/
 }
 #header #logo {
 	float: left;
@@ -90,6 +92,7 @@ h1 {
 
 #header #logout .logout-text {
 	margin: 20px 0 5px 0;
+	/*differs from dash-ingest*/
 }
 #header #logout img{
 	float: right;
@@ -1302,4 +1305,7 @@ width: 190px;
 }
 #dataset-description-page .content.content-dataset .dataset-actions a img{
 	margin-bottom: 1em;
+}
+.search-form-area {
+	float: right;
 }

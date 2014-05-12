@@ -251,6 +251,12 @@
 						<div id="content"> 
 							<div id="browse-all-container">
 								<h1>Select a Dataset...</h1>
+								<div class="search-form-area">
+									<form name="navigationSearchForm" action="/xtf/search" method="get">
+										<input type="text" name="keyword" class="searchField cleardefault" value="Search datasets..." title="Search datasets"/>
+										<input type="submit" value="Go!" class="searchButton"/>
+									</form>
+								</div>
 								<div class="search-refine">
 									<div class="search-refine-controls">
 										<table>

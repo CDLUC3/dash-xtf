@@ -9,8 +9,9 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<script type="text/javascript">var less = {env: "development"};</script>
-	    <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"></script>
-	    <script src="assets/js/datashare.js" type="text/javascript"></script>
+	    <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"/>
+	    <script src="assets/js/datashare.js" type="text/javascript"/>
+		<script src="assets/js/clearText.js" type="text/javascript"/>
 		<script type="text/javascript">
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-34221926-1']);
