@@ -256,6 +256,7 @@
 										<input type="text" name="keyword" class="searchField cleardefault" value="Search datasets..." title="Search datasets"/>
 										<input type="submit" value="Go!" class="searchButton"/>
 									</form>
+									<a class="searchLabel" href="/xtf/search?browse-all=yes">Clear search</a>
 								</div>
 								<div class="search-refine">
 									<div class="search-refine-controls">

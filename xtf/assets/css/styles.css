@@ -1309,3 +1309,10 @@ width: 190px;
 .search-form-area {
 	float: right;
 }
+.searchLabel {
+    display: block;
+    text-align: right;
+}
+a.searchLabel {
+	font-size: 69%;
+}
