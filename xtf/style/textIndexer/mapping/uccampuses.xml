@@ -55,8 +55,12 @@
 <id>UCOP</id>
 <label>UC Office of the President</label>
 </campus>
-</campuses>
 <campus>
 <id>UC Office of the President</id>
 <label>UC Office of the President</label>
 </campus>
+<campus>
+<id>University of California, Office of the President</id>
+<label>UC Office of the President</label>
+</campus>
+</campuses>
