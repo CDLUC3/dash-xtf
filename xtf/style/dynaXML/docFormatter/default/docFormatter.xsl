@@ -45,6 +45,7 @@
    <!-- ====================================================================== -->
    
    <xsl:import href="../common/docFormatterCommon.xsl"/>
+
    <!-- ====================================================================== -->
    <!-- Output Format                                                          -->
    <!-- ====================================================================== -->
@@ -55,12 +56,14 @@
       doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" 
       exclude-result-prefixes="#all"
       omit-xml-declaration="yes"/>
+
    <xsl:output name="frameset" method="xhtml" indent="no" 
       encoding="UTF-8" media-type="text/html; charset=UTF-8" 
       doctype-public="-//W3C//DTD XHTML 1.0 Frameset//EN" 
       doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd" 
       omit-xml-declaration="yes"
       exclude-result-prefixes="#all"/>
+
    
    <!-- ====================================================================== -->
    <!-- Global parameters and variables                                        -->
@@ -72,12 +75,14 @@
       <!-- Normally this is a URL parameter, but in ERC mode it's part of the main URL. -->
       <!-- <xsl:value-of select="replace($http.URL, $ercPat, '$2')"/> -->
    </xsl:param>
+
    <!-- ====================================================================== -->
    <!-- Define Parameters                                                      -->
    <!-- ====================================================================== -->
    
    <xsl:param name="doc.title" select="/title"/>
    <xsl:param name="css.path" select="'css/default/'"/>
+
    
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
@@ -258,6 +263,29 @@
 												</span>
 											</dd>
 										</xsl:if>
+										<dt>Citation</dt>
+										<dd>
+											<xsl:for-each select="/*/*:meta/*:creator">
+												<xsl:value-of select="normalize-space(.)"/>
+												<xsl:if test="not(position() = last())">
+													<xsl:text>; </xsl:text>
+												</xsl:if>
+											</xsl:for-each>
+											<xsl:choose>
+												<xsl:when test="/*/*:meta/*:publicationYear">
+													(<xsl:apply-templates select="/*/*:meta/*:publicationYear"/>):
+												</xsl:when>
+												<xsl:otherwise>. </xsl:otherwise>
+											</xsl:choose>
+											<xsl:value-of select="normalize-space(/*/*:meta/*:title)"/>.
+											<xsl:if test="/*/*:meta/*:publisher">
+												<xsl:value-of select="/*/*:meta/*:publisher"/>.
+											</xsl:if>
+											<xsl:if test="/*/*:meta/*:resourceType">
+												<xsl:value-of select="/*/*:meta/*:resourceType"/>.
+											</xsl:if>
+											<xsl:value-of select="/*/*:meta/*:doi"/>
+										</dd>
 									</dl>
 								</div>
 								<div class="dataset-actions">
@@ -272,7 +300,6 @@
 											<b>Download <xsl:apply-templates select="//objectsize"/> dataset
 											</b>
 										</a>
-										<a class="dataset-action-cite" href="{$doc.path}&#038;doc.view=citation" target="_top">Cite this dataset</a>
 									</div>
 								</div>
 							</div>
@@ -284,15 +311,14 @@
 		</body>
 	</html>
  </xsl:template>
+
+
    <!-- ====================================================================== -->
    <!-- Content Template                                                       -->
    <!-- ====================================================================== -->
 <xsl:template name="body">
 	<body>
 		<table>   
-			<tr>
-				<td>The value of docId is <xsl:copy-of select="$docId"/></td>
-			</tr>
 			<tr>
 				<td>
 					<xsl:text>&#160;</xsl:text>
@@ -550,6 +576,7 @@
 		</table>
 	</body>
 </xsl:template>            
+
    <!-- ====================================================================== -->
    <!-- TOC Template                                                       -->
    <!-- ====================================================================== -->
@@ -563,5 +590,5 @@
 		</ul>
 	</body>
 </xsl:template>      
-</xsl:stylesheet>
 
+</xsl:stylesheet>
