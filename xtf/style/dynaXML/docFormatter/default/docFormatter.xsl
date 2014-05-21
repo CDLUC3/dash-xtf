@@ -263,7 +263,9 @@
 												</span>
 											</dd>
 										</xsl:if>
-										<dt>Citation</dt>
+										
+<!--Citation -->
+<dt>Citation</dt>
 										<dd>
 											<xsl:for-each select="/*/*:meta/*:creator">
 												<xsl:value-of select="normalize-space(.)"/>
