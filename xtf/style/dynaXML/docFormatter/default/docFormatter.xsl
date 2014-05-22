@@ -122,7 +122,6 @@
    <!-- ====================================================================== -->
    
 <xsl:template name="frameset">
-	<xsl:message>The value of brand is <xsl:copy-of select="$brand"/></xsl:message>
 	<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<title>Dash: <xsl:apply-templates select="//title"/></title>
@@ -301,6 +300,9 @@
 											<b>Download <xsl:apply-templates select="//objectsize"/> dataset
 											</b>
 										</a>
+									</div>
+									<div class="cc-license">
+										<xsl:call-template name="cc-by"/>
 									</div>
 								</div>
 							</div>

@@ -1316,3 +1316,9 @@ width: 190px;
 a.searchLabel {
 	font-size: 69%;
 }
+.cc-license {
+	margin-top: 30px;
+	margin-left: 10px;
+	text-align: center;
+	font-size: 75%;
+}
