@@ -125,7 +125,7 @@
 	<xsl:message>The value of brand is <xsl:copy-of select="$brand"/></xsl:message>
 	<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
-			<title>DataShare: <xsl:apply-templates select="//title"/></title>
+			<title>Dash: <xsl:apply-templates select="//title"/></title>
 			<xsl:copy-of select="$brand.htmlhead"/>
 		</head>
 		<body>
