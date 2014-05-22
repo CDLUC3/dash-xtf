@@ -144,6 +144,30 @@
 								<h1><xsl:apply-templates select="//title"/></h1>
 								<div class="dataset-description">
 									<dl>
+									<!-- Citation -->
+										<dt>Citation</dt>
+										<dd>
+											<xsl:for-each select="/*/*:meta/*:creator">
+												<xsl:value-of select="normalize-space(.)"/>
+												<xsl:if test="not(position() = last())">
+													<xsl:text>; </xsl:text>
+												</xsl:if>
+											</xsl:for-each>
+											<xsl:choose>
+												<xsl:when test="/*/*:meta/*:publicationYear">
+													(<xsl:apply-templates select="/*/*:meta/*:publicationYear"/>):
+												</xsl:when>
+												<xsl:otherwise>. </xsl:otherwise>
+											</xsl:choose>
+											<xsl:value-of select="normalize-space(/*/*:meta/*:title)"/>.
+											<xsl:if test="/*/*:meta/*:publisher">
+												<xsl:value-of select="/*/*:meta/*:publisher"/>.
+											</xsl:if>
+											<xsl:if test="/*/*:meta/*:resourceType">
+												<xsl:value-of select="/*/*:meta/*:resourceType"/>.
+											</xsl:if>
+											<xsl:value-of select="/*/*:meta/*:doi"/>
+										</dd>
 										<xsl:if test="//title"> 
 											<dt>Title</dt>
 											<dd><span class="DC-Title"><xsl:apply-templates select="//title"/></span></dd>
@@ -263,30 +287,6 @@
 												</span>
 											</dd>
 										</xsl:if>
-										<!-- Citation -->
-										<dt>Citation</dt>
-										<dd>
-											<xsl:for-each select="/*/*:meta/*:creator">
-												<xsl:value-of select="normalize-space(.)"/>
-												<xsl:if test="not(position() = last())">
-													<xsl:text>; </xsl:text>
-												</xsl:if>
-											</xsl:for-each>
-											<xsl:choose>
-												<xsl:when test="/*/*:meta/*:publicationYear">
-													(<xsl:apply-templates select="/*/*:meta/*:publicationYear"/>):
-												</xsl:when>
-												<xsl:otherwise>. </xsl:otherwise>
-											</xsl:choose>
-											<xsl:value-of select="normalize-space(/*/*:meta/*:title)"/>.
-											<xsl:if test="/*/*:meta/*:publisher">
-												<xsl:value-of select="/*/*:meta/*:publisher"/>.
-											</xsl:if>
-											<xsl:if test="/*/*:meta/*:resourceType">
-												<xsl:value-of select="/*/*:meta/*:resourceType"/>.
-											</xsl:if>
-											<xsl:value-of select="/*/*:meta/*:doi"/>
-										</dd>
 									</dl>
 								</div>
 								<div class="dataset-actions">
