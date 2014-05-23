@@ -1040,7 +1040,7 @@
          </div>
          <xsl:if test="$expand=$field">
             <div class="facetLess">
-               <i><a href="{$xtfURL}{$crossqueryPath}?{editURL:remove($queryString,'expand')}">less</a></i>
+               <em><a href="{$xtfURL}{$crossqueryPath}?{editURL:remove($queryString,'expand')}">less</a></em>
             </div>
          </xsl:if>
          <div class="facetGroup">
@@ -1050,7 +1050,7 @@
          </div>
          <xsl:if test="$needExpand and not($expand=$field)">
             <div class="facetMore">
-               <i><a href="{$xtfURL}{$crossqueryPath}?{editURL:set($queryString,'expand',$field)}">more</a></i>
+               <em><a href="{$xtfURL}{$crossqueryPath}?{editURL:set($queryString,'expand',$field)}">more</a></em>
             </div>
          </xsl:if>
       </div>
@@ -1084,9 +1084,9 @@
             <xsl:when test="//param[matches(@name,concat('f[0-9]+-',$field))]/@value=$value">
                <td class="col2">
                   <xsl:apply-templates select="." mode="beforeGroupValue"/>
-                  <i>
+                  <em>
                      <xsl:value-of select="$value"/>
-                  </i>
+                  </em>
                   <xsl:apply-templates select="." mode="afterGroupValue"/>
                </td>
                <td class="col3">
@@ -1177,9 +1177,9 @@
                <td class="col1">&#8226;</td> <!-- bullet char -->
                <td class="col2">
                   <xsl:apply-templates select="." mode="beforeGroupValue"/>
-                  <i>
+                  <em>
                      <xsl:value-of select="@value"/>
-                  </i>
+                  </em>
                   <xsl:apply-templates select="." mode="afterGroupValue"/>
                </td>
                <td class="col3"><a href="{$collapseLink}">[X]</a></td>
