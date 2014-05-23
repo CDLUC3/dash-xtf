@@ -744,9 +744,9 @@
 				<xsl:with-param name="path" select="$path"/>
 			</xsl:call-template>
 		</xsl:attribute>
-		<b>
+		<strong>
 		<xsl:apply-templates select="meta/title"/>
-		</b></a>
+		</strong></a>
 		</span></h3>
 		<ul>
 			<li>by
