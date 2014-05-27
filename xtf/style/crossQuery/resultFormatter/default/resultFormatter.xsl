@@ -102,6 +102,9 @@
 		<xsl:when test="$smode = 'preparePage'">   	 
 			<xsl:call-template name="preparePage"/>
 		</xsl:when>
+		<xsl:when test="$smode = 'policiesPage'">   	 
+			<xsl:call-template name="policiesPage"/>
+		</xsl:when>
 		<xsl:when test="$smode = 'stepsPage'">   	 
 			<xsl:call-template name="stepsPage"/>
 		</xsl:when>
@@ -1144,6 +1147,51 @@
 		</body>
 	</html>
 </xsl:template>
+
+<!-- ====================================================================== -->
+<!-- policiesPage Template		                                           	-->
+<!-- ====================================================================== -->
+<xsl:template name="policiesPage">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+		<head>
+			<title>Dash: Policies- Open data for the global research community</title>
+			<xsl:copy-of select="$brand.htmlhead"/>
+		</head>
+ 		<body>
+			<!-- begin page id -->
+			<div id="prepare-to-submit-page"> 
+				<!-- begin outer container -->  
+				<div id="outer-container"> 
+				    <!-- begin inner container -->
+				    <div id="inner-container"> 
+						<div class="header">
+				     		<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="nav-header"/> 
+				    	</div>
+						<!-- begin content -->
+						<div id="content"> 	
+							<div class="single-column">
+								<h1>Policies</h1>
+								<div class="text-container">
+									<ul>
+										<li>Item 1</li>
+										<li>Item 2</li>
+										<li>Item 3</li>
+									</ul>
+								</div>
+							</div>
+						</div> <!-- end content-->
+						<div id="triangle-container">
+							<div id="triangle"></div>
+						</div>
+						<xsl:copy-of select="$brand.footer"/>
+					</div> <!-- end inner container -->
+				</div> <!-- end outer container -->
+			</div>
+		</body>
+	</html>
+</xsl:template>
+
 	
 <!-- ====================================================================== -->
 <!-- uploadFaqPage Template		                                           	-->
@@ -1171,21 +1219,11 @@
 								<h1>Upload FAQ</h1>
 								<div class="text-container">
 									<ul>
-										<li>Be sure you have read through and are comfortable with the terms of the <a href="/xtf/search?smode=dataUseAgreement">Dash Data Use Agreement</a></li>
-										<li>Ensure that all data relating to human subjects has been properly de-identified</li>
-										<li>Ensure data files are the most up-to-date and complete versions</li>
-										<li>Dash accepts all file formats.</li>
-										<li>Generally speaking, the data files you upload into Dash should fall into one of the following types:
-											<ul> 
-												<li>text</li> 
-												<li>spreadsheet (csv, tab-delimited, Excel)</li>
-												<li>video</li>
-												<li>image</li>
-												<li>software code</li>
-												<li>pdf</li>
-											</ul>
-										</li>
-										<li>If the data files are of a specialized or proprietary nature, be sure to include any pertinent information that would allow the proper viewing and/or usage of the file(s) either as a separate 'Readme' document within the data set folder, or in the 'Technical Description'.</li>
+										<li>See <a href="/xtf/search?smode=policiesPage">Policies</a> for more information on uploading datasets to Dash.</li>
+										<li>All file formats are accepted by Dash, although it is good practice to share data using open formats. See the <a href="http://www.data-archive.ac.uk/create-manage/format/formats-table" target="_blank">UK Data Archive for a list of optimal file formats</a>.</li>
+										<li>Include any files that may help others to use your data. This includes readme files, formal metadata files, or other critical information.</li>
+										<li>Any data submitted via Dash will be under a <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 (CC BY-4.0)</a> license. We do not currently support any other license types, nor do we allow for restrictions on data access or use.</li>
+										<li>It is your responsibility to ensure your data are being shared responsibly and ethically. Please be careful of sharing sensitive data and ensure you are complying with institutional and governmental regulations.</li>
 									</ul>
 								</div>
 							</div>
