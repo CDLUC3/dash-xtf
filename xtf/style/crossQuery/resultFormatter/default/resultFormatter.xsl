@@ -1375,14 +1375,13 @@
 									<div class="why-share">Why Share?</div>
 									<div class="bullet-points">
 										<ul>
-											<li>Facilitates quality science </li>
-											<li>Increases the visibility of underlying research (<a href="http://www.plosone.org/article/info:doi%2F10.1371%2Fjournal.pone.0000308">69% increase in citations for articles associated with shared datasets</a>)</li>
-											<li>Allows credit for all research outputs, including unpublished work</li>
-											<li>Enables validation and reproducibility (<a href="http://www-stat.stanford.edu/~wavelab/Wavelab_850/wavelab.pdf">"An article ... in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship." - D. Donoho</a>)</li>
-											<li>Enhances global collaborative opportunities</li>
-											<li>Data re-use maximizes efficiency of available resources</li>
-											<li>View the Dash <a href="/xtf/search?smode=dataUseAgreement">Data Use Agreement</a></li>
+											<li>Promotes transparency and reproducibility in research.</li>
+											<li>Increases the visibility of underlying research (69% increase in citations for articles associated with shared datasets, Piwowar et al. 2007, <a href="http://http://dx.doi.org/10.1371/journal.pone.0000308" target="_blank">doi:10.1371/journal.pone.0000308</a>).</li>
+											<li>Allows you to get credit for your dataset&#8212;add it to your CV, share it with colleagues, and have others cite your dataset when using it.</li>
+											<li>Helps you meet funder and publisher requirements for data availability.</li>
+											<li>Increases chances for collaboration.</li>
 										</ul>
+										<p>For more information, see the <a href="http://www.data-archive.ac.uk/create-manage/planning-for-sharing/why-share-data" target="_blank">UK Data Archive list of reasons to share data</a>.
 									</div>
 								</div>
 							</div>
