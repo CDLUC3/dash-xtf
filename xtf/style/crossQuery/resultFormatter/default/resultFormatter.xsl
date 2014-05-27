@@ -1424,7 +1424,7 @@
 									<div class="bullet-points">
 										<ul>
 											<li>Promotes transparency and reproducibility in research.</li>
-											<li>Increases the visibility of underlying research (69% increase in citations for articles associated with shared datasets, Piwowar et al. 2007, <a href="http://http://dx.doi.org/10.1371/journal.pone.0000308" target="_blank">doi:10.1371/journal.pone.0000308</a>).</li>
+											<li>Increases the visibility of underlying research (69% increase in citations for articles associated with shared datasets, Piwowar et al. 2007, <a href="http://dx.doi.org/10.1371/journal.pone.0000308" target="_blank">doi:10.1371/journal.pone.0000308</a>).</li>
 											<li>Allows you to get credit for your dataset&#8212;add it to your CV, share it with colleagues, and have others cite your dataset when using it.</li>
 											<li>Helps you meet funder and publisher requirements for data availability.</li>
 											<li>Increases chances for collaboration.</li>
