@@ -1429,7 +1429,7 @@
 											<li>Helps you meet funder and publisher requirements for data availability.</li>
 											<li>Increases chances for collaboration.</li>
 										</ul>
-										<p>For more information, see the <a href="http://www.data-archive.ac.uk/create-manage/planning-for-sharing/why-share-data" target="_blank">UK Data Archive list of reasons to share data</a>.
+										<p>For more information, see the <a href="http://www.data-archive.ac.uk/create-manage/planning-for-sharing/why-share-data" target="_blank">UK Data Archive list of reasons to share data</a>.</p>
 									</div>
 								</div>
 							</div>
