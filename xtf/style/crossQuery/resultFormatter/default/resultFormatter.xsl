@@ -1220,7 +1220,7 @@
 								<div class="text-container">
 									<ul>
 										<li>See <a href="/xtf/search?smode=policiesPage">Policies</a> for more information on uploading datasets to Dash.</li>
-										<li>All file formats are accepted by Dash, although it is good practice to share data using open formats. See the <a href="http://www.data-archive.ac.uk/create-manage/format/formats-table" target="_blank">UK Data Archive for a list of optimal file formats</a>.</li>
+										<li>All file formats are accepted by Dash, although it is good practice to share data using open formats. See the UK Data Archive for a <a href="http://www.data-archive.ac.uk/create-manage/format/formats-table" target="_blank">list of optimal file formats</a>.</li>
 										<li>Include any files that may help others to use your data. This includes readme files, formal metadata files, or other critical information.</li>
 										<li>Any data submitted via Dash will be under a <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 (CC BY-4.0)</a> license. We do not currently support any other license types, nor do we allow for restrictions on data access or use.</li>
 										<li>It is your responsibility to ensure your data are being shared responsibly and ethically. Please be careful of sharing sensitive data and ensure you are complying with institutional and governmental regulations.</li>
