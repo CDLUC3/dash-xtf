@@ -1271,55 +1271,50 @@
 							<div class="single-column">
 								<h1>Metadata Basics</h1>
 								<div class="text-container">
-									<p>Metadata, simply put, is data about data. Any descriptive information that helps people understand the data resource can be considered metadata. Metadata is important not only to help people understand and make proper use of a data resource, but metadata also makes the resource discoverable (for example through internet searches or data indexing services). Dash requires only a few key pieces of metadata, however the more metadata available, the more useful and discoverable the resource becomes.</p>
-									<p class="secondary-para">Dash employs a metadata schema developed by DataCite, an international organization devoted to promoting best practices around data re-use. Each metadata field on the 'Describe your Data' page serves a purpose, and therefore some of these fields have specifications for acceptable entries. See below for a full list of metadata accepted by Dash.</p>
+									<p>Comprehensive data documentation (i.e. metadata) is the key to future understanding of data. Without a thorough description of the context of the data file, the context in which the data were collected, the measurements that were made, and the quality of the data, it is unlikely that the data can be easily discovered, understood, or effectively used. Metadata is important not only to help people understand and make proper use of a data resource, but metadata also makes the resource discoverable (for example through internet searches or data indexing services). Read more about metadata in the <a href="http://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf" target="_blank">DataONE Primer on Data Management</a> (PDF).</p>
+									<p class="secondary-para">Dash requires a few key pieces of metadata. A complete list of the metadata fields in Dash is below. Additional metadata can be uploaded alongside the dataset (e.g., as a readme.txt file). The metadata entry form for Dash is based on fields from the <a href="http://schema.datacite.org/meta/kernel-3/index.html" target="_blank">DataCite schema</a>, version 3.0.</p>
 									<table>
-											<tr>
-												<th width="25%" valign="top"><strong>Metadata Fieldname</strong></th>
-												<th width="75%" valign="top"><strong>Description</strong></th>
-											</tr>
-											<tr>
-												<td width="25%" valign="top">Title*</td>
-												<td width="75%" valign="top">Title of the data resource</td>
-											</tr>
-											<tr>
-												<td width="25%" valign="top">Data Creator(s)*</td>
-												<td width="75%" valign="top">Main researcher(s) involved in producing the data, or the authors of the publication, in priority order. (Last Name, First Name)</td>
-											</tr>
-											<tr>
-												<td width="25%" valign="top">Description*</td>
-												<td width="75%" valign="top">An abstract or general description of the data resource </td>
-											</tr>
-											<tr>
-												<td width="25%" valign="top">Institution</td>
-												<td width="75%" valign="top">Name of the institution that supported creation of the resource (Dash currently pre-populates this field)</td>
-											</tr>
-											<tr>
-												<td width="25%" valign="top">Date</td>
-												<td width="75%" valign="top">Date the data resource was shared <br />
-										      (Dash currently pre-populates this field)</td>
-											</tr>
-											<tr>
-												<td width="25%" valign="top">Methods</td>
-												<td width="75%" valign="top">Any technical or methodological info that helps to understand how the data were generated and/or how they may be properly re-used</td>
-											</tr>
-											<tr>
-												<td width="25%" valign="top">Keywords</td>
-												<td width="75%" valign="top">Any keywords that help identify data domain(s) (Dash <strong>highly recommends </strong>using    a controlled vocabulary, such as <a href="http://www.ncbi.nlm.nih.gov/mesh">MeSH</a>) </td>
-											</tr>
-											<tr>
-												<td width="25%" valign="top">Lab / Department</td>
-												<td width="75%" valign="top">Lab or department responsible for collecting,    creating, or otherwise contributing to the development of the dataset </td>
-											</tr>
-											<tr>
-												<td width="25%" valign="top">Funder</td>
-												<td width="75%" valign="top">Agency responsible for funding the data generation </td>
-											</tr>
-											<tr>
-												<td width="25%" valign="top">Related Resources</td>
-												<td width="75%" valign="top">This field may be used to indicate the existence of any other resources that are associated with the data, for example publications or grant numbers (All formats are acceptable, however for publications an identifier is preferred e.g. PMID or DOI)</td>
-											</tr>
-										</table>
+										<tr>
+											<th width="25%" valign="top"><strong>Metadata Field Name</strong></th>
+											<th width="75%" valign="top"><strong>Description</strong></th>
+										</tr>
+										<tr>
+											<td width="25%" valign="top">Title *</td>
+											<td width="75%" valign="top">Title of the dataset. Be as descriptive as possible.</td>
+										</tr>
+										<tr>
+											<td width="25%" valign="top">Institution *</td>
+											<td width="75%" valign="top">Name of the institution that supported creation of the resource.</td>
+										</tr>
+										<tr>
+											<td width="25%" valign="top">Data type *</td>
+											<td width="75%" valign="top">Type of data. This entry is constrained to a list from DataCite.</td>
+										</tr>
+										<tr>
+											<td width="25%" valign="top">Data Creator(s) *</td>
+											<td width="75%" valign="top">Main researcher(s) involved in producing the data</td>
+										</tr>
+										<tr>
+											<td width="25%" valign="top">Date</td>
+											<td width="75%" valign="top">Date submitted to Dash. This is automatically populated by Dash.</td>
+										</tr>
+										<tr>
+											<td width="25%" valign="top">Keyword(s)</td>
+											<td width="75%" valign="top">Descriptive words that may help others discover your dataset. Dash recommends that you research whether your discipline has an existing controlled vocabulary from which to choose your keywords. Please enter one keyword per line.</td>
+										</tr>
+										<tr>
+											<td width="25%" valign="top">Abstract</td>
+											<td width="75%" valign="top">An abstract or general description of the dataset.</td>
+										</tr>
+										<tr>
+											<td width="25%" valign="top">Methods</td>
+											<td width="75%" valign="top">Any technical or methodological information that may help others to understand how the data were generated and/or how they may be properly reused.</td>
+										</tr>
+										<tr>
+											<td width="25%" valign="top">Citations</td>
+											<td width="75%" valign="top">Use this field to indicate other resources that are associated with the data. Examples include publications, grant numbers, and other datasets.</td>
+										</tr>
+									</table>
 									<p class="secondary-para">* Required for submission</p>
 								</div>
 							</div>
