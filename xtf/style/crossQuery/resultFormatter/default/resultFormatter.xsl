@@ -1114,12 +1114,22 @@
 							<div class="single-column">
 								<h1>Preparing to Submit</h1>
 								<div class="text-container">
+									<p>Use this checklist to prepare your dataset for submission to Dash. See our <a href="/xtf/search?smode=policiesPage">Policies</a> for more information.</p>
 									<ol>
-										<li>Ensure permission is granted from the appropriate PI(s)</li>
-										<li>Ensure data files are the most up-to-date and complete versions</li>
-										<li>Ensure that all data relating to human subjects has been properly de-identified</li>
-										<li>Collect as much descriptive metadata as possible (more info here)</li>
-										<li>Ensure that any information critical to the proper viewing and/or usage of the data is included in the submission (either as a separate 'Readme' file or within the 'Technical Description' metadata field)</li>
+										<li>Inform your dataset co-creators that you plan to deposit the dataset in Dash.</li>
+										<li>Ensure that all governmental and institutional regulations regarding the handling of sensitive data are addressed.</li>
+										<li>Prepare or obtain the most up-to-date and complete version of dataset.</li>
+										<li>Prepare or obtain relevant explanatory documents related to the dataset (e.g., readme.txt files, formal metadata records, or other critical information.etc.)</li>
+										<li>Gather the following information, to be entered as metadata in the Dash system (see <a href="/xtf/search?smode=metadataBasicsPage">Metadata Basics</a> for more information):
+											<ul>
+												<li>Dataset title&#8212;be as descriptive as possible</li>
+												<li>Full names of all dataset co-creators</li>
+												<li>Keywords for the dataset (use discipline-specific controlled vocabularies whenever possible)</li>
+												<li>Abstract (description) describing the dataset you are submitting</li>
+												<li>Description of the methods used to collect the data</li>
+												<li>Citations to associated materials, including grant numbers, publications using the dataset, and other related datasets</li>
+											</ul>
+										</li>
 									</ol>
 								</div>
 							</div>
