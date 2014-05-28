@@ -87,9 +87,6 @@
 		<xsl:when test="$smode = 'faqPage'">   	 
 			<xsl:call-template name="faqPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'termsPage'">   	 
-			<xsl:call-template name="termsPage"/>
-		</xsl:when>
 		<xsl:when test="$smode = 'metadataBasicsPage'">   	 
 		 	<xsl:call-template name="metadataBasicsPage"/>
 		</xsl:when>
