@@ -71,9 +71,9 @@
 			<p class="title">What if I have collaborators outside of UC Berkeley?</p>
 			<p class="para">You will need UC Berkeley credentials to log into the system and deposit data. You can, however, add your collaborators to the “data contributors” section of the metadata. Although only researchers logged in with UC Berkeley credentials can deposit data, anyone can search, view and download datasets in Dash.</p>
 			<p class="title">Who can access these datasets?</p>
-			<p class="para">All data in Dash are CC-BY licensed. This means anyone can access the datasets, download them, and use them provided they give proper attribution. Although many researchers would prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read Panton Principles for Open Data in Science for more information.</p>
+			<p class="para">All data in Dash are <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY</a> licensed. This means anyone can access the datasets, download them, and use them provided they give proper attribution. Although many researchers would prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read <a href="http://pantonpriciples.org" target="_blank">Panton Principles for Open Data in Science</a> for more information.</p>
 			<p class="title">Do you support data embargoes or restricted access?</p>
-			<p class="para">Not at this time. We do, however, have plans to expand the Dash functionality to include both. If you have specific requests for functionality, please add it to our GitHub Issue Tracker. </p>
+			<p class="para">Not at this time. We do, however, have plans to expand the Dash functionality to include both. If you have specific requests for functionality, please add it to our <a href="https://github.com/CDLUC3/dash/issues" target="_blank">GitHub Issue Tracker</a>. </p>
 			<p class="title">What do I need to submit the data?</p>
 			<ul>
 				<li>Permission from the appropriate PI(s)</li>
@@ -91,24 +91,23 @@
 			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the data set files, or could be entered in the 'Methods' section of the metadata.</p>
 			<p class="title">What best practices can I follow for data preparation?</p>
 			<p class="para">UC Berkeley Libraries provides data management support through online tutorials and guides.  Questions about the use of data management can be sent to the data consultation list (data-consult at lists dot berkeley dot edu).</p>
-			<p class="para">There are a variety of best practices depending on your field of research. For generic help, see the DataONE Primer on Data Management Best Practices (PDF). Generally,
-				<ul>
-					<li>Ensure data files are the most up-to-date and complete versions</li>
-					<li>Ensure the integrity of data files (check if corrupted)</li>
-					<li>Ensure that all data relating to human subjects have been properly de-identified</li>
-					<li>Double-check the accuracy of the descriptive metadata</li>
-					<li>Enter as much descriptive metadata as possible in the indexing fields</li>
-					<li>Ensure that any information critical to the proper viewing and/or usage of the data is included in the submission (either as a separate 'Readme' file or within the 'Methods' metadata field)</li>
+			<p class="para">There are a variety of best practices depending on your field of research. For generic help, see the DataONE Primer on Data Management Best Practices (PDF). Generally follow these guidelines:</p>
+			<ul>
+				<li>Ensure data files are the most up-to-date and complete versions</li>
+				<li>Ensure the integrity of data files (check if corrupted)</li>
+				<li>Ensure that all data relating to human subjects have been properly de-identified</li>
+				<li>Double-check the accuracy of the descriptive metadata</li>
+				<li>Enter as much descriptive metadata as possible in the indexing fields</li>
+				<li>Ensure that any information critical to the proper viewing and/or usage of the data is included in the submission (either as a separate 'Readme' file or within the 'Methods' metadata field)</li>
 				</ul>
-			</p>
 			<p class="title">For how long will the data be available?</p>
-			<p class="para">Once you have deposited data, they are permanently archived and available through the California Digital Library’s Merritt Repository. See our Policies [URL needed] page for more information.</p>
+			<p class="para">Once you have deposited data, they are permanently archived and available through the California Digital Library’s Merritt Repository. See our <a href="/xtf/search?smode=policiesPage">Policies</a> page for more information.</p>
 			<p class="title">How will someone find my data?</p>
 			<p class="para">Metadata will be indexed by the Thomson-Reuters Data Citation Index and Scopus.</p>
 			<p class="title">Do the data have to be associated with a publication?</p>
 			<p class="para">No. Dash accepts all quality data, regardless of whether they have been used to publish a paper.</p>
 			<p class="title">Do I need to log into Dash to get data?</p>
-			<p class="para">Persons requesting data are not required to sign-in in order to do so. Data sets will be made available immediately following acceptance of the Data Use Agreement terms (requiring entry of name and a valid email address).</p>
+			<p class="para">Persons requesting data are not required to sign-in in download datasets.</p>
 			<p class="title">Do I have to pay for data?</p>
 			<p class="para">No, these data are made publicly available free of charge.</p>
 			<p class="title">What if I have questions about the data?</p>
