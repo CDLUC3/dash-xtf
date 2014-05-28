@@ -50,8 +50,9 @@
 		<div id="footer">
 			<div id="footer-container" class="shading">
 				<div id="terms"><a href="http://www.cdlib.org/about/terms.html">Terms of Use</a></div>
-				<div id="faq-footer" ><a href="/xtf/search?smode=faqPage" title="Frequently Asked Questions">FAQ</a></div>
-				<div id="contact-us" ><a href="/xtf/search?smode=contactPage">Contact Us</a></div>
+				<div id="faq-footer"><a href="/xtf/search?smode=faqPage" title="Frequently Asked Questions">FAQ</a></div>
+				<div id="policies"><a href="/xtf/search?smode=policiesPage">Policies</a></div>
+				<div id="contact-us"><a href="/xtf/search?smode=contactPage">Contact Us</a></div>
 			</div>
 		</div>   
 		<div id="footer-logos">
@@ -90,15 +91,16 @@
 			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the data set files, or could be entered in the 'Methods' section of the metadata.</p>
 			<p class="title">What best practices can I follow for data preparation?</p>
 			<p class="para">UC Berkeley Libraries provides data management support through online tutorials and guides.  Questions about the use of data management can be sent to the data consultation list (data-consult at lists dot berkeley dot edu).</p>
-			<p class="para">There are a variety of best practices depending on your field of research. For generic help, see the DataONE Primer on Data Management Best Practices (PDF). Generally, follow these steps:</p>
-			<ul>
-				<li>Ensure data files are the most up-to-date and complete versions</li>
-				<li>Ensure the integrity of data files (check if corrupted)</li>
-				<li>Ensure that all data relating to human subjects have been properly de-identified</li>
-				<li>Double-check the accuracy of the descriptive metadata</li>
-				<li>Enter as much descriptive metadata as possible in the indexing fields</li>
-				<li>Ensure that any information critical to the proper viewing and/or usage of the data is included in the submission (either as a separate 'Readme' file or within the 'Methods' metadata field)</li>
-			</ul>
+			<p class="para">There are a variety of best practices depending on your field of research. For generic help, see the DataONE Primer on Data Management Best Practices (PDF). Generally,
+				<ul>
+					<li>Ensure data files are the most up-to-date and complete versions</li>
+					<li>Ensure the integrity of data files (check if corrupted)</li>
+					<li>Ensure that all data relating to human subjects have been properly de-identified</li>
+					<li>Double-check the accuracy of the descriptive metadata</li>
+					<li>Enter as much descriptive metadata as possible in the indexing fields</li>
+					<li>Ensure that any information critical to the proper viewing and/or usage of the data is included in the submission (either as a separate 'Readme' file or within the 'Methods' metadata field)</li>
+				</ul>
+			</p>
 			<p class="title">For how long will the data be available?</p>
 			<p class="para">Once you have deposited data, they are permanently archived and available through the California Digital Library’s Merritt Repository. See our Policies [URL needed] page for more information.</p>
 			<p class="title">How will someone find my data?</p>
