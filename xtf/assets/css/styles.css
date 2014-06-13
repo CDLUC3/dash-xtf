@@ -1327,8 +1327,14 @@ a.searchLabel {
 	font-size: 69%;
 }
 .cc-license {
+	padding: 5px;
 	margin-top: 30px;
 	margin-left: 10px;
 	text-align: center;
 	font-size: 75%;
+	border-style: solid;
+	border-width: thin;
+}	
+.cc-license p {
+	text-align: left;
 }
