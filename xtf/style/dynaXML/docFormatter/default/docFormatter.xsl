@@ -302,7 +302,7 @@
 										</a>
 									</div>
 									<div class="cc-license">
-										<xsl:call-template name="cc-by"/>
+										<xsl:call-template name="cc-0"/>
 									</div>
 								</div>
 							</div>
