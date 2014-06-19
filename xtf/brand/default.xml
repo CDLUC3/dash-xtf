@@ -72,7 +72,7 @@
 		<p class="title">Who can access these data?</p>
 		<p class="para">The descriptive metadata associated with each data set is publicly available. Any member of the public may discover these data and request access to them. Access to the data will be granted in accordance with the terms specified by the data depositor.</p>
 		<p class="title">Will I have control of the data?</p>
-		<p class="para">You will have the ability to control access to your data (see below). Once data is deposited, you will have control over the versioning of the data set as well as the metadata indexing fields.</p>
+		<p class="para">You will have the ability to control access to your data (see below). Once data are deposited, you will have control over the versioning of the data set as well as the metadata indexing fields.</p>
 		<p class="title">How can I control who sees/accesses the data?</p>
 		<p class="para">Anyone will be able to view the descriptive metadata used to index your data set, this information is publicly available to allow for maximum discoverability. You will have the ability to specify terms of use for your data set via a 'Data Use Agreement' (DUA) prior to allowing access. Default DUAs are set at the collection level (e.g. all of the data sets entered under the Lab X collection will be assigned the default DUA specified by Lab X), however this DUA may be over-written if a different set of terms is required for a specific data set.</p>
 		<p class="title">What do I need to submit the data?</p>
