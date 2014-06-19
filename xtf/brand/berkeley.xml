@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<brand xmlns="http://www.w3.org/1999/xhtml">
+	<htmlhead>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8; charset=UTF-8" />
+		<link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+		<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script type="text/javascript">var less = {env: "development"};</script>
+	    <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"/>
+	    <script src="assets/js/datashare.js" type="text/javascript"/>
+		<script src="assets/js/clearText.js" type="text/javascript"/>
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-34221926-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+	</htmlhead>
+   
+   <links>
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <link rel="stylesheet" href="css/default/results.css" type="text/css"/>
+	  <link rel="shortcut icon" href="icons/default/favicon.ico" />
+   </links>
+   
+   <dynaxml.links>
+      <link rel="stylesheet" href="css/default/content.css" type="text/css"/>
+      <link rel="shortcut icon" href="icons/default/favicon.ico" />
+   </dynaxml.links>
+   
+   <header>
+      <a href="/xtf/search"><img src="assets/img/Dash_UCB.png" alt="UCB DASH logo" height="78" class="your-logo"/></a>
+      <br class="clear" />
+   </header>
+   
+   <dynaxml.header>
+      <a href="/xtf/search"><img src="assets/img/Dash_UCB.png" alt="UCB DASH logo" height="78" class="your-logo"/></a>
+      <br class="clear" />
+   </dynaxml.header>
+
+   <footer>
+		<div id="footer">
+			<div id="footer-container" class="shading">
+				<div id="terms"><a href="http://www.cdlib.org/about/terms.html">Terms of Use</a></div>
+				<div id="faq-footer"><a href="/xtf/search?smode=faqPage" title="Frequently Asked Questions">FAQ</a></div>
+				<div id="policies"><a href="/xtf/search?smode=policiesPage">Policies</a></div>
+				<div id="contact-us"><a href="/xtf/search?smode=contactPage">Contact Us</a></div>
+			</div>
+		</div>   
+		<div id="footer-logos">
+			<div id="cdl-logo-sm"><a href="http://www.cdlib.org/"><img src="assets/img/cdl-logo.jpg" width="72" height="26" alt="California Digital Library" title="California Digital Library" /></a></div>
+			<div id="cdl-logo-text">Dash is a service of the University of California Digital Library. Copyright &#169; 2014 The Regents of the University of California</div>
+			<div id="local-lib-sm"><a href="http://cdlib.org/uc3/"><img src="assets/img/uc3.png" width="72" alt="UC Curation Center" title="UC Curation Center"/></a></div>
+			<div id="local-lib-text">Dash is a collaborative project between the <a href="http://lib.berkeley.edu">UC Berkeley Library</a> and the <a href="http://cdlib.org/uc3">UC Curation Center</a>.</div>
+		</div> 
+		
+	</footer>
+
+	<faq>
+		<div class="text-container">
+			<p class="title">Who can deposit data here?</p>
+			<p class="para">Any UC Berkeley-affiliated researcher (faculty, postdoc, student, or staff) can use this resource to archive and share research data sets, provided they have appropriate permission. Data that are collected at research sites are under the stewardship of the Principal Investigator (PI) named on the resource provided to collect the data, and this PI may grant permission to deposit data.</p>
+			<p class="title">What if I have collaborators outside of UC Berkeley?</p>
+			<p class="para">You will need UC Berkeley credentials to log into the system and deposit data. You can, however, add your collaborators to the “data contributors” section of the metadata. Although only researchers logged in with UC Berkeley credentials can deposit data, anyone can search, view and download datasets in Dash.</p>
+			<p class="title">Who can access these datasets?</p>
+			<p class="para">All data in Dash are in the public domain (<a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0</a>). This means anyone can access the datasets, download them, and use them. Although many researchers would prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read <a href="http://pantonpriciples.org" target="_blank">Panton Principles for Open Data in Science</a> for more information.</p>	
+			<p class="title">Do you support data embargoes or restricted access?</p>
+			<p class="para">Not at this time. We do, however, have plans to expand the Dash functionality to include both. If you have specific requests for functionality, please add it to our <a href="https://github.com/CDLUC3/dash/issues" target="_blank">GitHub Issue Tracker</a>. </p>
+			<p class="title">What do I need to submit the data?</p>
+			<ul>
+				<li>Permission from the appropriate PI(s)</li>
+				<li>Information about the dataset, including
+					<ul>
+						<li>dataset title</li>
+						<li>creators</li>
+						<li>keywords</li>
+						<li>....</li>
+					</ul>
+				</li>
+				<li>Access to files comprising the data set</li>
+			</ul>
+			<p class="title">Are there any file format requirements?</p>
+			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the data set files, or could be entered in the 'Methods' section of the metadata.</p>
+			<p class="title">What best practices can I follow for data preparation?</p>
+			<p class="para">UC Berkeley Libraries provides data management support through online tutorials and guides.  Questions about the use of data management can be sent to the data consultation list (data-consult at lists dot berkeley dot edu).</p>
+			<p class="para">There are a variety of best practices depending on your field of research. For generic help, see the DataONE Primer on Data Management Best Practices (PDF). Generally follow these guidelines:</p>
+			<ul>
+				<li>Ensure data files are the most up-to-date and complete versions</li>
+				<li>Ensure the integrity of data files (check if corrupted)</li>
+				<li>Ensure that all data relating to human subjects have been properly de-identified</li>
+				<li>Double-check the accuracy of the descriptive metadata</li>
+				<li>Enter as much descriptive metadata as possible in the indexing fields</li>
+				<li>Ensure that any information critical to the proper viewing and/or usage of the data is included in the submission (either as a separate 'Readme' file or within the 'Methods' metadata field)</li>
+				</ul>
+			<p class="title">For how long will the data be available?</p>
+			<p class="para">Once you have deposited data, they are permanently archived and available through the California Digital Library’s Merritt Repository. See our <a href="/xtf/search?smode=policiesPage">Policies</a> page for more information.</p>
+			<p class="title">How will someone find my data?</p>
+			<p class="para">Metadata will be indexed by the Thomson-Reuters Data Citation Index and Scopus.</p>
+			<p class="title">Do the data have to be associated with a publication?</p>
+			<p class="para">No. Dash accepts all quality data, regardless of whether they have been used to publish a paper.</p>
+			<p class="title">Do I need to log into Dash to get data?</p>
+			<p class="para">Persons requesting data are not required to sign-in in download datasets.</p>
+			<p class="title">Do I have to pay for data?</p>
+			<p class="para">No, these data are made publicly available free of charge.</p>
+			<p class="title">What if I have questions about the data?</p>
+			<p class="para">Please contact us at data-consult at lists dot berkeley dot edu with any questions about the data. Your message will be directed to an appropriate source to answer any questions about the data.</p>
+		</div>
+	</faq>
+
+
+
+	<promo-img>
+		<img class="headshot" width="60" height="81" alt="Dr. Famous Researcher, UC Berkeley" src="assets/img/promo/sbeckett01.jpg" />
+	</promo-img>
+	<promo-quote>
+		<p>"Quotation from UC Berkeley researcher." &#8212;Dr. Famous Researcher, UC Berkeley</p>
+	</promo-quote>
+
+	<contactus-script>
+		<script type='text/javascript'>
+			function resetMe(){
+			document.getElementByName("afm_form_e71bf67c").reset();
+			};
+		</script>
+	</contactus-script>
+
+	<contactus-form>
+		<form name="afm_form_e71bf67c" id="afm_form_e71bf67c" action="http://free.allforms.mailjol.net/u/e71bf67c.php" method="post">
+			<label for="name">Name:</label>
+			<input class="input-text" type="text" name="Name:" id="name" /> 
+			<label for="affiliation">Affiliation:</label>
+			<input class="input-text" type="text" name="Lab/Department" id="affiliation" /> 
+			<label for="email">Email:</label>
+			<input class="input-text" type="text" name="Email:" id="email" /> 
+			<label for="message">Message:</label>
+			<textarea rows="10" cols="50" name="Message:" id="message"></textarea> 
+			<input type="hidden" name="feedback-type" value="contact" />
+			<div class="button-container">
+				<input class="input-button" type="image" src="assets/img/submit-button.png" name="submit" value="Submit" alt="Submit"/>  
+				<input class="input-button" type="image" src="assets/img/reset-button.png" name="reset" value="Reset" onclick='document.afm_form_e71bf67c.reset();return false;' alt="Reset"/>
+			</div>
+		</form>
+	</contactus-form>
+
+</brand>
