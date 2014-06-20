@@ -2,6 +2,5 @@ syntax: glob
 
 *.DS_Store
 *.dat
-xtf/conf
 xtf/data
 xtf/index
