@@ -1,8 +1,0 @@
-title
-publisher
-publicationYear
-dates
-resourceType
-relatedIdentifiers
-set
-rightsList
