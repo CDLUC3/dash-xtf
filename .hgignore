@@ -5,3 +5,6 @@ syntax: glob
 xtf/data
 xtf/conf
 xtf/index
+xtf/style/crossQuery/queryParser/default/queryParser.xsl
+xtf/style/dynaXML/docReqParser.xsl
+config.codekit
