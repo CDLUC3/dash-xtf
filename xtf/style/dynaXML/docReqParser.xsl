@@ -102,7 +102,7 @@
 <!--for local environment -->
 <!--    <xsl:variable name="file" select="concat('../../data/',$docId)"/> -->
 <!--for online environment -->
-      <xsl:variable name="file" select="concat('data/',$docId)"/> 
+      <xsl:variable name="file" select="concat('/dash/xtf-data/data/',$docId)"/> 
       <xsl:variable name="stub" select="if ($docId and FileUtils:exists($file)) then FileUtils:readXMLStub($file) else ()"/>
       <xsl:variable name="fileType">
          <xsl:for-each select="$stub">
@@ -168,7 +168,7 @@
 <!--for local environment -->
       <!-- <source path="{concat('data/',$docId)}"/> -->
 <!--for online environment -->
-	<source path="{concat('data/',$docId)}"/> 
+	<source path="{concat('/dash/xtf-data/data/',$docId)}"/> 
       <!-- ==================================================================
          The optional "brand" tag specifies a filesystem path (relative to the
          servlet base directory) that is a simple stylesheet. It should produce
