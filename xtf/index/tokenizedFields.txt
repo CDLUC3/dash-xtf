@@ -6,3 +6,4 @@ resourceType
 relatedIdentifiers
 set
 rightsList
+contributors
