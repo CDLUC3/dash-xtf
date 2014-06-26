@@ -71,7 +71,7 @@
    <xsl:param name="docHits" select="/crossQueryResult/docHit"/>
    <xsl:param name="email"/>
    <xsl:param name="name"/>
-<!--   <xsl:param name="brand"/>   -->
+
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
    <!-- ====================================================================== -->
@@ -104,9 +104,6 @@
 		</xsl:when>
 		<xsl:when test="$smode = 'stepsPage'">   	 
 			<xsl:call-template name="stepsPage"/>
-		</xsl:when>
-		<xsl:when test="$smode = 'contactPage'">   	 
-			<xsl:call-template name="contactPage"/>
 		</xsl:when>
 		<!-- robot response -->
         <xsl:when test="matches($http.user-agent,$robots)">
@@ -233,7 +230,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
 		<body>
 			<!-- begin page id -->
@@ -245,7 +242,7 @@
 						<!-- begin header -->
 						<div class="header">
 							<xsl:copy-of select="$brand.header"/>
-							<xsl:call-template name="nav-header"/> 
+							<xsl:copy-of select="$assets.nav-header"/>
 						</div>
 						<!-- begin content -->
 						<div id="content"> 
@@ -284,6 +281,7 @@
 								</div>
 							</div>
 						</div>
+					<xsl:copy-of select="$assets.nav-footer"/>
 					<xsl:copy-of select="$brand.footer"/>
 					</div>
 				</div>
@@ -394,7 +392,7 @@
 		<body>
 			<div class="header">
 				<xsl:copy-of select="$brand.header"/>
-				<xsl:call-template name="nav-header"/> 
+				<xsl:copy-of select="$assets.nav-header"/>
 			</div>
             <!-- result header -->
             <div class="resultsHeader">
@@ -475,6 +473,7 @@
 				</table>
 			</div>
 			<!-- footer -->
+			<xsl:copy-of select="$assets.nav-footer"/>
 			<xsl:copy-of select="$brand.footer"/>
 		</body>
 	</html>
@@ -493,7 +492,7 @@
 		<body>
 			<div class="header">
 				<xsl:copy-of select="$brand.header"/>
-				<xsl:call-template name="nav-header"/> 
+				<xsl:copy-of select="$assets.nav-header"/>
 			</div>
 			<div class="content content-researchgroup">
 				<h2>Datasets from 
@@ -516,6 +515,7 @@
 					</div>
 				</xsl:if>
 			</div>
+			<xsl:copy-of select="$assets.nav-footer"/>
 			<xsl:copy-of select="$brand.footer"/>
 		</body>
 	</html>
@@ -534,7 +534,7 @@
 		<body>
 			<div class="header">
 				<xsl:copy-of select="$brand.header"/>
-				<xsl:call-template name="nav-header"/> 
+				<xsl:copy-of select="$assets.nav-header"/>
 			</div>
 			<div class="content content-researchgroup">
 				<h2>Labs on Dash:</h2>		
@@ -563,6 +563,7 @@
 					</div>
 				</div>
 			</div>
+			<xsl:copy-of select="$assets.nav-footer"/>
 			<xsl:copy-of select="$brand.footer"/>
 		</body>
 	</html>
@@ -576,12 +577,12 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	  	<head>
 			<title>Datasets from 	<xsl:value-of select="$f1-creator"/> (Dash)</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
 		<body>
 			<div class="header">
 				<xsl:copy-of select="$brand.header"/>
-				<xsl:call-template name="nav-header"/> 
+				<xsl:copy-of select="$assets.nav-header"/>
 			</div>
 			<div class="content content-researchgroup">
 				<h2>Datasets from 
@@ -604,6 +605,7 @@
 					</div>
 				</xsl:if>
 			</div>
+			<xsl:copy-of select="$assets.nav-footer"/>
 			<xsl:copy-of select="$brand.footer"/>
 		</body>
 	</html>
@@ -616,12 +618,12 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   		<head>
 			<title>Dash: Browse by Researcher</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
 		<body>
 			<div class="header">
 				<xsl:copy-of select="$brand.header"/>
-				<xsl:call-template name="nav-header"/> 
+				<xsl:copy-of select="$assets.nav-header"/>
 			</div>
 			<div class="content content-researchgroup">
 				<h2>Researchers on Dash:</h2>		
@@ -641,6 +643,7 @@
 					</div>
 				</div>
 			</div>
+			<xsl:copy-of select="$assets.nav-footer"/>
 			<xsl:copy-of select="$brand.footer"/>
 		</body>
 	</html>
@@ -961,54 +964,6 @@
 	</html>
 </xsl:template>
 
-<!-- ====================================================================== -->
-<!-- contactPage Template		                                           	-->
-<!-- ====================================================================== -->
-<xsl:template name="contactPage">
-	<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-		<head>
-			<title>Dash: Contact Us - Open data for the global research community</title>
-			<xsl:copy-of select="$brand.contactus-script"/>
-			<xsl:copy-of select="$brand.htmlhead"/>
-		</head>
-		<body>
-			<!-- begin page id -->
-			<div id="contact-us-page"> 
-				<!-- begin outer container -->  
-				<div id="outer-container"> 
-					<!-- begin inner container -->
-					<div id="inner-container"> 
-      					<div class="header">
-				     		<xsl:copy-of select="$brand.header"/>
-							<xsl:call-template name="nav-header"/> 
-				    	</div>
-						<!-- begin content -->
-						<div id="content"> 	
-							<div class="single-column">
-								<xsl:choose>
-									<xsl:when test="$type='confirmation'">
-										<h1>Confirmation</h1>
-										<p>Thanks for contacting the Dash team. We'll get back to you shortly.</p>
-									</xsl:when>
-									<xsl:otherwise>
-										<h1>Contact us</h1>
-										<div class="contact-us-form">
-											<xsl:copy-of select="$brand.contactus-form"/>
-										</div>
-									</xsl:otherwise>
-								</xsl:choose>
-							</div>
-						</div> <!-- end content-->
-						<div id="triangle-container">
-							<div id="triangle"></div>
-						</div>
-					<xsl:copy-of select="$brand.footer"/>
-					</div> <!-- end inner container -->
-				</div> <!-- end outer container -->
-			</div>
-		</body>
-	</html>
-</xsl:template>
 
 <!-- ====================================================================== -->
 <!-- faqPage Template		                                           		-->
@@ -1017,7 +972,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: FAQ - Open data for the global research community</title>
-				<xsl:copy-of select="$brand.htmlhead"/>
+				<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1028,7 +983,7 @@
 				    <div id="inner-container"> 
 						<div class="header">
 				     		<xsl:copy-of select="$brand.header"/>
-							<xsl:call-template name="nav-header"/> 
+							<xsl:copy-of select="$assets.nav-header"/>
 				    	</div>
 						<!-- begin content -->
 						<div id="content">
@@ -1040,6 +995,7 @@
 						<div id="triangle-container">
 							<div id="triangle"></div>
 						</div>
+						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
 				</div> <!-- end outer container -->
@@ -1055,7 +1011,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Terms of Use - Open data for the global research community</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1066,7 +1022,7 @@
 					<div id="inner-container"> 
 						<div class="header">
 							<xsl:copy-of select="$brand.header"/>
-							<xsl:call-template name="nav-header"/> 
+							<xsl:copy-of select="$assets.nav-header"/>
 						</div>
 						<!-- begin content -->
 						<div id="content"> 	
@@ -1081,6 +1037,7 @@
 						<div id="triangle-container">
 							<div id="triangle"></div>
 						</div>
+						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
 				</div> <!-- end outer container -->
@@ -1096,7 +1053,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Preparing to Submit - Open data for the global research community</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1107,7 +1064,7 @@
 				    <div id="inner-container"> 
 						<div class="header">
 				     		<xsl:copy-of select="$brand.header"/>
-							<xsl:call-template name="nav-header"/> 
+							<xsl:copy-of select="$assets.nav-header"/>
 				    	</div>
 						<!-- begin content -->
 						<div id="content"> 	
@@ -1137,6 +1094,7 @@
 						<div id="triangle-container">
 							<div id="triangle"></div>
 						</div>
+						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
 				</div> <!-- end outer container -->
@@ -1152,7 +1110,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Policies- Open data for the global research community</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1163,7 +1121,7 @@
 				    <div id="inner-container"> 
 						<div class="header">
 				     		<xsl:copy-of select="$brand.header"/>
-							<xsl:call-template name="nav-header"/> 
+							<xsl:copy-of select="$assets.nav-header"/>
 				    	</div>
 						<!-- begin content -->
 						<div id="content"> 	
@@ -1181,6 +1139,7 @@
 						<div id="triangle-container">
 							<div id="triangle"></div>
 						</div>
+						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
 				</div> <!-- end outer container -->
@@ -1197,7 +1156,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Upload FAQ - Open data for the global research community</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1208,7 +1167,7 @@
 				    <div id="inner-container"> 
 						<div class="header">
 				     		<xsl:copy-of select="$brand.header"/>
-							<xsl:call-template name="nav-header"/> 
+							<xsl:copy-of select="$assets.nav-header"/>
 				    	</div>
 						<!-- begin content -->
 						<div id="content"> 	
@@ -1228,6 +1187,7 @@
 						<div id="triangle-container">
 							<div id="triangle"></div>
 						</div>
+						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
 				</div> <!-- end outer container -->
@@ -1243,7 +1203,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Data Use Agreement - Open data for the global research community</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1254,7 +1214,7 @@
 				    <div id="inner-container"> 
 						<div class="header">
 				     		<xsl:copy-of select="$brand.header"/>
-							<xsl:call-template name="nav-header"/> 
+							<xsl:copy-of select="$assets.nav-header"/>
 				    	</div>
 						<!-- begin content -->
 						<div id="content"> 	
@@ -1283,6 +1243,7 @@
 						<div id="triangle-container">
 							<div id="triangle"></div>
 						</div>
+						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
 				</div> <!-- end outer container -->
@@ -1298,7 +1259,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Metadata Basics - Open data for the global research community</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1309,7 +1270,7 @@
 				    <div id="inner-container"> 
 						<div class="header">
 				     		<xsl:copy-of select="$brand.header"/>
-							<xsl:call-template name="nav-header"/> 
+							<xsl:copy-of select="$assets.nav-header"/>
 				    	</div>
 							<!-- begin content -->
 						<div id="content"> 	
@@ -1367,6 +1328,7 @@
 						<div id="triangle-container">
 							<div id="triangle"></div>
 						</div>
+						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
 				</div> <!-- end outer container -->
@@ -1382,7 +1344,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Steps to Share your Data - Open data for the global research community</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1393,7 +1355,7 @@
 				    <div id="inner-container"> 
 						<div class="header">
 				     		<xsl:copy-of select="$brand.header"/>
-							<xsl:call-template name="nav-header"/> 
+							<xsl:copy-of select="$assets.nav-header"/>
 				    	</div>
 						<!-- begin content -->
 						<div id="content"> 	
@@ -1434,6 +1396,7 @@
 						<div id="triangle-container">
 							<div id="triangle"></div>
 						</div>
+						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
 				</div> <!-- end outer container -->
@@ -1449,7 +1412,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Open data for the global research community</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1460,7 +1423,7 @@
 				    <div id="inner-container"> 
 						<div class="header"> 
 				     		<xsl:copy-of select="$brand.header"/>
-							<xsl:call-template name="nav-header"/> 
+							<xsl:copy-of select="$assets.nav-header"/>
 				    	</div> 
 						<!-- begin content -->
 						<div id="content"> 	
@@ -1482,6 +1445,7 @@
 								</div>
 							</div>
 						</div>
+						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div>
 				</div>
@@ -1497,7 +1461,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Why Share Data?</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
 			<div id="terms-of-use"> 
@@ -1507,7 +1471,7 @@
 				    <div id="inner-container"> 
 						<div class="header">
 							<xsl:copy-of select="$brand.header"/>
-							<xsl:call-template name="nav-header"/> 
+							<xsl:copy-of select="$assets.nav-header"/>
 						</div>
 						<div class="content">
 							<h1>Why Share Data?</h1>
@@ -1553,6 +1517,7 @@
 								<br/><a href="http://www.kevinmd.com/blog/2011/10/medical-scientists-share-data.html">http://www.kevinmd.com/blog/2011/10/medical-scientists-share-data.html</a></li>
 							</ul>
 						</div>
+						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div>
 				</div>

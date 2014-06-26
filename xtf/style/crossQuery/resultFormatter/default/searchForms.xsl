@@ -57,7 +57,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Open data for the global research community</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
 		<xsl:if test="matches($smode,'simple')">
 			<xsl:call-template name="simpleForm"/>
@@ -134,7 +134,7 @@
 					<!-- begin header -->
 					<div class="header">
 						<xsl:copy-of select="$brand.header"/>
-						<xsl:call-template name="nav-header"/> 
+						<xsl:copy-of select="$assets.nav-header"/>
 					</div>
 					<div id="banner">
 						<img src="assets/img/banner-home-v8.0.jpg" width="952" height="72" alt="Publish and Download Research Datasets"/>
@@ -176,6 +176,7 @@
 							</div>
 						</div>
 					</div>  <!-- end content-->
+					<xsl:copy-of select="$assets.nav-footer"/>
 					<xsl:copy-of select="$brand.footer"/>
 				</div> <!-- end inner container -->
 			</div> <!-- end outer container -->
@@ -183,25 +184,16 @@
 	</body>
 </xsl:template>
 
-<xsl:template name="nav-header">
-	<div id="nav-home-menu">
-		<div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
-		<div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
-		<div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data</a></div>
-		<div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
-	</div>
-</xsl:template>
-
 <xsl:template name="affiliation">
 	<html>
 		<head>
 			<title>DataShare: Browse by Lab</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
 		<body>
 			<div class="header">
 				<xsl:copy-of select="$brand.header"/>
-				<xsl:call-template name="nav-header"/>
+				<xsl:copy-of select="$assets.nav-header"/>
 			</div>
 			<div class="content">
 				<h2>Labs on DataShare:</h2>
@@ -213,6 +205,7 @@
 			   		</xsl:for-each>
 				</ul>
 			</div>
+			<xsl:copy-of select="$assets.nav-footer"/>
 		    <xsl:copy-of select="$brand.footer"/>
 		</body>
 	</html>
@@ -222,12 +215,12 @@
 	<html>
 		<head>
 			<title>DataShare: Browse by Researcher</title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>			
 		<body>
 			<div class="header">
 				<xsl:copy-of select="$brand.header"/>
-				<xsl:call-template name="nav-header"/> 
+				<xsl:copy-of select="$assets.nav-header"/>
 			</div>
 		    <div class="content">
 				<h2>Researchers on DataShare:</h2>
@@ -239,6 +232,7 @@
 		   			</xsl:for-each>
 				</ul>
 		    </div>
+			<xsl:copy-of select="$assets.nav-footer"/>
 			<xsl:copy-of select="$brand.footer"/>
 		</body>
 	</html>

@@ -145,12 +145,19 @@
          </xsl:otherwise>
       </xsl:choose>
    </xsl:variable>
+
+   <xsl:variable name="assets">
+       <xsl:copy-of select="document('../../../../assets/assets.xml')"/>
+   </xsl:variable>
    
-   <xsl:param name="brand.links" select="$brand.file/brand/dynaxml.links/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-   <xsl:param name="brand.header" select="$brand.file/brand/dynaxml.header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-   <xsl:param name="brand.footer" select="$brand.file/brand/footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-   <xsl:param name="brand.htmlhead" select="$brand.file//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-   
+   <xsl:param name="brand.links" select="$brand.file//links/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:param name="brand.header" select="$brand.file//header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:param name="brand.footer" select="$brand.file//footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:param name="brand.faq" select="$brand.file//faq/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>    
+
+   <xsl:param name="assets.htmlhead" select="$assets//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:param name="assets.nav-header" select="$assets//nav-header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:param name="assets.nav-footer" select="$assets//nav-footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
    <!-- Special Robot Parameters -->
    
    <xsl:param name="http.user-agent"/>
@@ -319,7 +326,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<title>Dash: <xsl:apply-templates select="//title"/></title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
 		<body>
 			<div id="dataset-description-page"> 

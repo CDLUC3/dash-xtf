@@ -192,7 +192,6 @@
    <xsl:param name="style"/>
    <xsl:param name="smode" select="'simple'"/>
    <xsl:param name="rmode" select="'none'"/>
-   <!-- <xsl:param name="brand" select="'default'"/> -->
    <xsl:param name="sort"/>
    
    <!-- XML Output Parameter -->
@@ -210,17 +209,21 @@
       </xsl:choose>
    </xsl:variable>
 
+   <xsl:variable name="assets">
+       <xsl:copy-of select="document('../../../../assets/assets.xml')"/>
+   </xsl:variable>
+   
    <!-- Branding parameters -->
    <xsl:param name="brand.links" select="$brand.file//links/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.header" select="$brand.file//header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.footer" select="$brand.file//footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-   <xsl:param name="brand.contact" select="$brand.file//contact/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-   <xsl:param name="brand.htmlhead" select="$brand.file//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.faq" select="$brand.file//faq/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
    <xsl:param name="brand.promo-img" select="$brand.file//promo-img/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
-   <xsl:param name="brand.promo-quote" select="$brand.file//promo-quote/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
-   <xsl:param name="brand.contactus-form" select="$brand.file//contactus-form/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
-   <xsl:param name="brand.contactus-script" select="$brand.file//contactus-script/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
+   <xsl:param name="brand.promo-quote" select="$brand.file//promo-quote/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>  
+   
+   <xsl:param name="assets.htmlhead" select="$assets//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:param name="assets.nav-header" select="$assets//nav-header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:param name="assets.nav-footer" select="$assets//nav-footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
 
    <!-- Paging Parameters-->  
    <xsl:param name="startDoc" as="xs:integer" select="1"/>
