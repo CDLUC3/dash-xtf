@@ -125,7 +125,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<title>Dash: <xsl:apply-templates select="//title"/></title>
-			<xsl:copy-of select="$brand.htmlhead"/>
+			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
 		<body>
 			<div id="dataset-description-page"> 
@@ -307,6 +307,7 @@
 								</div>
 							</div>
 						</div>
+						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div>
 				</div>

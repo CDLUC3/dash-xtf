@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assets xmlns="http://www.w3.org/1999/xhtml">
+	<htmlhead>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8; charset=UTF-8" />
+		<link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+		<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+		<meta name="description" content="Research data sharing" />
+		<meta name="keywords" content="Research data management" />
+		<script type="text/javascript">var less = {env: "development"};</script>
+	    <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript"/>
+	    <script src="assets/js/datashare.js" type="text/javascript"/>
+		<script src="assets/js/clearText.js" type="text/javascript"/>
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-34221926-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+	</htmlhead>
+
+	<nav-header>
+		<div id="nav-home-menu">
+			<div id="about-nav" class="menu"><a href="/xtf/search?smode=aboutPage">About</a></div>
+			<div id="search-nav" class="menu"><a href="/xtf/search">Search Data</a></div>
+			<div id="publish-nav" class="menu"><a href="/xtf/search?smode=stepsPage">Share Data</a></div>
+			<div id="my-datasets-nav" class="menu"><a href="/login">My Datasets</a></div>
+		</div>
+	</nav-header>
+
+	<nav-footer>
+		<div id="footer">
+			<div id="footer-container" class="shading">
+				<div id="terms"><a href="http://www.cdlib.org/about/terms.html">Terms of Use</a></div>
+				<div id="faq-footer"><a href="/xtf/search?smode=faqPage" title="Frequently Asked Questions">FAQ</a></div>
+				<div id="policies"><a href="/xtf/search?smode=policiesPage">Policies</a></div>
+				<div id="contact-us"><a href="/contact">Contact Us</a></div>
+			</div>
+		</div>   
+	</nav-footer>
+
+</assets>
