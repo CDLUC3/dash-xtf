@@ -17,7 +17,6 @@ body {
 	padding: 0;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 80%;
-	line-height: 1.3em;
 	font-weight: normal;
 	}
 a:link, a:hover, a:visited, a:active {
@@ -40,7 +39,6 @@ a img {
 
 h1 {
 	font-size: 230%;
-	margin: 0 0;
 }
 
 .clear { 
