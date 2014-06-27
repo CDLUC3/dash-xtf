@@ -755,12 +755,12 @@ width: 190px;
 	height: 100%;
 }
 
-#my-datasets-page .dataset-table table, #metadata-basics-page table{
+#my-datasets-page .dataset-table table {
 	width: 100%;
 	border-collapse:collapse;
 }
 
-#my-datasets-page .dataset-table table, td, th, #metadata-basics-page table, td, th{
+#my-datasets-page .dataset-table table, td, th {
 		border: 1px solid #58585a;
 		/* text-align: center; */
 		padding: 4px;
@@ -782,6 +782,16 @@ width: 190px;
 }
 #my-datasets-page .data-action {
 	width: 120px;
+}
+
+/* Metadata Basics styles */
+
+#metadata-basics-page table {
+	border: 1px solid #999;
+}
+
+#metadata-basics-page th {
+	white-space: nowrap;
 }
 
 /* General Steps styles */
