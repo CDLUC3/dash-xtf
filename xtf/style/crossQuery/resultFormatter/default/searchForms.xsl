@@ -150,10 +150,14 @@
 								<h1>Search for Data</h1>
 									<form id="search-form" name="search-form" action="#" method="get">
 										<label for="search-box"><span class="hidden">Search</span></label><input id="search-box" name="keyword" type="text"/>
-										<input id="search-go" type="submit" name="submit" value=""></input>
+										<button class="btn" type="submit" name="submit">Go</button>
+										<!-- <input id="search-go" type="submit" name="submit" value=""></input> -->
 									</form>
 									<p id="or">or</p>
-									<a href="/xtf/search?browse-all=yes"><input type="image" src="assets/img/browse.png" id="browse" alt="Browse all data"/></a>
+									<a href="/xtf/search?browse-all=yes">
+										<button class="btn">Browse all data</button>
+										<!-- <input type="image" src="assets/img/browse.png" id="browse" alt="Browse all data"/> -->
+									</a>
 								</div>
 							</div>
 						</div>
@@ -171,7 +175,10 @@
 										<li>Promote reuse</li>
 										<li>Meet funder requirements</li>
 									</ul>
-									<a href="/xtf/search?smode=stepsPage"><img src="assets/img/learn-more.gif" width="125" height="27" alt="Learn more"/></a>
+									<a href="/xtf/search?smode=stepsPage">
+										<button class="btn">Learn more</button>
+										<!-- <img src="assets/img/learn-more.gif" width="125" height="27" alt="Learn more"/> -->
+									</a>
 								</div>
 							</div>
 						</div>
