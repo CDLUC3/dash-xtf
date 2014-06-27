@@ -2,6 +2,7 @@
 <assets xmlns="http://www.w3.org/1999/xhtml">
 	<htmlhead>
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8; charset=UTF-8" />
+	    <link rel="stylesheet" href="assets/css/bootstrap.2.3.2.min.css" type="text/css" />
 		<link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
 		<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
 		<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
