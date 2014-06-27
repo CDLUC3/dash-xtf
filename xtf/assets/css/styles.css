@@ -35,10 +35,19 @@ a:hover, a:active {
 }
 a img {
 	border: none; 
-}	
+}
+
+h1, h2, h3 {
+	margin: 1em 0;
+	line-height: 1em;
+}
 
 h1 {
-	font-size: 230%;
+	font-size: 2.4em;
+}
+
+h2 {
+	font-size: 1.6em;
 }
 
 .clear { 
@@ -473,16 +482,6 @@ height: 49px;
 /* Terms of Use page styles */
 #terms-of-use #terms-content {
 	margin: 58px 0 0 79px;
-}
-
-#terms-of-use #terms-content h1 {
-	font-size: 230%;
-	margin: 0 0;
-}
-
-#terms-of-use #terms-content p {
-	margin: 0 0 0 0;
-	line-height: 157%;
 }
 
 #terms-of-use #terms-content .text-container {
