@@ -1557,7 +1557,9 @@
 										</ul>
 									</div>
 									<div class="begin">
-										<a href="/login"><img src="assets/img/begin2.gif" width="149" height="42" alt="Begin"/></a>
+										<a href="/login">
+											<button class="btn btn-large btn-success">Begin</button>
+										</a>
 									</div>
 								</div>
 								<div id="right-container">
