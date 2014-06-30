@@ -191,58 +191,5 @@
 	</body>
 </xsl:template>
 
-<xsl:template name="affiliation">
-	<html>
-		<head>
-			<title>DataShare: Browse by Lab</title>
-			<xsl:copy-of select="$assets.htmlhead"/>
-		</head>
-		<body>
-			<div class="header">
-				<xsl:copy-of select="$brand.header"/>
-				<xsl:copy-of select="$assets.nav-header"/>
-			</div>
-			<div class="content">
-				<h2>Labs on DataShare:</h2>
-				<ul>
-					<xsl:for-each select="document('../../../../static/brand/labinfo.xml')/labs/lab">
-						<li>
-							<a href="/xtf/search?browse-lab=all;f1-contributor={contributor}"><xsl:value-of select="campus"/>, <xsl:value-of select="name"/></a>
-						</li>
-			   		</xsl:for-each>
-				</ul>
-			</div>
-			<xsl:copy-of select="$assets.nav-footer"/>
-		    <xsl:copy-of select="$brand.footer"/>
-		</body>
-	</html>
-</xsl:template>
-	
-<xsl:template name="researcher">
-	<html>
-		<head>
-			<title>DataShare: Browse by Researcher</title>
-			<xsl:copy-of select="$assets.htmlhead"/>
-		</head>			
-		<body>
-			<div class="header">
-				<xsl:copy-of select="$brand.header"/>
-				<xsl:copy-of select="$assets.nav-header"/>
-			</div>
-		    <div class="content">
-				<h2>Researchers on DataShare:</h2>
-				<ul>
-					<xsl:for-each select="document('../../../../static/brand/researcherinfo.xml')/researchers/researcher">
-						<li>
-		        			<a href="/xtf/search?browse-researcher=all;f1-creator={editURL:protectValue(creator)}"><xsl:value-of select="creator"/></a>
-						</li>
-		   			</xsl:for-each>
-				</ul>
-		    </div>
-			<xsl:copy-of select="$assets.nav-footer"/>
-			<xsl:copy-of select="$brand.footer"/>
-		</body>
-	</html>
-</xsl:template>
-   
+  
 </xsl:stylesheet>
