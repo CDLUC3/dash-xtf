@@ -164,49 +164,6 @@
 			</xsl:call-template>
 		</xsl:when>
 
-		<xsl:when test="$browse-lab">
-			<xsl:call-template name="translate">
-				<xsl:with-param name="resultTree">
-					<xsl:apply-templates select="crossQueryResult" mode="lab"/>
-				</xsl:with-param>
-			</xsl:call-template>
-		</xsl:when>
-
-		<xsl:when test="$browse-labs">
-			<xsl:call-template name="translate">
-				<xsl:with-param name="resultTree">
-					<xsl:apply-templates select="crossQueryResult" mode="labs"/>
-				</xsl:with-param>
-			</xsl:call-template>
-		</xsl:when>
-
-		<xsl:when test="$browse-researcher">
-			<xsl:call-template name="translate">
-				<xsl:with-param name="resultTree">
-					<xsl:apply-templates select="crossQueryResult" mode="researcher"/>
-				</xsl:with-param>
-			</xsl:call-template>
-		</xsl:when>
-
-		<xsl:when test="$browse-researchers">
-			<xsl:call-template name="translate">
-				<xsl:with-param name="resultTree">
-					<xsl:apply-templates select="crossQueryResult" mode="researchers"/>
-				</xsl:with-param>
-			</xsl:call-template>
-		</xsl:when>
-
-		<xsl:when test="$smode = 'affiliation'">
-			<xsl:call-template name="affiliation"/>
-		</xsl:when>
-		
-		<xsl:when test="$smode = 'researcher'">        
-			<xsl:call-template name="researcher"/>
-		</xsl:when>
-		
-		<xsl:when test="$smode = 'oru'">
-			<xsl:call-template name="oru"/>
-		</xsl:when>
 		<!-- show results -->
 		<xsl:when test="crossQueryResult/query/*/*">
 			<xsl:call-template name="translate">
@@ -480,174 +437,6 @@
 </xsl:template>
 
 
-<!-- ======================================================================	-->
-<!-- Lab Template		                                                  	-->
-<!-- ====================================================================== -->
-<xsl:template match="crossQueryResult" mode="lab" exclude-result-prefixes="#all">
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  		<head>
-			<title>Datasets from <xsl:value-of select="replace($f1-contributor, '::', '-')"/> (Dash)</title>
-			<xsl:copy-of select="$brand.links"/>
-		</head>
-		<body>
-			<div class="header">
-				<xsl:copy-of select="$brand.header"/>
-				<xsl:copy-of select="$assets.nav-header"/>
-			</div>
-			<div class="content content-researchgroup">
-				<h2>Datasets from 
-				<xsl:value-of select="replace($f1-contributor, '::', '-')"/>
-				</h2>
-				<div class="researchgroup-datasets">
-					<div class="search-result">
-						<xsl:apply-templates select="docHit"/>
-						<xsl:if test="@totalDocs > $docsPerPage">
-							<xsl:call-template name="pages"/>
-						</xsl:if>
-					</div>
-				</div>
-				<xsl:if test="document('../../../../static/brand/labinfo.xml')//labs/lab[@id=$f1-contributor]/contributor"> 
-					<div class="researchgroup-about">
-						<div class="promo-box">
-							<h3>About <xsl:value-of select="replace(document('../../../../static/brand/labinfo.xml')//labs/lab[@id=$f1-contributor]/contributor, '::', '-')"/></h3>
-							<xsl:value-of select="document('../../../../static/brand/labinfo.xml')//labs/lab[@id=$f1-contributor]/description"/>
-						</div>
-					</div>
-				</xsl:if>
-			</div>
-			<xsl:copy-of select="$assets.nav-footer"/>
-			<xsl:copy-of select="$brand.footer"/>
-		</body>
-	</html>
-</xsl:template>
-
-
-<!-- ====================================================================== -->
-<!-- List Lab Template		                                                -->
-<!-- ====================================================================== -->
-<xsl:template match="crossQueryResult" mode="labs" exclude-result-prefixes="#all">
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  		<head>
-			<title>Dash: Browse by Lab</title>
-			<xsl:copy-of select="$brand.links"/>
-		</head>
-		<body>
-			<div class="header">
-				<xsl:copy-of select="$brand.header"/>
-				<xsl:copy-of select="$assets.nav-header"/>
-			</div>
-			<div class="content content-researchgroup">
-				<h2>Labs on Dash:</h2>		
-				<div class="researchgroup-datasets">
-					<div class="search-result">
-						<xsl:for-each select="distinct-values(docHit/meta/*:contributor)">
-							<xsl:sort order="ascending"/>
-							<xsl:variable name="temp" select="."/>
-							<li>
-							<a href="/xtf/search?browse-lab=all;f1-contributor={.}">
-							<xsl:choose>		
-								<xsl:when test="document('../../../../static/brand/labinfo.xml')//labs/lab[@id=$temp]/contributor"> 
-									<xsl:value-of select="replace(., '::', '-')"/>,		
-									<xsl:value-of select="document('../../../../static/brand/labinfo.xml')//labs/lab[@id=$temp]/name"/>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:value-of select="replace(., '::', '-')"/>
-								</xsl:otherwise>
-							</xsl:choose>
-							</a>			
-							</li>
-						</xsl:for-each>
-						<xsl:if test="@totalDocs > $docsPerPage">
-							<xsl:call-template name="pages"/>
-						</xsl:if>
-					</div>
-				</div>
-			</div>
-			<xsl:copy-of select="$assets.nav-footer"/>
-			<xsl:copy-of select="$brand.footer"/>
-		</body>
-	</html>
-</xsl:template>
-
-
-<!-- ====================================================================== -->
-<!-- Researcher Template		                                            -->
-<!-- ====================================================================== -->
-<xsl:template match="crossQueryResult" mode="researcher" exclude-result-prefixes="#all">
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-	  	<head>
-			<title>Datasets from 	<xsl:value-of select="$f1-creator"/> (Dash)</title>
-			<xsl:copy-of select="$assets.htmlhead"/>
-		</head>
-		<body>
-			<div class="header">
-				<xsl:copy-of select="$brand.header"/>
-				<xsl:copy-of select="$assets.nav-header"/>
-			</div>
-			<div class="content content-researchgroup">
-				<h2>Datasets from 
-				<xsl:value-of select="$f1-creator"/>
-				</h2>
-				<div class="researchgroup-datasets">
-					<div class="search-result">
-						<xsl:apply-templates select="docHit"/>
-							<xsl:if test="@totalDocs > $docsPerPage">
-								<xsl:call-template name="pages"/>
-							</xsl:if>
-					</div>
-				</div>
-				<xsl:if test="document('../../../../static/brand/researcherinfo.xml')//researchers/researcher[@id=$f1-creator]/creator"> 
-					<div class="researchgroup-about">
-						<div class="promo-box">
-							<h3>About <xsl:value-of select="document('../../../../static/brand/researcherinfo.xml')//researchers/researcher[@id=$f1-creator]/creator"/></h3>
-							<xsl:value-of select="document('../../../../static/brand/researcherinfo.xml')//researchers/researcher[@id=$f1-creator]/description"/>
-						</div>
-					</div>
-				</xsl:if>
-			</div>
-			<xsl:copy-of select="$assets.nav-footer"/>
-			<xsl:copy-of select="$brand.footer"/>
-		</body>
-	</html>
-</xsl:template>
-
-<!-- ====================================================================== -->
-<!-- Researchers Template (list all researchers)                            -->
-<!-- ====================================================================== -->
-<xsl:template match="crossQueryResult" mode="researchers" exclude-result-prefixes="#all">
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  		<head>
-			<title>Dash: Browse by Researcher</title>
-			<xsl:copy-of select="$assets.htmlhead"/>
-		</head>
-		<body>
-			<div class="header">
-				<xsl:copy-of select="$brand.header"/>
-				<xsl:copy-of select="$assets.nav-header"/>
-			</div>
-			<div class="content content-researchgroup">
-				<h2>Researchers on Dash:</h2>		
-				<div class="researchgroup-datasets">
-					<div class="search-result">
-						<xsl:for-each select="distinct-values(docHit/meta/*:creator)">
-							<xsl:sort  order="ascending" data-type="text" />
-							<li>
-							<a href="/xtf/search?browse-researcher=all;f1-creator={.}">
-							<xsl:value-of select="."/></a>			
-							</li>
-						</xsl:for-each>
-						<xsl:if test="@totalDocs > $docsPerPage">
-							<xsl:call-template name="pages"/>
-						</xsl:if>
-
-					</div>
-				</div>
-			</div>
-			<xsl:copy-of select="$assets.nav-footer"/>
-			<xsl:copy-of select="$brand.footer"/>
-		</body>
-	</html>
-</xsl:template>
 
 
 <xsl:template name="browseLinks">
@@ -901,15 +690,6 @@
 	</li>
 </xsl:template>
 	
-<!-- ====================================================================== -->
-<!-- docHit/labForm Template                                           		-->
-<!-- ====================================================================== -->
-<xsl:template match="docHit" mode="labForm" exclude-result-prefixes="#all">
-	<xsl:variable name="path" select="@path"/>
-		<li>
-			<xsl:apply-templates select="meta/contributor"/>
-		</li>
-</xsl:template>
 
 <!-- ====================================================================== -->
 <!-- Search controls Template                                           	-->
@@ -935,34 +715,6 @@
 </xsl:template>
 
 
-<!-- ====================================================================== -->
-<!-- ORU Template				                                           	-->
-<!-- ====================================================================== -->
-<xsl:template name="oru">
-	<xsl:param name="orgName"/>
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-		<head><title>Dash Organizations</title>
-			<xsl:copy-of select="$brand.links"/>
-			<!-- AJAX support -->
-			<script src="script/yui/yahoo-dom-event.js" type="text/javascript"/> 
-			<script src="script/yui/connection-min.js" type="text/javascript"/> 
-		</head>
-		<body>
-			<xsl:copy-of select="$brand.header"/>
-			<p>	
-				<xsl:value-of select="document('../../../../static/brand/labinfo.xml')//labs/lab[@id=$name]/campus"/>
-			</p>
-			<p>
-				<xsl:value-of select="document('../../../../static/brand/labinfo.xml')//labs/lab[@id=$name]/name"/>
-			</p>
-			<p>
-				<xsl:value-of select="document('../../../../static/brand/labinfo.xml')//labs/lab[@id=$name]/description"/>
-			</p>
-				<a href="search?contributor={document('../../../../static/brand/labinfo.xml')//labs/lab[@id=$name]/contributor}">
-				<xsl:value-of select="string(./name)" />Publications</a>
-		</body>
-	</html>
-</xsl:template>
 
 
 <!-- ====================================================================== -->
@@ -1004,47 +756,6 @@
 	</html>
 </xsl:template>
 	
-<!-- ====================================================================== -->
-<!-- termsPage Template		                                           		-->
-<!-- ====================================================================== -->
-<xsl:template name="termsPage">
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-		<head>
-			<title>Dash: Terms of Use - Open data for the global research community</title>
-			<xsl:copy-of select="$assets.htmlhead"/>
-		</head>
- 		<body>
-			<!-- begin page id -->
-			<div id="terms-of-use"> 
-				<!-- begin outer container -->  
-				<div id="outer-container"> 
-					<!-- begin inner container -->
-					<div id="inner-container"> 
-						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
-							<xsl:copy-of select="$assets.nav-header"/>
-						</div>
-						<!-- begin content -->
-						<div id="content"> 	
-							<div id="terms-content">
-								<h1>Terms of Use</h1>
-								<div class="text-container">
-									<p>Dash encourages the use of this site, regardless of domain address, as a way to share information and knowledge in support of the University's three-part mission of education, research and public service. This site is owned by The Regents of the University of California and operated by the Dash project group. Site content is subject to change without notice. While most parts of this site are publicly accessible, certain services and information offered online may be restricted to specific users or segments of the University of California population.</p>
-									<p class="secondary-para">Dash collects information to improve functionality and content and to monitor performance. Data is used to help answer specific questions about the usage and performance of the web site or individual web pages. At no time is site usage associated with individual IP addresses.</p>
-								</div>
-							</div>
-						</div> <!-- end content-->
-						<div id="triangle-container">
-							<div id="triangle"></div>
-						</div>
-						<xsl:copy-of select="$assets.nav-footer"/>
-						<xsl:copy-of select="$brand.footer"/>
-					</div> <!-- end inner container -->
-				</div> <!-- end outer container -->
-			</div>
-		</body>
-	</html>
-</xsl:template>
 
 <!-- ====================================================================== -->
 <!-- preparePage Template		                                           	-->
