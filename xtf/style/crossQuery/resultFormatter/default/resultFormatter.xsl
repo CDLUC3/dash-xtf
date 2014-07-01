@@ -102,6 +102,9 @@
 		<xsl:when test="$smode = 'policiesPage'">   	 
 			<xsl:call-template name="policiesPage"/>
 		</xsl:when>
+		<xsl:when test="$smode = 'rightsPage'">   	 
+			<xsl:call-template name="rightsPage"/>
+		</xsl:when>
 		<xsl:when test="$smode = 'stepsPage'">   	 
 			<xsl:call-template name="stepsPage"/>
 		</xsl:when>
@@ -840,192 +843,64 @@
 								<h1>Policies</h1>
 								<div class="text-container">
 									  <h2>Scope</h2>
-
 									  <p>All fields of scholarship. All types of research artifacts. Content must not violate privacy or copyright, or breach confidentiality or nondisclosure for data collected from human subjects.</p>
 
-									  
-
 									  <h2>Status of research data</h2>
-
-									  <p>Complete, final research data sets
-									  are accepted, although there is no restriction on uploading new versions. The content
-									  does not need to be associated with a published research article.</p>
-
-									  
+									  <p>Complete, final research data sets are accepted, although there is no restriction on uploading new versions. The content does not need to be associated with a published research article.</p>
 
 									  <h2>Eligible depositors</h2>
-
-									  <p>Access to the Dash data submission system is limited to individuals
-									  affiliated with UC campuses that have implemented Dash. Contact <a href="mailto:uc3@ucop.edu">uc3@ucop.edu</a> for
-									  more information.</p>
-
-									  
+									  <p>Access to the Dash data submission system is limited to individuals affiliated with UC campuses that have implemented Dash. Contact <a href="mailto:uc3@ucop.edu">uc3@ucop.edu</a> for more information.</p>
 
 									  <h2>Versions</h2>
-
-									  <p>All versions of a dataset will be kept in the Merritt Repository,
-									  but only the most recent version will be available through the Dash user interface.
-									  Users may not delete datasets once they've been submitted, but may submit new
-									  versions whenever appropriate.</p>
-
-									  
+									  <p>All versions of a dataset will be kept in the Merritt Repository, but only the most recent version will be available through the Dash user interface. Users may not delete datasets once they've been submitted, but may submit new versions whenever appropriate.</p>
 
 									  <h2>Data file formats</h2>
-
 									  <p>All formats are allowed.</p>
 
-									  
-
 									  <h2>Volume and size limitations</h2>
-
-									  <p>10GB per file size
-									  constraint. Quotas are likely to be introduced at a
-									  later stage. All data files are stored in the Merritt Repository. More information
-									  about the Merritt Repository Service is available in the white paper
-									  "<a href=
-									  "https://merritt.cdlib.org/d/ark%3A%2F13030%2Fm52f7p63/2/producer%2FUC3-Merritt-preservation-latest.pdf">UC3,
-									  Merritt and Long-term Preservation</a>."</p>
-
-									  
+									  <p>10GB per file sizeconstraint. Quotas are likely to be introduced at a later stage. All data files are stored in the Merritt Repository. More information about the Merritt Repository Service is available in the white paper "<a href="https://merritt.cdlib.org/d/ark%3A%2F13030%2Fm52f7p63/2/producer%2FUC3-Merritt-preservation-latest.pdf">UC3, Merritt and Long-term Preservation</a>."</p>
 
 									  <h2>Data quality</h2>
-
-									  <p>All information is provided "as-is" and the user shall
-									  hold Dash and information providers supplying data to Dash free and harmless in
-									  connection with the use of such information.</p>
-
+									  <p>All information is provided "as-is" and the user shall hold Dash and information providers supplying data to Dash free and harmless in connection with the use of such information.</p>
 									  
-
 									  <h2>Embargo status</h2>
+									  <p>Dash does not currently have the capability for users to deposit content under an embargo status.</p>
 
-									  <p>Dash does not currently have the capability for users to deposit
-									  content under an embargo status.</p>
-
-									  <h1><a name="h.vuanhwo3t3up" id="h.vuanhwo3t3up"></a>Withdrawal of
-									  data and revocation of DOIs</h1>
-
-									  
+									  <h1><a name="h.vuanhwo3t3up" id="h.vuanhwo3t3up"></a>Withdrawal of data and revocation of DOIs</h1>
 
 									  <h2>Revocation</h2>
-
-									  <p>Content not considered to fall under the scope of the repository
-									  will be removed and associated DOIs issued by Dash revoked. Please signal promptly any
-									  suspected policy violations, ideally no later than 24 hours from upload. User access
-									  may be revoked on violation of <a href=
-									  "http://www.cdlib.org/about/terms.html">
-									  Terms of Use</a>.</p>
-
+									  <p>Content not considered to fall under the scope of the repository will be removed and associated DOIs issued by Dash revoked. Please signal promptly any suspected policy violations, ideally no later than 24 hours from upload. User access may be revoked on violation of <a href="http://www.cdlib.org/about/terms.html">Terms of Use</a>.</p>
 									  
-
 									  <h2>Withdrawal</h2>
+									  <p>Withdrawal is considered an exceptional action which normally should be requested and fully justified by the original contributor. In any other circumstance reasonable attempts will be made to contact the original contributor to obtain consent.</p>
 
-									  <p>Withdrawal is considered an exceptional action which normally
-									  should be requested and fully justified by the original contributor. In any other
-									  circumstance reasonable attempts will be made to contact the original contributor to
-									  obtain consent.</p>
-
-									  
-
-									  
-
-									  <h1><a name="h.gt79ttyx3jfc" id="h.gt79ttyx3jfc"></a>Access and reuse
-									  of data</h1>
-
-									  
-
-									  
+									  <h1><a name="h.gt79ttyx3jfc" id="h.gt79ttyx3jfc"></a>Access and reuse of data</h1>
 
 									  <h2>Access to data objects</h2>
-
-									  <p>Data deposited into Dash may have a custom Data Use
-									  Agreement, or it may be under <a href=
-									  "https://creativecommons.org/licenses/by/4.0/">
-									  CC-BY-4.0</a>. The dataset landing page will display the license
-									  associated with the dataset. Note that content in Dash is offered "as is." By
-									  downloading files, you agree to the <a href="http://www.cdlib.org/about/terms.html">Dash Terms of Use</a>.</p>
-
-									  
-
-									  
+									  <p>Data deposited into Dash may have a custom Data Use Agreement, or it may be under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. The dataset landing page will display the license associated with the dataset. Note that content in Dash is offered "as is." By downloading files, you agree to the <a href="http://www.cdlib.org/about/terms.html">Dash Terms of Use</a>.</p>
 
 									  <h2>Tracking users and statistics</h2>
+									  <p>The California Digital Library does not track, collect or retain personal information from users of Dash, except as otherwise provided herein. In order to enhance Dash and monitor traffic, non-personal information such as IP addresses and cookies may be tracked and retained. User provided information, like corrections of metadata or paper claims, will be integrated into the database without displaying its source and may be shared with other services.</p>
+									  <p>The California Digital Library will take all reasonable measures to protect the privacy of its users and to resist service interruptions, intentional attacks, or other events that may compromise the security of the Dash website.</p>
 
-									  <p>The California Digital Library does not track, collect or retain
-									  personal information from users of Dash, except as otherwise provided herein. In order
-									  to enhance Dash and monitor traffic, non-personal information such as IP addresses and
-									  cookies may be tracked and retained. User provided information, like corrections of
-									  metadata or paper claims, will be integrated into the database without displaying its
-									  source and may be shared with other services.</p>
-
-									  <p>The California Digital Library will take all reasonable measures to
-									  protect the privacy of its users and to resist service interruptions, intentional
-									  attacks, or other events that may compromise the security of the Dash
-									  website.</p>
-
-									  
-
-									  
-
-									  <h1><a name="h.atav9amvh8gv" id="h.atav9amvh8gv"></a>Preservation of
-									  data</h1>
-
-									  
-
-									  <p>All data submitted to Dash will be housed in the CDL's
-									  Merritt Repository. For a full description of the services provided by Merritt, see
-									  this document: <a href=
-									  "https://merritt.cdlib.org/d/ark%3A%2F13030%2Fm52f7p63/2/producer%2FUC3-Merritt-preservation-latest.pdf">
-									  UC3, Merritt, and Long-term preservation</a>.</p>
-
-									  
+									  <h1><a name="h.atav9amvh8gv" id="h.atav9amvh8gv"></a>Preservation of data</h1>
+									  <p>All data submitted to Dash will be housed in the CDL's Merritt Repository. For a full description of the services provided by Merritt, see this document: <a href="https://merritt.cdlib.org/d/ark%3A%2F13030%2Fm52f7p63/2/producer%2FUC3-Merritt-preservation-latest.pdf">UC3, Merritt, and Long-term preservation</a>.</p>
 
 									  <h2>Retention period</h2>
-
-									  <p>Items will be retained for the lifetime of the
-									  repository.</p>
-
-									  
+									  <p>Items will be retained for the lifetime of the repository.</p>
 
 									  <h2>Functional preservation</h2>
-
-									  <p>Dash makes no promises of usability and understandability of
-									  deposited objects over time.</p>
-
-									  
+									  <p>Dash makes no promises of usability and understandability of deposited objects over time.</p>
 
 									  <h2>File preservation</h2>
-
-									  <p>Data files are replicated with multiple copies in multiple
-									  geographic locations; metadata is backed up on a nightly basis.</p>
-
+									  <p>Data files are replicated with multiple copies in multiple geographic locations; metadata are backed up on a nightly basis.</p>
 									  
-
 									  <h2>Fixity and authenticity</h2>
+									  <p>All data files are stored along with a SHA-256 checksum of the file  content. Regular checks of files against their checksums are made. The audit process cycles continually, with a current cycle time of approximately two months.</p>
 
-									  <p>All data files are stored along with a SHA-256 checksum of the file
-									  content. Regular checks of files against their checksums are
-									  made. The audit process cycles continually, with a current cycle time
-									  of approximately two months.</p>
-
-									  
-
-									  
-
-									  <h1><a name="h.a1h6vbdcpidu" id="h.a1h6vbdcpidu"></a>Succession
-									  plans</h1>
-
-									  
-
-									  <p>In case of closure of the repository,
-									  reasonable efforts will be made to integrate all content into
-									  suitable alternative institutional and/or subject based repositories.</p>
-
-									  
-
-									  <p>All information is provided "as-is" and the user shall
-									  hold the California Digital Library, UC Campus, and information providers supplying
-									  data to Dash free and harmless in connection with the use of such
-									  information.</p>
+									  <h1><a name="h.a1h6vbdcpidu" id="h.a1h6vbdcpidu"></a>Succession plans</h1>
+									  <p>In case of closure of the repository, reasonable efforts will be made to integrate all content into suitable alternative institutional and/or subject based repositories.</p>
+									  <p>All information is provided "as-is" and the user shall hold the California Digital Library, UC Campus, and information providers supplying data to Dash free and harmless in connection with the use of such information.</p>
 								</div>
 							</div>
 						</div> <!-- end content-->
@@ -1041,7 +916,49 @@
 	</html>
 </xsl:template>
 
-	
+<!-- ====================================================================== -->
+<!-- rightsPage Template		                                           	-->
+<!-- ====================================================================== -->
+<xsl:template name="rightsPage">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+		<head>
+			<title>Dash: Rights Information: Open data for the global research community</title>
+			<xsl:copy-of select="$assets.htmlhead"/>
+		</head>
+ 		<body>
+			<!-- begin page id -->
+			<div id="prepare-to-submit-page"> 
+				<!-- begin outer container -->  
+				<div id="outer-container"> 
+				    <!-- begin inner container -->
+				    <div id="inner-container"> 
+						<div class="header">
+				     		<xsl:copy-of select="$brand.header"/>
+							<xsl:copy-of select="$assets.nav-header"/>
+				    	</div>
+						<!-- begin content -->
+						<div id="content"> 	
+							<div class="single-column">
+								<h1>Rights, Ownership and Licensing of Research Data</h1>
+								<div class="text-container">
+									<h2>Ownership</h2> 
+									<p><a href="http://www.ucop.edu/academic-personnel/_files/apm/apm-020.pdf" target="_blank">The University of California Academic Personnel Policy (APM) 020</a> states:
+									<blockquote>"Notebooks and other original records of the research are the property of the University." (II. 5, p.3)</blockquote>
+									which the university interprets as meaning that research data are owned by the university.</p>
+									<h2>Licenses</h2>
+									<p>UCOP General Counsel currently recommends using a Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a> license, requiring attribution. Dash supports this recommendation by only offering CC-BY 4.0, but we can support other licenses.</p>
+								</div>
+							</div>
+						</div> <!-- end content-->
+						<xsl:copy-of select="$assets.nav-footer"/>
+						<xsl:copy-of select="$brand.footer"/>
+					</div> <!-- end inner container -->
+				</div> <!-- end outer container -->
+			</div>
+		</body>
+	</html>
+</xsl:template>
+
 <!-- ====================================================================== -->
 <!-- uploadFaqPage Template		                                           	-->
 <!-- ====================================================================== -->
@@ -1073,6 +990,7 @@
 										<li>Include any files that may help others to use your data. This includes readme files, formal metadata files, or other critical information.</li>
 										<li>Any data submitted via Dash will be in the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">Public Domain (CC0)</a>. We do not currently support any other license types, nor do we allow for restrictions on data access or use.</li>
 										<li>It is your responsibility to ensure your data are being shared responsibly and ethically. Please be careful of sharing sensitive data and ensure you are complying with institutional and governmental regulations.</li>
+										<li>There is <a href="/xtf/search?smode=rightsPage">more information</a> on rights and ownership of, and licences for, research data.</li>
 									</ul>
 								</div>
 							</div>
