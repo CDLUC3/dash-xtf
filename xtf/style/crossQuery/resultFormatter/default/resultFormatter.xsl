@@ -1180,7 +1180,7 @@
 											<li><span class="title">2. Describe Data </span> <br />
 											Create your metadata: [<a href="/xtf/search?smode=metadataBasicsPage">Metadata Basics</a>]</li>
 											<li><span class="title">3. Upload data </span><br />
-											Add your data and metadata to Dash: [<a href="/xtf/search?smode=uploadFaqPage">Uploading Basics</a>]</li>
+											Add your data and metadata to Dash: [<a href="/xtf/search?smode=uploadFaqPage">Upload Basics</a>]</li>
 											<li><span class="title">4. Get confirmation </span><br/>
 											Receive your data citation.</li>
 										</ul>
