@@ -965,7 +965,7 @@
 <xsl:template name="uploadFaqPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Upload FAQ - Open data for the global research community</title>
+			<title>Dash: Upload Basics - Open data for the global research community</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
@@ -982,7 +982,7 @@
 						<!-- begin content -->
 						<div id="content"> 	
 							<div class="single-column">
-								<h1>Upload FAQ</h1>
+								<h1>Upload Basics</h1>
 								<div class="text-container">
 									<ul>
 										<li>See <a href="/xtf/search?smode=policiesPage">Policies</a> for more information on uploading datasets to Dash.</li>
@@ -1176,11 +1176,11 @@
 									<div class="steps">
 										<ul>
 											<li><span class="title">1. Prepare </span><br />
-											Gather your data and information before starting. [<a href="/xtf/search?smode=preparePage">Read More</a>]</li>
+											Gather your data and information before starting: [<a href="/xtf/search?smode=preparePage">Preparing to Submit</a>]</li>
 											<li><span class="title">2. Describe Data </span> <br />
-											Create your metadata. [<a href="/xtf/search?smode=metadataBasicsPage">Read More</a>]</li>
+											Create your metadata: [<a href="/xtf/search?smode=metadataBasicsPage">Metadata Basics</a>]</li>
 											<li><span class="title">3. Upload data </span><br />
-											Add your data and metadata to Dash. [<a href="/xtf/search?smode=uploadFaqPage">Read More</a>]</li>
+											Add your data and metadata to Dash: [<a href="/xtf/search?smode=uploadFaqPage">Uploading Basics</a>]</li>
 											<li><span class="title">4. Get confirmation </span><br/>
 											Receive your data citation.</li>
 										</ul>
