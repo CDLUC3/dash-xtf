@@ -942,11 +942,11 @@
 								<h1>Rights, Ownership and Licensing of Research Data</h1>
 								<div class="text-container">
 									<h2>Ownership</h2> 
-									<p><a href="http://www.ucop.edu/academic-personnel/_files/apm/apm-020.pdf" target="_blank">The University of California Academic Personnel Policy (APM) 020</a> states:
+									<p><a href="http://www.ucop.edu/academic-personnel/_files/apm/apm-020.pdf">The University of California Academic Personnel Policy (APM) 020</a> states:
 									<blockquote>"Notebooks and other original records of the research are the property of the University." (II. 5, p.3)</blockquote>
 									which the university interprets as meaning that research data are owned by the university.</p>
 									<h2>Licenses</h2>
-									<p>UCOP General Counsel currently recommends using a Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a> license, requiring attribution. Dash supports this recommendation by only offering CC-BY 4.0, but we can support other licenses.</p>
+									<p>UCOP General Counsel currently recommends using a Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> license, requiring attribution. Dash supports this recommendation by only offering CC-BY 4.0, but we can support other licenses.</p>
 								</div>
 							</div>
 						</div> <!-- end content-->
@@ -986,9 +986,9 @@
 								<div class="text-container">
 									<ul>
 										<li>See <a href="/xtf/search?smode=policiesPage">Policies</a> for more information on uploading datasets to Dash.</li>
-										<li>All file formats are accepted by Dash, although it is good practice to share data using open formats. See the UK Data Archive for a <a href="http://www.data-archive.ac.uk/create-manage/format/formats-table" target="_blank">list of optimal file formats</a>.</li>
+										<li>All file formats are accepted by Dash, although it is good practice to share data using open formats. See the UK Data Archive for a <a href="http://www.data-archive.ac.uk/create-manage/format/formats-table">list of optimal file formats</a>.</li>
 										<li>Include any files that may help others to use your data. This includes readme files, formal metadata files, or other critical information.</li>
-										<li>Any data submitted via Dash will be in the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">Public Domain (CC0)</a>. We do not currently support any other license types, nor do we allow for restrictions on data access or use.</li>
+										<li>Any data submitted via Dash will be in the <a href="https://creativecommons.org/publicdomain/zero/1.0/">Public Domain (CC0)</a>. We do not currently support any other license types, nor do we allow for restrictions on data access or use.</li>
 										<li>It is your responsibility to ensure your data are being shared responsibly and ethically. Please be careful of sharing sensitive data and ensure you are complying with institutional and governmental regulations.</li>
 										<li>There is <a href="/xtf/search?smode=rightsPage">more information</a> on rights and ownership of, and licences for, research data.</li>
 									</ul>
@@ -1088,8 +1088,8 @@
 							<div class="single-column">
 								<h1>Metadata Basics</h1>
 								<div class="text-container">
-									<p>Comprehensive data documentation (i.e. metadata) is the key to future understanding of data. Without a thorough description of the context of the data file, the context in which the data were collected, the measurements that were made, and the quality of the data, it is unlikely that the data can be easily discovered, understood, or effectively used. Metadata is important not only to help people understand and make proper use of a data resource, but metadata also makes the resource discoverable (for example through internet searches or data indexing services). Read more about metadata in the <a href="http://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf" target="_blank">DataONE Primer on Data Management</a> (PDF).</p>
-									<p class="secondary-para">Dash requires a few key pieces of metadata. A complete list of the metadata fields in Dash is below. Additional metadata can be uploaded alongside the dataset (e.g., as a readme.txt file). The metadata entry form for Dash is based on fields from the <a href="http://schema.datacite.org/meta/kernel-3/index.html" target="_blank">DataCite schema</a>, version 3.0.</p>
+									<p>Comprehensive data documentation (i.e. metadata) is the key to future understanding of data. Without a thorough description of the context of the data file, the context in which the data were collected, the measurements that were made, and the quality of the data, it is unlikely that the data can be easily discovered, understood, or effectively used. Metadata is important not only to help people understand and make proper use of a data resource, but metadata also makes the resource discoverable (for example through internet searches or data indexing services). Read more about metadata in the <a href="http://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf">DataONE Primer on Data Management</a> (PDF).</p>
+									<p class="secondary-para">Dash requires a few key pieces of metadata. A complete list of the metadata fields in Dash is below. Additional metadata can be uploaded alongside the dataset (e.g., as a readme.txt file). The metadata entry form for Dash is based on fields from the <a href="http://schema.datacite.org/meta/kernel-3/index.html">DataCite schema</a>, version 3.0.</p>
 									<table class="table table-bordered">
 										<tr>
 											<th>Metadata Field Name</th>
@@ -1196,12 +1196,12 @@
 									<div class="bullet-points">
 										<ul>
 											<li>Promotes transparency and reproducibility in research.</li>
-											<li>Increases the visibility of underlying research (69% increase in citations for articles associated with shared datasets, Piwowar et al. 2007, <a href="http://dx.doi.org/10.1371/journal.pone.0000308" target="_blank">doi:10.1371/journal.pone.0000308</a>).</li>
+											<li>Increases the visibility of underlying research (69% increase in citations for articles associated with shared datasets, Piwowar et al. 2007, <a href="http://dx.doi.org/10.1371/journal.pone.0000308">doi:10.1371/journal.pone.0000308</a>).</li>
 											<li>Allows you to get credit for your dataset&#8212;add it to your CV, share it with colleagues, and have others cite your dataset when using it.</li>
 											<li>Helps you meet funder and publisher requirements for data availability.</li>
 											<li>Increases chances for collaboration.</li>
 										</ul>
-										<p>For more information, see the <a href="http://www.data-archive.ac.uk/create-manage/planning-for-sharing/why-share-data" target="_blank">UK Data Archive list of reasons to share data</a>.</p>
+										<p>For more information, see the <a href="http://www.data-archive.ac.uk/create-manage/planning-for-sharing/why-share-data">UK Data Archive list of reasons to share data</a>.</p>
 									</div>
 								</div>
 							</div>
