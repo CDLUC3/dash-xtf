@@ -1176,11 +1176,11 @@
 									<div class="steps">
 										<ul>
 											<li><span class="title">1. Prepare </span><br />
-											Gather your data and information before starting: [<a href="/xtf/search?smode=preparePage">Preparing to Submit</a>]</li>
+											Gather your data and information: <a href="/xtf/search?smode=preparePage">Preparing to Submit</a></li>
 											<li><span class="title">2. Describe Data </span> <br />
-											Create your metadata: [<a href="/xtf/search?smode=metadataBasicsPage">Metadata Basics</a>]</li>
+											Create your metadata: <a href="/xtf/search?smode=metadataBasicsPage">Metadata Basics</a></li>
 											<li><span class="title">3. Upload data </span><br />
-											Add your data and metadata to Dash: [<a href="/xtf/search?smode=uploadFaqPage">Upload Basics</a>]</li>
+											Add your data and metadata to Dash: <a href="/xtf/search?smode=uploadFaqPage">Upload Basics</a></li>
 											<li><span class="title">4. Get confirmation </span><br/>
 											Receive your data citation.</li>
 										</ul>
@@ -1201,6 +1201,7 @@
 											<li>Helps you meet funder and publisher requirements for data availability.</li>
 											<li>Increases chances for collaboration.</li>
 										</ul>
+										<br /><br />
 										<p>For more information, see the <a href="http://www.data-archive.ac.uk/create-manage/planning-for-sharing/why-share-data">UK Data Archive list of reasons to share data</a>.</p>
 									</div>
 								</div>
