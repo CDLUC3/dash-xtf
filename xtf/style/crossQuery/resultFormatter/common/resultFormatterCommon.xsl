@@ -218,13 +218,15 @@
    <xsl:param name="brand.header" select="$brand.file//header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.footer" select="$brand.file//footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.faq" select="$brand.file//faq/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
+   <xsl:param name="brand.about" select="$brand.file//about/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
    <xsl:param name="brand.promo-img" select="$brand.file//promo-img/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
    <xsl:param name="brand.promo-quote" select="$brand.file//promo-quote/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>  
    
    <xsl:param name="assets.htmlhead" select="$assets//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="assets.nav-header" select="$assets//nav-header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="assets.nav-footer" select="$assets//nav-footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-
+   
+   
    <!-- Paging Parameters-->  
    <xsl:param name="startDoc" as="xs:integer" select="1"/>
    <!-- Documents per Page -->
