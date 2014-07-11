@@ -85,7 +85,10 @@
 		<p class="para">Please contact us with any questions about the data. Your message will be directed to an appropriate source to answer any questions about the data. We cannot guarantee that the source will be able to obtain an answer to your specific question.</p>
 		</div>
 	</faq>
-
+	
+	<about>
+	</about>
+	
 	<promo-img>
 		<img class="headshot" alt="Dr. Michael Weiner, UCSF" width="60" height="81" src="assets/img/promo/weiner.jpg" />
 	</promo-img>
