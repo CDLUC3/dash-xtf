@@ -204,7 +204,7 @@
             <xsl:copy-of select="document(concat('../../../../brand/',$brand,'.xml'))"/>
          </xsl:when>
          <xsl:otherwise>
-            <xsl:copy-of select="document('../../../../brand/default.xml')"/>
+			<xsl:copy-of select="document('../../../../brand/default.xml')"/>
          </xsl:otherwise>
       </xsl:choose>
    </xsl:variable>
