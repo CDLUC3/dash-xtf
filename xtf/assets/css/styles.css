@@ -391,9 +391,9 @@ nav a {
 }
 
 #search-form #search-box {
-	width: 169px;
+	width: 160px;
 	height: 16px;
-	border: 1px solid #58595b;
+	border: 1px solid #999;
 	float: left;
 	padding: 5px 0;
 	padding-left : 5px;
