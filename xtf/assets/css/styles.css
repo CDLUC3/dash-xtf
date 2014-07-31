@@ -252,7 +252,55 @@ height: 49px;
 	background-color: #f4f4f4;
 	margin: 4px 0 0 0;
 	/* border: 1px green solid; */	
-}	
+}
+
+/* new nav bar */
+
+#navbar {
+	margin-top: 19px; /* not in dash-ingest version */
+	padding: 5px;
+	background: #000;
+	overflow: hidden;
+}
+
+nav {
+	float: left;
+}
+
+#navbar ul {
+	margin: 0;
+}
+
+#navbar li {
+	display: inline;
+}
+
+#navbar a {
+	font-size: 1.2em !important;
+	color: #fff !important;
+}
+
+#navbar a:hover {
+	text-decoration: none;
+}
+
+nav a {
+	margin: 0 2em;
+}
+
+#project_links a {
+	padding: 0 1em;
+}
+
+#project_links li:first-child a {
+	border-right: 1px solid #fff;
+}
+
+#project_links {
+	float: right;
+}
+
+/* old nav bar */
 	
 #nav-home-menu {
 	width: 100%;
@@ -293,7 +341,7 @@ height: 49px;
 }
 
 #banner {
-	margin: 4px 0 0 0;
+	/*margin: 4px 0 0 0;*/
 	height: 72px;
 }
 
