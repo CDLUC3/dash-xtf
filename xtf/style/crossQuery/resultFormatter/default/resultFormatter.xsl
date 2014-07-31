@@ -740,6 +740,9 @@
 				     		<xsl:copy-of select="$brand.header"/>
 							<xsl:copy-of select="$assets.nav-header"/>
 				    	</div>
+				    	<div id="banner">
+							<img src="assets/img/banner-home-v8.0.jpg" width="952" height="72" alt="Publish and Download Research Datasets"/>
+						</div>
 						<!-- begin content -->
 						<div id="content">
 							<div class="single-column">
@@ -837,6 +840,9 @@
 				     		<xsl:copy-of select="$brand.header"/>
 							<xsl:copy-of select="$assets.nav-header"/>
 				    	</div>
+				    	<div id="banner">
+							<img src="assets/img/banner-home-v8.0.jpg" width="952" height="72" alt="Publish and Download Research Datasets"/>
+						</div>
 						<!-- begin content -->
 						<div id="content"> 	
 							<div class="single-column">
