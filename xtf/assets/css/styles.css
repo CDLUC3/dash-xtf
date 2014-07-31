@@ -1391,3 +1391,21 @@ a.searchLabel {
 .cc-license p {
 	text-align: left;
 }
+
+/* Bootstrap button updates */
+
+.btn {
+	padding: 4px 15px;
+	border-radius: 15px;
+}
+
+.btn-large {
+	padding: 11px 25px;
+	font-size: 17.5px;
+	border-radius: 25px;
+}
+
+.btn-success, .btn-success:hover {
+	background-color: #ea792a;
+	background-image: linear-gradient(to bottom, #e99256, #ea792a);
+}
