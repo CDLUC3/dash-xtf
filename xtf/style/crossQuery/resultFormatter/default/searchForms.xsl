@@ -150,7 +150,7 @@
 								<h1>Search for Data</h1>
 									<form id="search-form" name="search-form" action="#" method="get">
 										<label for="search-box"><span class="hidden">Search</span></label><input id="search-box" name="keyword" type="text"/>
-										<button class="btn" type="submit" name="submit">Go</button>
+										<!-- <button class="btn" type="submit" name="submit">Go</button> -->
 										<!-- <input id="search-go" type="submit" name="submit" value=""></input> -->
 									</form>
 									<p id="or">or</p>
