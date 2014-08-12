@@ -82,4 +82,8 @@
 <id>University of California, Office of the President</id>
 <label>UC Office of the President</label>
 </campus>
+<campus>
+<id>UC Office of the president</id>
+<label>UC Office of the President</label>
+</campus>
 </campuses>
