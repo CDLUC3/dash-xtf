@@ -302,7 +302,33 @@
 										</a>
 									</div>
 									<div class="cc-license">
-										<xsl:call-template name="cc-0"/>
+									<!--the logic here: if the metadata contains either CC-BY or CC-0 in the  -->
+									<!--rights element, display the approved wording. If not, and the rights  -->
+									<!--contains something, display what it contains; if empty, display CC-BY -->
+										<xsl:choose>
+											<xsl:when test="//@rightsURI='https://creativecommons.org/licenses/by/4.0/'">
+												<xsl:call-template name="cc-by-4"/>
+											</xsl:when>
+											<xsl:when test="//@rightsURI='http://creativecommons.org/about/cc0'">
+												<xsl:call-template name="cc-0"/>
+											</xsl:when>
+											<xsl:when test="//@rightsURI='http://creativecommons.org/publicdomain/zero/1.0/'">
+												<xsl:call-template name="cc-0"/>
+											</xsl:when>
+											<xsl:when test="starts-with(//@rightsURI, 'http://datashare.ucsf.edu/xtf/search')">
+												<xsl:call-template name="ucsf-datashare-dua"/>
+											</xsl:when>
+											<xsl:otherwise>
+												<xsl:choose>
+													<xsl:when test="//rightsList!=''">
+														<xsl:value-of select="//rightsList"/>
+													</xsl:when>
+													<xsl:otherwise>
+														<xsl:call-template name="cc-by-4"/>
+													</xsl:otherwise>
+												</xsl:choose>
+											</xsl:otherwise> 
+										</xsl:choose>
 									</div>
 								</div>
 							</div>
