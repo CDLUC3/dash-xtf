@@ -22,23 +22,27 @@
 <id>UCI</id>
 <label>UC Irvine</label>
 </campus>
-<campus>
 <!--Los Angeles -->
+<campus>
 <id>UCLA</id>
 <label>UC Los Angeles</label>
 </campus>
 <campus>
+<id>University of California, Los Angeles</id>
+<label>UC Los Angeles</label>
+</campus>
 <!--Merced -->
+<campus>
 <id>UCM</id>
 <label>UC Merced</label>
 </campus>
-<campus>
 <!--Riverside -->
+<campus>
 <id>UCR</id>
 <label>UC Riverside</label>
 </campus>
-<campus>
 <!--San Diego -->
+<campus>
 <id>UCSD</id>
 <label>UC San Diego</label>
 </campus>
@@ -51,8 +55,8 @@
 <id>UCSF</id>
 <label>UC San Francisco</label>
 </campus>
-<campus>
 <!--Santa Barbara -->
+<campus>
 <id>UCSB</id>
 <label>UC Santa Barbara</label>
 </campus>
