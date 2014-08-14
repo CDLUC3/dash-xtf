@@ -124,7 +124,7 @@
       <html>
          <head>
             <title><xsl:value-of select="$reason"/></title>
-            <link type="text/css" rel="stylesheet" href="css/default/content.css"/>
+            <xsl:copy-of select="$assets.htmlhead"/> 
          </head>
          <body>
             <div class="content">
