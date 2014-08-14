@@ -209,9 +209,9 @@
 							<div id="browse-all-container">
 								<h1>Select a Dataset...</h1>
 								<div class="search-form-area">
-									<form name="navigationSearchForm" action="/xtf/search" method="get">
+									<form name="navigationSearchForm" action="/xtf/search" method="get" class="navbar-form">
 										<input type="text" name="keyword" class="searchField cleardefault" value="Search datasets..." title="Search datasets"/>
-										<input type="submit" value="Go!" class="searchButton"/>
+										<input type="submit" value="Go!" class="searchButton btn"/>
 									</form>
 									<a class="searchLabel" href="/xtf/search?browse-all=yes">Clear search</a>
 								</div>
@@ -700,14 +700,14 @@
 <xsl:template name="search_controls">
 	<div class="search-controls">
 		<div class="search-control-sort">
-			<form method="get" action="{$xtfURL}{$crossqueryPath}">
+			<form method="get" action="{$xtfURL}{$crossqueryPath}" class="navbar-form">
 				<b>Sorted by:&#160;</b>
 				<xsl:call-template name="sort.options"/>
 				<xsl:call-template name="hidden.query">
 					<xsl:with-param name="queryString" select="editURL:remove($queryString, 'sort')"/>
 				</xsl:call-template>
 				<xsl:text>&#160;</xsl:text>
-				<input type="submit" value="Go!"/>
+				<input type="submit" value="Go!" class="btn"/>
            </form>
 		</div>
 	</div>
