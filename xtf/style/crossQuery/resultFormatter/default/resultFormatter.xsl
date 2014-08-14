@@ -204,8 +204,11 @@
 							<xsl:copy-of select="$brand.header"/>
 							<xsl:copy-of select="$assets.nav-header"/>
 						</div>
+						<div id="banner">
+    						<img width="952" height="72" alt="Publish and Download Research Datasets" src="assets/img/banner-home-v8.0.jpg"></img>
+						</div>
 						<!-- begin content -->
-						<div id="content"> 
+						<div id="content">
 							<div id="browse-all-container">
 								<h1>Select a Dataset...</h1>
 								<div class="search-form-area">
