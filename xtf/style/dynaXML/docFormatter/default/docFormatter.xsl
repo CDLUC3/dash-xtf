@@ -136,7 +136,10 @@
 						<!-- begin header -->
 						<div class="header">
 							<xsl:copy-of select="$brand.header"/>
-							<xsl:call-template name="nav-header"/> 
+							<div id="navbar">
+								<xsl:copy-of select="$assets.nav-header"/>
+								<xsl:copy-of select="$brand.homelink"/>
+							</div>
 						</div>
 						<div class="content content-dataset" id="content">
 							<div class="single-column">

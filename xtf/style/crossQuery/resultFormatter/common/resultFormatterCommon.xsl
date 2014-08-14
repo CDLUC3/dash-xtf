@@ -221,6 +221,7 @@
    <xsl:param name="brand.about" select="$brand.file//about/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
    <xsl:param name="brand.promo-img" select="$brand.file//promo-img/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
    <xsl:param name="brand.promo-quote" select="$brand.file//promo-quote/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>  
+   <xsl:param name="brand.homelink" select="$brand.file//homelink/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    
    <xsl:param name="assets.htmlhead" select="$assets//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="assets.nav-header" select="$assets//nav-header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>

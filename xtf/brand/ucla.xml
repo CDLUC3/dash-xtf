@@ -21,6 +21,15 @@
       <a href="http://dash-dev.cdlib.org"><img src="assets/img/dash_cdl_logo.png" alt="Dash: Data sharing made easy"  class="your-logo"/></a>
       <br class="clear" />
    </dynaxml.header>
+   
+	<homelink>
+		<div class="project_links">
+			<ul>
+				<li><a href="#">UCLA Dash</a></li>
+				<li><a href="/logout">Log Out</a></li>
+			</ul>
+		</div>
+	</homelink>
 
    <footer>
 		<div id="footer-logos">

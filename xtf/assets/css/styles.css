@@ -263,10 +263,13 @@ height: 49px;
 	overflow: hidden;
 }
 
-nav {
+#nav-common {
 	float: left;
 }
 
+#nav-common a {
+	margin: 0 2em;
+}
 #navbar ul {
 	margin: 0;
 }
@@ -284,9 +287,6 @@ nav {
 	text-decoration: none;
 }
 
-nav a {
-	margin: 0 2em;
-}
 
 #project_links a {
 	padding: 0 1em;

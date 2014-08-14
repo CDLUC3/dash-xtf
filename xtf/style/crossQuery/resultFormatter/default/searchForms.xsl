@@ -134,7 +134,10 @@
 					<!-- begin header -->
 					<div class="header">
 						<xsl:copy-of select="$brand.header"/>
-						<xsl:copy-of select="$assets.nav-header"/>
+						<div id="navbar">
+							<xsl:copy-of select="$assets.nav-header"/>
+							<xsl:copy-of select="$brand.homelink"/>
+						</div>
 					</div>
 					<div id="banner">
 						<img src="assets/img/banner-home-v8.0.jpg" width="952" height="72" alt="Publish and Download Research Datasets"/>
