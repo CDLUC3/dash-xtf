@@ -22,6 +22,15 @@
       <br class="clear" />
    </dynaxml.header>
 
+	<homelink>
+		<div id="project_links">
+			<ul>
+				<li><a href="#">UC Dash</a></li>
+				<li><a href="/logout">Log Out</a></li>
+			</ul>
+		</div>
+	</homelink>
+
    <footer>
 		<div id="footer-logos">
 			<div id="cdl-logo-sm"><a href="http://www.cdlib.org/"><img src="assets/img/cdl-logo.jpg" width="72" height="26" alt="California Digital Library" title="California Digital Library" /></a></div>
