@@ -64,7 +64,10 @@
 							<!-- begin header -->
 							<div class="header">
 								<xsl:copy-of select="$brand.header"/>
-								<xsl:copy-of select="$assets.nav-header"/>
+								<div id="navbar">
+									<xsl:copy-of select="$assets.nav-header"/>
+									<xsl:copy-of select="$brand.homelink"/>
+								</div>
 							</div>
 							<div id="content"> 	
 								<div id="terms-content">
