@@ -141,6 +141,9 @@
 								<xsl:copy-of select="$brand.homelink"/>
 							</div>
 						</div>
+						<div id="banner">
+    						<img width="952" height="72" alt="Publish and Download Research Datasets" src="assets/img/banner-home-v8.0.jpg"></img>
+						</div>
 						<div class="content content-dataset" id="content">
 							<div class="single-column">
 								<h1><xsl:apply-templates select="//title"/></h1>
