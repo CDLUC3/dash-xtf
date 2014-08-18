@@ -47,7 +47,7 @@
    
    <xsl:param name="freeformQuery"/>
    <xsl:variable name="brand" select="session:getData('brand')"/>
-   
+      
    <!-- ====================================================================== -->
    <!-- Form Templates                                                         -->
    <!-- ====================================================================== -->
@@ -125,7 +125,7 @@
 </xsl:template>
    
 <xsl:template name="simpleForm">
-	<body>
+   	<body>
 		<div id="terms-of-use">
 			<!-- begin outer container -->  
 			<div id="outer-container"> 
