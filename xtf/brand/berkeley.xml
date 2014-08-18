@@ -30,7 +30,7 @@
 			</ul>
 		</div>
 	</homelink>
-
+	
    <footer>
 		<div id="footer-logos">
 			<div id="cdl-logo-sm"><a href="http://www.cdlib.org/"><img src="assets/img/cdl-logo.jpg" width="72" height="26" alt="California Digital Library" title="California Digital Library" /></a></div>
@@ -45,7 +45,7 @@
 			<p class="title">Who can deposit data here?</p>
 			<p class="para">Any UC Berkeley-affiliated researcher (faculty, postdoc, student, or staff) can use this resource to archive and share research data sets, provided they have appropriate permission. Data that are collected at research sites are under the stewardship of the Principal Investigator (PI) named on the resource provided to collect the data, and this PI may grant permission to deposit data.</p>
 			<p class="title">What if I have collaborators outside of UC Berkeley?</p>
-			<p class="para">You will need UC Berkeley credentials to log into the system and deposit data. You can, however, add your collaborators to the “data contributors” section of the metadata. Although only researchers logged in with UC Berkeley credentials can deposit data, anyone can search, view and download datasets in Dash.</p>
+			<p class="para">You will need UC Berkeley credentials to log into the system and deposit data. You can, however, add your collaborators to the "data contributors" section of the metadata. Although only researchers logged in with UC Berkeley credentials can deposit data, anyone can search, view and download datasets in Dash.</p>
 			<p class="title">Who can access these datasets?</p>
 			<p class="para">All data in Dash are in the public domain (<a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0</a>). This means anyone can access the datasets, download them, and use them. Although many researchers would prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read <a href="http://pantonpriciples.org" target="_blank">Panton Principles for Open Data in Science</a> for more information.</p>	
 			<p class="title">Do you support data embargoes or restricted access?</p>
