@@ -63,14 +63,14 @@
 	<xsl:when test="contains($http.x-forwarded-host, 'ucla.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucla')"/>
 	</xsl:when>
-<!-- campuses to add -->
-<!--
 	<xsl:when test="contains($http.x-forwarded-host, 'uci.edu')">
 		<xsl:value-of select="session:setData('brand', 'uci')"/>
 	</xsl:when>
 	<xsl:when test="contains($http.x-forwarded-host, 'ucmerced.edu')">
-		<xsl:value-of select="session:setData('brand', 'ucmerced')"/>
+		<xsl:value-of select="session:setData('brand', 'ucmerced')"/>	
 	</xsl:when>
+<!-- campuses to add -->
+<!--
 	<xsl:when test="contains($http.x-forwarded-host, 'ucr.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucr')"/>
 	</xsl:when>
