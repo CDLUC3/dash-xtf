@@ -14,12 +14,12 @@
 -->   
 	<header>
 		<a href="http://dash-dev.cdlib.org"><img src="assets/img/dash_cdl_logo.png" alt="Dash: Data sharing made easy"  class="your-logo"/></a>
-		<br class="clear" />
 		<div id="logout">
 			<p>
 				<img alt="Dash: Open data for the global research community" height="70" src="assets/img/dash_ucb_logo.png" title="Dash: Open data for the global research community" width="120" />
 			</p>
 		</div>
+		<br class="clear" />
 	</header>
    
 <!--   <dynaxml.header>
