@@ -762,9 +762,6 @@
 								<xsl:copy-of select="$brand.faq"/>
 							</div>
 						</div> <!-- end content-->
-						<div id="triangle-container">
-							<div id="triangle"></div>
-						</div>
 						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
@@ -826,9 +823,6 @@
 								</div>
 							</div>
 						</div> <!-- end content-->
-						<div id="triangle-container">
-							<div id="triangle"></div>
-						</div>
 						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
@@ -931,9 +925,6 @@
 								</div>
 							</div>
 						</div> <!-- end content-->
-						<div id="triangle-container">
-							<div id="triangle"></div>
-						</div>
 						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
@@ -1024,9 +1015,6 @@
 								</div>
 							</div>
 						</div> <!-- end content-->
-						<div id="triangle-container">
-							<div id="triangle"></div>
-						</div>
 						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
@@ -1086,9 +1074,6 @@
 								</div>
 							</div>
 						</div> <!-- end content-->
-						<div id="triangle-container">
-							<div id="triangle"></div>
-						</div>
 						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
@@ -1177,9 +1162,6 @@
 								</div>
 							</div>
 						</div><!-- end content-->
-						<div id="triangle-container">
-							<div id="triangle"></div>
-						</div>
 						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
@@ -1254,9 +1236,6 @@
 								</div>
 							</div>
 						</div> <!-- end content-->
-						<div id="triangle-container">
-							<div id="triangle"></div>
-						</div>
 						<xsl:copy-of select="$assets.nav-footer"/>
 						<xsl:copy-of select="$brand.footer"/>
 					</div> <!-- end inner container -->
