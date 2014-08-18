@@ -7,21 +7,26 @@
 	  <link rel="shortcut icon" href="icons/default/favicon.ico" />
    </links>
    
-   <dynaxml.links>
+<!--   <dynaxml.links>
       <link rel="stylesheet" href="css/default/content.css" type="text/css"/>
       <link rel="shortcut icon" href="icons/default/favicon.ico" />
    </dynaxml.links>
+-->   
+	<header>
+		<a href="http://dash-dev.cdlib.org"><img src="assets/img/dash_cdl_logo.png" alt="Dash: Data sharing made easy"  class="your-logo"/></a>
+		<div id="logout">
+			<p>
+				<img alt="Dash: Open data for the global research community" height="70" src="assets/img/blank_institution_logo.png" title="Dash: Open data for the global research community" width="120" />
+			</p>
+		</div>
+		<br class="clear" />
+	</header>
    
-   <header>
-      <a href="http://dash-dev.cdlib.org"><img src="assets/img/dash_cdl_logo.png" alt="Dash: Data sharing made easy"  class="your-logo"/></a>
-      <br class="clear" />
-   </header>
-   
-   <dynaxml.header>
+<!--   <dynaxml.header>
       <a href="http://dash-dev.cdlib.org"><img src="assets/img/dash_cdl_logo.png" alt="Dash: Data sharing made easy"  class="your-logo"/></a>
       <br class="clear" />
    </dynaxml.header>
-
+-->
 	<homelink>
 		<div id="project_links">
 			<ul>

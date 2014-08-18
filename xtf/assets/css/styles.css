@@ -90,23 +90,25 @@ h2 {
 	height: 78px;
 }*/
 
-#header #login {
+.header #login {
 	float: right;
 	margin: 42px 0 0 0;
 }
 
-#header #logout {
+.header #logout {
 	float: right;
 	margin: 0 0 0 0;
 	text-align : right;
+	vertical-align: bottom;
 }
 
-#header #logout .logout-text {
+.header #logout .logout-text {
 	margin: 20px 0 5px 0;
 	/*differs from dash-ingest*/
 }
-#header #logout img{
+.header #logout p img{
 	float: right;
+	vertical-align: bottom;
 }
 #footer {
 	width: 952px; 
