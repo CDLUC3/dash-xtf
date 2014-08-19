@@ -276,7 +276,15 @@
 												</xsl:if>
 											</dd>
 										</xsl:if>
-										<xsl:if test="//*/*:meta/*:subject"> 
+										<xsl:if test="//*/*:meta/*:publicationYear">
+											<dt>Published</dt>
+											<dd>
+												<span class="DC-Date">
+													<xsl:apply-templates select="//*/*:meta/*:publicationYear"/>
+												</span>
+											</dd>
+										</xsl:if>
+										<xsl:if test="//*/*:meta/*:subject!=''"> 
 											<dt>Keywords</dt>
 											<dd>
 												<span class="DC-Subject">
