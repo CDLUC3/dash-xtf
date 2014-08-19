@@ -75,7 +75,7 @@
       <!-- Normally this is a URL parameter, but in ERC mode it's part of the main URL. -->
       <!-- <xsl:value-of select="replace($http.URL, $ercPat, '$2')"/> -->
    </xsl:param>
-
+   
    <!-- ====================================================================== -->
    <!-- Define Parameters                                                      -->
    <!-- ====================================================================== -->
@@ -216,7 +216,7 @@
 											</xsl:if>
 										</xsl:if>
 										<xsl:for-each select="//*/*:meta/*:description[@descriptionType='Abstract']">
-											<xsl:if test="//*/*:meta/*:description[@descriptionType='Abstract']">
+											<xsl:if test="//*/*:meta/*:description[@descriptionType='Abstract']!=''">
 												<dt>Description</dt>
 												<dd>
 													<span class="DC-Type">
@@ -226,7 +226,7 @@
 											</xsl:if>
 										</xsl:for-each>
 										<xsl:for-each select="//*/*:meta/*:description[@descriptionType='Methods']">
-											<xsl:if test="//*/*:meta/*:description[@descriptionType='Methods']">
+											<xsl:if test="//*/*:meta/*:description[@descriptionType='Methods']!=''">
 												<dt>Methods</dt>
 												<dd>
 													<div class="collapsible">
@@ -248,11 +248,11 @@
 												</span>
 											</dd>
 										</xsl:if>
-										<xsl:if test="//*/*:meta/*:size"> 
+										<xsl:if test="//objectsize"> 
 											<dt>Size</dt>
 											<dd>
 												<span class="DC-Type">
-													<xsl:apply-templates select="//*/*:meta/*:size"/>
+													<xsl:apply-templates select="//objectsize"/>
 												</span>
 											</dd>
 										</xsl:if>
