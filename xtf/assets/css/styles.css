@@ -1359,7 +1359,7 @@ width: 190px;
 
 #dataset-description-page .content.content-dataset .dataset-description dd {
 	margin-left: 9.5em;
-	line-height: 115%;
+	/* line-height: 115%; */
 	margin-bottom: 0.7em;
 }
 
