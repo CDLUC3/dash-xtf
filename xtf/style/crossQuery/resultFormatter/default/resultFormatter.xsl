@@ -71,7 +71,8 @@
    <xsl:param name="docHits" select="/crossQueryResult/docHit"/>
    <xsl:param name="email"/>
    <xsl:param name="name"/>
-
+   <xsl:param name="http.Shib_Session_ID"/>
+   
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
    <!-- ====================================================================== -->
@@ -1263,6 +1264,7 @@
 				    <div id="inner-container"> 
 						<div class="header">
 							<xsl:copy-of select="$brand.header"/>
+							<xsl:value-of select="$http.Shib_Session_ID"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:copy-of select="$brand.homelink"/>
