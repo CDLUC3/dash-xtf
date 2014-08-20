@@ -110,6 +110,12 @@ h2 {
 	float: right;
 	vertical-align: bottom;
 }
+
+#logout img {
+    width: auto;
+    height: 60px;
+}
+
 #footer {
 	width: 952px; 
 	margin: 0 0 0 0;
