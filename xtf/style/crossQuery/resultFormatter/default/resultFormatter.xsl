@@ -71,8 +71,7 @@
    <xsl:param name="docHits" select="/crossQueryResult/docHit"/>
    <xsl:param name="email"/>
    <xsl:param name="name"/>
-   <xsl:param name="http.Shib_Session_ID"/>
-   
+      
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
    <!-- ====================================================================== -->
@@ -1250,6 +1249,7 @@
 <!-- aboutPage Template			                                         	-->
 <!-- ====================================================================== -->	
 <xsl:template name="aboutPage">
+	<xsl:variable name="ShibSessionID" select="System:getenv('Shib_Session_ID')" xmlns:System="java:java.lang.System"/> 
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Open data for the global research community</title>
@@ -1264,7 +1264,7 @@
 				    <div id="inner-container"> 
 						<div class="header">
 							<xsl:copy-of select="$brand.header"/>
-							<xsl:value-of select="$http.Shib_Session_ID"/>
+							<xsl:value-of select="$ShibSessionID"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:copy-of select="$brand.homelink"/>
