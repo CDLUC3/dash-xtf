@@ -123,6 +123,7 @@
    <!-- ====================================================================== -->
    
 <xsl:template name="frameset">
+	<xsl:message>HTTP Cookie: <xsl:value-of select="$http.cookie"/></xsl:message>
 	<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<title>Dash: <xsl:apply-templates select="//title"/></title>

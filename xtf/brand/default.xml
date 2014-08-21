@@ -7,11 +7,6 @@
 	  <link rel="shortcut icon" href="icons/default/favicon.ico" />
    </links>
    
-<!--   <dynaxml.links>
-      <link rel="stylesheet" href="css/default/content.css" type="text/css"/>
-      <link rel="shortcut icon" href="icons/default/favicon.ico" />
-   </dynaxml.links>
--->   
 	<header>
 		<a href="http://dash-dev.cdlib.org"><img src="assets/img/dash_cdl_logo.png" alt="Dash: Data sharing made easy"  class="your-logo"/></a>
 		<div id="logout">
@@ -22,11 +17,6 @@
 		<br class="clear" />
 	</header>
    
-<!--   <dynaxml.header>
-      <a href="http://dash-dev.cdlib.org"><img src="assets/img/dash_cdl_logo.png" alt="Dash: Data sharing made easy"  class="your-logo"/></a>
-      <br class="clear" />
-   </dynaxml.header>
--->
 	<homelink>
 		<a href="/xtf/search">UC Dash</a>
 	</homelink>

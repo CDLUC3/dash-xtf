@@ -5,8 +5,6 @@
    xmlns:session="java:org.cdlib.xtf.xslt.Session"
    version="2.0">
    
-   
-   
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
    <!-- Search forms stylesheet                                                -->
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -65,66 +63,8 @@
 		</xsl:if>
 	</html>
 </xsl:template>
-<!--
-<xsl:template name="simpleFormBkp" exclude-result-prefixes="#all">
-	<div class="content content-home">
-		<div class="main-row">
-	   		<div class="find-data">
-			  <h2><img src="assets/img/search.png" alt=""/> Find data</h2>
-			    <div class="home-search-block">
-					<form method="get" action="/xtf/search">
-							<input type="text" placeholder="e.g. HIV, radiology" name="keyword"/>
-				            <xsl:text>&#160;</xsl:text>
-				            <input type="submit" value="Search"/>
-					  </form>
-			    </div>
-			    <div class="browse-options">
-			      <h3>Browse by:</h3>
-			      <h4><a href="/xtf/search?browse-all=yes">All Records</a></h4>
-			      <h4><a href="/xtf/search?browse-labs=all">Lab/Department</a></h4>
-			      <h4><a href="/xtf/search?browse-researchers=all">Researcher</a></h4>
-			    </div>
-			</div>	
-			<div class="share-data">
-			  <h2><img src="assets/img/upload.png"  alt=""/> Share data</h2>
-			  <div class="upload-link"><a href="/xtf/search?smode=uploadPage">Upload research data</a></div>
-			  <div class="help-options">
-			    <h3>Learn more:</h3>
-			    <h4><a href="/xtf/search?smode=aboutPage">About Dash</a></h4>
-			    <h4><a href="/xtf/search?smode=whyShareDataPage">Why share research data?</a></h4>
-			    <h4><a href="/xtf/search?smode=faqPage">FAQ</a></h4>
-				</div>
-			</div>
-		</div>
-		<div class="promo-row">
-			<div class="featured-data">
-				<div class="promo-box">
-				<h3>Recently uploaded research data</h3>
-					<ul>
-						<xsl:for-each select="document('../../../../static/brand/featured.xml')//featured">
-							<xsl:for-each select="./dataset">
-								<li>
-									<a href="{./link}">
-									<xsl:value-of select="string(./title)" />
-									</a>
-								</li>
-							</xsl:for-each>
-						</xsl:for-each>
-					</ul>
-				</div>
-			</div>
-			<div class="featured-sharer">
-				<div class="promo-box">
-					<h3>Researcher voices</h3>
-					<xsl:copy-of select="$brand.promo-img"/>
-					<br/>
-					<xsl:copy-of select="$brand.promo-quote"/>
-				</div>
-			</div>
-		</div>
-	</div>
-</xsl:template>
--->   
+
+   <!-- Home page template -->
 <xsl:template name="simpleForm">
    	<body>
 		<div id="terms-of-use">
