@@ -71,7 +71,7 @@
    <xsl:param name="docHits" select="/crossQueryResult/docHit"/>
    <xsl:param name="email"/>
    <xsl:param name="name"/>
-      
+   
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
    <!-- ====================================================================== -->
@@ -204,7 +204,7 @@
 							<xsl:copy-of select="$brand.header"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:copy-of select="$brand.homelink"/>
+								<xsl:call-template name="navheader"/>
 							</div>
 						</div>
 						<div id="banner">
@@ -360,7 +360,7 @@
 				<xsl:copy-of select="$brand.header"/>
 				<div id="navbar">
 					<xsl:copy-of select="$assets.nav-header"/>
-					<xsl:copy-of select="$brand.homelink"/>
+					<xsl:call-template name="navheader"/>
 				</div>
 			</div>
             <!-- result header -->
@@ -749,7 +749,7 @@
 							<xsl:copy-of select="$brand.header"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:copy-of select="$brand.homelink"/>
+								<xsl:call-template name="navheader"/>
 							</div>
 						</div>
 						<div id="banner">
@@ -792,7 +792,7 @@
 							<xsl:copy-of select="$brand.header"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:copy-of select="$brand.homelink"/>
+								<xsl:call-template name="navheader"/>
 							</div>
 						</div>
 						<div id="banner">
@@ -852,7 +852,7 @@
 							<xsl:copy-of select="$brand.header"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:copy-of select="$brand.homelink"/>
+								<xsl:call-template name="navheader"/>
 							</div>
 						</div>
 						<div id="banner">
@@ -993,7 +993,7 @@
 							<xsl:copy-of select="$brand.header"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:copy-of select="$brand.homelink"/>
+								<xsl:call-template name="navheader"/>
 							</div>
 						</div>
 						<div id="banner">
@@ -1044,7 +1044,7 @@
 							<xsl:copy-of select="$brand.header"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:copy-of select="$brand.homelink"/>
+								<xsl:call-template name="navheader"/>
 							</div>
 						</div>
 						<div id="banner">
@@ -1103,7 +1103,7 @@
 							<xsl:copy-of select="$brand.header"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:copy-of select="$brand.homelink"/>
+								<xsl:call-template name="navheader"/>
 							</div>
 						</div>
 						<div id="banner">
@@ -1191,7 +1191,7 @@
 							<xsl:copy-of select="$brand.header"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:copy-of select="$brand.homelink"/>
+								<xsl:call-template name="navheader"/>
 							</div>
 						</div>
 						<div id="banner">
@@ -1249,7 +1249,6 @@
 <!-- aboutPage Template			                                         	-->
 <!-- ====================================================================== -->	
 <xsl:template name="aboutPage">
-	<xsl:variable name="ShibSessionID" select="System:getenv('Shib_Session_ID')" xmlns:System="java:java.lang.System"/> 
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
 			<title>Dash: Open data for the global research community</title>
@@ -1264,10 +1263,9 @@
 				    <div id="inner-container"> 
 						<div class="header">
 							<xsl:copy-of select="$brand.header"/>
-							<xsl:value-of select="$ShibSessionID"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:copy-of select="$brand.homelink"/>
+								<xsl:call-template name="navheader"/>
 							</div>
 						</div>
 						<div id="banner">
@@ -1278,6 +1276,7 @@
 							<div id="terms-content">
 								<h1>About</h1>
 								<div class="text-container">
+									<p class="Random"><xsl:value-of select="$http.cookie"/></p>
 									<xsl:copy-of select="$brand.about"/>
 									<h3>UC Curation Center (UC3)</h3>
 									<p>The <a href="http://cdlib.org/uc3">UC3</a> is a creative partnership bringing together the expertise and resources of the CDL, the ten UC campuses, and the broader international curation community. The group fosters collaborative analysis, projects and solutions to ensure the long-term viability and usability of curated digital content. Examples of tools and services include the <a href="https://merritt.cdlib.org">Merritt Repository Service</a>, the <a href="http://was.cdlib.org">Web Archiving Service</a> (WAS), and <a href="https://dmptool.org">Data Management Planning Tool</a> (DMPTool).</p>
@@ -1317,7 +1316,7 @@
 							<xsl:copy-of select="$brand.header"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:copy-of select="$brand.homelink"/>
+								<xsl:call-template name="navheader"/>
 							</div>
 						</div>
 						<div class="content">

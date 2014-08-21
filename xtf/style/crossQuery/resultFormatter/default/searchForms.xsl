@@ -47,7 +47,8 @@
    
    <xsl:param name="freeformQuery"/>
    <xsl:variable name="brand" select="session:getData('brand')"/>
-      
+   <xsl:param name="http.cookie"/>
+   <xsl:variable name="Shib_cookie_name" select="'_shibsession'"/>      
    <!-- ====================================================================== -->
    <!-- Form Templates                                                         -->
    <!-- ====================================================================== -->
@@ -64,7 +65,7 @@
 		</xsl:if>
 	</html>
 </xsl:template>
-
+<!--
 <xsl:template name="simpleFormBkp" exclude-result-prefixes="#all">
 	<div class="content content-home">
 		<div class="main-row">
@@ -123,7 +124,7 @@
 		</div>
 	</div>
 </xsl:template>
-   
+-->   
 <xsl:template name="simpleForm">
    	<body>
 		<div id="terms-of-use">
@@ -136,7 +137,7 @@
 						<xsl:copy-of select="$brand.header"/>
 						<div id="navbar">
 							<xsl:copy-of select="$assets.nav-header"/>
-							<xsl:copy-of select="$brand.homelink"/>
+							<xsl:call-template name="navheader"/>
 						</div>
 					</div>
 					<div id="banner">
@@ -193,6 +194,25 @@
 		</div>
 	</body>
 </xsl:template>
+	<!-- ======================================================================	-->
+	<!-- NavHeader Template	                                                	-->
+	<!-- ======================================================================	-->
+<xsl:template name="navheader">
+	<xsl:choose>
+		<xsl:when test="contains($http.cookie, $Shib_cookie_name)">
+			<div id="project_links">
+				<ul>
+					<li><xsl:copy-of select="$brand.homelink"/></li>
+					<li><a href="/logout">Log Out</a></li>
+				</ul>
+			</div>
+		</xsl:when>
+		<xsl:otherwise>
+			<div id="project_links_no_logout">
+				<xsl:copy-of select="$brand.homelink"/>
+			</div>
+		</xsl:otherwise>
+	</xsl:choose>
+</xsl:template> 
 
-  
 </xsl:stylesheet>

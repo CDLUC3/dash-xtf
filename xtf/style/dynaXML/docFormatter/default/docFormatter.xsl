@@ -75,14 +75,15 @@
       <!-- Normally this is a URL parameter, but in ERC mode it's part of the main URL. -->
       <!-- <xsl:value-of select="replace($http.URL, $ercPat, '$2')"/> -->
    </xsl:param>
-   
+   <xsl:param name="http.cookie"/>
+
    <!-- ====================================================================== -->
-   <!-- Define Parameters                                                      -->
+   <!-- Define Parameters and variables                                        -->
    <!-- ====================================================================== -->
    
    <xsl:param name="doc.title" select="/title"/>
    <xsl:param name="css.path" select="'css/default/'"/>
-
+   <xsl:variable name="Shib_cookie_name" select="'_shibsession'"/>
    
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
@@ -138,7 +139,7 @@
 							<xsl:copy-of select="$brand.header"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:copy-of select="$brand.homelink"/>
+								<xsl:call-template name="navheader"/>
 							</div>
 						</div>
 						<div id="banner">
@@ -634,5 +635,27 @@
 		</ul>
 	</body>
 </xsl:template>      
+
+	<!-- ======================================================================	-->
+	<!-- NavHeader Template	                                                	-->
+	<!-- ======================================================================	-->
+<xsl:template name="navheader">
+	<xsl:choose>
+		<xsl:when test="contains($http.cookie, $Shib_cookie_name)">
+			<div id="project_links">
+				<ul>
+					<li><xsl:copy-of select="$brand.homelink"/></li>
+					<li><a href="/logout">Log Out</a></li>
+				</ul>
+			</div>
+		</xsl:when>
+		<xsl:otherwise>
+			<div id="project_links_no_logout">
+				<xsl:copy-of select="$brand.homelink"/>
+			</div>
+		</xsl:otherwise>
+	</xsl:choose>
+</xsl:template> 
+
 
 </xsl:stylesheet>

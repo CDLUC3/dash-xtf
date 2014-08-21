@@ -308,6 +308,12 @@ height: 49px;
 	float: right;
 }
 
+#project_links_no_logout {
+	float: right;
+	padding-right: 100px;
+	padding-left: 1em;
+}
+
 /* old nav bar */
 	
 #nav-home-menu {
