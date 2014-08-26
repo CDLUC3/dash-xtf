@@ -206,7 +206,7 @@
 											</xsl:if>
 										</xsl:if>
 										<xsl:for-each select="//*/*:meta/*:description[@descriptionType='Abstract']">
-											<xsl:if test="//*/*:meta/*:description[@descriptionType='Abstract']!=''">
+											<xsl:if test="not(normalize-space(.)='')">
 												<dt>Description</dt>
 												<dd>
 													<span class="DC-Type">
@@ -216,7 +216,7 @@
 											</xsl:if>
 										</xsl:for-each>
 										<xsl:for-each select="//*/*:meta/*:description[@descriptionType='Methods']">
-											<xsl:if test="//*/*:meta/*:description[@descriptionType='Methods']!=''">
+											<xsl:if test="not(normalize-space(.)='')">
 												<dt>Methods</dt>
 												<dd>
 													<div class="collapsible">
