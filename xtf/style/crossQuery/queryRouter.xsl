@@ -57,15 +57,22 @@
    <xsl:param name="http.URL"/>
    <xsl:template match="/">
    <xsl:choose>
+<!-- Berkeley -->
    <xsl:when test="contains($http.x-forwarded-host, 'berkeley.edu')">
 		<xsl:value-of select="session:setData('brand', 'berkeley')"/>
 	</xsl:when>
+<!-- UCLA -->
 	<xsl:when test="contains($http.x-forwarded-host, 'ucla.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucla')"/>
 	</xsl:when>
+	<xsl:when test="contains($http.x-forwarded-host, 'dash-ucla-dev.cdlib.org')">
+		<xsl:value-of select="session:setData('brand', 'ucla')"/>
+	</xsl:when>
+<!-- Irvine -->
 	<xsl:when test="contains($http.x-forwarded-host, 'uci.edu')">
 		<xsl:value-of select="session:setData('brand', 'uci')"/>
 	</xsl:when>
+<!-- Merced -->
 	<xsl:when test="contains($http.x-forwarded-host, 'ucmerced.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucmerced')"/>	
 	</xsl:when>
