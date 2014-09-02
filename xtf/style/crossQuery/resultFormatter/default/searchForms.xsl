@@ -120,7 +120,7 @@
 										<li>Meet funder requirements</li>
 									</ul>
 									<a href="/xtf/search?smode=stepsPage">
-										<button class="btn">Learn more</button>
+										<button class="btn">Get started</button>
 										<!-- <img src="assets/img/learn-more.gif" width="125" height="27" alt="Learn more"/> -->
 									</a>
 								</div>
