@@ -879,7 +879,7 @@
 									  <p>All formats are allowed.</p>
 
 									  <h2>Volume and size limitations</h2>
-									  <p>10GB per file sizeconstraint. Quotas are likely to be introduced at a later stage. All data files are stored in the Merritt Repository. More information about the Merritt Repository Service is available in the white paper "<a href="https://merritt.cdlib.org/d/ark%3A%2F13030%2Fm52f7p63/2/producer%2FUC3-Merritt-preservation-latest.pdf">UC3, Merritt and Long-term Preservation</a>."</p>
+									  <p>10GB per file size constraint. Quotas are likely to be introduced at a later stage. All data files are stored in the Merritt Repository. More information about the Merritt Repository Service is available in the white paper "<a href="https://merritt.cdlib.org/d/ark%3A%2F13030%2Fm52f7p63/2/producer%2FUC3-Merritt-preservation-latest.pdf">UC3, Merritt and Long-term Preservation</a>."</p>
 
 									  <h2>Data quality</h2>
 									  <p>All information is provided "as-is" and the user shall hold Dash and information providers supplying data to Dash free and harmless in connection with the use of such information.</p>
@@ -898,7 +898,7 @@
 									  <h1><a name="h.gt79ttyx3jfc" id="h.gt79ttyx3jfc"></a>Access and reuse of data</h1>
 
 									  <h2>Access to data objects</h2>
-									  <p>Data deposited into Dash may have a custom Data Use Agreement, or it may be under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. The dataset landing page will display the license associated with the dataset. Note that content in Dash is offered "as is." By downloading files, you agree to the <a href="http://www.cdlib.org/about/terms.html">Dash Terms of Use</a>.</p>
+									  <p>Data deposited into Dash may have a custom Data Use Agreement, or they may be under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. According to the terms of the CC-BY license, reuse of the data must include appropriate credit and must indicate if changes were made. The dataset landing page will display the license associated with the dataset. Note that content in Dash is offered "as is." By downloading files, you agree to the <a href="http://www.cdlib.org/about/terms.html">Dash Terms of Use</a>.</p>
 
 									  <h2>Tracking users and statistics</h2>
 									  <p>The California Digital Library does not track, collect or retain personal information from users of Dash, except as otherwise provided herein. In order to enhance Dash and monitor traffic, non-personal information such as IP addresses and cookies may be tracked and retained. User provided information, like corrections of metadata or paper claims, will be integrated into the database without displaying its source and may be shared with other services.</p>
@@ -1278,9 +1278,9 @@
 								<h1>About</h1>
 								<div class="text-container">
 									<xsl:copy-of select="$brand.about"/>
-									<h3>UC Curation Center (UC3)</h3>
-									<p>The <a href="http://cdlib.org/uc3">UC3</a> is a creative partnership bringing together the expertise and resources of the CDL, the ten UC campuses, and the broader international curation community. The group fosters collaborative analysis, projects and solutions to ensure the long-term viability and usability of curated digital content. Examples of tools and services include the <a href="https://merritt.cdlib.org">Merritt Repository Service</a>, the <a href="http://was.cdlib.org">Web Archiving Service</a> (WAS), and <a href="https://dmptool.org">Data Management Planning Tool</a> (DMPTool).</p>
-									<h3>Dash Origins</h3>
+										<h3>UC Curation Center (UC3)</h3>
+										<p>The <a href="http://cdlib.org/uc3">UC3</a> is a creative partnership bringing together the expertise and resources of the CDL, the ten UC campuses, and the broader international curation community. The group fosters collaborative analysis, projects and solutions to ensure the long-term viability and usability of curated digital content. Examples of tools and services include the <a href="https://merritt.cdlib.org">Merritt Repository Service</a>, the <a href="http://was.cdlib.org">Web Archiving Service</a> (WAS), and <a href="https://dmptool.org">Data Management Planning Tool</a> (DMPTool).</p>
+									<h2>Dash Origins</h2>
 									<p>The Dash project began as <a href="http://datashare.ucsf.edu">DataShare</a>, a collaboration between University of California San Francisco's <a href="http://ctsi.ucsf.edu">Clinical and Translational Science Institute</a> (CTSI), the <a href="http://library.ucsf.edu">UCSF Library</a>, and <a href="http://cdlib.org/uc3">UC3</a>.</p>
 									<p>UCSF's <a href="http://ctsi.ucsf.edu">Clinical &amp; Translational Science Institute</a> facilitates the rapid translation of research to improvements in patient and community health. It is a cross-school, campus-wide institute with scientist leaders at its helm. To achieve its goal of accelerating research to advance health, CTSI provides infrastructure, services, and training to support clinical and translational research. To advance its mission, it also develops broad coalitions and partnerships at the local and national levels to enable a transformation of the research environment. Established in 2006, the Institute was among the first of the now 60-member, National Institutes of Health-funded, Clinical and Translational Science Awards (CTSA) consortium.</p>
 									<p>The mission of the <a href="http://library.ucsf.edu">UCSF Library and Center for Knowledge Management</a> is to advance science, foster excellence in teaching and learning, and promote health through the collection, development, organization, and dissemination of the world's health sciences knowledge base. It delivers services to the UCSF community and works with faculty on a number of collaborative projects in both education and research. On May 21, 2012 the UCSF faculty approved an Open Access policy for journal articles and the Library is developing systems and strategies to comply with the policy.</p>

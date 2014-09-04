@@ -32,58 +32,86 @@
 
 	<faq>
 		<div class="text-container">
-		<p class="title">Who can deposit data here?</p>
-		<p class="para">UCI answer here.</p>
-		<p class="title">Who can access these data?</p>
-		<p class="para">The descriptive metadata associated with each data set is publicly available. Any member of the public may discover these data and request access to them. Access to the data will be granted in accordance with the terms specified by the data depositor.</p>
-		<p class="title">Will I have control of the data?</p>
-		<p class="para">You will have the ability to control access to your data (see below). Once data is deposited, you will have control over the versioning of the data set as well as the metadata indexing fields.</p>
-		<p class="title">How can I control who sees/accesses the data?</p>
-		<p class="para">Anyone will be able to view the descriptive metadata used to index your data set, this information is publicly available to allow for maximum discoverability. You will have the ability to specify terms of use for your data set via a 'Data Use Agreement' (DUA) prior to allowing access. Default DUAs are set at the collection level (e.g. all of the data sets entered under the Lab X collection will be assigned the default DUA specified by Lab X), however this DUA may be over-written if a different set of terms is required for a specific data set.</p>
-		<p class="title">What do I need to submit the data?</p>
+			<h2 class="title">Who can deposit data here?</h2>
+			<p class="para">Any UCI-affiliated researcher (faculty, postdoc, student, or staff) can use this resource to archive and share research data sets, provided they have appropriate permission. Data that are collected at research sites are under the stewardship of the Principal Investigator (PI) named on the resource provided to collect the data, and this PI may grant permission to deposit data.</p>
+
+			<h2 class="title">What if I have collaborators outside of UCI?</h2>
+			<p class="para">Only researchers logged in with UCINetID can deposit data. You can, however, add your collaborators to the "data contributors" section of the metadata.</p>
+
+			<h2 class="title">Who can access these data?</h2>
+			<p class="para">All data in Dash have <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution</a> (CC-BY-4.0) licenses. This means anyone can access the data sets, download them, and use them provided they give proper attribution. Although many researchers would prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read <a href="http://pantonprinciples.org">Panton Principles for Open Data in Science</a> for more information.</p>
+
+			<h2 class="title">Do you support data embargoes or restricted access?</h2>
+			<p class="para">Not at this time. We do, however, have plans to expand the Dash functionality to include both.</p>
+
+			<h2 class="title">What do I need to submit the data?</h2>
 			<ul>
 				<li>Permission from the appropriate PI(s)</li>
-				<li>Information about the data set (this descriptive metadata will be used to index your data set, so the more information you can provide - the better)</li>
+				<li>Information about the dataset, including dataset title, creators and keywords (this descriptive metadata will be used to index your data set, so the more information you can provide, the better)</li>
 				<li>Access to files comprising the data set</li>
 			</ul>
-		<p class="title">Are there any file format requirements?</p>
-		<p class="para">No. Files of any type are acceptable for deposit. However, please ensure that any files of a specialized or proprietary nature are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the data set files, or could be entered in the 'Technical Description' section of the metadata.</p>
-		<p class="title">What best practices can I follow for data preparation?</p>
-		<p class="para">There are a variety of best practices depending on your field of research, but generally:</p>
+
+			<h2 class="title">Are there any file format requirements?</h2>
+			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the data set files, or could be entered in the 'Technical Description' section of the metadata.</p>
+
+			<h2 class="title">What best practices can I follow for data preparation?</h2>
+			<p class="para">There are a variety of best practices depending on your field of research. For generic help, see the <a href="http://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf">DataONE Primer on Data Management Best Practices</a> (PDF). Generally,</p>
 			<ul>
 				<li>Ensure data files are the most up-to-date and complete versions</li>
 				<li>Ensure the integrity of data files (check if corrupted)</li>
-				<li>Ensure that all data relating to human subjects has been properly <a href="http://cphs.berkeley.edu/hipaa/hipaaglossary.html">de-identified</a>.</li>
+				<li>Ensure that all data relating to human subjects has been properly de-identified</li>
 				<li>Double-check the accuracy of the descriptive metadata</li>
 				<li>Enter as much descriptive metadata as possible in the indexing fields</li>
 				<li>Ensure that any information critical to the proper viewing and/or usage of the data is included in the submission (either as a separate 'Readme' file or within the 'Technical Description' metadata field)</li>
 			</ul>
-		<p class="title">For how long will the data be available?</p>
-		<p class="para">Once you have deposited data, it is permanently archived and available through the California Digital Library; however the DataShare website is currently supported as a pilot project and therefore we cannot guarantee availability through Dash for any length of time.</p>
-		<p class="title">Will I know if someone uses/views the data?</p>
-		<p class="para">Yes, Dash provides tools to access the metrics associated with each data set. This includes number of page views and data set downloads. We request notification from data re-users when analysis of data made available through Dash leads to publications or conference presentations, however we cannot guarantee this.</p>
-		<p class="title">How do I get credit for the data if someone uses it?</p>
-		<p class="para">Data re-users are provided with a simple 'Cite this data set' button which provides the proper data citation (including persistent identifier) and can be exported to a reference manager. Your data use agreement contains a term requiring data re-users to provide proper attribution, thus, they must cite your data when and where it is appropriate.</p>
-		<p class="title">What if I never published anything using these data?</p>
-		<p class="para">It is not required that the data deposited in Dash be associated with a publication. It is only required that these data are collected in a manner that adheres to the standards set forth by the affiliated institution and institutional review board.</p>
-		<p class="title">Who created these data?</p>
-		<p class="para">The data are collected and/or processed by the individuals specified as 'Data creators' in association with the individual(s) designated as 'Principal Investigator'.</p>
-		<p class="title">How can the data on this site be used?</p>
-		<p class="para">The data made available through Dash can be used in any manner consistent with the general goal of advancing scientific knowledge; either by serving as training materials or testing materials.</p>
-		<p class="title">Is there anything I can't use the data for?</p>
-		<p class="para">The data cannot be used for disreputable purposes, and no attempts must ever be made to re-identify human subjects based on their data. Any additional constraints on data use will be outlined in a 'Data Use Agreement' (DUA) specified by the data provider. You will need to view and agree to the DUA terms prior to being granted access to the data.</p>
-		<p class="title">Are there requirements if I use data?</p>
-		<p class="para">We require only that the data set be cited appropriately when used, this ensures that data providers receive proper credit for their contribution to any works derived from the data. Any additional requirements for data use will be outlined in a 'Data Use Agreement' (DUA) specified by the data provider. You will need to view and agree to the DUA terms prior to being granted access to the data.</p>
-		<p class="title">Do I need to sign-in to get data?</p>
-		<p class="para">Persons requesting data are not required to sign-in in order to do so. Most data sets will be made available immediately following acceptance of the Data Use Agreement terms (requiring entry of name and a valid email address). However, data providers reserve the right to enforce additional controls on access to the data.</p>
-		<p class="title">Do I have to pay for data?</p>
-		<p class="para">No, these data are made publicly available free of charge.</p>
-		<p class="title">What if I have questions about the data?</p>
-		<p class="para">Please contact us with any questions about the data. Your message will be directed to an appropriate source to answer any questions about the data. We cannot guarantee that the source will be able to obtain an answer to your specific question.</p>
+
+			<h2 class="title">For how long will the data be available?</h2>
+			<p>Once you have deposited data, they are permanently archived and available through the <a href="http://cdlib.org">California Digital Library</a>'s <a href="https://merritt.cdlib.org">Merritt Repository Service</a>. See "Preservation of data" on the <a href="/xtf/search?smode=policiesPage">Policies page</a> for more information.</p>
+
+			<h2 class="title">Will I know if someone uses/views the data?</h2>
+			<p class="para">Yes, Dash provides tools to access the metrics associated with each data set. This includes number of page views and data set downloads. We request notification from data re-users when analysis of data made available through Dash leads to publications or conference presentations, however we cannot guarantee this.</p>
+
+			<h2 class="title">How do I get credit for the data if someone uses it?</h2>
+			<p class="para">Data re-users are provided with the proper data citation (including persistent identifier). See "Access and reuse of data" on the <a href="/xtf/search?smode=policiesPage">Policies page</a> for more information.</p>
+
+			<h2 class="title">Can I update my data?</h2>
+			<p class="para">Yes, you can add new versions of your data.</p>
+
+			<h2 class="title">How will someone find my data?</h2>
+			<p class="para">Metadata will be indexed by the <a href="http://wokinfo.com/products_tools/multidisciplinary/dci/about/">Thomson-Reuters Data Citation Index</a> and <a href="http://www.elsevier.com/online-tools/scopus">Scopus</a>.</p>
+
+			<h2 class="title">Do the data have to be associated with a publication?</h2>
+			<p class="para">No. Dash accepts all quality data, regardless of whether they have been used to publish a paper.</p>
+
+			<h2 class="title">Do I need to log into Dash to get data?</h2>
+			<p class="para">Anyone can search, view and download datasets in Dash. Persons requesting data are not required to sign-in in order to do so.</p>
+
+			<h2 class="title">Do I have to pay for data?</h2>
+			<p class="para">No, these data are made publicly available free of charge.</p>
+
+			<h2 class="title">What if I have questions about the data?</h2>
+			<p class="para">Please contact Matthew McKinley at <a href="mailto:mjmckinl@uci.edu">mjmckinl@uci.edu</a> with any questions about the data. Your message will be directed to an appropriate source to answer any questions about the data.</p>
 		</div>
 	</faq>
 
 	<about>
+		<h2>About</h2>
+			<p>Dash is a new, easy-to-use solution for the effective curation of and access to campus research data. It is designed to be a simple self-service curation tool for researchers to archive and share their datasets.</p>
+		<h2>Tasks Dash helps you perform:</h2>
+			<ul>
+				<li>Prepare data for curation by reviewing best practice guidance for the creation or acquisition of digital research data.</li>
+				<li>Select data for curation through local file browse or drag-and-drop operation.</li>
+				<li>Describe data in terms of the DataCite metadata schema.</li>
+				<li>Identify data with a persistent DOI for permanent citation and discovery.</li>
+				<li>Preserve, Manage, and Share data by uploading to a public <a href="https://merritt.cdlib.org">Merritt</a> collection.</li>
+				<li>Discover and retrieve data through faceted search and browse.</li>
+			</ul>
+		<h2>Importance of Data Sharing</h2>
+			<p>Data sharing is critical for the advancement of knowledge. Researchers benefit from increased collaborations, validation, and recognition of their work; institutions and funders benefit from the measurable increase in the impact of their resources; and society benefits from the faster pace at which research can progress. There are several barriers to providing access to data, and currently data sharing is mostly done by large, well-funded multi-investigator projects. If these barriers were addressed, allowing individual investigators to easily and quickly share their primary research data, we could create a new culture of transparency and efficiency&#8212;likely resulting in major impacts on knowledge advancement.</p>
+		<h2>Who We Are</h2>
+			<p>UCI Dash is a collaborative project between the <a href="http://www.lib.uci.edu">UCI Libraries</a> and the UC Curation Center (UC3) at the <a href="http://cdlib.org">California Digital Library</a>. </p>
+			<h3>UCI Libraries</h3>
+				<p>The UCI Libraries assist UC Irvine's students, faculty, and staff in fulfilling the education, scholarship, patient care, and research goals of the University. We provide superior user-focused services, accurate and unbiased assistance, and easy-to-use access to outstanding research collections. We also preserve our collections to ensure their availability for use and their survival as valuable cultural assets. As a major information resource for UC Irvine and its local community, we contribute to creating and sustaining a well-informed and educated society.</p>
 	</about>
 
 </brand>
