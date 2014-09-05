@@ -52,11 +52,11 @@
 			</ul>
 
 			<h2 class="title">Are there any file format requirements?</h2>
-			<p class="title">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the data set files.</p>
+			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the data set files.</p>
 
 			<h2 class="title">What best practices can I follow for data preparation?</h2>
-			<p class="title">UC Berkeley Libraries provides data management support through <a href="http://www.lib.berkeley.edu/sciences/data/guide">online tutorials</a> and <a href="https://sites.google.com/site/managescientificdata/">guides</a>. Questions about the use of data management can be sent to the data consultation list (data-consult at lists dot berkeley dot edu).</p>
-			<p2 class="para">There are a variety of best practices depending on your field of research. For generic help, see the <a href="https://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf">DataONE Primer on Data Management Best Practices</a> (PDF). Generally,</p>
+			<p class="para">UC Berkeley Libraries provides data management support through <a href="http://www.lib.berkeley.edu/sciences/data/guide">online tutorials</a> and <a href="https://sites.google.com/site/managescientificdata/">guides</a>. Questions about the use of data management can be sent to the data consultation list (data-consult at lists dot berkeley dot edu).</p>
+			<p class="para">There are a variety of best practices depending on your field of research. For generic help, see the <a href="https://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf">DataONE Primer on Data Management Best Practices</a> (PDF). Generally,</p>
 			<ul>
 				<li>Ensure data files are the most up-to-date and complete versions</li>
 				<li>Ensure the integrity of data files (check if corrupted)</li>
@@ -67,22 +67,22 @@
 			</ul>
 
 			<h2 class="title">For how long will the data be available?</h2>
-			<p class="title">Once you have deposited data, it is permanently archived and available through the <a href="http://cdlib.org">California Digital Library</a>'s <https://merritt.cdlib.org">Merritt Repository Service</a>. See our <a href="/xtf/search?smode=policiesPage">Policies page</a> for more information.</p>
+			<p class="para">Once you have deposited data, it is permanently archived and available through the <a href="http://cdlib.org">California Digital Library</a>'s <a href="https://merritt.cdlib.org">Merritt Repository Service</a>. See our <a href="/xtf/search?smode=policiesPage">Policies page</a> for more information.</p>
 
 			<h2 class="title">How will someone find my data?</h2>
-			<p class="title">Metadata will be indexed by the <a href="http://wokinfo.com/products_tools/multidisciplinary/dci/about/">Thomson-Reuters Data Citation Index</a> and <a href="http://www.elsevier.com/online-tools/scopus">Scopus</a>.</p>
+			<p class="para">Metadata will be indexed by the <a href="http://wokinfo.com/products_tools/multidisciplinary/dci/about/">Thomson-Reuters Data Citation Index</a> and <a href="http://www.elsevier.com/online-tools/scopus">Scopus</a>.</p>
 
 			<h2 class="title">Do the data have to be associated with a publication?</h2>
-			<p class="title">No. Dash accepts all high quality data, regardless of whether they have been used to publish a paper.</p>
+			<p class="para">No. Dash accepts all high quality data, regardless of whether they have been used to publish a paper.</p>
 
 			<h2 class="title">Do I need to log into Dash to get data?</h2>
-			<p class="title">Persons requesting data are not required to sign in in order to do so.</p>
+			<p class="para">Persons requesting data are not required to sign in in order to do so.</p>
 
 			<h2 class="title">Do I have to pay for data?</h2>
-			<p class="title">During the pilot project the library will cover costs of publishing data.</p>
+			<p class="para">During the pilot project the library will cover costs of publishing data.</p>
 
 			<h2 class="title">What if I have questions about the data?</h2>
-			<p class="title">Please contact us at data-consult at lists dot berkeley dot edu with any questions about the data. Your message will be directed to an appropriate source to answer any questions about the data.</p>
+			<p class="para">Please contact us at data-consult at lists dot berkeley dot edu with any questions about the data. Your message will be directed to an appropriate source to answer any questions about the data.</p>
 		</div>
 	</faq>
 
