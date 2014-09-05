@@ -887,7 +887,7 @@
 									  <h2>Embargo status</h2>
 									  <p>Dash does not currently have the capability for users to deposit content under an embargo status.</p>
 
-									  <h1><a name="h.vuanhwo3t3up" id="h.vuanhwo3t3up"></a>Withdrawal of data and revocation of DOIs</h1>
+									  <h1>Withdrawal of data and revocation of DOIs</h1>
 
 									  <h2>Revocation</h2>
 									  <p>Content not considered to fall under the scope of the repository will be removed and associated DOIs issued by Dash revoked. Please signal promptly any suspected policy violations, ideally no later than 24 hours from upload. User access may be revoked on violation of <a href="http://www.cdlib.org/about/terms.html">Terms of Use</a>.</p>
@@ -895,7 +895,7 @@
 									  <h2>Withdrawal</h2>
 									  <p>Withdrawal is considered an exceptional action which normally should be requested and fully justified by the original contributor. In any other circumstance reasonable attempts will be made to contact the original contributor to obtain consent.</p>
 
-									  <h1><a name="h.gt79ttyx3jfc" id="h.gt79ttyx3jfc"></a>Access and reuse of data</h1>
+									  <h1>Access and reuse of data</h1>
 
 									  <h2>Access to data objects</h2>
 									  <p>Data deposited into Dash may have a custom Data Use Agreement, or they may be under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. According to the terms of the CC-BY license, reuse of the data must include appropriate credit and must indicate if changes were made. The dataset landing page will display the license associated with the dataset. Note that content in Dash is offered "as is." By downloading files, you agree to the <a href="http://www.cdlib.org/about/terms.html">Dash Terms of Use</a>.</p>
@@ -904,7 +904,7 @@
 									  <p>The California Digital Library does not track, collect or retain personal information from users of Dash, except as otherwise provided herein. In order to enhance Dash and monitor traffic, non-personal information such as IP addresses and cookies may be tracked and retained. User provided information, like corrections of metadata or paper claims, will be integrated into the database without displaying its source and may be shared with other services.</p>
 									  <p>The California Digital Library will take all reasonable measures to protect the privacy of its users and to resist service interruptions, intentional attacks, or other events that may compromise the security of the Dash website.</p>
 
-									  <h1><a name="h.atav9amvh8gv" id="h.atav9amvh8gv"></a>Preservation of data</h1>
+									  <h1>Preservation of data</h1>
 									  <p>All data submitted to Dash will be housed in the CDL's Merritt Repository. For a full description of the services provided by Merritt, see this document: <a href="https://merritt.cdlib.org/d/ark%3A%2F13030%2Fm52f7p63/2/producer%2FUC3-Merritt-preservation-latest.pdf">UC3, Merritt, and Long-term preservation</a>.</p>
 
 									  <h2>Retention period</h2>
@@ -919,7 +919,7 @@
 									  <h2>Fixity and authenticity</h2>
 									  <p>All data files are stored along with a SHA-256 checksum of the file  content. Regular checks of files against their checksums are made. The audit process cycles continually, with a current cycle time of approximately two months.</p>
 
-									  <h1><a name="h.a1h6vbdcpidu" id="h.a1h6vbdcpidu"></a>Succession plans</h1>
+									  <h1>Succession plans</h1>
 									  <p>In case of closure of the repository, reasonable efforts will be made to integrate all content into suitable alternative institutional and/or subject based repositories.</p>
 									  <p>All information is provided "as-is" and the user shall hold the California Digital Library, UC Campus, and information providers supplying data to Dash free and harmless in connection with the use of such information.</p>
 								</div>
