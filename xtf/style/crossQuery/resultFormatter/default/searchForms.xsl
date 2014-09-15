@@ -46,7 +46,7 @@
    <xsl:param name="freeformQuery"/>
    <xsl:variable name="brand" select="session:getData('brand')"/>
    <xsl:param name="http.cookie"/>
-   <xsl:variable name="Shib_cookie_name" select="'_shibsession'"/>      
+   <xsl:variable name="Shib_cookie_name" select="'dash_logged_in'"/>      
    <!-- ====================================================================== -->
    <!-- Form Templates                                                         -->
    <!-- ====================================================================== -->

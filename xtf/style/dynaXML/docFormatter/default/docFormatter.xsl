@@ -83,7 +83,7 @@
    
    <xsl:param name="doc.title" select="/title"/>
    <xsl:param name="css.path" select="'css/default/'"/>
-   <xsl:variable name="Shib_cookie_name" select="'_shibsession'"/>
+   <xsl:variable name="Shib_cookie_name" select="'dash_logged_in'"/>
    
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
