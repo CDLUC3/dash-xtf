@@ -201,7 +201,8 @@
 					<div id="inner-container"> 
 						<!-- begin header -->
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
+							<!-- <xsl:copy-of select="$brand.header"/> -->
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -269,7 +270,8 @@
 		</head>
 		<body>
 			<div class="header">
-				<xsl:copy-of select="$brand.header"/>
+				<xsl:call-template name="brandheader"/>
+<!--				<xsl:copy-of select="$brand.header"/> -->
 			</div>
             <div class="getAddress">
 				<h2>E-mail My Bookbag</h2>
@@ -307,7 +309,8 @@
 		</head>
 		<body onload="autoCloseTimer = setTimeout('window.close()', 1000)">
 			<div class="header">
-				<xsl:copy-of select="$brand.header"/>
+				<xsl:call-template name="brandheader"/>
+<!--				<xsl:copy-of select="$brand.header"/> -->
 			</div>
             <h1>E-mail My Citations</h1>
             <b>Your citations have been sent.</b>
@@ -357,7 +360,8 @@
 		</head>
 		<body>
 			<div class="header">
-				<xsl:copy-of select="$brand.header"/>
+				<xsl:call-template name="brandheader"/>
+<!--				<xsl:copy-of select="$brand.header"/> -->
 				<div id="navbar">
 					<xsl:copy-of select="$assets.nav-header"/>
 					<xsl:call-template name="navheader"/>
@@ -746,7 +750,8 @@
 					<!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
+<!--							<xsl:copy-of select="$brand.header"/> -->
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -789,7 +794,8 @@
 					<!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
+<!-- 							<xsl:copy-of select="$brand.header"/> -->
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -849,7 +855,8 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
+<!--							<xsl:copy-of select="$brand.header"/> -->
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -990,7 +997,8 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
+<!--							<xsl:copy-of select="$brand.header"/> -->
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -1041,7 +1049,8 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
+<!--							<xsl:copy-of select="$brand.header"/> -->
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -1100,7 +1109,8 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
+<!--							<xsl:copy-of select="$brand.header"/> -->
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -1188,7 +1198,8 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
+<!--							<xsl:copy-of select="$brand.header"/> -->
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -1263,7 +1274,8 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
+<!--							<xsl:copy-of select="$brand.header"/> -->
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -1310,7 +1322,8 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
+<!--							<xsl:copy-of select="$brand.header"/> -->
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>

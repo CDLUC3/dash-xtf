@@ -101,7 +101,18 @@
 		<xsl:value-of select="session:setData('brand', 'default')"/>
 	</xsl:otherwise>
 	</xsl:choose>
-      <route>
+	<xsl:choose>
+		<xsl:when test="contains($http.x-forwarded-host, '-dev')">
+			<xsl:value-of select="session:setData('server', 'http://dash-dev.cdlib.org')"/>
+		</xsl:when>
+		<xsl:when test="contains($http.x-forwarded-host, '-stg')">
+			<xsl:value-of select="session:setData('server', 'https://dash-stg.cdlib.org')"/>
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:value-of select="session:setData('server', 'https://dash.cdlib.org')"/>
+		</xsl:otherwise>
+	</xsl:choose>
+	<route>
          <xsl:choose>
             <!-- oai -->
             <xsl:when test="matches($http.URL,'oai\?')">

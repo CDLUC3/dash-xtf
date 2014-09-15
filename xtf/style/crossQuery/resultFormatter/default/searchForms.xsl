@@ -44,7 +44,9 @@
    <!-- ====================================================================== -->
    
    <xsl:param name="freeformQuery"/>
+   <xsl:param name="http.x-forwarded-host"/>
    <xsl:variable name="brand" select="session:getData('brand')"/>
+   <xsl:variable name="serverName" select="session:getData('server')"/>
    <xsl:param name="http.cookie"/>
    <xsl:variable name="Shib_cookie_name" select="'dash_logged_in'"/>      
    <!-- ====================================================================== -->
@@ -74,7 +76,8 @@
 				<div id="inner-container"> 
 					<!-- begin header -->
 					<div class="header">
-						<xsl:copy-of select="$brand.header"/>
+						<xsl:call-template name="brandheader"/>
+<!--						<xsl:copy-of select="$brand.header"/> -->
 						<div id="navbar">
 							<xsl:copy-of select="$assets.nav-header"/>
 							<xsl:call-template name="navheader"/>
@@ -154,5 +157,10 @@
 		</xsl:otherwise>
 	</xsl:choose>
 </xsl:template> 
+<xsl:template name="brandheader">
+	<xsl:message>x-forwarded-host: <xsl:value-of select="$http.x-forwarded-host"/></xsl:message>
+	<a href="{$serverName}"><img src="assets/img/dash_cdl_logo.png" alt="Dash: Data sharing made easy" class="your-logo"/></a>
+	<xsl:copy-of select="$brand.header"/>
+</xsl:template>
 
 </xsl:stylesheet>
