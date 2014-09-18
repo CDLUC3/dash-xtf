@@ -424,7 +424,7 @@
 	<p>Content in Dash is offered "as is." By downloading files, you agree to the <a href="http://www.cdlib.org/about/terms.html">Dash Terms of use</a>. To the extent possible under law, the authors have waived all copyright and related or neighboring rights to these data by agreeing to a <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 waiver</a>.</p>
 </xsl:template>
 <xsl:template name="ucsf-datashare-dua">
-	<p>Terms of Use for these data are outlined in the associated <a href="/xtf/search?smode=dataUseAgreement">Data Use Agreement</a>.</p>
+	<p>Terms of Use for these data are outlined in the associated <a href="/xtf/search?smode=dataUseAgreementUCSF">Data Use Agreement</a>.</p>
 </xsl:template>
 
 </xsl:stylesheet>

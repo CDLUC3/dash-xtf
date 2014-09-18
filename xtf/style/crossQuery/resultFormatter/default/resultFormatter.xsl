@@ -93,8 +93,8 @@
 		<xsl:when test="$smode = 'uploadFaqPage'">   	 
 		 	<xsl:call-template name="uploadFaqPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'dataUseAgreement'">   	 
-		 	<xsl:call-template name="dataUseAgreement"/>
+		<xsl:when test="$smode = 'dataUseAgreementUCSF'">   	 
+		 	<xsl:call-template name="dataUseAgreementUCSF"/>
 		</xsl:when>
 		<xsl:when test="$smode = 'preparePage'">   	 
 			<xsl:call-template name="preparePage"/>
@@ -1035,10 +1035,10 @@
 <!-- ====================================================================== -->
 <!-- dataUseAgreementPage Template                                         	-->
 <!-- ====================================================================== -->
-<xsl:template name="dataUseAgreement">
+<xsl:template name="dataUseAgreementUCSF">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Data Use Agreement - Open data for the global research community</title>
+			<title>Datashare: Data Use Agreement - Open data for the global research community</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
@@ -1063,7 +1063,7 @@
 						<div id="content"> 	
 							<div class="single-column">
 								<div class="single-column">
-									<h1>Dash Data Use Agreement</h1>
+									<h1>UCSF Datashare Data Use Agreement</h1>
 									<div class="text-container">
 										<p>As part of this agreement, Consumer submits to the following statements:</p>
 										<ol>

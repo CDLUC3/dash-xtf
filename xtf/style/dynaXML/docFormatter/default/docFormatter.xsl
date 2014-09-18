@@ -324,6 +324,9 @@
 											<xsl:when test="starts-with(//@rightsURI, 'http://datashare.ucsf.edu/xtf/search')">
 												<xsl:call-template name="ucsf-datashare-dua"/>
 											</xsl:when>
+											<xsl:when test="//campus='UC San Francisco'">
+												<xsl:call-template name="ucsf-datashare-dua"/>
+											</xsl:when>
 											<xsl:otherwise>
 												<xsl:choose>
 													<xsl:when test="//rightsList!=''">
