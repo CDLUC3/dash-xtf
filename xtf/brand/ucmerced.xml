@@ -33,13 +33,13 @@
 	<faq>
 		<div class="text-container">
 			<h2 class="title">Who can deposit data here?</h2>
-			<p class="para">Any UC Merced-affiliated researcher (faculty, postdoc, student, or staff) can use this resource to archive and share research data sets, provided they have appropriate permission. Data that are collected at research sites are under the stewardship of the Principal Investigator (PI) named on the resource provided to collect the data, and this PI may grant permission to deposit data.</p>
+			<p class="para">Any UC Merced-affiliated researcher (faculty, postdoc, student, or staff) can use this resource to archive and share research datasets, provided they have appropriate permission. Data that are collected at research sites are under the stewardship of the Principal Investigator (PI) named on the resource provided to collect the data, and this PI may grant permission to deposit data.</p>
 
 			<h2 class="title">What if I have collaborators outside of UC Merced?</h2>
 			<p class="para">You will need UC Merced credentials to log into the system and deposit data. You can, however, add your collaborators to the "data contributors" section of the metadata. Although only researchers logged in with UC Merced credentials can deposit data, anyone can search, view and download datasets in Dash.</p>
 
 			<h2 class="title">Who can access these datasets?</h2>
-			<p class="para">All data in Dash have <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution</a> (CC-BY-4.0) licenses. This means anyone can access the data sets, download them, and use them provided they give proper attribution. Although many researchers would prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read <a href="http://pantonprinciples.org">Panton Principles for Open Data in Science</a> for more information.</p>
+			<p class="para">All data in Dash have <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution</a> (CC-BY-4.0) licenses. This means anyone can access the datasets, download them, and use them provided they give proper attribution. Although many researchers would prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read <a href="http://pantonprinciples.org">Panton Principles for Open Data in Science</a> for more information.</p>
 
 			<h2 class="title">Do you support data embargoes or restricted access?</h2>
 			<p class="para">Not at this time. We do, however, have plans to expand the Dash functionality to include both. If you have specific requests for functionality, please add it to our <a href="https://github.com/CDLUC3/dash/issues">GitHub Issue Tracker</a>.</p>
@@ -48,11 +48,11 @@
 			<ul>
 				<li>Permission from the appropriate PI(s)</li>
 				<li>Information about the dataset, including dataset title, creators, keywords</li>
-				<li>Access to files comprising the data set</li>
+				<li>Access to files comprising the dataset</li>
 			</ul>
 
 			<h2 class="title">Are there any file format requirements?</h2>
-			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the data set files, or could be entered in the 'Technical Description' section of the metadata.</p>
+			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the dataset files, or could be entered in the 'Technical Description' section of the metadata.</p>
 
 			<h2 class="title">What best practices can I follow for data preparation?</h2>
 			<p class="para">There are a variety of best practices depending on your field of research. For generic help, see the <a href="http://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf">DataONE Primer on Data Management Best Practices</a> (PDF). Generally,</p>
