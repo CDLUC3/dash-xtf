@@ -68,6 +68,10 @@
 	<xsl:when test="contains($http.x-forwarded-host, 'dash-ucla-dev.cdlib.org')">
 		<xsl:value-of select="session:setData('brand', 'ucla')"/>
 	</xsl:when>
+	<xsl:when test="contains($http.x-forwarded-host, 'dash-ucla-stg.cdlib.org')">
+		<xsl:value-of select="session:setData('brand', 'ucla')"/>
+	</xsl:when>
+
 <!-- Irvine -->
 	<xsl:when test="contains($http.x-forwarded-host, 'uci.edu')">
 		<xsl:value-of select="session:setData('brand', 'uci')"/>
