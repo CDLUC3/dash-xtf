@@ -426,5 +426,8 @@
 <xsl:template name="ucsf-datashare-dua">
 	<p>Terms of Use for these data are outlined in the associated <a href="/xtf/search?smode=dataUseAgreementUCSF">Data Use Agreement</a>.</p>
 </xsl:template>
+<xsl:template name="ucla-mdcune-dua">
+	<p>Terms of Use for these data are outlined in the associated <a href="/xtf/search?smode=dataUseAgreementMDCUNE">Data Use Agreement</a>.</p>
+</xsl:template>
 
 </xsl:stylesheet>
