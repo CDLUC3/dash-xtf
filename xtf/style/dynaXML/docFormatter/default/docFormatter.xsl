@@ -170,7 +170,7 @@
 											<dd><span class="DC-Title"><xsl:apply-templates select="//title"/></span></dd>
 										</xsl:if>
 										<xsl:if test="//*/*:meta/*:creator"> 
-											<dt>By</dt>
+											<dt>Creator(s)</dt>
 											<dd class="DC-Creator">
 												<xsl:apply-templates select="//*/*:meta/*:creator"/>
 											</dd>
@@ -209,7 +209,7 @@
 										</xsl:if>
 										<xsl:for-each select="//*/*:meta/*:description[@descriptionType='Abstract']">
 											<xsl:if test="not(normalize-space(.)='')">
-												<dt>Description</dt>
+												<dt>Abstract</dt>
 												<dd>
 													<span class="DC-Type">
 														<xsl:value-of select="."/>
