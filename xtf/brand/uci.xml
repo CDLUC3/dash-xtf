@@ -8,7 +8,6 @@
    </links>
    
 	<header>
-		<a href="http://dash-dev.cdlib.org"><img src="assets/img/dash_cdl_logo.png" alt="Dash: Data sharing made easy"  class="your-logo"/></a>
 		<div id="logout">
 			<p>
 				<img alt="UCI Dash: Open data for the global research community" src="assets/img/dash_uci_logo.gif" title="Dash: Open data for the global research community" />
@@ -33,13 +32,13 @@
 	<faq>
 		<div class="text-container">
 			<h2 class="title">Who can deposit data here?</h2>
-			<p class="para">Any UCI-affiliated researcher (faculty, postdoc, student, or staff) can use this resource to archive and share research data sets, provided they have appropriate permission. Data that are collected at research sites are under the stewardship of the Principal Investigator (PI) named on the resource provided to collect the data, and this PI may grant permission to deposit data.</p>
+			<p class="para">Any UCI-affiliated researcher (faculty, postdoc, student, or staff) can use this resource to archive and share research datasets, provided they have appropriate permission. Data that are collected at research sites are under the stewardship of the Principal Investigator (PI) named on the resource provided to collect the data, and this PI may grant permission to deposit data.</p>
 
 			<h2 class="title">What if I have collaborators outside of UCI?</h2>
 			<p class="para">Only researchers logged in with UCINetID can deposit data. You can, however, add your collaborators to the "data contributors" section of the metadata.</p>
 
 			<h2 class="title">Who can access these data?</h2>
-			<p class="para">All data in Dash have <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution</a> (CC-BY-4.0) licenses. This means anyone can access the data sets, download them, and use them provided they give proper attribution. Although many researchers would prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read <a href="http://pantonprinciples.org">Panton Principles for Open Data in Science</a> for more information.</p>
+			<p class="para">All data in Dash have <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution</a> (CC-BY-4.0) licenses. This means anyone can access the datasets, download them, and use them provided they give proper attribution. Although many researchers would prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read <a href="http://pantonprinciples.org">Panton Principles for Open Data in Science</a> for more information.</p>
 
 			<h2 class="title">Do you support data embargoes or restricted access?</h2>
 			<p class="para">Not at this time. We do, however, have plans to expand the Dash functionality to include both.</p>
@@ -47,12 +46,12 @@
 			<h2 class="title">What do I need to submit the data?</h2>
 			<ul>
 				<li>Permission from the appropriate PI(s)</li>
-				<li>Information about the dataset, including dataset title, creators and keywords (this descriptive metadata will be used to index your data set, so the more information you can provide, the better)</li>
-				<li>Access to files comprising the data set</li>
+				<li>Information about the dataset, including dataset title, creators and keywords (this descriptive metadata will be used to index your dataset, so the more information you can provide, the better)</li>
+				<li>Access to files comprising the dataset</li>
 			</ul>
 
 			<h2 class="title">Are there any file format requirements?</h2>
-			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the data set files, or could be entered in the 'Technical Description' section of the metadata.</p>
+			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the dataset files, or could be entered in the 'Technical Description' section of the metadata.</p>
 
 			<h2 class="title">What best practices can I follow for data preparation?</h2>
 			<p class="para">There are a variety of best practices depending on your field of research. For generic help, see the <a href="http://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf">DataONE Primer on Data Management Best Practices</a> (PDF). Generally,</p>
@@ -69,7 +68,7 @@
 			<p>Once you have deposited data, they are permanently archived and available through the <a href="http://cdlib.org">California Digital Library</a>'s <a href="https://merritt.cdlib.org">Merritt Repository Service</a>. See "Preservation of data" on the <a href="/xtf/search?smode=policiesPage">Policies page</a> for more information.</p>
 
 			<h2 class="title">Will I know if someone uses/views the data?</h2>
-			<p class="para">Yes, Dash provides tools to access the metrics associated with each data set. This includes number of page views and data set downloads. We request notification from data re-users when analysis of data made available through Dash leads to publications or conference presentations, however we cannot guarantee this.</p>
+			<p class="para">Yes, Dash provides tools to access the metrics associated with each dataset. This includes number of page views and dataset downloads. We request notification from data re-users when analysis of data made available through Dash leads to publications or conference presentations, however we cannot guarantee this.</p>
 
 			<h2 class="title">How do I get credit for the data if someone uses it?</h2>
 			<p class="para">Data re-users are provided with the proper data citation (including persistent identifier). See "Access and reuse of data" on the <a href="/xtf/search?smode=policiesPage">Policies page</a> for more information.</p>

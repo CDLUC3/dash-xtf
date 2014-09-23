@@ -68,6 +68,13 @@
 	<xsl:when test="contains($http.x-forwarded-host, 'dash-ucla-dev.cdlib.org')">
 		<xsl:value-of select="session:setData('brand', 'ucla')"/>
 	</xsl:when>
+	<xsl:when test="contains($http.x-forwarded-host, 'dash-ucla-stg.cdlib.org')">
+		<xsl:value-of select="session:setData('brand', 'ucla')"/>
+	</xsl:when>
+	<xsl:when test="contains($http.x-forwarded-host, 'dash-ucla.cdlib.org')">
+		<xsl:value-of select="session:setData('brand', 'ucla')"/>
+	</xsl:when>
+
 <!-- Irvine -->
 	<xsl:when test="contains($http.x-forwarded-host, 'uci.edu')">
 		<xsl:value-of select="session:setData('brand', 'uci')"/>
@@ -101,7 +108,18 @@
 		<xsl:value-of select="session:setData('brand', 'default')"/>
 	</xsl:otherwise>
 	</xsl:choose>
-      <route>
+	<xsl:choose>
+		<xsl:when test="contains($http.x-forwarded-host, '-dev')">
+			<xsl:value-of select="session:setData('server', 'http://dash-dev.cdlib.org')"/>
+		</xsl:when>
+		<xsl:when test="contains($http.x-forwarded-host, '-stg')">
+			<xsl:value-of select="session:setData('server', 'https://dash-stg.cdlib.org')"/>
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:value-of select="session:setData('server', 'https://dash.cdlib.org')"/>
+		</xsl:otherwise>
+	</xsl:choose>
+	<route>
          <xsl:choose>
             <!-- oai -->
             <xsl:when test="matches($http.URL,'oai\?')">

@@ -8,7 +8,6 @@
    </links>
    
 	<header>
-		<a href="http://dash-dev.cdlib.org"><img src="assets/img/dash_cdl_logo.png" alt="Dash: Data sharing made easy"  class="your-logo"/></a>
 		<div id="logout">
 			<p>
 				<img alt="Dash: Open data for the global research community" src="assets/img/blank_institution_logo.png" title="Dash: Open data for the global research community" />
@@ -33,7 +32,7 @@
 	<faq>
 		<div class="text-container">
 			<h2 class="title">Who can deposit data here?</h2>
-			<p class="para">Dash is currently a service for UC-affiliated researchers. Not all campuses have adopted or implemented Dash yet. Check your campus status on the <a href="https://github.com/CDLUC3/dash/wiki/Campus-Status-and-Contacts">Dash GitHub wiki</a>. Once a campus has adopted and configured Dash, researchers from that campus can use Dash to archive and share research data sets (subject to access restrictions set at the campus level).</p>
+			<p class="para">Dash is currently a service for UC-affiliated researchers. Not all campuses have adopted or implemented Dash yet. Check your campus status on the <a href="https://github.com/CDLUC3/dash/wiki/Campus-Status-and-Contacts">Dash GitHub wiki</a>. Once a campus has adopted and configured Dash, researchers from that campus can use Dash to archive and share research datasets (subject to access restrictions set at the campus level).</p>
 
 			<h2 class="title">What if I have collaborators outside of the UC?</h2>
 			<p class="para">You will need UC campus-issued credentials (username and password) for a partner campus to log into the system and deposit data. You can, however, add your collaborators to the “data contributors” section of the metadata. Although only researchers from a partner campus (logged in with the appropriate credentials) can deposit data, anyone can search, view and download datasets in Dash.</p>
@@ -49,11 +48,11 @@
 				<li>Appropriate credentials issued by a UC partner campus</li>
 				<li>Permission from the appropriate PI(s)</li>
 				<li>Information about the dataset, including title, creators, keywords, an abstract, and contact information</li>
-				<li>Access to files comprising the data set</li>
+				<li>Access to files comprising the dataset</li>
 			</ul>
 
 			<h2 class="title">Are there any file format requirements?</h2>
-			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types should be non-proprietary and conform to recognized disciplinary standards or best practices. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in the "Methods" section of the metadata, or as a separate "Readme" document archived alongside the data set files.</p>
+			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types should be non-proprietary and conform to recognized disciplinary standards or best practices. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in the "Methods" section of the metadata, or as a separate "Readme" document archived alongside the dataset files.</p>
 
 			<h2 class="title">What best practices can I follow for data preparation?</h2>
 			<p class="para">There are a variety of best practices depending on your field of research. For generic help, see the <a href="http://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf">DataONE Primer on Data Management Best Practices</a> (PDF). Generally,</p>

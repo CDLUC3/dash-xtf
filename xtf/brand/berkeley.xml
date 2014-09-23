@@ -8,7 +8,6 @@
    </links>
    
 	<header>
-		<a href="http://dash-dev.cdlib.org"><img src="assets/img/dash_cdl_logo.png" alt="Dash: Data sharing made easy"  class="your-logo"/></a>
 		<div id="logout">
 			<p>
 				<img alt="Dash: Open data for the global research community" src="assets/img/dash_ucb_logo.png" title="Dash: Open data for the global research community" />
@@ -33,7 +32,7 @@
 	<faq>
 		<div class="text-container">
 			<h2 class="title">Who can deposit data here?</h2>
-			<p class="para">Any UC Berkeley-affiliated researcher (faculty, postdoc, student, or staff) can use this resource to archive and share research data sets, provided they have appropriate permission. Data that are collected at research sites are under the stewardship of the Principal Investigator (PI) named on the resource provided to collect the data, and this PI may grant permission to deposit data.</p>
+			<p class="para">Any UC Berkeley-affiliated researcher (faculty, postdoc, student, or staff) can use this resource to archive and share research datasets, provided they have appropriate permission. Data that are collected at research sites are under the stewardship of the Principal Investigator (PI) named on the resource provided to collect the data, and this PI may grant permission to deposit data.</p>
 
 			<h2 class="title">What if I have collaborators outside of UC Berkeley?</h2>
 			<p class="para">You will need UC Berkeley credentials to log into the system and deposit data. You can, however, add your collaborators to the "data contributors" section of the metadata. Although only researchers logged in with UC Berkeley credentials can deposit data, anyone can search, view and download datasets in Dash.</p>
@@ -48,11 +47,11 @@
 			<ul>
 				<li>Permission from the appropriate PI(s)</li>
 				<li>Information about the dataset, including title, creators, keywords, an abstract, and contact information</li>
-				<li>Access to files comprising the data set</li>
+				<li>Access to files comprising the dataset</li>
 			</ul>
 
 			<h2 class="title">Are there any file format requirements?</h2>
-			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the data set files.</p>
+			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the dataset files.</p>
 
 			<h2 class="title">What best practices can I follow for data preparation?</h2>
 			<p class="para">UC Berkeley Libraries provides data management support through <a href="http://www.lib.berkeley.edu/sciences/data/guide">online tutorials</a> and <a href="https://sites.google.com/site/managescientificdata/">guides</a>. Questions about the use of data management can be sent to the data consultation list (data-consult at lists dot berkeley dot edu).</p>
