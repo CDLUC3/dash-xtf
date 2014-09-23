@@ -951,6 +951,16 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<!-- begin content -->
+						<div class="header">
+							<xsl:call-template name="brandheader"/>
+							<div id="navbar">
+								<xsl:copy-of select="$assets.nav-header"/>
+								<xsl:call-template name="navheader"/>
+							</div>
+						</div>
+						<div id="banner">
+							<img src="assets/img/banner-home-v8.0.jpg" width="952" height="72" alt="Publish and Download Research Datasets"/>
+						</div>
 						<div id="content"> 	
 							<div class="single-column">
 								<h1>Rights, Ownership and Licensing of Research Data</h1>
