@@ -735,7 +735,7 @@
 <xsl:template name="faqPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: FAQ - Open data for the global research community</title>
+			<title>Dash: FAQ</title>
 				<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
@@ -778,7 +778,7 @@
 <xsl:template name="preparePage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Preparing to Submit - Open data for the global research community</title>
+			<title>Dash: Preparing to Submit</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
@@ -838,7 +838,7 @@
 <xsl:template name="policiesPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Policies- Open data for the global research community</title>
+			<title>Dash: Policies</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
@@ -940,7 +940,7 @@
 <xsl:template name="rightsPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Rights Information: Open data for the global research community</title>
+			<title>Dash: Rights Information</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
@@ -979,7 +979,7 @@
 <xsl:template name="uploadFaqPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Upload Basics - Open data for the global research community</title>
+			<title>Dash: Upload Basics</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
@@ -1089,7 +1089,7 @@
 <xsl:template name="metadataBasicsPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Metadata Basics - Open data for the global research community</title>
+			<title>Dash: Metadata Basics</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
@@ -1177,7 +1177,7 @@
 <xsl:template name="stepsPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Steps to Share your Data - Open data for the global research community</title>
+			<title>Dash: Steps to Share your Data</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>
@@ -1252,7 +1252,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<xsl:message>HTTP Cookie: <xsl:value-of select="$http.cookie"/></xsl:message>
 		<head>
-			<title>Dash: Open data for the global research community</title>
+			<title>Dash: About Dash</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
  		<body>

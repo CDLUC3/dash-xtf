@@ -8,7 +8,6 @@
    </links>
    
 	<header>
-<!--		<a href="http://dash-dev.cdlib.org"><img src="assets/img/dash_cdl_logo.png" alt="Dash: Data sharing made easy"  class="your-logo"/></a> -->
 		<div id="logout">
 			<p>
 				<img alt="Dash: Open data for the global research community" src="assets/img/dash_ucla_logo.png" title="Dash: Open data for the global research community" />

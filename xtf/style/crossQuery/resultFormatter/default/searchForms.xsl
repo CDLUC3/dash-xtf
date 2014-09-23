@@ -57,7 +57,7 @@
 <xsl:template match="crossQueryResult" mode="form" exclude-result-prefixes="#all">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Open data for the global research community</title>
+			<title>Dash</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
 		</head>
 		<xsl:if test="matches($smode,'simple')">
