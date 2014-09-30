@@ -117,6 +117,7 @@
 		<head>
 			<title>Dash: <xsl:apply-templates select="//title"/></title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
 		<body>
 			<div id="dataset-description-page"> 

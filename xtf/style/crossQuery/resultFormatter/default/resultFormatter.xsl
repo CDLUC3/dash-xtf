@@ -191,6 +191,7 @@
 		<head>
 			<title>Dash</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
 		<body>
 			<!-- begin page id -->
@@ -737,6 +738,7 @@
 		<head>
 			<title>Dash: FAQ</title>
 				<xsl:copy-of select="$assets.htmlhead"/>
+				<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -780,6 +782,7 @@
 		<head>
 			<title>Dash: Preparing to Submit</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -840,6 +843,7 @@
 		<head>
 			<title>Dash: Policies</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -942,6 +946,7 @@
 		<head>
 			<title>Dash: Rights Information</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -991,6 +996,7 @@
 		<head>
 			<title>Dash: Upload Basics</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1042,6 +1048,7 @@
 		<head>
 			<title>UCSF Datashare Data Use Agreement</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1101,6 +1108,7 @@
 		<head>
 			<title>Dash: Metadata Basics</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1189,6 +1197,7 @@
 		<head>
 			<title>Dash: Steps to Share your Data</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1264,6 +1273,7 @@
 		<head>
 			<title>Dash: About Dash</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1312,6 +1322,7 @@
 		<head>
 			<title>Dash: Why Share Data?</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<div id="terms-of-use"> 

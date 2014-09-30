@@ -59,6 +59,7 @@
 		<head>
 			<title>Dash</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
 		<xsl:if test="matches($smode,'simple')">
 			<xsl:call-template name="simpleForm"/>
