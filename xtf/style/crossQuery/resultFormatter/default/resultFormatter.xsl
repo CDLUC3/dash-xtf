@@ -191,6 +191,7 @@
 		<head>
 			<title>Dash</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
 		<body>
 			<!-- begin page id -->
@@ -737,6 +738,7 @@
 		<head>
 			<title>Dash: FAQ</title>
 				<xsl:copy-of select="$assets.htmlhead"/>
+				<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -780,6 +782,7 @@
 		<head>
 			<title>Dash: Preparing to Submit</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -840,6 +843,7 @@
 		<head>
 			<title>Dash: Policies</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -942,6 +946,7 @@
 		<head>
 			<title>Dash: Rights Information</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -951,6 +956,16 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<!-- begin content -->
+						<div class="header">
+							<xsl:call-template name="brandheader"/>
+							<div id="navbar">
+								<xsl:copy-of select="$assets.nav-header"/>
+								<xsl:call-template name="navheader"/>
+							</div>
+						</div>
+						<div id="banner">
+							<img src="assets/img/banner-home-v8.0.jpg" width="952" height="72" alt="Publish and Download Research Datasets"/>
+						</div>
 						<div id="content"> 	
 							<div class="single-column">
 								<h1>Rights, Ownership and Licensing of Research Data</h1>
@@ -981,6 +996,7 @@
 		<head>
 			<title>Dash: Upload Basics</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1032,6 +1048,7 @@
 		<head>
 			<title>UCSF Datashare Data Use Agreement</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1091,6 +1108,7 @@
 		<head>
 			<title>Dash: Metadata Basics</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1179,6 +1197,7 @@
 		<head>
 			<title>Dash: Steps to Share your Data</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1254,6 +1273,7 @@
 		<head>
 			<title>Dash: About Dash</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1302,6 +1322,7 @@
 		<head>
 			<title>Dash: Why Share Data?</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<div id="terms-of-use"> 
