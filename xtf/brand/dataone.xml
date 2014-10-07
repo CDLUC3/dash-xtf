@@ -43,7 +43,7 @@
 		<div class="text-container">
 			<h2 class="title">What is the relationship between DataONE Dash, ONEShare, and UC Dash?</h2>
 			<p class="para">Dash is public online service for curating research data supported by the <a href="http://cdlib.org">California Digital Library</a> (CDL). There are two versions of Dash: 1) UC Dash and 2) DataONE Dash. UC Dash is targeted for use by the 10 University of California campuses.  DataONE Dash is a separate service, operated by CDL in collaboration with the <a href="http://dataone.org">DataONE</a> project, that is open to the non-UC research community.  ONEShare is the name of the curation repository underlying DataONE Dash.</p>
-			<img src="/xtf/assets/img/dash-where-to-start.png" alt="Dash: where to start"/>
+			<a href="/xtf/assets/img/dash-where-to-start-large.jpg"><img src="/xtf/assets/img/dash-where-to-start.png" alt="Dash: where to start"/></a>
 
 			<h2 class="title">Who can deposit data here?</h2>
 			<p class="para">Any researcher with a Google account can use this resource to archive and share research data sets.  (Visit <a href="https://support.google.com/accounts/#topic=3382296">Google Support</a> for more information about obtaining a Google account.) </p>
