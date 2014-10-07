@@ -20,7 +20,7 @@
 	<header>
 		<div id="logout">
 			<p>
-				<img alt="Dash: Open data for the global research community" src="assets/img/dash_dataone_logo.png" title="Dash: Open data for the global research community" />
+				<img alt="Dash: Open data for the global research community" src="assets/img/dash_dataone_logo.jpg" title="Dash: Open data for the global research community" />
 			</p>
 		</div>
 		<br class="clear" />
@@ -45,8 +45,8 @@
 			<p class="para">Dash is public online service for curating research data supported by the <a href="http://cdlib.org">California Digital Library</a> (CDL). There are two versions of Dash: 1) UC Dash and 2) DataONE Dash. UC Dash is targeted for use by the 10 University of California campuses.  DataONE Dash is a separate service, operated by CDL in collaboration with the <a href="http://dataone.org">DataONE</a> project, that is open to the non-UC research community.  ONEShare is the name of the curation repository underlying DataONE Dash.</p>
 			<img src="/xtf/assets/img/dash-where-to-start.png" alt="Dash: where to start"/>
 
-			<h2 class="title">Who can deposit data here?
-			<p class="para">Any researcher with a Google account can use this resource to archive and share research data sets.  (Visit <a href="https://support.google.com/accounts/#topic=3382296">Google Support</a> for more information about obtaining a Google account.) 
+			<h2 class="title">Who can deposit data here?</h2>
+			<p class="para">Any researcher with a Google account can use this resource to archive and share research data sets.  (Visit <a href="https://support.google.com/accounts/#topic=3382296">Google Support</a> for more information about obtaining a Google account.) </p>
  
 			<h2 class="title">Who can access these datasets?</h2>
 			<p class="para">All data in DataONE Dash are in the public domain, i.e. "No Rights Reserved." Depositors must agree to waive rights via Creative Commons <a href="https://creativecommons.org/about/cc0">CC0</a>. This means anyone can access the datasets, download them, and use them without restriction. Although many researchers may prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read <a href="http://pantonprinciples.org/">Panton Principles for Open Data in Science</a> for more information.</p>
