@@ -6,6 +6,16 @@
       <link rel="stylesheet" href="css/default/results.css" type="text/css"/>
 	  <link rel="shortcut icon" href="icons/default/favicon.ico" />
    </links>
+
+   <googleanalytics>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-55198916-1', 'auto', {'allowLinker': true});
+			ga('require', 'linker');
+			ga('linker:autoLink', ['ucop.edu', 'uci.edu', 'ucmerced.edu', 'ucla.edu', 'berkeley.edu']);
+			ga('send', 'pageview');
+		</script>
+	</googleanalytics>   
    
 	<header>
 		<div id="logout">
@@ -31,11 +41,82 @@
 
 	<faq>
 		<div class="text-container">
-			
+			<h2 class="title">What is the relationship between DataONE Dash, ONEShare, and UC Dash?</h2>
+			<p class="para">Dash is public online service for curating research data supported by the <a href="http://cdlib.org">California Digital Library</a> (CDL). There are two versions of Dash: 1) UC Dash and 2) DataONE Dash. UC Dash is targeted for use by the 10 University of California campuses.  DataONE Dash is a separate service, operated by CDL in collaboration with the <a href="http://dataone.org">DataONE</a> project, that is open to the non-UC research community.  ONEShare is the name of the curation repository underlying DataONE Dash.</p>
+			<img src="/xtf/assets/img/dash-where-to-start.png" alt="Dash: where to start"/>
+
+			<h2 class="title">Who can deposit data here?
+			<p class="para">Any researcher with a Google account can use this resource to archive and share research data sets.  (Visit <a href="https://support.google.com/accounts/#topic=3382296">Google Support</a> for more information about obtaining a Google account.) 
+ 
+			<h2 class="title">Who can access these datasets?</h2>
+			<p class="para">All data in DataONE Dash are in the public domain, i.e. "No Rights Reserved." Depositors must agree to waive rights via Creative Commons <a href="https://creativecommons.org/about/cc0">CC0</a>. This means anyone can access the datasets, download them, and use them without restriction. Although many researchers may prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read <a href="http://pantonprinciples.org/">Panton Principles for Open Data in Science</a> for more information.</p>
+  
+			<h2 class="title">Do you support data embargoes or restricted access?</h2>
+			<p class="para">Not at this time. We do, however, have plans to expand Dash functionality to include both features. If you have specific requests for functionality, please add it to our GitHub <a href="https://github.com/CDLUC3/dash/issues">Issue Tracker</a>.</p>
+ 
+			<h2 class="title">What do I need to submit the data?</h2>
+			<ol>
+				<li>Permission from the appropriate PI(s)</li>
+				<li>Information about the dataset, including dataset title, date, creators, keywords, abstract, methods, and citation(s)</li>
+				<li>Access to the file(s) comprising the data set</li>
+			</ol>
+ 
+			<h2 class="title">Are there any file format requirements?</h2>
+			<p class="para">No, files of any type are acceptable for deposit. Ideally, file types will be open, non-proprietary, well documented, and well supported by appropriate tools for manipulation. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the data set files, or could be entered in the 'Methods' section of the metadata.</p>
+ 
+			<h2 class="title">What best practices can I follow for data preparation?</h2>
+			<p class="para">There are a variety of best practices depending on your field of research. For generic help, see the <a href="http://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf">DataONE Primer on Data Management Best Practices</a> (PDF). Generally,</p>
+			<ol>
+				<li>Ensure data files are the most up-to-date and complete versions</li>
+				<li>Ensure the integrity of data files (i.e., check for any corruption)</li>
+				<li>Ensure that all data relating to human subjects have been properly de-identified (and that any other IRB requirements have been met)</li>
+				<li>Double-check the accuracy of the descriptive metadata</li>
+				<li>Enter as much descriptive metadata as possible</li>
+				<li>Ensure that any information critical to the proper viewing and/or usage of the data is included in the submission (either as a separate 'Readme' file or within the 'Methods' metadata field)</li>
+			</ol>
+
+			<h2 class="title">For how long will the data be available?</h2>
+			<p class="para">Once you have deposited data, it is permanently archived and available through the ONEShare repository. See our <a href="/xtf/search?smode=policiesPage">Policies</a> page for more information.</p>
+ 
+			<h2 class="title">Can I update my data?</h2>
+			<p class="para">Yes, you can add new versions of your data.  The full change history of your data is maintained and by ONEShare and all prior states are accessible.</p>
+ 
+			<h2 class="title">How will someone find my data?</h2>
+			<p class="para">Metadata will be indexed by the Thomson-Reuters's <a href="http://wokinfo.com/products_tools/multidisciplinary/dci/about/">Data Citation Index</a> and <a href="http://www.elsevier.com/online-tools/scopus">Scopus</a>. In addition, data deposited into the <a href="https://merritt.cdlib.org/m/oneshare_dash">ONEShare</a> repository will be indexed by <a href="http://dataone.org">DataONE</a> and discoverable via the <a href="http://cn.dataone.org/onemercury">ONEMercury</a> search interface.</p>
+ 
+			<h2 class="title">Do the data have to be associated with a publication?</h2>
+			<p class="para">No, DataONE Dash accepts all quality data, regardless of whether it has been used to publish a paper.</p>
+ 
+			<h2 class="title">Do I need to log into Dash to get data?</h2>
+			<p class="para">No sign-in is required to access or download data in ONEShare. Note that some datasets available via the generic Dash interface may have data use agreements that require you to provide an email address and agree to certain parameters.</p>
+ 
+			<h2 class="title">Do I have to pay for data?</h2>
+			<p class="para">No, these data are made publicly available free of charge.</p>
+ 
+			<h2 class="title">What if I have questions about the data?</h2>
+			<p class="para">Please contact us at uc3@ucop.edu with any questions about the data. Your message will be directed to an appropriate source to answer any questions about the data.</p>
 		</div>
 	</faq>
 
 	<about>
+		<h2>Overview</h2>
+		<p>DataONE Dash is a new self-service tool for researchers to describe, upload, and share their research data via ONEShare, member repository of the <a href="http://dataone.org">DataONE</a> network. It is designed to be a simple self-service curation tool for researchers, and helps them perform the following tasks:</p>
+		<ul>
+			<li>Prepare data for curation by reviewing best practice guidance for the creation or acquisition of digital research data.</li>
+			<li>Select data for curation through local file browse or drag-and-drop operation.</li>
+			<li>Describe data in terms of the DataCite metadata schema.</li>
+			<li>Identify data with a persistent digital object identifier (DOI) for permanent citation and discovery.</li>
+			<li>Preserve, manage, and share data by uploading to the ONEShare repository.</li>
+			<li>Discover and retrieve data through faceted search and browse.</li>
+		</ul>
+ 
+		<h2>ONEShare Repository</h2>
+		<p>ONEShare is a free, open data repository that allows anyone to deposit research data. It is a <a href="http://dataone.org">DataONE</a> member node, which means datasets deposited in ONEShare via Dash are indexed by DataONE and available for discovery and use by the public in the <a href="http://cn.dataone.org/onemercury">ONEMercury search interface</a>. All data in ONEShare are also available for discovery in the larger <a href="http://dash.ucop.edu">Dash</a> network.</p>
 
+		<h2>Who We Are</h2>
+		<p>DataONE Dash is a collaborative project between <a href="http://dataone.org">DataONE</a> and the <a href="http://cdlib.org/uc3">UC Curation Center</a> (UC3) at the <a href="http://cdlib.org">California Digital Library</a>, with funding from the <a href="http://nsf.gov">National Science Foundation</a> (Grant No. 0830944).</p>
+ 
+		<h3>DataONE</h3>
+		<p>Data Observation Network for Earth (DataONE) is the foundation of new innovative environmental science through a distributed framework and sustainable cyberinfrastructure that meets the needs of science and society for open, persistent, robust, and secure access to well-described and easily discovered Earth observational data. DataONE will ensure the preservation, access, use and reuse of multi-scale, multi-discipline, and multi-national science data via three primary cyber-infrastructure elements and a broad education and outreach program. Learn more at the <a href="http://dataone.org">DataONE website</a>.</p>
 	</about>
 </brand>
