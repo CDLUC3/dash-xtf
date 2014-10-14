@@ -118,4 +118,9 @@
 <id>UC Office of the president</id>
 <label>UC Office of the President</label>
 </campus>
+<!--DataONE/OneShare -->
+<campus>
+<id>DataONE</id>
+<label>DataONE</id>
+</campus>
 </campuses>
