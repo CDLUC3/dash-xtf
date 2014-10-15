@@ -57,6 +57,10 @@
    <xsl:param name="http.URL"/>
    <xsl:template match="/">
    <xsl:choose>
+<!-- OneShare -->
+   <xsl:when test="contains($http.x-forwarded-host, 'oneshare')">
+   		<xsl:value-of select="session:setData('brand', 'dataone')"/>
+   </xsl:when>
 <!-- Berkeley -->
    <xsl:when test="contains($http.x-forwarded-host, 'berkeley.edu')">
 		<xsl:value-of select="session:setData('brand', 'berkeley')"/>
