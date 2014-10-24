@@ -93,8 +93,8 @@
 		<xsl:when test="$smode = 'uploadFaqPage'">   	 
 		 	<xsl:call-template name="uploadFaqPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'dataUseAgreement'">   	 
-		 	<xsl:call-template name="dataUseAgreement"/>
+		<xsl:when test="$smode = 'dataUseAgreementUCSF'">   	 
+		 	<xsl:call-template name="dataUseAgreementUCSF"/>
 		</xsl:when>
 		<xsl:when test="$smode = 'preparePage'">   	 
 			<xsl:call-template name="preparePage"/>
@@ -191,6 +191,7 @@
 		<head>
 			<title>Dash</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
 		<body>
 			<!-- begin page id -->
@@ -201,7 +202,7 @@
 					<div id="inner-container"> 
 						<!-- begin header -->
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -269,7 +270,7 @@
 		</head>
 		<body>
 			<div class="header">
-				<xsl:copy-of select="$brand.header"/>
+				<xsl:call-template name="brandheader"/>
 			</div>
             <div class="getAddress">
 				<h2>E-mail My Bookbag</h2>
@@ -307,7 +308,7 @@
 		</head>
 		<body onload="autoCloseTimer = setTimeout('window.close()', 1000)">
 			<div class="header">
-				<xsl:copy-of select="$brand.header"/>
+				<xsl:call-template name="brandheader"/>
 			</div>
             <h1>E-mail My Citations</h1>
             <b>Your citations have been sent.</b>
@@ -357,7 +358,7 @@
 		</head>
 		<body>
 			<div class="header">
-				<xsl:copy-of select="$brand.header"/>
+				<xsl:call-template name="brandheader"/>
 				<div id="navbar">
 					<xsl:copy-of select="$assets.nav-header"/>
 					<xsl:call-template name="navheader"/>
@@ -735,8 +736,9 @@
 <xsl:template name="faqPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: FAQ - Open data for the global research community</title>
+			<title>Dash: FAQ</title>
 				<xsl:copy-of select="$assets.htmlhead"/>
+				<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -746,7 +748,7 @@
 					<!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -778,8 +780,9 @@
 <xsl:template name="preparePage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Preparing to Submit - Open data for the global research community</title>
+			<title>Dash: Preparing to Submit</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -789,7 +792,7 @@
 					<!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -838,8 +841,9 @@
 <xsl:template name="policiesPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Policies- Open data for the global research community</title>
+			<title>Dash: Policies</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -849,7 +853,7 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -940,8 +944,9 @@
 <xsl:template name="rightsPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Rights Information: Open data for the global research community</title>
+			<title>Dash: Rights Information</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -951,6 +956,16 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<!-- begin content -->
+						<div class="header">
+							<xsl:call-template name="brandheader"/>
+							<div id="navbar">
+								<xsl:copy-of select="$assets.nav-header"/>
+								<xsl:call-template name="navheader"/>
+							</div>
+						</div>
+						<div id="banner">
+							<img src="assets/img/banner-home-v8.0.jpg" width="952" height="72" alt="Publish and Download Research Datasets"/>
+						</div>
 						<div id="content"> 	
 							<div class="single-column">
 								<h1>Rights, Ownership and Licensing of Research Data</h1>
@@ -979,8 +994,9 @@
 <xsl:template name="uploadFaqPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Upload Basics - Open data for the global research community</title>
+			<title>Dash: Upload Basics</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -990,7 +1006,7 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -1027,11 +1043,12 @@
 <!-- ====================================================================== -->
 <!-- dataUseAgreementPage Template                                         	-->
 <!-- ====================================================================== -->
-<xsl:template name="dataUseAgreement">
+<xsl:template name="dataUseAgreementUCSF">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Data Use Agreement - Open data for the global research community</title>
+			<title>UCSF Datashare Data Use Agreement</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1041,7 +1058,7 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -1054,7 +1071,7 @@
 						<div id="content"> 	
 							<div class="single-column">
 								<div class="single-column">
-									<h1>Dash Data Use Agreement</h1>
+									<h1>UCSF Datashare Data Use Agreement</h1>
 									<div class="text-container">
 										<p>As part of this agreement, Consumer submits to the following statements:</p>
 										<ol>
@@ -1089,8 +1106,9 @@
 <xsl:template name="metadataBasicsPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Metadata Basics - Open data for the global research community</title>
+			<title>Dash: Metadata Basics</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1100,7 +1118,7 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -1177,8 +1195,9 @@
 <xsl:template name="stepsPage">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 		<head>
-			<title>Dash: Steps to Share your Data - Open data for the global research community</title>
+			<title>Dash: Steps to Share your Data</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1188,7 +1207,7 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -1252,8 +1271,9 @@
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<xsl:message>HTTP Cookie: <xsl:value-of select="$http.cookie"/></xsl:message>
 		<head>
-			<title>Dash: Open data for the global research community</title>
+			<title>Dash: About Dash</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<!-- begin page id -->
@@ -1263,7 +1283,7 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
@@ -1302,6 +1322,7 @@
 		<head>
 			<title>Dash: Why Share Data?</title>
 			<xsl:copy-of select="$assets.htmlhead"/>
+			<xsl:copy-of select="$brand.googleanalytics"/>
 		</head>
  		<body>
 			<div id="terms-of-use"> 
@@ -1310,7 +1331,7 @@
 				    <!-- begin inner container -->
 				    <div id="inner-container"> 
 						<div class="header">
-							<xsl:copy-of select="$brand.header"/>
+							<xsl:call-template name="brandheader"/>
 							<div id="navbar">
 								<xsl:copy-of select="$assets.nav-header"/>
 								<xsl:call-template name="navheader"/>
