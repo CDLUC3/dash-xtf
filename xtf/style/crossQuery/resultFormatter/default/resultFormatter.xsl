@@ -1234,7 +1234,7 @@
 										</ul>
 									</div>
 									<div class="begin">
-										<a href="/login">
+										<a href="/records">
 											<button class="btn btn-large btn-success">Begin</button>
 										</a>
 									</div>
