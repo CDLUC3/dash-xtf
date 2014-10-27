@@ -40,28 +40,30 @@
 
 	<faq>
 		<div class="text-container">
-			<h2 class="title">Who can deposit data here?</h2>
-			<p class="para">Dash is currently a service for UC-affiliated researchers. Not all campuses have adopted or implemented Dash yet. Check your campus status on the <a href="https://github.com/CDLUC3/dash/wiki/Campus-Status-and-Contacts">Dash GitHub wiki</a>. Once a campus has adopted and configured Dash, researchers from that campus can use Dash to archive and share research datasets (subject to access restrictions set at the campus level).</p>
-
-			<h2 class="title">What if I have collaborators outside of the UC?</h2>
-			<p class="para">You will need UC campus-issued credentials (username and password) for a partner campus to log into the system and deposit data. You can, however, add your collaborators to the “data contributors” section of the metadata. Although only researchers from a partner campus (logged in with the appropriate credentials) can deposit data, anyone can search, view and download datasets in Dash.</p>
-
-			<h2 class="title">Who can access these datasets?</h2>
-			<p class="para">Data submitted to Dash is released under the terms of the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC-BY-4.0). This means anyone can access the datasets, download them, and use them provided they give proper attribution. Although many researchers would prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read the <a href="http://pantonprinciples.org/">Panton Principles for Open Data in Science</a> for more information. For more information on why Dash requires CC-BY, see our <a href="/xtf/search?smode=policiesPage">Policies</a>.</p>
-
+			<h2 class="title">Who can deposit data into Dash?</h2>
+			<p class="para">Researchers from University of California partner campuses can use their campus credentials to deposit data into their campus instance of Dash (see the <a href="https://dash.cdlib.org">list of campus partners</a>). Researchers from outside of the UC or from non-partner campuses can use Google credentials to deposit data via <a href="https://oneshare.cdlib.org">DataONE Dash</a>.</p>
+			<a href="/xtf/assets/img/dash-where-to-start-large.jpg"><img src="/xtf/assets/img/dash-where-to-start.png" alt="Dash: where to start"/></a>
+			
+			<h2 class="title">What is the relationship between DataONE Dash, ONEShare, and UC Dash?</h2>
+			<p class="para">Dash is public online service for curating research data supported by the <a href="http://cdlib.org">California Digital Library</a> (CDL). There are two versions of Dash: 1) UC Dash and 2) DataONE Dash. UC Dash is targeted for use by the 10 University of California campuses. DataONE Dash is a separate service, operated by CDL in collaboration with the <a href="http://dataone.org">DataONE project</a>, that is open to the non-UC research community. ONEShare is the name of the curation repository underlying DataONE Dash.</p>
+			
+			<h2 class="title">Who can access datasets in Dash?</h2>
+			<p class="para">Data submitted to DataONE Dash are in the public domain under a <a href="http://creativecommons.org/publicdomain/zero/1.0/">Creative Commons Universal waiver</a> (CC0); there are no restrictions on use, reuse, or repurposing the data.</p>
+			<p class="para">Data submitted to UC Dash are released under the terms of the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC-BY-4.0). This means anyone can access the datasets, download them, and use them provided they give proper attribution.</p>
+			<p class="para">Although many researchers would prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read the <a href="http://pantonprinciples.org/">Panton Principles for Open Data in Science</a> for more information.</p>
+			
 			<h2 class="title">Do you support data embargoes or restricted access?</h2>
-			<p class="para">Not at this time. We do, however, have plans to expand the Dash functionality to include both features. If you have specific requests for other functional enhancements, please add them to our <a href="https://github.com/CDLUC3/dash/issues?state=open">Dash GitHub Issue Tracker</a>.</p>
-
+			<p class="para">Not at this time. We do, however, have plans to expand the Dash functionality to include both. If you have specific requests for functionality, please add it to our <a href="http://github.com/cdluc3/dash/issues">GitHub Issues page</a>.</p>
+			
 			<h2 class="title">What do I need to submit the data?</h2>
 			<ul>
-				<li>Appropriate credentials issued by a UC partner campus</li>
 				<li>Permission from the appropriate PI(s)</li>
-				<li>Information about the dataset, including title, creators, keywords, an abstract, and contact information</li>
-				<li>Access to files comprising the dataset</li>
+				<li>Information about the dataset, including dataset title, authors, keywords, and an abstract</li>
+				<li>Access to files comprising the data set</li>
 			</ul>
 
 			<h2 class="title">Are there any file format requirements?</h2>
-			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types should be non-proprietary and conform to recognized disciplinary standards or best practices. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in the "Methods" section of the metadata, or as a separate "Readme" document archived alongside the dataset files.</p>
+			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in the "Methods" section of the metadata, or as a separate "Readme" document archived alongside the dataset files.</p>
 
 			<h2 class="title">What best practices can I follow for data preparation?</h2>
 			<p class="para">There are a variety of best practices depending on your field of research. For generic help, see the <a href="http://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf">DataONE Primer on Data Management Best Practices</a> (PDF). Generally,</p>
@@ -71,46 +73,66 @@
 				<li>Ensure that all data relating to human subjects has been properly de-identified</li>
 				<li>Double-check the accuracy of the descriptive metadata</li>
 				<li>Enter as much descriptive metadata as possible in the indexing fields</li>
-				<li>Ensure that any information critical to the proper viewing and/or usage of the data is included in the submission (e.g., as a separate 'Readme' file)</li>
+				<li>Ensure that any information critical to the proper viewing and/or usage of the data is included in the submission (e.g., as a separate "Readme" file)</li>
 			</ul>
 
 			<h2 class="title">For how long will the data be available?</h2>
-			<p class="para">Once you have deposited data, it is permanently archived and available through the California Digital Library’s <a href="http://merritt.cdlib.org">Merritt Repository</a>. See our <a href="/xtf/search?smode=policiesPage">Policies</a> for more information.</p>
+			<p class="para">Once you have deposited data, it is permanently archived and available through the <a href="http://cdlib.org">California Digital Library</a>'s <a href="https://merritt.cdlib.org">Merritt Repository</a>. See our <a href="/xtf/search?smode=policiesPage">Policies</a> page for more information.</p>
 
+			<h2 class="title">Can I update my data?</h2>
+			<p class="para">Yes, you can add new versions of your data.</p>
+			
 			<h2 class="title">How will someone find my data?</h2>
-			<p class="para">Metadata will be indexed by the <a href="http://wokinfo.com/products_tools/multidisciplinary/dci/about/">Thomson-Reuters Data Citation Index</a> and <a href="http://www.elsevier.com/online-tools/scopus">Scopus</a>.  All datasets in Dash are given a unique Digital Object Identifier or DOI.  Entering the DOI URL in any browser will take the user to the dataset’s landing page in Dash.  Dash also provides a faceted search and browse capability for direct discovery.</p>
-
+			<p class="para">Metadata will be indexed by the <a href="http://wokinfo.com/products_tools/multidisciplinary/dci/about/">Thomson-Reuters Data Citation Index</a> and <a href="http://www.elsevier.com/online-tools/scopus">Scopus</a>.  All datasets in Dash are given a unique Digital Object Identifier or DOI. Entering the DOI URL in any browser will take the user to the dataset's landing page in Dash. Dash also provides a faceted search and browse capability for direct discovery.</p>
+			
 			<h2 class="title">Do the data have to be associated with a publication?</h2>
-			<p class="para">No. Dash accepts all high quality data, regardless of whether it’s been used to publish a paper.</p>
-
+			<p class="para">No. Dash accepts all quality data, regardless of whether they have been used to publish a paper.</p>
+			
 			<h2 class="title">Do I need to log into Dash to get data?</h2>
-			<p class="para">Persons requesting data are not required to sign in in order to do so.</p>
+			<p class="para">Persons requesting data are not required to sign-in in order to do so.</p>
 
 			<h2 class="title">Do I have to pay for data?</h2>
-			<p class="para">No,  currently these data are made publicly available free of charge.</p>
-
+			<p class="para">No,  these data are made publicly available free of charge.</p>
+			
 			<h2 class="title">What if I have questions about the data?</h2>
-			<p class="para">Please contact the dataset creator, whose information is provided as part of the dataset metadata. You can also contact us at uc3@ucop.edu.</p>
+			<p class="para">Please <a href="/contact">contact us</a> with any questions about the data.</p>
 		</div>
 	</faq>
 	
 	<about>
 		<h2>Overview</h2>
-			<p>Dash is a new, easy-to-use solution for the effective curation of and access to campus research data. It is designed to be a simple self-service curation tool for researchers to archive and share their datasets.</p>
-			<p>Tasks Dash helps you perform:</p>
+			<p>Dash is a new self-service tool for researchers to describe, upload, and share their research data. It is designed to be a simple self-service curation tool for researchers, and helps them perform the following tasks:</p>
 			<ul>
 				<li>Prepare data for curation by reviewing best practice guidance for the creation or acquisition of digital research data.</li>
 				<li>Select data for curation through local file browse or drag-and-drop operation.</li>
 				<li>Describe data in terms of the DataCite metadata schema.</li>
-				<li>Identify data with a persistent DOI for permanent citation and discovery.</li>
-				<li>Preserve, Manage, and Share data by uploading to a public Merritt collection.</li>
+				<li>Identify data with a persistent digital object identifier (DOI) for permanent citation and discovery.</li>
+				<li>Preserve, manage, and share data by uploading to a public <a href="https://merritt.cdlib.org">Merritt repository</a> collection.</li>
 				<li>Discover and retrieve data through faceted search and browse.</li>
 			</ul>
-			<p>See our <a href="/xtf/search?smode=faqPage">Frequently Asked Questions</a> and <a href="/xtf/search?smode=policiesPage">Policies</a> pages for more information. Dash is an ongoing project; for updates and information on how to participate, see our <a href="http://github.com/CDLUC3/dash/wiki">GitHub site</a>.</p>
+		<h2>There are two versions of Dash: UC Dash and DataONE Dash</h2>
+		<p><strong>UC Dash</strong> is targeted for use by the 10 University of California campuses. There are currently five live instances of UC Dash:</p>
+		<ul>
+			<li>UC Berkeley: <a href="https://dash.berkeley.edu">dash.berkeley.edu</a></li>
+			<li>UC Irvine:   <a href="https://dash.lib.uci.edu">dash.lib.uci.edu</a></li>
+			<li>UCLA:        <a href="https://dash.ucla.edu">dash.ucla.edu</a></li>
+			<li>UC Merced:   <a href="https://dash.ucmerced.edu">dash.ucmerced.edu</a></li>
+			<li>UCOP:        <a href="https://dash.ucop.edu">dash.ucop.edu</a></li>
+		</ul>
+		<p><a href="https://oneshare.cdlib.org"><strong>DataONE Dash</strong></a> is a separate service, operated by CDL in collaboration with the <a href="http://dataone.org">DataONE project</a>, that is open to the non-UC research community. ONEShare is the name of the curation repository underlying DataONE Dash.</p>
+		<h2>Project Links</h2>
+		<ul>	
+			<li>Read more about the code, the project, and contributing to development on the <a href="http://cdluc3.github.io/dash">Dash GitHub site</a></li>
+			<li>Log enhancements or bugs on the <a href="http://github.com/cdluc3/dash/issues">Dash GitHub Issues page</a></li>
+			<li>Check out our Dash <a href="http://facebook.com/UC3Dash">Facebook</a>, <a href="https://plus.google.com/105054484560267661110">Google+</a> and <a href="http://twitter.com/UC3Dash">Twitter</a> accounts.</li>
+			<li>Read about our <a href="http://cdluc3.github.io/dash/site-descriptors">Site Descriptors</a> project to develop a way to cite research stations.</li>
+			<li>Check out the <a href="http://datapub.cdlib.org">Data Pub blog</a> for updates and data news.</li>
+			<li><a href="http://escholarship.org/uc/item/2mw6v93b">Read our funded proposal</a> to the Alfred P. Sloan Foundation to improve the Dash interface and functionality.</li>
+		</ul>
 		<h2>Importance of Data Sharing</h2>
-			<p>Data sharing is critical for the advancement of scientific knowledge. Researchers benefit from increased collaborations, validation, and recognition of their work; institutions and funders benefit from the measurable increase in the impact of their resources and investments; and society benefits from the faster pace at which science can progress and an increased confidence in the integrity of the scientific enterprise. There are several barriers to providing access to data, and currently data sharing is mostly done by large, well funded multi-investigator projects. If these barriers were addressed, allowing individual investigators to share their primary research data quickly and easily, we could create a new culture of transparency and efficiency&#8212;likely resulting in major positive impacts on scientific advancement.</p>
-			<h3>Who We Are</h3>
-				<p>UC Dash is a collaborative project between the <a href="http://libraries.universityofcalifornia.edu">UC Libraries</a> and the <a href="http://cdlib.org/uc3">UC Curation Center</a> (UC3) at the <a href="http://cdlib.org">California Digital Library</a>.</p>
+			<p>Data sharing is critical for the advancement of knowledge. Researchers benefit from increased collaborations, validation and recognition of their work; institutions and funders benefit from the measurable increase in the impact of their resources; and society benefits from the faster pace at which research can progress. There are several barriers to providing access to data, and currently data sharing is mostly done by large, well funded multi-investigator projects. If these barriers were addressed, allowing individual investigators to easily and quickly share their primary research data, we could create a new culture of transparency and efficiency&#8212;likely resulting in major impacts on knowledge advancement.</p>
+		<h2>Who We Are</h2>
+			<p>UC Dash is a collaborative project between the <a href="http://libraries.universityofcalifornia.edu">UC Libraries</a> and the <a href="http://cdlib.org/uc3">UC Curation Center</a> (UC3) at the <a href="http://cdlib.org">California Digital Library</a>.</p>
 	</about>
 	
 </brand>
