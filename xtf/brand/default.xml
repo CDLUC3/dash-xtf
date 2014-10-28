@@ -111,11 +111,11 @@
 		<h2>There are two versions of Dash: UC Dash and DataONE Dash</h2>
 		<p><strong>UC Dash</strong> is targeted for use by the 10 University of California campuses. There are currently five live instances of UC Dash:</p>
 		<ul>
-			<li><a href="https://dash-dev.berkeley.edu">UC Berkeley</a></li>
-			<li><a href="https://dash-dev.lib.uci.edu">UC Irvine</a></li>
-			<li><a href="https://dash-dev.ucla.edu">UCLA</a></li>
-			<li><a href="https://dash-dev.ucmerced.edu">UC Merced</a></li>
-			<li><a href="https://dash-dev.ucop.edu">UC Office of the President</a></li>
+			<li><a href="https://dash.berkeley.edu">UC Berkeley</a></li>
+			<li><a href="https://dash.lib.uci.edu">UC Irvine</a></li>
+			<li><a href="https://dash.ucla.edu">UCLA</a></li>
+			<li><a href="https://dash.ucmerced.edu">UC Merced</a></li>
+			<li><a href="https://dash.ucop.edu">UC Office of the President</a></li>
 		</ul>
 		<p><a href="https://oneshare-dev.cdlib.org"><strong>DataONE Dash</strong></a> is a separate service, operated by CDL in collaboration with the <a href="http://dataone.org">DataONE project</a>, that is open to the non-UC research community. ONEShare is the name of the curation repository underlying DataONE Dash.</p>
 		<h2>Project Links</h2>
