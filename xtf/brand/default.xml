@@ -10,9 +10,7 @@
 	<googleanalytics>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			ga('create', 'UA-55198916-1', 'auto', {'allowLinker': true});
-			ga('require', 'linker');
-			ga('linker:autoLink', ['berkeley.edu', 'uci.edu', 'ucmerced.edu', 'ucla.edu']);
+			ga('create', 'UA-55198916-1', 'auto');
 			ga('send', 'pageview');
 		</script>
 	</googleanalytics>
@@ -113,13 +111,13 @@
 		<h2>There are two versions of Dash: UC Dash and DataONE Dash</h2>
 		<p><strong>UC Dash</strong> is targeted for use by the 10 University of California campuses. There are currently five live instances of UC Dash:</p>
 		<ul>
-			<li><a href="https://dash.berkeley.edu">UC Berkeley</a></li>
-			<li><a href="https://dash.lib.uci.edu">UC Irvine</a></li>
-			<li><a href="https://dash.ucla.edu">UCLA</a></li>
-			<li><a href="https://dash.ucmerced.edu">UC Merced</a></li>
-			<li><a href="https://dash.ucop.edu">UC Office of the President</a></li>
+			<li><a href="https://dash-dev.berkeley.edu">UC Berkeley</a></li>
+			<li><a href="https://dash-dev.lib.uci.edu">UC Irvine</a></li>
+			<li><a href="https://dash-dev.ucla.edu">UCLA</a></li>
+			<li><a href="https://dash-dev.ucmerced.edu">UC Merced</a></li>
+			<li><a href="https://dash-dev.ucop.edu">UC Office of the President</a></li>
 		</ul>
-		<p><a href="https://oneshare.cdlib.org"><strong>DataONE Dash</strong></a> is a separate service, operated by CDL in collaboration with the <a href="http://dataone.org">DataONE project</a>, that is open to the non-UC research community. ONEShare is the name of the curation repository underlying DataONE Dash.</p>
+		<p><a href="https://oneshare-dev.cdlib.org"><strong>DataONE Dash</strong></a> is a separate service, operated by CDL in collaboration with the <a href="http://dataone.org">DataONE project</a>, that is open to the non-UC research community. ONEShare is the name of the curation repository underlying DataONE Dash.</p>
 		<h2>Project Links</h2>
 		<ul>	
 			<li>Read more about the code, the project, and contributing to development on the <a href="http://cdluc3.github.io/dash">Dash GitHub site</a></li>
