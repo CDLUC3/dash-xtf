@@ -159,7 +159,7 @@
 			</xsl:call-template>
 		</xsl:when>
 		<!-- browse pages -->
-		<xsl:when test="$browse-title or $browse-creator or $browse-contributor or $browse-keyword or $browse-campus">
+		<xsl:when test="$browse-title or $browse-creator or $browse-contributor or $browse-keyword or $browse-publisher">
 			<xsl:call-template name="translate">
 				<xsl:with-param name="resultTree">
 					<xsl:apply-templates select="crossQueryResult" mode="browse"/>
@@ -228,7 +228,7 @@
 											<tr>
 												<td>
 													<div class="facet">
-														<xsl:apply-templates select="facet[@field='facet-campus']"/>
+														<xsl:apply-templates select="facet[@field='facet-publisher']"/>
 														<xsl:apply-templates select="facet[@field='facet-creator']"/>
 														<xsl:apply-templates select="facet[@field='facet-keyword']"/>
 													</div>
@@ -374,7 +374,7 @@
 							<xsl:when test="$browse-title">Title</xsl:when>
 							<xsl:when test="$browse-creator">Author</xsl:when>
 							<xsl:when test="$browse-contributor">Contributor</xsl:when>
-							<xsl:when test="$browse-campus">Campus</xsl:when>
+							<xsl:when test="$browse-publisher">Publisher</xsl:when>
 							<xsl:otherwise>All Items</xsl:otherwise>
 						</xsl:choose>
 						</td>
@@ -434,8 +434,8 @@
 								<xsl:when test="$browse-contributor">
 									<xsl:apply-templates select="facet[@field='browse-contributor']/group/docHit"/>
 								</xsl:when>
-								<xsl:when test="$browse-campus">
-									<xsl:apply-templates select="facet[@field='browse-campus']/group/docHit"/>
+								<xsl:when test="$browse-publisher">
+									<xsl:apply-templates select="facet[@field='browse-publisher']/group/docHit"/>
 								</xsl:when>
 							</xsl:choose>
 						</td>
@@ -563,7 +563,7 @@
 				</xsl:choose>
 				</span>
 			</li>
-			<li>at
+			<li>
 				<xsl:choose>
 					<xsl:when test="meta/contributor">
 						<span class="DC-Contributor">
@@ -573,7 +573,7 @@
 					</xsl:when>
 				</xsl:choose>
 			    <span class="DC-Publisher">
-					<xsl:apply-templates select="meta/campus"/>
+					<xsl:apply-templates select="meta/publisher"/>
 				</span>
 			</li>
 			<li>

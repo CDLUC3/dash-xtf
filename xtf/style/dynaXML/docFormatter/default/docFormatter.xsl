@@ -330,7 +330,7 @@
 											<xsl:when test="starts-with(//@rightsURI, 'http://datashare.ucsf.edu/xtf/search')">
 												<xsl:call-template name="ucsf-datashare-dua"/>
 											</xsl:when>
-											<xsl:when test="//campus='UC San Francisco'">
+											<xsl:when test="//publisher='UC San Francisco'">
 												<xsl:call-template name="ucsf-datashare-dua"/>
 											</xsl:when>
 											<xsl:otherwise>
@@ -338,7 +338,7 @@
 													<xsl:when test="//rightsList!=''">
 														<xsl:value-of select="//rightsList"/>
 													</xsl:when>
-													<xsl:when test="//campus='DataONE'">
+													<xsl:when test="//publisher='DataONE'">
 														<xsl:call-template name="cc-0"/>
 													</xsl:when>
 													<xsl:otherwise>
