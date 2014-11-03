@@ -224,11 +224,12 @@
    <xsl:param name="brand.promo-quote" select="$brand.file//promo-quote/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>  
    <xsl:param name="brand.homelink" select="$brand.file//homelink/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.googleanalytics" select="$brand.file//googleanalytics/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:param name="brand.uploadbasics" select="$brand.file//uploadbasics/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    
    <xsl:param name="assets.htmlhead" select="$assets//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="assets.nav-header" select="$assets//nav-header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="assets.nav-footer" select="$assets//nav-footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-   
+   <xsl:param name="assets.uploadbasics" select="$assets//uploadbasics/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    
    <!-- Paging Parameters-->  
    <xsl:param name="startDoc" as="xs:integer" select="1"/>

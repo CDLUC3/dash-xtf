@@ -78,34 +78,34 @@
    
 <xsl:template match="/" exclude-result-prefixes="#all">
 	<xsl:choose>
-		<xsl:when test="$smode = 'aboutPage'">   	 
+		<xsl:when test="$smode = 'aboutPage'">
 			<xsl:call-template name="aboutPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'whyShareDataPage'">   	 
+		<xsl:when test="$smode = 'whyShareDataPage'">
 			<xsl:call-template name="whyShareDataPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'faqPage'">   	 
+		<xsl:when test="$smode = 'faqPage'">
 			<xsl:call-template name="faqPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'metadataBasicsPage'">   	 
+		<xsl:when test="$smode = 'metadataBasicsPage'">
 		 	<xsl:call-template name="metadataBasicsPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'uploadFaqPage'">   	 
+		<xsl:when test="$smode = 'uploadFaqPage'">
 		 	<xsl:call-template name="uploadFaqPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'dataUseAgreementUCSF'">   	 
+		<xsl:when test="$smode = 'dataUseAgreementUCSF'">
 		 	<xsl:call-template name="dataUseAgreementUCSF"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'preparePage'">   	 
+		<xsl:when test="$smode = 'preparePage'">
 			<xsl:call-template name="preparePage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'policiesPage'">   	 
+		<xsl:when test="$smode = 'policiesPage'">
 			<xsl:call-template name="policiesPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'rightsPage'">   	 
+		<xsl:when test="$smode = 'rightsPage'">
 			<xsl:call-template name="rightsPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'stepsPage'">   	 
+		<xsl:when test="$smode = 'stepsPage'">
 			<xsl:call-template name="stepsPage"/>
 		</xsl:when>
 		<!-- robot response -->
@@ -902,7 +902,13 @@
 									  <h1>Access and reuse of data</h1>
 
 									  <h2>Access to data objects</h2>
-									  <p>Data deposited into Dash may have a custom Data Use Agreement, or they may be under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. According to the terms of the CC-BY license, reuse of the data must include appropriate credit and must indicate if changes were made. The dataset landing page will display the license associated with the dataset. Note that content in Dash is offered "as is." By downloading files, you agree to the <a href="http://www.cdlib.org/about/terms.html">Dash Terms of Use</a>.</p>
+									  <p>Data deposited into Dash may have one of the following:</p>
+										<ol>
+											<li>Custom Data Use Agreement.</li>
+											<li>Made available under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a> (CC-BY-4.0). According to the terms of the CC-BY license, reuse of the data must include appropriate credit and must indicate if changes were made.</li>
+											<li>Released under a <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">Creative Commons Public Domain Dedication Waiver</a> (CC0). This waiver has no restrictions on use and encourages reuse of data for any and all purposes.</li>
+										</ol>
+										<p>The dataset landing page will display the usage information associated with the dataset. Note that content in Dash is offered "as is." By downloading files, you agree to the Dash <a href="http://www.cdlib.org/about/terms.html">Terms of Use</a>.</p>
 
 									  <h2>Tracking users and statistics</h2>
 									  <p>The California Digital Library does not track, collect or retain personal information from users of Dash, except as otherwise provided herein. In order to enhance Dash and monitor traffic, non-personal information such as IP addresses and cookies may be tracked and retained. User provided information, like corrections of metadata or paper claims, will be integrated into the database without displaying its source and may be shared with other services.</p>
@@ -1020,14 +1026,14 @@
 							<div class="single-column">
 								<h1>Upload Basics</h1>
 								<div class="text-container">
-									<ul>
-										<li>See <a href="/xtf/search?smode=policiesPage">Policies</a> for more information on uploading datasets to Dash.</li>
-										<li>All file formats are accepted by Dash, although it is good practice to share data using open formats. See the UK Data Archive for a <a href="http://www.data-archive.ac.uk/create-manage/format/formats-table">list of optimal file formats</a>.</li>
-										<li>Include any files that may help others to use your data. This includes readme files, formal metadata files, or other critical information.</li>
-										<li>Any data submitted via Dash will be in the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a> CC-BY 4.0). We do not currently support any other license types, nor do we allow for restrictions on data access or use.</li>
-										<li>It is your responsibility to ensure your data are being shared responsibly and ethically. Please be careful of sharing sensitive data and ensure you are complying with institutional and governmental regulations.</li>
-										<li>There is <a href="/xtf/search?smode=rightsPage">more information</a> on rights and ownership of, and licences for, research data.</li>
-									</ul>
+									<xsl:choose>
+										<xsl:when test="$brand='dataone'">
+											<xsl:copy-of select="$brand.uploadbasics"/>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:copy-of select="$assets.uploadbasics"/>
+										</xsl:otherwise>
+									</xsl:choose>
 								</div>
 							</div>
 						</div> <!-- end content-->
