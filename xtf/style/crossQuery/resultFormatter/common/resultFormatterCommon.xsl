@@ -93,11 +93,12 @@
    <xsl:param name="description-exclude"/>
    <xsl:param name="description-max"/>
    
-   <xsl:param name="campus"/>
-   <xsl:param name="campus-join"/>
-   <xsl:param name="campus-prox"/>
-   <xsl:param name="campus-exclude"/>
-   <xsl:param name="campus-max"/>
+   <xsl:param name="publisher"/>
+   <xsl:param name="publisher-join"/>
+   <xsl:param name="publisher-prox"/>
+   <xsl:param name="publisher-exclude"/>
+   <xsl:param name="publisher-max"/>
+   <xsl:param name="f1-publisher"/>
    
    <xsl:param name="contributor"/>
    <xsl:param name="f1-contributor"/>
@@ -186,7 +187,7 @@
    <xsl:param name="browse-labs"/>
    <xsl:param name="browse-researcher"/>
    <xsl:param name="browse-researchers"/>
-   <xsl:param name="browse-campus"/>
+   <xsl:param name="browse-publisher"/>
 
    <!-- Search and Result Behavior URL Parameters -->
    <xsl:param name="style"/>
@@ -499,8 +500,8 @@
       </xsl:if>
   </xsl:template>
 
-   <xsl:template match="campus">
-      <a href="{$xtfURL}{$crossqueryPath}?f1-campus={normalize-space(editURL:protectValue(.))}">
+   <xsl:template match="publisher">
+      <a href="{$xtfURL}{$crossqueryPath}?f1-publisher={normalize-space(editURL:protectValue(.))}">
           <xsl:value-of select="replace(string(.),'::', '-')"/>
       </a>
       <xsl:if test="not(position() = last())">
@@ -1279,17 +1280,20 @@
 
 <!-- pw modified -->
    <!-- Default template to display the name of a facet. Override to specialize. -->
-   <xsl:template match="facet" mode="facetName" priority="-1">
-       <xsl:choose>
-       <xsl:when test="contains(@field,'creator')">
-              <xsl:value-of select="'Author'"/>
-       </xsl:when>
-       <xsl:otherwise>
-           <xsl:variable name="rawName" select="replace(@field, '^facet-', '')"/>
-           <xsl:value-of select="concat(upper-case(substring($rawName, 1, 1)), substring($rawName, 2))"/>
-       </xsl:otherwise>
-       </xsl:choose>
-   </xsl:template>
+	<xsl:template match="facet" mode="facetName" priority="-1">
+		<xsl:choose>
+			<xsl:when test="contains(@field,'creator')">
+				<xsl:value-of select="'Author'"/>
+			</xsl:when>
+			<xsl:when test="contains(@field,'publisher')">
+				<xsl:value-of select="'Publisher'"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:variable name="rawName" select="replace(@field, '^facet-', '')"/>
+				<xsl:value-of select="concat(upper-case(substring($rawName, 1, 1)), substring($rawName, 2))"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
 
    <!-- Default template to add data before the name of a facet group. Override to specialize. -->
    <xsl:template match="group" mode="beforeGroupValue" priority="-1">

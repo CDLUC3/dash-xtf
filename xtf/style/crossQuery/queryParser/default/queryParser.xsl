@@ -131,7 +131,7 @@
          </xsl:call-template>
 
          <xsl:call-template name="facet">
-            <xsl:with-param name="field" select="'facet-campus'"/>
+            <xsl:with-param name="field" select="'facet-publisher'"/>
             <xsl:with-param name="topGroups" select="'*[1-5]'"/>
             <xsl:with-param name="sort" select="'totalDocs'"/>
          </xsl:call-template>
@@ -187,10 +187,10 @@
             <facet field="browse-contributor" sortGroupsBy="value" sortDocsBy="sort-contributor,sort-title,sort-creator,sort-year" select="{concat('*|',$pageSel,'#all')}"/>
          </xsl:if>
 
-         <xsl:if test="//param[@name='browse-campus']">
-            <xsl:variable name="page" select="//param[@name='browse-campus']/@value"/> 
+         <xsl:if test="//param[@name='browse-publisher']">
+            <xsl:variable name="page" select="//param[@name='browse-publisher']/@value"/> 
             <xsl:variable name="pageSel" select="if ($page = 'first') then '*[1]' else $page"/>
-            <facet field="browse-campus" sortGroupsBy="value" sortDocsBy="sort-contributor,sort-title,sort-creator,sort-year" select="{concat('*|',$pageSel,'#all')}"/>
+            <facet field="browse-publisher" sortGroupsBy="value" sortDocsBy="sort-contributor,sort-title,sort-creator,sort-year" select="{concat('*|',$pageSel,'#all')}"/>
          </xsl:if>
 
          <!-- to support lab pages -->

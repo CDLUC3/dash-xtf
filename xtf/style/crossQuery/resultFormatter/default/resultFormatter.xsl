@@ -159,7 +159,7 @@
 			</xsl:call-template>
 		</xsl:when>
 		<!-- browse pages -->
-		<xsl:when test="$browse-title or $browse-creator or $browse-contributor or $browse-keyword or $browse-campus">
+		<xsl:when test="$browse-title or $browse-creator or $browse-contributor or $browse-keyword or $browse-publisher">
 			<xsl:call-template name="translate">
 				<xsl:with-param name="resultTree">
 					<xsl:apply-templates select="crossQueryResult" mode="browse"/>
@@ -228,7 +228,7 @@
 											<tr>
 												<td>
 													<div class="facet">
-														<xsl:apply-templates select="facet[@field='facet-campus']"/>
+														<xsl:apply-templates select="facet[@field='facet-publisher']"/>
 														<xsl:apply-templates select="facet[@field='facet-creator']"/>
 														<xsl:apply-templates select="facet[@field='facet-keyword']"/>
 													</div>
@@ -374,7 +374,7 @@
 							<xsl:when test="$browse-title">Title</xsl:when>
 							<xsl:when test="$browse-creator">Author</xsl:when>
 							<xsl:when test="$browse-contributor">Contributor</xsl:when>
-							<xsl:when test="$browse-campus">Campus</xsl:when>
+							<xsl:when test="$browse-publisher">Publisher</xsl:when>
 							<xsl:otherwise>All Items</xsl:otherwise>
 						</xsl:choose>
 						</td>
@@ -434,8 +434,8 @@
 								<xsl:when test="$browse-contributor">
 									<xsl:apply-templates select="facet[@field='browse-contributor']/group/docHit"/>
 								</xsl:when>
-								<xsl:when test="$browse-campus">
-									<xsl:apply-templates select="facet[@field='browse-campus']/group/docHit"/>
+								<xsl:when test="$browse-publisher">
+									<xsl:apply-templates select="facet[@field='browse-publisher']/group/docHit"/>
 								</xsl:when>
 							</xsl:choose>
 						</td>
@@ -563,7 +563,7 @@
 				</xsl:choose>
 				</span>
 			</li>
-			<li>at
+			<li>
 				<xsl:choose>
 					<xsl:when test="meta/contributor">
 						<span class="DC-Contributor">
@@ -573,7 +573,7 @@
 					</xsl:when>
 				</xsl:choose>
 			    <span class="DC-Publisher">
-					<xsl:apply-templates select="meta/campus"/>
+					<xsl:apply-templates select="meta/publisher"/>
 				</span>
 			</li>
 			<li>
@@ -1301,7 +1301,7 @@
 										<h3>UC Curation Center (UC3)</h3>
 										<p>The <a href="http://cdlib.org/uc3">UC3</a> is a creative partnership bringing together the expertise and resources of the CDL, the ten UC campuses, and the broader international curation community. The group fosters collaborative analysis, projects and solutions to ensure the long-term viability and usability of curated digital content. Examples of tools and services include the <a href="https://merritt.cdlib.org">Merritt Repository Service</a>, the <a href="http://was.cdlib.org">Web Archiving Service</a> (WAS), and <a href="https://dmptool.org">Data Management Planning Tool</a> (DMPTool).</p>
 									<h2>Dash Origins</h2>
-									<p>The Dash project began as <a href="http://datashare.ucsf.edu">DataShare</a>, a collaboration between University of California San Francisco's <a href="http://ctsi.ucsf.edu">Clinical &amp; Translational Science Institute</a> (CTSI), the <a href="http://www.library.ucsf.edu/">UCSF Library and Center for Knowledge Management</a>, and <a href="http://cdlib.org/uc3">UC3</a>. CTSI is part of the Clinical and Translational Science Award program funded by the National Center for Advancing Translational Sciences at the National Institutes of Health (Grant Number UL1 TR000004).</p>
+									<p>The Dash project began as <a href="http://datashare.ucsf.edu">DataShare</a>, a collaboration among <a href="http://www.cdlib.org/uc3">UC3</a>, the <a href="http://www.library.ucsf.edu/">University of California San Francisco Library and Center for Knowledge Management</a>, and the <a href="http://ctsi.ucsf.edu/">UCSF Clinical and Translational Science Institute</a> (CTSI). CTSI is part of the Clinical and Translational Science Award program funded by the National Center for Advancing Translational Sciences at the National Institutes of Health (Grant Number UL1 TR000004).</p>
 								</div>
 							</div>
 						</div>
