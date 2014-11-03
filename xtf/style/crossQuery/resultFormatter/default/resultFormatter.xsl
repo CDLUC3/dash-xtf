@@ -102,9 +102,6 @@
 		<xsl:when test="$smode = 'policiesPage'">
 			<xsl:call-template name="policiesPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'rightsPage'">
-			<xsl:call-template name="rightsPage"/>
-		</xsl:when>
 		<xsl:when test="$smode = 'stepsPage'">
 			<xsl:call-template name="stepsPage"/>
 		</xsl:when>
@@ -932,56 +929,6 @@
 									  <h1>Succession plans</h1>
 									  <p>In case of closure of the repository, reasonable efforts will be made to integrate all content into suitable alternative institutional and/or subject based repositories.</p>
 									  <p>All information is provided "as-is" and the user shall hold the California Digital Library, UC Campus, and information providers supplying data to Dash free and harmless in connection with the use of such information.</p>
-								</div>
-							</div>
-						</div> <!-- end content-->
-						<xsl:copy-of select="$assets.nav-footer"/>
-						<xsl:copy-of select="$brand.footer"/>
-					</div> <!-- end inner container -->
-				</div> <!-- end outer container -->
-			</div>
-		</body>
-	</html>
-</xsl:template>
-
-<!-- ====================================================================== -->
-<!-- rightsPage Template		                                           	-->
-<!-- ====================================================================== -->
-<xsl:template name="rightsPage">
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-		<head>
-			<title>Dash: Rights Information</title>
-			<xsl:copy-of select="$assets.htmlhead"/>
-			<xsl:copy-of select="$brand.googleanalytics"/>
-		</head>
- 		<body>
-			<!-- begin page id -->
-			<div id="prepare-to-submit-page"> 
-				<!-- begin outer container -->  
-				<div id="outer-container"> 
-				    <!-- begin inner container -->
-				    <div id="inner-container"> 
-						<!-- begin content -->
-						<div class="header">
-							<xsl:call-template name="brandheader"/>
-							<div id="navbar">
-								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:call-template name="navheader"/>
-							</div>
-						</div>
-						<div id="banner">
-							<img src="assets/img/banner-home-v8.0.jpg" width="952" height="72" alt="Publish and Download Research Datasets"/>
-						</div>
-						<div id="content"> 	
-							<div class="single-column">
-								<h1>Rights, Ownership and Licensing of Research Data</h1>
-								<div class="text-container">
-									<h2>Ownership</h2> 
-									<p><a href="http://www.ucop.edu/academic-personnel/_files/apm/apm-020.pdf">The University of California Academic Personnel Policy (APM) 020</a> states:
-									<blockquote>"Notebooks and other original records of the research are the property of the University." (II. 5, p.3)</blockquote>
-									which the university interprets as meaning that research data are owned by the university.</p>
-									<h2>Licenses</h2>
-									<p>UCOP General Counsel currently recommends using a Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> license, requiring attribution. Dash supports this recommendation by only offering CC-BY 4.0, but we can support other licenses.</p>
 								</div>
 							</div>
 						</div> <!-- end content-->
