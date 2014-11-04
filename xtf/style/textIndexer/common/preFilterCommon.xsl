@@ -160,6 +160,16 @@
 				<xsl:call-template name="lookupCampusLabel"><xsl:with-param name="uc-id" select="string(.)"/></xsl:call-template>
            		</campus>
             </xsl:when>
+           
+           <!-- GeoLocation
+           <xsl:when test="matches(name(),'geoLocations')">
+             <xsl:for-each select="/geoLocation/*">
+               <xsl:element name="{name()}" xtf:meta="true" xtf:tokenize="no">
+                 <xsl:copy-of select="@*"/>
+                 <xsl:value-of select="string()"/>
+               </xsl:element>
+             </xsl:for-each>
+           </xsl:when> -->
 
             <xsl:otherwise>
                <xsl:element name="{name()}">
@@ -225,6 +235,7 @@
          <xsl:apply-templates select="$meta/*:subject" mode="facet"/>
 <!--		 <xsl:apply-templates select="$meta/*:contributor" mode="facet"/> -->
 		 <xsl:apply-templates select="$meta/*:campus" mode="facet"/>
+        <xsl:apply-templates select="$meta/*:geoLocations" mode="facet"/>
 		
 <!--pw add browse for creator, contributor -->
 <!--		 <xsl:apply-templates select="$meta/*:contributor" mode="browse"/> -->
@@ -351,7 +362,18 @@
 			<xsl:value-of select="string(.)"/>
 		</facet-campus>
 
-	</xsl:template>	
+   </xsl:template>	
+  
+  <!-- If the dataset has geoLocation metadata, include an index marker. -->
+  <xsl:template match="*:geoLocations" mode="facet">
+    <browse-locations>
+      <xsl:attribute name="xtf:meta" select="'true'"/>
+      <xsl:attribute name="xtf:facet" select="'yes'"/>
+      <xsl:text>yes</xsl:text>
+    </browse-locations>
+  </xsl:template>
+  
+  
 	<!-- Generate browse-title -->
    <xsl:template match="*:title" mode="browse">
       <browse-title>

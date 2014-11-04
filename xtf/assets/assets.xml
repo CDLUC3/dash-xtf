@@ -35,5 +35,13 @@
 			</div>
 		</div>   
 	</nav-footer>
+	
+	<leaflet-map>
+    <link rel="stylesheet" type="text/css" href="assets/css/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/leaflet-map.css" />
+    <script type="text/javascript" src="assets/js/leaflet.js"/>
+    <script type="text/javascript" src="assets/js/leaflet-src.js"/>
+    <script type="text/javascript" src="assets/js/leaflet-map-generator.js"/>
+	</leaflet-map>
 
 </assets>

@@ -51,6 +51,7 @@
    <xsl:import href="../common/resultFormatterCommon.xsl"/>
    <xsl:import href="rss.xsl"/>
    <xsl:include href="searchForms.xsl"/>
+   <xsl:include href="geoBrowse.xsl"/>
    <!-- ====================================================================== -->
    <!-- Output                                                                 -->
    <!-- ====================================================================== -->
@@ -166,6 +167,14 @@
 				</xsl:with-param>
 			</xsl:call-template>
 		</xsl:when>
+	  <!-- Geographic interface -->
+	  <xsl:when test="$browse-locations">
+	    <xsl:call-template name="translate">
+	      <xsl:with-param name="resultTree">
+	        <xsl:call-template name="browseLocation"/>
+	      </xsl:with-param>
+	    </xsl:call-template>
+	  </xsl:when>
 
 		<!-- show results -->
 		<xsl:when test="crossQueryResult/query/*/*">
@@ -228,9 +237,9 @@
 											<tr>
 												<td>
 													<div class="facet">
-														<xsl:apply-templates select="facet[@field='facet-campus']"/>
-														<xsl:apply-templates select="facet[@field='facet-creator']"/>
-														<xsl:apply-templates select="facet[@field='facet-keyword']"/>
+														<xsl:apply-templates select="//facet[@field='facet-campus']"/>
+														<xsl:apply-templates select="//facet[@field='facet-creator']"/>
+														<xsl:apply-templates select="//facet[@field='facet-keyword']"/>
 													</div>
 												</td>
 											</tr>
@@ -240,7 +249,7 @@
 								<div class="search-results">
 									<xsl:call-template name="search_controls"/>
 									<div class="search-result">
-										<xsl:apply-templates select="docHit"/>
+										<xsl:apply-templates select="//docHit"/>
 										<xsl:if test="@totalDocs > $docsPerPage">
 											<xsl:call-template name="pages"/>
 										</xsl:if>           

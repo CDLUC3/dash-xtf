@@ -187,6 +187,7 @@
    <xsl:param name="browse-researcher"/>
    <xsl:param name="browse-researchers"/>
    <xsl:param name="browse-campus"/>
+   <xsl:param name="browse-locations"/>
 
    <!-- Search and Result Behavior URL Parameters -->
    <xsl:param name="style"/>
@@ -227,6 +228,7 @@
    <xsl:param name="assets.htmlhead" select="$assets//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="assets.nav-header" select="$assets//nav-header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="assets.nav-footer" select="$assets//nav-footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+  <xsl:param name="assets.leaflet-map" select="$assets//leaflet-map/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    
    
    <!-- Paging Parameters-->  

@@ -1,0 +1,9 @@
+title
+publicationYear
+dates
+relatedIdentifiers
+set
+resourceType
+geoLocations
+contributors
+rightsList
