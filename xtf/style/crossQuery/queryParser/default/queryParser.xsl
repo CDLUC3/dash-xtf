@@ -77,7 +77,7 @@
       <!-- The top-level query element tells what stylesheet will be used to
          format the results, which document to start on, and how many documents
          to display on this page. -->
-      <query indexPath="/apps/dash/xtf-data/index" termLimit="1000" workLimit="1000000" style="{$stylesheet}" startDoc="{$startDoc}" maxDocs="{$docsPerPage}">
+      <query indexPath="index" termLimit="1000" workLimit="1000000" style="{$stylesheet}" startDoc="{$startDoc}" maxDocs="{$docsPerPage}">
          
          <!-- sort attribute -->
          <xsl:if test="$sort">
@@ -288,9 +288,20 @@
                </not>
             </xsl:if>
          </xsl:for-each>
+        
+         <!-- The preFilter adds a browse-locations field for those documents 
+           with geographic information. Since there doesn't seem a way to check 
+           if the field exists, the preFilter gives the field a text value of 
+           "yes". Here we narrow the search to documents which match the term 
+           "yes" - in other words, only the documents with geographic metadata. -->
+         <xsl:if test="param[matches(@name, 'browse-locations')]">
+           <and field="browse-locations">
+             <term>yes</term>
+           </and>
+         </xsl:if>
       
          <!-- to enable you to see browse results -->
-         <xsl:if test="param[matches(@name, 'browse-')]">
+         <xsl:if test="param[matches(@name, 'browse-') and not(matches(@name, 'browse-locations'))]">
             <allDocs/>
          </xsl:if>
 
