@@ -8,7 +8,10 @@
     <!-- geoBrowsePage Template		                                           		-->
     <!-- ====================================================================== -->
     <xsl:template name="browseLocation" exclude-result-prefixes="#all">
-      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+      <xsl:call-template name="skeleton-browse">
+        <xsl:with-param name="browse-type">locations</xsl:with-param>
+      </xsl:call-template>
+      <!--<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
         <head>
           <title>Dash</title>
           <xsl:copy-of select="$assets.htmlhead"/>
@@ -16,15 +19,15 @@
           <xsl:copy-of select="$brand.googleanalytics"/>
         </head>
         <body>
-          <!-- begin page id -->
-          <!-- NOTE: I would change "browse-all-*" IDs to "browse-locations", 
-            but that breaks the CSS. ~AMC (UCI) -->
+          <!-\- begin page id -\->
+          <!-\- NOTE: I would change "browse-all-*" IDs to "browse-locations", 
+            but that breaks the CSS. ~AMC (UCI) -\->
           <div id="browse-locations-page"> 
-            <!-- begin outer container -->  
+            <!-\- begin outer container -\->  
             <div id="outer-container"> 
-              <!-- begin inner container -->
+              <!-\- begin inner container -\->
               <div id="inner-container"> 
-                <!-- begin header -->
+                <!-\- begin header -\->
                 <div class="header">
                   <xsl:call-template name="brandheader"/>
                   <div id="navbar">
@@ -35,7 +38,7 @@
                 <div id="banner">
                   <img width="952" height="72" alt="Publish and Download Research Datasets" src="assets/img/banner-home-v8.0.jpg"></img>
                 </div>
-                <!-- begin content -->
+                <!-\- begin content -\->
                 <div id="content">
                   <div id="browse-locations-container">
                     <h1>Select a Dataset...</h1>
@@ -83,7 +86,7 @@
             </div>
           </div>
         </body>
-      </html>
+      </html>-->
     </xsl:template>
     
 </xsl:stylesheet>

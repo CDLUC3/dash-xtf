@@ -196,74 +196,98 @@
 </xsl:template>
 
 <xsl:template match="crossQueryResult" mode="results" exclude-result-prefixes="#all">
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-		<head>
-			<title>Dash</title>
-			<xsl:copy-of select="$assets.htmlhead"/>
-			<xsl:copy-of select="$brand.googleanalytics"/>
-		</head>
-		<body>
-			<!-- begin page id -->
-			<div id="browse-all-page"> 
-				<!-- begin outer container -->  
-				<div id="outer-container"> 
-					<!-- begin inner container -->
-					<div id="inner-container"> 
-						<!-- begin header -->
-						<div class="header">
-							<xsl:call-template name="brandheader"/>
-							<div id="navbar">
-								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:call-template name="navheader"/>
-							</div>
-						</div>
-						<div id="banner">
-    						<img width="952" height="72" alt="Publish and Download Research Datasets" src="assets/img/banner-home-v8.0.jpg"></img>
-						</div>
-						<!-- begin content -->
-						<div id="content">
-							<div id="browse-all-container">
-								<h1>Select a Dataset...</h1>
-								<div class="search-form-area">
-									<form name="navigationSearchForm" action="/xtf/search" method="get" class="navbar-form">
-										<input type="text" name="keyword" class="searchField cleardefault" value="Search datasets..." title="Search datasets"/>
-										<input type="submit" value="Go!" class="searchButton btn"/>
-									</form>
-									<a class="searchLabel" href="/xtf/search?browse-all=yes">Clear search</a>
-								</div>
-								<div class="search-refine">
-									<div class="search-refine-controls">
-										<table>
-											<tr>
-												<td>
-													<div class="facet">
-														<xsl:apply-templates select="//facet[@field='facet-campus']"/>
-														<xsl:apply-templates select="//facet[@field='facet-creator']"/>
-														<xsl:apply-templates select="//facet[@field='facet-keyword']"/>
-													</div>
-												</td>
-											</tr>
-										</table>
-									</div>
-								</div>
-								<div class="search-results">
-									<xsl:call-template name="search_controls"/>
-									<div class="search-result">
-										<xsl:apply-templates select="//docHit"/>
-										<xsl:if test="@totalDocs > $docsPerPage">
-											<xsl:call-template name="pages"/>
-										</xsl:if>           
-									</div>
-								</div>
-							</div>
-						</div>
-					<xsl:copy-of select="$assets.nav-footer"/>
-					<xsl:copy-of select="$brand.footer"/>
-					</div>
-				</div>
-			</div>
-		</body>
-	</html>
+	<!-- AMC: This now calls the skeleton-browse template to build the HTML. 
+	  This way Browse-Locations can stay updated with Browse-All. -->
+  <xsl:call-template name="skeleton-browse">
+	  <xsl:with-param name="browse-type">all</xsl:with-param>
+	</xsl:call-template>
+</xsl:template>
+  
+<xsl:template name="skeleton-browse">
+  <!-- "browse-type" parameter should be either "all" or "locations." -->
+  <xsl:param name="browse-type"/>
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+      <title>Dash</title>
+      <xsl:copy-of select="$assets.htmlhead"/>
+      <xsl:if test="matches($browse-type,'locations')">
+        <xsl:copy-of select="$assets.leaflet-map"/>
+      </xsl:if>
+      <xsl:copy-of select="$brand.googleanalytics"/>
+    </head>
+    <body>
+      <!-- begin page id -->
+      <div id="browse-all-page"> 
+        <!-- The template parameter is used to construct the ID attribute. -->
+        <xsl:attribute name="id">browse-<xsl:value-of select="$browse-type"/>-page</xsl:attribute>
+        <!-- begin outer container -->  
+        <div id="outer-container"> 
+          <!-- begin inner container -->
+          <div id="inner-container"> 
+            <!-- begin header -->
+            <div class="header">
+              <xsl:call-template name="brandheader"/>
+              <div id="navbar">
+                <xsl:copy-of select="$assets.nav-header"/>
+                <xsl:call-template name="navheader"/>
+              </div>
+            </div>
+            <div id="banner">
+              <img width="952" height="72" alt="Publish and Download Research Datasets" src="assets/img/banner-home-v8.0.jpg"></img>
+            </div>
+            <!-- begin content -->
+            <div id="content">
+              <div>
+                <xsl:attribute name="id">browse-<xsl:value-of select="$browse-type"/>-container</xsl:attribute>
+                <h1>Select a Dataset...</h1>
+                <div class="search-form-area">
+                  <form name="navigationSearchForm" action="/xtf/search" method="get" class="navbar-form">
+                    <input type="text" name="keyword" class="searchField cleardefault" value="Search datasets..." title="Search datasets"/>
+                    <input type="submit" value="Go!" class="searchButton btn"/>
+                  </form>
+                  <a class="searchLabel" href="/xtf/search?browse-all=yes">Clear search</a>
+                </div>
+                <div class="search-refine">
+                  <div class="search-refine-controls">
+                    <table>
+                      <tr>
+                        <td>
+                          <div class="facet">
+                            <xsl:apply-templates select="//facet[@field='facet-campus']"/>
+                            <xsl:apply-templates select="//facet[@field='facet-creator']"/>
+                            <xsl:apply-templates select="//facet[@field='facet-keyword']"/>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="search-results">
+                  <xsl:call-template name="search_controls"/>
+                  <!-- If browsing locations, add the map here. -->
+                  <xsl:if test="matches($browse-type,'locations')">
+                    <div id="map">
+                      <script>
+                        <xsl:text>initMap();</xsl:text>
+                      </script>
+                    </div>
+                  </xsl:if>
+                  <div class="search-result">
+                    <xsl:apply-templates select="//docHit"/>
+                    <xsl:if test="@totalDocs > $docsPerPage">
+                      <xsl:call-template name="pages"/>
+                    </xsl:if>           
+                  </div>
+                </div>
+              </div>
+            </div>
+            <xsl:copy-of select="$assets.nav-footer"/>
+            <xsl:copy-of select="$brand.footer"/>
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>
 </xsl:template>
 
 
