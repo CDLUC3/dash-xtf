@@ -204,12 +204,13 @@
 </xsl:template>
   
 <xsl:template name="skeleton-browse">
-  <!-- "browse-type" parameter should be either "all" or "locations." -->
+  <!-- "browse-type" parameter should be either "all" or "locations". -->
   <xsl:param name="browse-type"/>
   <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
       <title>Dash</title>
       <xsl:copy-of select="$assets.htmlhead"/>
+      <!-- If browsing locations, add Leaflet javascript. -->
       <xsl:if test="matches($browse-type,'locations')">
         <xsl:copy-of select="$assets.leaflet-map"/>
       </xsl:if>
@@ -217,7 +218,7 @@
     </head>
     <body>
       <!-- begin page id -->
-      <div id="browse-all-page"> 
+      <div> 
         <!-- The template parameter is used to construct the ID attribute. -->
         <xsl:attribute name="id">browse-<xsl:value-of select="$browse-type"/>-page</xsl:attribute>
         <!-- begin outer container -->  
@@ -263,17 +264,25 @@
                   </div>
                 </div>
                 <div class="search-results">
-                  <xsl:call-template name="search_controls"/>
-                  <!-- If browsing locations, add the map here. -->
-                  <xsl:if test="matches($browse-type,'locations')">
-                    <div id="map">
-                      <script>
-                        <xsl:text>initMap();</xsl:text>
-                      </script>
-                    </div>
-                  </xsl:if>
+                  <xsl:choose>
+                    <!-- If browsing locations, add the map here. -->
+                    <xsl:when test="matches($browse-type,'locations')">
+                      <div id="map">
+                        <script>
+                          <xsl:text>initMap();</xsl:text>
+                          <xsl:call-template name="generateMapLayers"/>
+                        </script>
+                      </div>
+                    </xsl:when>
+                    <!-- Otherwise, add the Sorted By bar. -->
+                    <xsl:otherwise>
+                      <xsl:call-template name="search_controls"/>
+                    </xsl:otherwise>
+                  </xsl:choose>
                   <div class="search-result">
-                    <xsl:apply-templates select="//docHit"/>
+                    <xsl:apply-templates select="//docHit">
+                      <xsl:with-param name="browse-type" select="$browse-type"/>
+                    </xsl:apply-templates>
                     <xsl:if test="@totalDocs > $docsPerPage">
                       <xsl:call-template name="pages"/>
                     </xsl:if>           
@@ -556,6 +565,7 @@
 <!-- Document Hit Template                                                  -->
 <!-- ====================================================================== -->
 <xsl:template match="docHit" exclude-result-prefixes="#all">
+  <xsl:param name="browse-type"/>
 	<xsl:variable name="path" select="@path"/>
 	<xsl:variable name="identifier" select="meta/identifier[1]"/>
 	<xsl:variable name="quotedID" select="concat('&quot;', $identifier, '&quot;')"/>
@@ -574,7 +584,19 @@
 			</xsl:when>
 		</xsl:choose>
 	</xsl:variable>
-	<div id="main_{@rank}" class="docHit">     
+	<div class="docHit">
+	  <xsl:attribute name="id">
+	    <xsl:choose>
+	      <xsl:when  test="matches($browse-type,'mapPopup')">
+	        <xsl:text>popup_</xsl:text>
+	        <xsl:value-of select="@rank"/>
+	      </xsl:when>
+	      <xsl:otherwise>
+	        <xsl:text>main_</xsl:text>
+	        <xsl:value-of select="@rank"/>
+	      </xsl:otherwise>
+	    </xsl:choose>
+	  </xsl:attribute>
 		<h3><span class="DC-Title">
 		<a>
 		<xsl:attribute name="href">
@@ -587,7 +609,7 @@
 		</strong></a>
 		</span></h3>
 		<ul>
-			<li>by
+			<li><xsl:text>by </xsl:text>
 				<span class="DC-Creator">
 				<xsl:choose>
 					<xsl:when test="meta/creator">
@@ -596,41 +618,45 @@
 				</xsl:choose>
 				</span>
 			</li>
-			<li>at
+			<li><xsl:text>at </xsl:text>
 				<xsl:choose>
 					<xsl:when test="meta/contributor">
 						<span class="DC-Contributor">
 							<xsl:apply-templates select="meta/contributor"/>
 					    </span>
-						, 	
+ 						<xsl:text>,  </xsl:text>
 					</xsl:when>
 				</xsl:choose>
 			    <span class="DC-Publisher">
 					<xsl:apply-templates select="meta/campus"/>
 				</span>
 			</li>
-			<li>
-				<xsl:choose>
-					<xsl:when test="meta/date">uploaded
-						<span class="DC-Date">	
-							<xsl:apply-templates select="meta/date"/>
-						</span>,						
-					</xsl:when>
-				</xsl:choose>
-				<xsl:choose>
-				  	<xsl:when test="meta/collected">collected
-						<span class="DC-Date">	
-							<xsl:apply-templates select="meta/collected"/>
-						</span>						
-					</xsl:when>
-				</xsl:choose>
-		    </li>
-		    <li class="collapsible">
-				<div class="collapse-control"><span class="indicator"></span> abstract</div>
-				<div class="collapse-content"><span class="DC-Description">
-					<xsl:apply-templates select="meta/description[@descriptionType='Abstract']"/>
-				</span></div>
-			</li>
+		  <xsl:if test="not(matches($browse-type,'mapPopup'))">
+   			<li>
+   				<xsl:choose>
+   					<xsl:when test="meta/date">uploaded
+   						<span class="DC-Date">	
+   							<xsl:apply-templates select="meta/date"/>
+   						</span>,						
+   					</xsl:when>
+   				</xsl:choose>
+   				<xsl:choose>
+   				  	<xsl:when test="meta/collected">collected
+   						<span class="DC-Date">	
+   							<xsl:apply-templates select="meta/collected"/>
+   						</span>						
+   					</xsl:when>
+   				</xsl:choose>
+   		    </li>
+   		  <xsl:if test="not(matches($browse-type,'locations'))">
+   		    <li class="collapsible">
+     				<div class="collapse-control"><span class="indicator"></span> abstract</div>
+     				<div class="collapse-content"><span class="DC-Description">
+     					<xsl:apply-templates select="meta/description[@descriptionType='Abstract']"/>
+     				</span></div>
+   			  </li>
+   		  </xsl:if>
+		  </xsl:if>
 		</ul>
 	</div>
 	<br/>

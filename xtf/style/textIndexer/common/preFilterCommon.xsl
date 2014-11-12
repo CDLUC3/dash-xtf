@@ -161,15 +161,18 @@
            		</campus>
             </xsl:when>
            
-           <!-- GeoLocation
+           <!-- Capture the geoLocation data and context. -->
            <xsl:when test="matches(name(),'geoLocations')">
-             <xsl:for-each select="/geoLocation/*">
-               <xsl:element name="{name()}" xtf:meta="true" xtf:tokenize="no">
-                 <xsl:copy-of select="@*"/>
-                 <xsl:value-of select="string()"/>
-               </xsl:element>
-             </xsl:for-each>
-           </xsl:when> -->
+             <!--<xsl:choose>
+               <xsl:when test="./*/*[matches(text(),'geoLocationPlace')]">
+                 <xsl:copy-of select="./*/*[matches(name(),'geoLocationPlace')]"/>
+               </xsl:when>
+             </xsl:choose>-->
+             <geoLocations xtf:meta="true" xtf:tokenize="no">
+               <!-- Strip out "geoLocation" elements but copy their child nodes. -->
+               <xsl:copy-of select="./*/*[not(matches(name(),'geoLocationPlace'))]"/>
+             </geoLocations>
+           </xsl:when>
 
             <xsl:otherwise>
                <xsl:element name="{name()}">
@@ -235,7 +238,6 @@
          <xsl:apply-templates select="$meta/*:subject" mode="facet"/>
 <!--		 <xsl:apply-templates select="$meta/*:contributor" mode="facet"/> -->
 		 <xsl:apply-templates select="$meta/*:campus" mode="facet"/>
-        <xsl:apply-templates select="$meta/*:geoLocations" mode="facet"/>
 		
 <!--pw add browse for creator, contributor -->
 <!--		 <xsl:apply-templates select="$meta/*:contributor" mode="browse"/> -->
@@ -243,6 +245,8 @@
          <xsl:apply-templates select="$meta/*:subject" mode="browse"/>
          <xsl:apply-templates select="$meta/*:title[1]" mode="browse"/>    
 		 <xsl:apply-templates select="$meta/*:campus" mode="browse"/>
+        <!--<xsl:apply-templates select="$meta/*:geoLocations/geoLocationPlace" mode="browse"/>-->
+        <xsl:apply-templates select="$meta/*:geoLocations" mode="browse"/>
 	 </xtf:meta>
    </xsl:template>
 
@@ -364,15 +368,6 @@
 
    </xsl:template>	
   
-  <!-- If the dataset has geoLocation metadata, include an index marker. -->
-  <xsl:template match="*:geoLocations" mode="facet">
-    <browse-locations>
-      <xsl:attribute name="xtf:meta" select="'true'"/>
-      <xsl:attribute name="xtf:facet" select="'yes'"/>
-      <xsl:text>yes</xsl:text>
-    </browse-locations>
-  </xsl:template>
-  
   
 	<!-- Generate browse-title -->
    <xsl:template match="*:title" mode="browse">
@@ -416,6 +411,20 @@
          <xsl:attribute name="xtf:tokenize" select="'no'"/>
 		 <xsl:value-of select="parse:alpha(parse:title(.))"/>
       </browse-campus>
+   </xsl:template>
+  
+   <!-- If the dataset has geoLocation metadata, include an index marker. -->
+   <xsl:template match="*:geoLocations" mode="browse">
+     <!-- geoLocationPlace is keyed to the OC Data Portal, so only match 
+       geoLocations that contain Points or Boxes. -->
+     <!--<xsl:if test="/geoLocationPlace[text()='Orange County (Calif.)']">
+       <oc-data-portal xtf:meta="true" xtf:facet="yes">
+         <xsl:text>yes</xsl:text>
+       </oc-data-portal>
+     </xsl:if>-->
+     <browse-locations xtf:meta="true" xtf:facet="yes">
+       <xsl:text>yes</xsl:text>
+     </browse-locations>
    </xsl:template>
 
    

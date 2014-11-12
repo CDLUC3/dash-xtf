@@ -1336,16 +1336,16 @@ width: 190px;
 	font-size: 120%;
 }
 #browse-all-container .search-results .search-result h2 a:link, #browse-all-container .search-results .search-result h3 a:visited,
-#browse-locations-container .search-results .search-result h2 a:link, #browse-locations-container .search-results .search-result h3 a:visited {
+.docHit  h3 a:visited {
     text-decoration: underline;
 }
 #browse-all-container .search-results .search-result ul,
-#browse-locations-container .search-results .search-result ul {
+.docHit ul {
     margin: 0 0 0 2em;
     padding: 0;
 }
 #browse-all-container .search-results .search-result ul li,
-#browse-locations-container .search-results .search-result ul li {
+.docHit ul li {
     line-height: 110%;
     list-style-type: none;
     margin: 0;

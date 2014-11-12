@@ -1,92 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    exclude-result-prefixes="xs"
-    version="2.0">
-    
-    <!-- ====================================================================== -->
-    <!-- geoBrowsePage Template		                                           		-->
-    <!-- ====================================================================== -->
-    <xsl:template name="browseLocation" exclude-result-prefixes="#all">
-      <xsl:call-template name="skeleton-browse">
-        <xsl:with-param name="browse-type">locations</xsl:with-param>
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
+
+  <xsl:template name="generateMapLayers">
+    <xsl:apply-templates select="//geoLocations/*" mode="makeLayers"/>
+    <!--<xsl:call-template name="setBounds">
+      <xsl:with-param name="layersAmt">
+        <xsl:value-of select="count(//geoLocations/*)"/>
+      </xsl:with-param>
+    </xsl:call-template>
+    <xsl:text>map.fitBounds(resultBounds);</xsl:text>-->
+  </xsl:template>
+
+  <xsl:template match="geoLocationPoint" mode="makeLayers">
+    <xsl:variable name="coord" select="tokenize(text(),' ')"/>
+    <xsl:variable name="coordPair">
+      <xsl:text>[</xsl:text>
+      <xsl:value-of select="$coord[1]"/>
+      <xsl:text>,</xsl:text>
+      <xsl:value-of select="$coord[2]"/>
+      <xsl:text>]</xsl:text>
+    </xsl:variable>
+    <!--<xsl:choose>
+      <xsl:when test="position()=1">
+        <xsl:text>resultBounds = L.latLngBounds(</xsl:text>
+        <xsl:value-of select="$coordPair"/>
+        <xsl:text>); </xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>resultBounds.extend(</xsl:text>
+        <xsl:value-of select="coordPair"/>
+        <xsl:text>); </xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>-->
+    <xsl:text>L.marker(</xsl:text>
+    <xsl:value-of select="$coordPair"/>
+    <xsl:text>).addTo(map).bindPopup('</xsl:text>
+    <xsl:call-template name="makePopup"/>
+    <xsl:text>'); </xsl:text>
+  </xsl:template>
+
+  <xsl:template match="geoLocationBox" mode="makeLayers">
+    <xsl:variable name="coords" select="tokenize(text(),' ')"/>
+    <xsl:variable name="swCoordPair">
+      <xsl:text>[</xsl:text>
+      <xsl:value-of select="$coords[1]"/>
+      <xsl:text>,</xsl:text>
+      <xsl:value-of select="$coords[2]"/>
+      <xsl:text>]</xsl:text>
+    </xsl:variable>
+    <xsl:variable name="neCoordPair">
+      <xsl:text>[</xsl:text>
+      <xsl:value-of select="$coords[3]"/>
+      <xsl:text>,</xsl:text>
+      <xsl:value-of select="$coords[4]"/>
+      <xsl:text>]</xsl:text>
+    </xsl:variable>
+    <xsl:text>L.rectangle([</xsl:text>
+    <xsl:value-of select="$swCoordPair"/>
+    <xsl:text>, </xsl:text>
+    <xsl:value-of select="$neCoordPair"/>
+    <xsl:text>]).addTo(map).bindPopup('</xsl:text>
+    <xsl:call-template name="makePopup"/>
+    <xsl:text>'); </xsl:text>
+    <!--<xsl:text>resultBounds.extend(L.latLngBounds([</xsl:text>
+             <xsl:value-of select="$swCoordPair"/>
+             <xsl:text>, </xsl:text>
+             <xsl:value-of select="$neCoordPair"/>
+             <xsl:text>])); </xsl:text>-->
+  </xsl:template>
+
+  <xsl:template name="setBounds"> 
+    <xsl:param name="layersAmt" as="xs:integer" required="yes"/>
+    <xsl:if test="$layersAmt > 0">
+      
+      <xsl:call-template name="setBounds">
+        <xsl:with-param name="layersAmt">
+          <xsl:value-of select="$layersAmt - 1"/>
+        </xsl:with-param>
       </xsl:call-template>
-      <!--<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-        <head>
-          <title>Dash</title>
-          <xsl:copy-of select="$assets.htmlhead"/>
-          <xsl:copy-of select="$assets.leaflet-map"/>
-          <xsl:copy-of select="$brand.googleanalytics"/>
-        </head>
-        <body>
-          <!-\- begin page id -\->
-          <!-\- NOTE: I would change "browse-all-*" IDs to "browse-locations", 
-            but that breaks the CSS. ~AMC (UCI) -\->
-          <div id="browse-locations-page"> 
-            <!-\- begin outer container -\->  
-            <div id="outer-container"> 
-              <!-\- begin inner container -\->
-              <div id="inner-container"> 
-                <!-\- begin header -\->
-                <div class="header">
-                  <xsl:call-template name="brandheader"/>
-                  <div id="navbar">
-                    <xsl:copy-of select="$assets.nav-header"/>
-                    <xsl:call-template name="navheader"/>
-                  </div>
-                </div>
-                <div id="banner">
-                  <img width="952" height="72" alt="Publish and Download Research Datasets" src="assets/img/banner-home-v8.0.jpg"></img>
-                </div>
-                <!-\- begin content -\->
-                <div id="content">
-                  <div id="browse-locations-container">
-                    <h1>Select a Dataset...</h1>
-                    <div class="search-form-area">
-                      <form name="navigationSearchForm" action="/xtf/search" method="get" class="navbar-form">
-                        <input type="text" name="keyword" class="searchField cleardefault" value="Search datasets..." title="Search datasets"/>
-                        <input type="submit" value="Go!" class="searchButton btn"/>
-                      </form>
-                      <a class="searchLabel" href="/xtf/search?browse-all=yes">Clear search</a>
-                    </div>
-                    <div class="search-refine">
-                      <div class="search-refine-controls">
-                        <table>
-                          <tr>
-                            <td>
-                              <div class="facet">
-                                <xsl:apply-templates select="//facet[@field='facet-campus']"/>
-                                <xsl:apply-templates select="//facet[@field='facet-creator']"/>
-                                <xsl:apply-templates select="//facet[@field='facet-keyword']"/>
-                              </div>
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                    <div class="search-results">
-                      <xsl:call-template name="search_controls"/>
-                      <div id="map">
-                        <script>
-                          <xsl:text>initMap();</xsl:text>
-                        </script>
-                      </div>
-                      <div class="search-result">
-                        <xsl:apply-templates select="//docHit"/>
-                        <xsl:if test="@totalDocs > $docsPerPage">
-                          <xsl:call-template name="pages"/>
-                        </xsl:if>           
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <xsl:copy-of select="$assets.nav-footer"/>
-                <xsl:copy-of select="$brand.footer"/>
-              </div>
-            </div>
-          </div>
-        </body>
-      </html>-->
-    </xsl:template>
-    
+    </xsl:if>
+  </xsl:template>
+  
+  <xsl:template name="makePopup">
+    <xsl:apply-templates select="ancestor::docHit">
+      <xsl:with-param name="browse-type">mapPopup</xsl:with-param>
+    </xsl:apply-templates>
+  </xsl:template>
+
+
+
+  <!-- ====================================================================== -->
+  <!-- geoBrowsePage Template		                                           		-->
+  <!-- ====================================================================== -->
+  <xsl:template name="browseLocation" exclude-result-prefixes="#all">
+    <xsl:call-template name="skeleton-browse">
+      <xsl:with-param name="browse-type">locations</xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+
 </xsl:stylesheet>
