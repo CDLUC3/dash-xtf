@@ -3,13 +3,10 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
 
   <xsl:template name="generateMapLayers">
-    <xsl:apply-templates select="//geoLocations/*" mode="makeLayers"/>
-    <!--<xsl:call-template name="setBounds">
-      <xsl:with-param name="layersAmt">
-        <xsl:value-of select="count(//geoLocations/*)"/>
-      </xsl:with-param>
-    </xsl:call-template>
-    <xsl:text>map.fitBounds(resultBounds);</xsl:text>-->
+    <xsl:text>var resultBounds = [];</xsl:text>
+    <xsl:apply-templates select="(//geoLocationPoint|//geoLocationBox)"
+      mode="makeLayers"/>
+    <xsl:text>map.fitBounds(resultBounds); </xsl:text>
   </xsl:template>
 
   <xsl:template match="geoLocationPoint" mode="makeLayers">
@@ -21,18 +18,9 @@
       <xsl:value-of select="$coord[2]"/>
       <xsl:text>]</xsl:text>
     </xsl:variable>
-    <!--<xsl:choose>
-      <xsl:when test="position()=1">
-        <xsl:text>resultBounds = L.latLngBounds(</xsl:text>
-        <xsl:value-of select="$coordPair"/>
-        <xsl:text>); </xsl:text>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:text>resultBounds.extend(</xsl:text>
-        <xsl:value-of select="coordPair"/>
-        <xsl:text>); </xsl:text>
-      </xsl:otherwise>
-    </xsl:choose>-->
+    <xsl:text>resultBounds.push(</xsl:text>
+    <xsl:value-of select="$coordPair"/>
+    <xsl:text>); </xsl:text>
     <xsl:text>L.marker(</xsl:text>
     <xsl:value-of select="$coordPair"/>
     <xsl:text>).addTo(map).bindPopup('</xsl:text>
@@ -56,18 +44,19 @@
       <xsl:value-of select="$coords[4]"/>
       <xsl:text>]</xsl:text>
     </xsl:variable>
+    <xsl:text>resultBounds.push([</xsl:text>
+    <xsl:value-of select="$swCoordPair"/>
+    <xsl:text>,</xsl:text>
+    <xsl:value-of select="$neCoordPair"/>
+    <xsl:text>]); </xsl:text>
     <xsl:text>L.rectangle([</xsl:text>
     <xsl:value-of select="$swCoordPair"/>
     <xsl:text>, </xsl:text>
     <xsl:value-of select="$neCoordPair"/>
-    <xsl:text>]).addTo(map).bindPopup('</xsl:text>
+    <!-- The weight attribute sets the line width of the rectangle's border. -->
+    <xsl:text>], { weight: 2 }).addTo(map).bindPopup('</xsl:text>
     <xsl:call-template name="makePopup"/>
     <xsl:text>'); </xsl:text>
-    <!--<xsl:text>resultBounds.extend(L.latLngBounds([</xsl:text>
-             <xsl:value-of select="$swCoordPair"/>
-             <xsl:text>, </xsl:text>
-             <xsl:value-of select="$neCoordPair"/>
-             <xsl:text>])); </xsl:text>-->
   </xsl:template>
 
   <xsl:template name="setBounds"> 

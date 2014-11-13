@@ -101,11 +101,16 @@
 										<button class="btn btn-success" type="submit" name="submit">Go</button>
 										<!-- <input id="search-go" type="submit" name="submit" value=""></input> -->
 									</form>
-									<p id="or">or</p>
+									<p class="or">or</p>
 									<a href="/xtf/search?browse-all=yes">
 										<button class="btn">Browse all data</button>
 										<!-- <input type="image" src="assets/img/browse.png" id="browse" alt="Browse all data"/> -->
 									</a>
+								  <p class="or">or</p>
+							    <a href="/xtf/search?browse-locations=yes">
+							      <!--<button class="btn">Explore by geoLocation</button>-->
+							      <input type="image" src="assets/img/map-browse-button.png" alt="Explore by geoLocation"/>
+							    </a>
 								</div>
 							</div>
 						</div>

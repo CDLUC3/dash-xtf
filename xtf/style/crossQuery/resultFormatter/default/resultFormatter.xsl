@@ -242,6 +242,14 @@
                 <xsl:attribute name="id">browse-<xsl:value-of select="$browse-type"/>-container</xsl:attribute>
                 <h1>Select a Dataset...</h1>
                 <div class="search-form-area">
+                  <xsl:if test="not(matches($browse-type,'locations'))">
+                    <div class="map-browse-button">
+                      <a href="/xtf/search?browse-locations=yes">
+                        <!--<button class="btn"><img src="assets/js/images/marker-icon.png" alt="Explore by geoLocation" style="padding-right: 5px"/>Explore by geoLocation</button>-->
+                        <input type="image" src="assets/img/map-browse-button.png" alt="Explore by geoLocation"/>
+                      </a>
+                    </div>
+                  </xsl:if>
                   <form name="navigationSearchForm" action="/xtf/search" method="get" class="navbar-form">
                     <input type="text" name="keyword" class="searchField cleardefault" value="Search datasets..." title="Search datasets"/>
                     <input type="submit" value="Go!" class="searchButton btn"/>
@@ -267,6 +275,10 @@
                   <xsl:choose>
                     <!-- If browsing locations, add the map here. -->
                     <xsl:when test="matches($browse-type,'locations')">
+                      <!-- Replace the sort mechanism with a note on collection policy. -->
+                      <div class="search-controls">
+                        <span style="padding:5px">NOTE: Only data with assigned geoLocation values will appear in this map interface.</span>
+                      </div>
                       <div id="map">
                         <script>
                           <xsl:text>initMap();</xsl:text>
