@@ -108,6 +108,9 @@
 		<xsl:value-of select="session:setData('brand', 'ucsf')"/>
 	</xsl:when>
 -->
+	<xsl:when test="contains($http.x-forwarded-host, 'lbl.gov')">
+		<xsl:value-of select="session:setData('brand', 'lbnl')"/>
+	</xsl:when>
 	<xsl:otherwise>
 		<xsl:value-of select="session:setData('brand', 'default')"/>
 	</xsl:otherwise>
