@@ -187,7 +187,10 @@
    <xsl:param name="browse-researcher"/>
    <xsl:param name="browse-researchers"/>
    <xsl:param name="browse-campus"/>
+  
+   <!-- Parameters specific to the geographic interface. -->
    <xsl:param name="browse-locations"/>
+   <xsl:param name="docId"/>
 
    <!-- Search and Result Behavior URL Parameters -->
    <xsl:param name="style"/>

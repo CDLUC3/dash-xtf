@@ -68,6 +68,12 @@
 			</identifier>
          </xsl:if>
 
+
+	  <!-- Makes the document identifier searchable (for Browse Locations). -->
+		<docId xtf:meta="true" xtf:tokenize="no">
+	    <xsl:value-of select="substring-after($docpath,'xtf/data/')"/>
+	  </docId>
+		
 		<xsl:if test="FileUtils:exists(concat($targetlink,'target_link'))">
 			<target xtf:meta="true" xtf:tokenize="no">
               <xsl:value-of select="unparsed-text(concat($targetlink,'target_link'))"/> 
@@ -163,11 +169,6 @@
            
            <!-- Capture the geoLocation data and context. -->
            <xsl:when test="matches(name(),'geoLocations')">
-             <!--<xsl:choose>
-               <xsl:when test="./*/*[matches(text(),'geoLocationPlace')]">
-                 <xsl:copy-of select="./*/*[matches(name(),'geoLocationPlace')]"/>
-               </xsl:when>
-             </xsl:choose>-->
              <geoLocations xtf:meta="true" xtf:tokenize="no">
                <!-- Strip out "geoLocation" elements but copy their child nodes. -->
                <xsl:copy-of select="./*/*[not(matches(name(),'geoLocationPlace'))]"/>

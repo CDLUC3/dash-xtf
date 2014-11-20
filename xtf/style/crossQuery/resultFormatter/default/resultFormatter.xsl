@@ -242,10 +242,11 @@
                 <xsl:attribute name="id">browse-<xsl:value-of select="$browse-type"/>-container</xsl:attribute>
                 <h1>Select a Dataset...</h1>
                 <div class="search-form-area">
-                  <xsl:if test="not(matches($browse-type,'locations'))">
+                  <!-- No need to display the button+link to Browse Locations 
+                    on that page, unless displaying record-specific locations. -->
+                  <xsl:if test="not(matches($browse-type,'locations')) or (matches($browse-type,'locations') and $docId)">
                     <div class="map-browse-button">
                       <a href="/xtf/search?browse-locations=yes">
-                        <!--<button class="btn"><img src="assets/js/images/marker-icon.png" alt="Explore by geoLocation" style="padding-right: 5px"/>Explore by geoLocation</button>-->
                         <input type="image" src="assets/img/map-browse-button.png" alt="Explore by geoLocation"/>
                       </a>
                     </div>
@@ -659,15 +660,13 @@
    						</span>						
    					</xsl:when>
    				</xsl:choose>
-   		    </li>
-   		  <xsl:if test="not(matches($browse-type,'locations'))">
-   		    <li class="collapsible">
-     				<div class="collapse-control"><span class="indicator"></span> abstract</div>
-     				<div class="collapse-content"><span class="DC-Description">
-     					<xsl:apply-templates select="meta/description[@descriptionType='Abstract']"/>
-     				</span></div>
-   			  </li>
-   		  </xsl:if>
+   	    </li>
+   	    <li class="collapsible">
+     			<div class="collapse-control"><span class="indicator"></span> abstract</div>
+     			<div class="collapse-content"><span class="DC-Description">
+     				<xsl:apply-templates select="meta/description[@descriptionType='Abstract']"/>
+     			</span></div>
+   		  </li>
 		  </xsl:if>
 		</ul>
 	</div>

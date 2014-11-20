@@ -255,7 +255,7 @@
       
       <!-- Find the meta-data and full-text queries, if any -->
       <xsl:variable name="queryParams"
-         select="param[not(matches(@name,'style|smode|rmode|expand|brand|sort|startDoc|docsPerPage|sectionType|fieldList|normalizeScores|explainScores|f[0-9]+-.+|facet-.+|browse-*|email|.*-exclude|.*-join|.*-prox|.*-max|.*-ignore|freeformQuery'))]"/>
+         select="param[not(matches(@name,'style|smode|rmode|expand|brand|sort|startDoc|docsPerPage|sectionType|fieldList|normalizeScores|explainScores|f[0-9]+-.+|facet-.+|browse-*|email|.*-exclude|.*-join|.*-prox|.*-max|.*-ignore|freeformQuery|docId'))]"/>
       
       <and>
          <!-- Process the meta-data and text queries, if any -->
@@ -292,11 +292,19 @@
          <!-- The preFilter adds a browse-locations field for those documents 
            with geographic information. Since there doesn't seem a way to check 
            if the field exists, the preFilter gives the field a text value of 
-           "yes". Here we narrow the search to documents which match the term 
+           "yes". Here, we narrow the search to documents which match the term 
            "yes" - in other words, only the documents with geographic metadata. -->
          <xsl:if test="param[matches(@name, 'browse-locations')]">
            <and field="browse-locations">
              <term>yes</term>
+           </and>
+         </xsl:if>
+        
+         <!-- Allows searching by document identifier. This way Browse 
+           Locations can deliver record-specific geoLocations. -->
+         <xsl:if test="param[matches(@name, 'docId')]">
+           <and field="docId">
+             <term><xsl:value-of select="param[matches(@name, 'docId')]/@value"/></term>
            </and>
          </xsl:if>
       

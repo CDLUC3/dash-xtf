@@ -1,19 +1,11 @@
 var map;
-var ajaxRequest;
-//var plotlist;
-//var plotlayers=[];
 var markerMap = {};
-//var defaultMarker = new L.Icon.Default;
-/*var highlightMarker = new L.Icon.Default({
-  iconUrl: '/assets/marker-icon-highlight.png',
-  iconRetinaUrl: '/assets/marker-icon-highlight-2x.png'
-});*/
 
 
+// Initialize the map using the given coordinates.
 function initMap(lat,lng) {
   map = L.map('map');
-  // Initialize the map using the given coordinates.
-  // Otherwise, use Orange County.
+  // If there aren't any coordinates, use Orange County.
   lat = lat || 33.6409;
   lng = lng || -117.77;
   map.setView([lat, lng], 10);
@@ -23,4 +15,13 @@ function initMap(lat,lng) {
   var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
   var osm = new L.TileLayer(osmUrl, {maxZoom: 16, attribution: osmAttrib, zIndex: 4});
   map.addLayer(osm);
+};
+
+// Extend Leaflet's Rectangle class to include a function which moves the 
+// current rectangle below frontLayer.
+L.Rectangle.prototype.bringBelow = function (frontLayer) {
+  if (this._container && frontLayer._container) {
+    var root = this._map._pathRoot;
+    root.insertBefore(this._container, frontLayer._container);
+  }
 }
