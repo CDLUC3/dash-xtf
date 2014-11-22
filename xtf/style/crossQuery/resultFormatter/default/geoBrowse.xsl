@@ -3,7 +3,16 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
 
   <!-- ====================================================================== -->
-  <!-- geoBrowsePage Template		                                           		-->
+  <!-- browse-orangecounty Template		                                     		-->
+  <!-- ====================================================================== -->
+  <xsl:template name="browseOC">
+    <xsl:call-template name="skeleton-browse">
+      <xsl:with-param name="browse-type">orangecounty</xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  <!-- ====================================================================== -->
+  <!-- browse-locations Template                                          		-->
   <!-- ====================================================================== -->
   <xsl:template name="browseLocation" exclude-result-prefixes="#all">
     <xsl:choose>

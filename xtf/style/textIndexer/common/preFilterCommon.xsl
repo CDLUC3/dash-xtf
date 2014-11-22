@@ -171,7 +171,7 @@
            <xsl:when test="matches(name(),'geoLocations')">
              <geoLocations xtf:meta="true" xtf:tokenize="no">
                <!-- Strip out "geoLocation" elements but copy their child nodes. -->
-               <xsl:copy-of select="./*/*[not(matches(name(),'geoLocationPlace'))]"/>
+               <xsl:copy-of select="./*/*"/>
              </geoLocations>
            </xsl:when>
 
@@ -414,18 +414,21 @@
       </browse-campus>
    </xsl:template>
   
-   <!-- If the dataset has geoLocation metadata, include an index marker. -->
    <xsl:template match="*:geoLocations" mode="browse">
-     <!-- geoLocationPlace is keyed to the OC Data Portal, so only match 
-       geoLocations that contain Points or Boxes. -->
-     <!--<xsl:if test="/geoLocationPlace[text()='Orange County (Calif.)']">
-       <oc-data-portal xtf:meta="true" xtf:facet="yes">
+     <!-- If present, geoLocationPlace's text should only match "Orange County 
+       (Calif.)", which signals that the record belongs to the OC Data Portal. -->
+     <xsl:if test="./*:geoLocationPlace[text()='Orange County (Calif.)']">
+       <browse-orangecounty xtf:meta="true">
          <xsl:text>yes</xsl:text>
-       </oc-data-portal>
-     </xsl:if>-->
-     <browse-locations xtf:meta="true" xtf:facet="yes">
-       <xsl:text>yes</xsl:text>
-     </browse-locations>
+       </browse-orangecounty>
+     </xsl:if>
+     <!-- For the general map browse, we're only interested in features we can 
+       map (read: geoLocationPoints or Boxes). -->
+     <xsl:if test="./*[not(matches(local-name(),'geoLocationPlace'))]">
+       <browse-locations xtf:meta="true">
+         <xsl:text>yes</xsl:text>
+       </browse-locations>
+     </xsl:if>
    </xsl:template>
 
    

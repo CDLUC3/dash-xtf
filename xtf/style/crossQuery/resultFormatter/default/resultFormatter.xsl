@@ -175,6 +175,14 @@
 	      </xsl:with-param>
 	    </xsl:call-template>
 	  </xsl:when>
+	  <!-- OC Data Portal -->
+	  <xsl:when test="$browse-orangecounty">
+	    <xsl:call-template name="translate">
+	      <xsl:with-param name="resultTree">
+	        <xsl:call-template name="browseOC"/>
+	      </xsl:with-param>
+	    </xsl:call-template>
+	  </xsl:when>
 
 		<!-- show results -->
 		<xsl:when test="crossQueryResult/query/*/*">
@@ -244,7 +252,7 @@
                 <div class="search-form-area">
                   <!-- No need to display the button+link to Browse Locations 
                     on that page, unless displaying record-specific locations. -->
-                  <xsl:if test="not(matches($browse-type,'locations')) or (matches($browse-type,'locations') and $docId)">
+                  <xsl:if test="not($browse-locations or $docId or $browse-orangecounty)">
                     <div class="map-browse-button">
                       <a href="/xtf/search?browse-locations=yes">
                         <input type="image" src="assets/img/map-browse-button.png" alt="Explore by geoLocation"/>
@@ -275,7 +283,7 @@
                 <div class="search-results">
                   <xsl:choose>
                     <!-- If browsing locations, add the map here. -->
-                    <xsl:when test="matches($browse-type,'locations')">
+                    <xsl:when test="$browse-locations or $browse-orangecounty">
                       <!-- Replace the sort mechanism with a note on collection policy. -->
                       <div class="search-controls">
                         <span style="padding:5px">NOTE: Only data with assigned geoLocation values will appear in this map interface.</span>

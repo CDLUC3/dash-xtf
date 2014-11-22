@@ -1,5 +1,4 @@
 var map;
-var markerMap = {};
 
 
 // Initialize the map using the given coordinates.

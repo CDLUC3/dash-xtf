@@ -191,6 +191,8 @@
    <!-- Parameters specific to the geographic interface. -->
    <xsl:param name="browse-locations"/>
    <xsl:param name="docId"/>
+   <!-- Parameters specific to the OC Data Portal -->
+   <xsl:param name="browse-orangecounty"/>
 
    <!-- Search and Result Behavior URL Parameters -->
    <xsl:param name="style"/>

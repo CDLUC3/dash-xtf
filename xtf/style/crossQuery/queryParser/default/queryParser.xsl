@@ -289,16 +289,28 @@
             </xsl:if>
          </xsl:for-each>
         
-         <!-- The preFilter adds a browse-locations field for those documents 
+        <!-- to enable you to see browse results -->
+        <xsl:choose>
+          <!-- The preFilter adds a browse-locations field for those documents 
            with geographic information. Since there doesn't seem a way to check 
            if the field exists, the preFilter gives the field a text value of 
            "yes". Here, we narrow the search to documents which match the term 
            "yes" - in other words, only the documents with geographic metadata. -->
-         <xsl:if test="param[matches(@name, 'browse-locations')]">
-           <and field="browse-locations">
-             <term>yes</term>
-           </and>
-         </xsl:if>
+          <xsl:when test="param[matches(@name, 'browse-locations')]">
+            <and field="browse-locations">
+              <term>yes</term>
+            </and>
+          </xsl:when>
+          <!-- Similar to browse-locations, but for the Orange County Data Portal. -->
+          <xsl:when test="param[matches(@name,'browse-orangecounty')]">
+            <and field="browse-orangecounty">
+              <term>yes</term>
+            </and>
+          </xsl:when>
+          <xsl:when test="param[matches(@name, 'browse-')]">
+            <allDocs/>
+          </xsl:when>
+        </xsl:choose>
         
          <!-- Allows searching by document identifier. This way Browse 
            Locations can deliver record-specific geoLocations. -->
@@ -306,11 +318,6 @@
            <and field="docId">
              <term><xsl:value-of select="param[matches(@name, 'docId')]/@value"/></term>
            </and>
-         </xsl:if>
-      
-         <!-- to enable you to see browse results -->
-         <xsl:if test="param[matches(@name, 'browse-') and not(matches(@name, 'browse-locations'))]">
-            <allDocs/>
          </xsl:if>
 
       </and>
