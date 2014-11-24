@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<brand xmlns="http://www.w3.org/1999/xhtml">
+   <links>
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <link rel="stylesheet" href="css/default/results.css" type="text/css"/>
+	  <link rel="shortcut icon" href="icons/default/favicon.ico" />
+   </links>
+
+	<googleanalytics>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-55198916-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</googleanalytics>   
+	<header>
+		<div id="logout">
+			<p>
+				<img alt="UCSC Dash: Open data for the global research community" src="assets/img/dash_ucsc_logo.png" title="Dash: Open data for the global research community" />
+			</p>
+		</div>
+		<br class="clear" />
+	</header>
+   
+	<homelink>
+		<a href="/xtf/search">UCSC Dash</a>
+	</homelink>
+	
+   <footer>
+		<div id="footer-logos">
+			<div id="cdl-logo-sm"><a href="http://www.cdlib.org/"><img src="assets/img/cdl-logo.jpg" width="72" height="26" alt="California Digital Library" title="California Digital Library" /></a></div>
+			<div id="cdl-logo-text">Dash is a service of the <a href="http://www.cdlib.org/services/uc3/">University of California Curation Center of the California Digital Library</a>. <br />Copyright &#169; 2014 The Regents of the University of California</div>
+			<div id="local-lib-sm"><a href="http://cdlib.org/uc3/"><img src="assets/img/uc3.png" width="72" alt="UC Curation Center" title="UC Curation Center"/></a></div>
+			<div id="local-lib-text">Dash is a collaborative project between the <br /><a href="http://library.ucsc.edu/">UCSC Library</a> and the <a href="http://cdlib.org/uc3">UC Curation Center</a>.</div>
+		</div> 
+   </footer>
+
+	<faq>
+		<div class="text-container">
+			<h2 class="title">Who can deposit data here?</h2>
+			<p class="para">UCSC answer here</p>
+
+			<h2 class="title">Who can access these datasets?</h2>
+			<p class="para">Data submitted to Dash are released under the terms of the <a href="http://creativecommons.org/licenses/by/4.0">Creative Commons Attribution license</a> (CC-BY-4.0). This means anyone can access the datasets, download them, and use them provided they give proper attribution. Although many researchers would prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read <a href="http://pantonprinciples.org">Panton Principles for Open Data in Science</a> for more information. For more information on why Dash requires CC-BY, see our <a href="/xtf/search?smode=policiesPage">Policies page</a>.</p>
+
+			<h2 class="title">Do you support data embargoes or restricted access?</h2>
+			<p class="para">Not at this time. We do, however, have plans to expand the Dash functionality to include both. If you have specific requests for functionality, please add it to our <a href="https://github.com/CDLUC3/dash/issues?q=is%3Aopen">GitHub Issue Tracker</a>.</p> 
+
+			<h2 class="title">What do I need to submit the data?</h2>
+			<ul>
+				<li>Permission from the appropriate PI(s)</li>
+				<li>Information about the dataset, including title, creators, keywords, an abstract, and contact information</li>
+				<li>Access to files comprising the dataset</li>
+			</ul>
+
+			<h2 class="title">Are there any file format requirements?</h2>
+			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the dataset files.</p>
+
+			<h2 class="title">What best practices can I follow for data preparation?</h2>
+			<p class="para">UC Berkeley Libraries provides data management support through <a href="http://www.lib.berkeley.edu/sciences/data/guide">online tutorials</a> and <a href="https://sites.google.com/site/managescientificdata/">guides</a>. Questions about the use of data management can be sent to the data consultation list (data-consult at lists dot berkeley dot edu).</p>
+			<p class="para">There are a variety of best practices depending on your field of research. For generic help, see the <a href="https://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf">DataONE Primer on Data Management Best Practices</a> (PDF). Generally,</p>
+			<ul>
+				<li>Ensure data files are the most up-to-date and complete versions</li>
+				<li>Ensure the integrity of data files (check if corrupted)</li>
+				<li>Ensure that all data relating to human subjects has been properly de-identified</li>
+				<li>Double-check the accuracy of the descriptive metadata</li>
+				<li>Enter as much descriptive metadata as possible in the indexing fields</li>
+				<li>Ensure that any information critical to the proper viewing and/or usage of the data is included in the submission (e.g., as a separate 'Readme' file)</li>
+			</ul>
+
+			<h2 class="title">For how long will the data be available?</h2>
+			<p class="para">Once you have deposited data, it is permanently archived and available through the <a href="http://cdlib.org">California Digital Library</a>'s <a href="https://merritt.cdlib.org">Merritt Repository Service</a>. See our <a href="/xtf/search?smode=policiesPage">Policies page</a> for more information.</p>
+
+			<h2 class="title">How will someone find my data?</h2>
+			<p class="para">Metadata will be indexed by the <a href="http://wokinfo.com/products_tools/multidisciplinary/dci/about/">Thomson-Reuters Data Citation Index</a> and <a href="http://www.elsevier.com/online-tools/scopus">Scopus</a>.</p>
+
+			<h2 class="title">Do the data have to be associated with a publication?</h2>
+			<p class="para">No. Dash accepts all high quality data, regardless of whether they have been used to publish a paper.</p>
+
+			<h2 class="title">Do I need to log into Dash to get data?</h2>
+			<p class="para">Persons requesting data are not required to sign in in order to do so.</p>
+
+			<h2 class="title">Do I have to pay for data?</h2>
+			<p class="para">During the pilot project the library will cover costs of publishing data.</p>
+
+			<h2 class="title">What if I have questions about the data?</h2>
+			<p class="para">Please contact us at data-consult at lists dot berkeley dot edu with any questions about the data. Your message will be directed to an appropriate source to answer any questions about the data.</p>
+		</div>
+	</faq>
+
+	<about>
+		<h2>Overview</h2>
+		<p>Dash is a simple self-service tool for researchers to use in publishing their datasets. It provides tools for the effective publication of and access to research data.</p>
+
+		<h2>Dash helps you:</h2>
+		<ul>
+			<li>Follow best practices when creating or acquiring data.</li>
+			<li>Select data for curation through local file browse or drag-and-drop operation.</li>
+			<li>Describe data in terms of the DataCite metadata schema.</li>
+			<li>Identify data with a persistent DOI for permanent citation and discovery.</li>
+			<li>Preserve, Manage, and Share data by uploading to a public Merritt collection.</li>
+			<li>Discover and retrieve data through faceted search and browse.</li>
+		</ul>
+
+		<h2>Importance of Data Sharing</h2>
+		<p>Data sharing is critical for the advancement of scientific knowledge. Researchers benefit from increased collaborations, validation, and recognition of their work; institutions and funders benefit from the measurable increase in the impact of their resources; and society benefits from the faster pace at which science can progress. There are several barriers to providing access to data, and currently data sharing is mostly done by large, well funded multi-investigator projects. If these barriers were addressed, allowing individual investigators to easily and quickly share their primary research data, we could create a new culture of transparency and efficiency&#8212;likely resulting in major impacts on scientific advancement.</p>
+
+		<h2>Who We Are</h2>
+		<p>UCSC Dash is a collaborative project between the <a href="http://library.ucsc.edu/">UCSC Library</a> and the <a href="http://cdlib.org/uc3">UC Curation Center</a> (UC3) at the <a href="http://cdlib.org">California Digital Library</a>.</p> 
+
+		<h3>UCSC Library</h3>
+		<p>The UCSC Library ...</p>
+	</about>
+</brand>

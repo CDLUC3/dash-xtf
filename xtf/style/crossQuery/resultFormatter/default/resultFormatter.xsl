@@ -235,7 +235,6 @@
 									</div>
 								</div>
 								<div class="search-results">
-									<xsl:call-template name="search_controls"/>
 									<div class="search-result">
 										<xsl:apply-templates select="docHit"/>
 										<xsl:if test="@totalDocs > $docsPerPage">
@@ -700,33 +699,6 @@
 	</li>
 </xsl:template>
 	
-
-<!-- ====================================================================== -->
-<!-- Search controls Template                                           	-->
-<!-- ====================================================================== -->
-<xsl:template name="search_controls">
-	<div class="search-controls">
-		<div class="search-control-sort">
-			<form method="get" action="{$xtfURL}{$crossqueryPath}" class="navbar-form">
-				<b>Sorted by:&#160;</b>
-				<xsl:call-template name="sort.options"/>
-				<xsl:call-template name="hidden.query">
-					<xsl:with-param name="queryString" select="editURL:remove($queryString, 'sort')"/>
-				</xsl:call-template>
-				<xsl:text>&#160;</xsl:text>
-				<input type="submit" value="Go!" class="btn"/>
-           </form>
-		</div>
-	</div>
-<!--	
-<div class="search-control-sort">Sort by: <a href="./sort=title">Title</a> <a href="#">Researcher</a> <a href="#">Lab/Department</a> <a href="#">Date</a></div>
-</div>
--->
-</xsl:template>
-
-
-
-
 <!-- ====================================================================== -->
 <!-- faqPage Template		                                           		-->
 <!-- ====================================================================== -->
