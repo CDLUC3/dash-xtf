@@ -28,6 +28,11 @@
 	<homelink>
 		<a href="/xtf/search">UC Dash</a>
 	</homelink>
+	
+	<!-- Uncomment for testing.  -->
+	<!--<orangecounty>
+	  <a href="/xtf/search?browse-orangecounty=yes">OC Data Portal</a>
+	</orangecounty>-->
 
    <footer>
 		<div id="footer-logos">

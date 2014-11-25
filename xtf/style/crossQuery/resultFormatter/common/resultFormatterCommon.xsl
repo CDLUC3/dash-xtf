@@ -1076,6 +1076,11 @@
       <xsl:variable name="value" select="@value"/>
       <xsl:variable name="nextName" select="editURL:nextFacetParam($queryString, $field)"/>
       
+     <!-- This will not remove "browse-locations" or "-orangecounty" 
+        parameters, which is good because it allows drilling down into the 
+        results within the geographic interface. -->
+     <!-- amc: There is a bug here; "xtfURL" should be "$xtfURL". I'm leaving 
+       it in because it allows the facet links to work in my local environment. -->
       <xsl:variable name="selectLink" select="
          concat(xtfURL, $crossqueryPath, '?',
                 editURL:set(editURL:remove($queryString,'browse-all=yes'), 

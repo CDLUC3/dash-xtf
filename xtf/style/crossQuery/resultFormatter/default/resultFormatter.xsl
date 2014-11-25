@@ -212,23 +212,28 @@
 </xsl:template>
   
 <xsl:template name="skeleton-browse">
-  <!-- "browse-type" parameter should be either "all" or "locations". -->
+  <!-- The "browse-type" parameter is used to generate ID attributes. -->
   <xsl:param name="browse-type"/>
+  
   <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
       <title>Dash</title>
-      <xsl:copy-of select="$assets.htmlhead"/>
-      <!-- If browsing locations, add Leaflet javascript. -->
-      <xsl:if test="matches($browse-type,'locations')">
+      <!-- If browsing with geographic interface, add Leaflet javascript. -->
+      <xsl:if test="$browse-locations or $browse-orangecounty">
         <xsl:copy-of select="$assets.leaflet-map"/>
       </xsl:if>
+      <xsl:copy-of select="$assets.htmlhead"/>
       <xsl:copy-of select="$brand.googleanalytics"/>
     </head>
     <body>
       <!-- begin page id -->
-      <div> 
-        <!-- The template parameter is used to construct the ID attribute. -->
+      <div>
+        <!-- styles.css now looks for the generalized "browse-page" and 
+          "browse-container" classes instead of specific ID attributes. The IDs
+          are maintained here in case Javascript or other CSS stylesheets 
+          depend upon the IDs. -->
         <xsl:attribute name="id">browse-<xsl:value-of select="$browse-type"/>-page</xsl:attribute>
+        <xsl:attribute name="class">browse-page</xsl:attribute>
         <!-- begin outer container -->  
         <div id="outer-container"> 
           <!-- begin inner container -->
@@ -242,13 +247,28 @@
               </div>
             </div>
             <div id="banner">
-              <img width="952" height="72" alt="Publish and Download Research Datasets" src="assets/img/banner-home-v8.0.jpg"></img>
+              <xsl:choose>
+                <xsl:when test="$browse-orangecounty">
+                  BANNER HERE
+                </xsl:when>
+                <xsl:otherwise>
+                  <img width="952" height="72" alt="Publish and Download Research Datasets" src="assets/img/banner-home-v8.0.jpg"></img>
+                </xsl:otherwise>
+              </xsl:choose>
             </div>
             <!-- begin content -->
             <div id="content">
               <div>
                 <xsl:attribute name="id">browse-<xsl:value-of select="$browse-type"/>-container</xsl:attribute>
-                <h1>Select a Dataset...</h1>
+                <xsl:attribute name="class">browse-container</xsl:attribute>
+                <xsl:choose>
+                  <xsl:when test="$browse-orangecounty">
+                    <h1>Orange County Data Portal</h1>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <h1>Select a Dataset...</h1>
+                  </xsl:otherwise>
+                </xsl:choose>
                 <div class="search-form-area">
                   <!-- No need to display the button+link to Browse Locations 
                     on that page, unless displaying record-specific locations. -->

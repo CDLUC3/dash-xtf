@@ -304,7 +304,7 @@ height: 49px;
 	padding: 0 1em;
 }
 
-#project_links li:first-child a {
+#project_links li:not(:last-child) a {
 	border-right: 1px solid #fff;
 }
 
@@ -1232,48 +1232,40 @@ width: 190px;
 	left: 27%;
 }
 
-/* Browse All Search page Styles */
-#browse-all-page  #content a:link,
-#browse-all-page #content  a:visited,
-#browse-locations-page  #content a:link,
-#browse-locations-page #content  a:visited {
+/* Browse-* Search page Styles */
+.browse-page  #content a:link,
+.browse-page #content  a:visited {
 	color: #666666;
 	/*color: #064F3A; */
 	/*color:  #87C8C2;*/
 	text-decoration: none;
 }
 	
-#browse-all-page #content a:hover,
-#browse-all-page #content a:active,
-#browse-locations-page #content a:hover,
-#browse-locations-page #content a:active {
+.browse-page #content a:hover,
+.browse-page #content a:active {
 	color: #666666;
 	/*color: #064F3A; */
 	/*color:  #87C8C2;*/
 	text-decoration: underline;
 }
 
-#browse-all-page #content,
-#browse-locations-page #content {
+.browse-page #content {
 	padding-bottom: 75px;
 }
 
-#browse-all-page  #browse-all-container,
-#browse-locations-page  #browse-locations-container {
+.browse-page  .browse-container {
 	margin: 58px 79px 75px 79px;
 }
 
-#browse-all-page  #browse-all-container .search-refine,
-#browse-locations-page  #browse-locations-container .search-refine {
+.browse-page  .browse-container .search-refine {
 	display: inline;
     float: left;
     margin-top: 30px;
     width: 220px;
 }
-#browse-all-page  #browse-all-container .search-refine .search-refine-controls,
-#browse-locations-page  #browse-locations-container .search-refine .search-refine-controls {
+.browse-page  .browse-container .search-refine .search-refine-controls {
     background-color: #EBEBEC;
-	background-image: url("../img/bg_bullet-points2.gif");
+	/*background-image: url("../img/bg_bullet-points2.gif");*/
     background-position: center bottom;
     background-repeat: repeat-x;
     color: #737373;
@@ -1282,87 +1274,75 @@ width: 190px;
     padding: 0 5px;
 	padding-bottom: 65px;
 }
-#browse-all-page  #browse-all-container .search-refine table, #browse-all-page  #browse-all-container .search-refine td, #browse-all-page  #browse-all-container .search-refine th, 
-#browse-locations-page  #browse-locations-container .search-refine table, #browse-locations-page  #browse-locations-container .search-refine td, #browse-locations-page  #browse-locations-container .search-refine th  {
+.browse-page  .browse-container .search-refine table, .browse-page  .browse-container .search-refine td, .browse-page  .browse-container .search-refine th  {
 	border-style: none;
 }
 
-#browse-all-page  #browse-all-container .search-refine .facetName,
-#browse-locations-page  #browse-locations-container .search-refine .facetName {
+.browse-page  .browse-container .search-refine .facetName {
     font-weight: bold;
     margin: 10px 0 0;
 }
 
-#browse-all-page  #browse-all-container .search-refine-controls div.facet table td.col1, 
-#browse-locations-page  #browse-locations-container .search-refine-controls div.facet table td.col1{
+.browse-page  .browse-container .search-refine-controls div.facet table td.col1 {
     padding-right: 0.5em;
     text-align: center;
     vertical-align: middle;
     width: 12px;
 }
 
-#browse-all-page  #browse-all-container .search-refine-controls div.facet table td.col2,
-#browse-locations-page  #browse-locations-container .search-refine-controls div.facet table td.col2 {
+.browse-page  .browse-container .search-refine-controls div.facet table td.col2 {
     padding-bottom: 0.1em;
     padding-top: 0.1em;
 	text-align: left;
 }
 
-#browse-all-page  #browse-all-container .search-results, 
-#browse-locations-page  #browse-locations-container .search-results {
+.browse-page  .browse-container .search-results {
     float: left;
     margin: 30px 0 0 20px;
     width: 545px;
 }
-#browse-all-page  #browse-all-container .search-results .search-controls,
-#browse-locations-page  #browse-locations-container .search-results .search-controls {
+.browse-page  .browse-container .search-results .search-controls {
 	background-color: #EBEBEC;
 	height: 35px;
 }
-#browse-all-page  #browse-all-container .search-results .search-controls .search-control-sort,
-#browse-locations-page  #browse-locations-container .search-results .search-controls .search-control-sort {
+.browse-page  .browse-container .search-results .search-controls .search-control-sort {
 	margin-top: 5px;
 	margin-left: 5px;
 	float: left;
 }
-#browse-all-page  #browse-all-container .search-results .search-result,
-#browse-locations-page  #browse-locations-container .search-results .search-result {
+.browse-page  .browse-container .search-results .search-result {
     margin-bottom: 1em;
     padding: 0.5em;
 }
-#browse-all-container .search-results .search-result  h2,
-#browse-locations-container .search-results .search-result  h2 {
+.browse-container .search-results .search-result  h2 {
 	margin-bottom: 0.2em;
 	font-size: 120%;
 }
-#browse-all-container .search-results .search-result h2 a:link, #browse-all-container .search-results .search-result h3 a:visited,
+.browse-container .search-results .search-result h2 a:link, .browse-container .search-results .search-result h3 a:visited,
 .docHit  h3 a:visited {
     text-decoration: underline;
 }
-#browse-all-container .search-results .search-result ul,
+.browse-container .search-results .search-result ul,
 .docHit ul {
     margin: 0 0 0 2em;
     padding: 0;
 }
-#browse-all-container .search-results .search-result ul li,
+.browse-container .search-results .search-result ul li,
 .docHit ul li {
     line-height: 110%;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-#browse-all-container .search-refine-controls div.facetGroup,
-#browse-locations-container .search-refine-controls div.facetGroup {
+.browse-container .search-refine-controls div.facetGroup {
     font-size: 95%;
 }
-#browse-all-container .search-refine-controls div.facetMore,
-#browse-locations-container .search-refine-controls div.facetMore {
+.browse-container .search-refine-controls div.facetMore {
     margin-left: 2em;
     margin-top: 0.5em;
 	font-size: 110%;
 }
-#browse-all-container .search-control-sort .sorted-by,
-#browse-locations-container .search-control-sort .sorted-by {
+.browse-container .search-control-sort .sorted-by {
 	font-weight: bold;
 	margin-right: 5px;
 }

@@ -109,13 +109,13 @@
   <!-- Write Javascript to populate the map. -->
   <xsl:template name="generateMapLayers">
     <!-- Create an array of map features. -->
-    <xsl:text>var markers = []; </xsl:text>
+    <xsl:text>var resultBounds = []; </xsl:text>
+    <!-- Create array for testing rectangles. -->
     <xsl:text>var rectangles = [];</xsl:text>
     <!-- Ignore geoLocationPlace. -->
     <xsl:apply-templates select="(//geoLocationPoint|//geoLocationBox)"
       mode="makeLayers"/>
     <!-- Fit the map to all its features. -->
-    <xsl:text>resultBounds = markers.concat(rectangles);</xsl:text>
     <xsl:text>map.fitBounds(resultBounds); </xsl:text>
   </xsl:template>
   
@@ -137,8 +137,8 @@
       <xsl:with-param name="geoInfo" select="$coordPair"/>
     </xsl:call-template>
     <xsl:text>'); </xsl:text>
-    <!-- Add the new marker to the tracking array. -->
-    <xsl:text>markers.push(</xsl:text>
+    <!-- Add the new marker to the bounds array. -->
+    <xsl:text>resultBounds.push(</xsl:text>
     <xsl:value-of select="$coordPair"/>
     <xsl:text>); </xsl:text>
   </xsl:template>
@@ -165,6 +165,10 @@
       <xsl:text>, </xsl:text>
       <xsl:value-of select="$neCoordPair"/>
     </xsl:variable>
+    <!-- Add the new rectangle to the bounds array. -->
+    <xsl:text>resultBounds.push(</xsl:text>
+    <xsl:value-of select="$rectBounds"/>
+    <xsl:text>); </xsl:text>
     <xsl:text>var rectBounds = L.latLngBounds(</xsl:text><xsl:value-of select="$rectBounds"/><xsl:text>);</xsl:text>
     <!-- Write the Javascript command to populate the map. -->
     <!-- The weight attribute sets the line width of the rectangle's border. -->

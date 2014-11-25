@@ -2,3 +2,35 @@
   width: 100%;
   height: 400px;
 }
+
+/* Browse Orange County page styles */
+#browse-orangecounty-page #content {
+	background-color: #D4731C;
+	color: #6B3200;
+}
+#browse-orangecounty-page #content a:link,
+#browse-orangecounty-page #content  a:visited {
+	color: #003C41;
+}
+#browse-orangecounty-page #content a:hover,
+#browse-orangecounty-page #content a:active {
+	color: #08626B;
+}
+#browse-orangecounty-container .search-refine {
+	background-color: #E39148;
+  color: #914400;
+  margin-top: 0;
+  width: 200px;
+}
+#browse-orangecounty-container .search-refine .search-refine-controls {
+  background-color: #E39148;
+  color: #914400;
+}
+#browse-orangecounty-container .search-results {
+  margin: 10px 0 0 10px;
+  width: 575px;
+}
+#browse-orangecounty-container .search-results .search-controls {
+	background-color: #E39148;
+	height: 35px;
+}
