@@ -95,9 +95,11 @@
 	<xsl:when test="contains($http.x-forwarded-host, 'ucsb.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucsb')"/>
 	</xsl:when>
+-->
 	<xsl:when test="contains($http.x-forwarded-host, 'ucsc.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucsc')"/>
 	</xsl:when>
+<!--
 	<xsl:when test="contains($http.x-forwarded-host, 'ucdavis.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucdavis')"/>
 	</xsl:when>
