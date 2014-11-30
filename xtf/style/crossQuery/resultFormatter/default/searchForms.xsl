@@ -153,9 +153,9 @@
 				<ul>
 					<li><xsl:copy-of select="$brand.homelink"/></li>
 				  <!-- On UCI's site, add link to OC Data Portal. -->
-				  <xsl:if test="matches($brand,'uci')">
-				    <li><xsl:copy-of select="$brand.file//*:orangecounty/*"/></li>
-				  </xsl:if>
+				  <!--<xsl:if test="matches($brand,'uci')">-->
+				    <li><xsl:copy-of select="$oc-assets.homelink"/></li>
+				  <!--</xsl:if>-->
 					<li><a href="/logout">Log Out</a></li>
 				</ul>
 			</div>

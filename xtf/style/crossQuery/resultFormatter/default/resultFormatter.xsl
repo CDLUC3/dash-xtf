@@ -171,15 +171,21 @@
 	  <xsl:when test="$browse-locations">
 	    <xsl:call-template name="translate">
 	      <xsl:with-param name="resultTree">
-	        <xsl:call-template name="browseLocation"/>
+	        <xsl:apply-templates select="crossQueryResult" mode="browseLocations"/>
 	      </xsl:with-param>
 	    </xsl:call-template>
 	  </xsl:when>
 	  <!-- OC Data Portal -->
+	  <xsl:when test="$smode='orangecounty-home'">
+	    <xsl:call-template name="orangecounty-home"/>
+	  </xsl:when>
+	  <xsl:when test="$smode='about-orangecounty'">
+	    <xsl:call-template name="about-orangecounty"/>
+	  </xsl:when>
 	  <xsl:when test="$browse-orangecounty">
 	    <xsl:call-template name="translate">
 	      <xsl:with-param name="resultTree">
-	        <xsl:call-template name="browseOC"/>
+	        <xsl:apply-templates select="crossQueryResult" mode="browseOC"/>
 	      </xsl:with-param>
 	    </xsl:call-template>
 	  </xsl:when>
@@ -222,7 +228,15 @@
       <xsl:if test="$browse-locations or $browse-orangecounty">
         <xsl:copy-of select="$assets.leaflet-map"/>
       </xsl:if>
-      <xsl:copy-of select="$assets.htmlhead"/>
+      <xsl:choose>
+        <xsl:when test="$browse-orangecounty">
+          <xsl:copy-of select="$oc-assets.htmlhead"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:copy-of select="$assets.htmlhead"/>
+        </xsl:otherwise>
+      </xsl:choose>
+      <!--<xsl:copy-of select="$assets.htmlhead"/>-->
       <xsl:copy-of select="$brand.googleanalytics"/>
     </head>
     <body>
@@ -233,7 +247,16 @@
           are maintained here in case Javascript or other CSS stylesheets 
           depend upon the IDs. -->
         <xsl:attribute name="id">browse-<xsl:value-of select="$browse-type"/>-page</xsl:attribute>
-        <xsl:attribute name="class">browse-page</xsl:attribute>
+        <xsl:choose>
+          <!-- The Orange County Data Portal makes use of any OCDP-specific 
+            styles. -->
+          <xsl:when test="$browse-orangecounty">
+            <xsl:attribute name="class">browse-page ocdp</xsl:attribute>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:attribute name="class">browse-page</xsl:attribute>
+          </xsl:otherwise>
+        </xsl:choose>
         <!-- begin outer container -->  
         <div id="outer-container"> 
           <!-- begin inner container -->
@@ -242,7 +265,16 @@
             <div class="header">
               <xsl:call-template name="brandheader"/>
               <div id="navbar">
-                <xsl:copy-of select="$assets.nav-header"/>
+                <xsl:choose>
+                  <!-- The Orange County Data Portal has its own assets, which 
+                    should be used here in place of the default ones. -->
+                  <xsl:when test="$browse-orangecounty">
+                    <xsl:copy-of select="$oc-assets.nav-header"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:copy-of select="$assets.nav-header"/>
+                  </xsl:otherwise>
+                </xsl:choose>
                 <xsl:call-template name="navheader"/>
               </div>
             </div>
@@ -280,6 +312,16 @@
                     </div>
                   </xsl:if>
                   <form name="navigationSearchForm" action="/xtf/search" method="get" class="navbar-form">
+                    <!-- Make sure that searches within a geographic interface 
+                      list results within that interface. -->
+                    <xsl:if test="$browse-locations or $browse-orangecounty">
+                      <input type="hidden" value="yes">
+                        <xsl:attribute name="name">
+                          <xsl:text>browse-</xsl:text>
+                          <xsl:value-of select="$browse-type"/>
+                        </xsl:attribute>
+                      </input>
+                    </xsl:if>
                     <input type="text" name="keyword" class="searchField cleardefault" value="Search datasets..." title="Search datasets"/>
                     <input type="submit" value="Go!" class="searchButton btn"/>
                   </form>
@@ -331,7 +373,15 @@
                 </div>
               </div>
             </div>
-            <xsl:copy-of select="$assets.nav-footer"/>
+            <xsl:choose>
+              <xsl:when test="$browse-orangecounty">
+                <xsl:copy-of select="$oc-assets.nav-footer"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:copy-of select="$assets.nav-footer"/>
+              </xsl:otherwise>
+            </xsl:choose>
+            <!--<xsl:copy-of select="$assets.nav-footer"/>-->
             <xsl:copy-of select="$brand.footer"/>
           </div>
         </div>

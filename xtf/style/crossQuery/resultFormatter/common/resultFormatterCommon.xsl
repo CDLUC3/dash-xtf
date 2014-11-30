@@ -270,7 +270,16 @@
    <xsl:param name="servlet.path"/>
    <xsl:param name="root.path"/>
    <xsl:param name="http.x-forwarded-host"/>
-   <xsl:param name="xtfURL" select="concat('http://',$http.x-forwarded-host,'/xtf/')"/>
+   <xsl:param name="xtfURL">
+     <xsl:choose>
+       <xsl:when test="$http.x-forwarded-host">
+         <xsl:value-of select="concat('http://',$http.x-forwarded-host,'/xtf/')"/>
+       </xsl:when>
+       <xsl:otherwise>
+         <xsl:text>http://localhost:8080/xtf/</xsl:text>
+       </xsl:otherwise>
+     </xsl:choose>
+   </xsl:param>
    <xsl:param name="serverURL" select="replace($xtfURL, '(http://.+)[:/].+', '$1/')"/>
    <xsl:param name="crossqueryPath" select="if (matches($servlet.path, 'org.cdlib.xtf.dynaXML.DynaXML')) then 'org.cdlib.xtf.crossQuery.CrossQuery' else 'search'"/>
    <xsl:param name="dynaxmlPath" select="if (matches($servlet.path, 'org.cdlib.xtf.crossQuery.CrossQuery')) then 'org.cdlib.xtf.dynaXML.DynaXML' else 'view'"/>
@@ -486,7 +495,15 @@
    <!-- ====================================================================== -->
    <xsl:template match="*:creator">
 
-	<a href="{$xtfURL}{$crossqueryPath}?f1-creator={editURL:protectValue(.)}">
+  <!-- amc: Allows URLs to drill down within the different browse interfaces. -->
+	<!--<a href="{$xtfURL}{$crossqueryPath}?f1-creator={editURL:protectValue(.)}">-->
+     <a>
+       <xsl:attribute name="href">
+         <xsl:value-of select="concat($xtfURL, $crossqueryPath, '?', 
+           editURL:set(editURL:remove($queryString,'browse-all=yes'),
+           'f1-creator',editURL:protectValue(.)))"/>
+       </xsl:attribute>
+	  
          <xsl:apply-templates/>
       </a>
       <xsl:if test="not(position() = last())">
@@ -498,7 +515,14 @@
    <!-- Author Links                                                           -->
    <!-- ====================================================================== -->
    <xsl:template match="contributor">
-      <a href="{$xtfURL}{$crossqueryPath}?f1-contributor={normalize-space(editURL:protectValue(.))}">
+      <!-- amc: Allows URLs to drill down within the different browse interfaces. -->
+      <!--<a href="{$xtfURL}{$crossqueryPath}?f1-contributor={normalize-space(editURL:protectValue(.))}">-->
+      <a>
+          <xsl:attribute name="href">
+            <xsl:value-of select="concat($xtfURL, $crossqueryPath, '?', 
+              editURL:set(editURL:remove($queryString,'browse-all=yes'),
+              'f1-contributor',normalize-space(editURL:protectValue(.))))"/>
+          </xsl:attribute>
           <xsl:value-of select="replace(string(.),'::', '-')"/>
       </a>
       <xsl:if test="not(position() = last())">
@@ -507,7 +531,14 @@
   </xsl:template>
 
    <xsl:template match="campus">
-      <a href="{$xtfURL}{$crossqueryPath}?f1-campus={normalize-space(editURL:protectValue(.))}">
+      <!-- amc: Allows URLs to drill down within the different browse interfaces. -->
+      <!--<a href="{$xtfURL}{$crossqueryPath}?f1-campus={normalize-space(editURL:protectValue(.))}">-->
+      <a>
+          <xsl:attribute name="href">
+            <xsl:value-of select="concat($xtfURL, $crossqueryPath, '?', 
+              editURL:set(editURL:remove($queryString,'browse-all=yes'),
+              'f1-campus',normalize-space(editURL:protectValue(.))))"/>
+          </xsl:attribute>
           <xsl:value-of select="replace(string(.),'::', '-')"/>
       </a>
       <xsl:if test="not(position() = last())">
@@ -1082,13 +1113,13 @@
      <!-- amc: There is a bug here; "xtfURL" should be "$xtfURL". I'm leaving 
        it in because it allows the facet links to work in my local environment. -->
       <xsl:variable name="selectLink" select="
-         concat(xtfURL, $crossqueryPath, '?',
+         concat($xtfURL, $crossqueryPath, '?',
                 editURL:set(editURL:remove($queryString,'browse-all=yes'), 
                             $nextName, $value))">
       </xsl:variable>
       
       <xsl:variable name="clearLink" select="
-         concat(xtfURL, $crossqueryPath, '?',
+         concat($xtfURL, $crossqueryPath, '?',
                 editURL:replaceEmpty(
                    editURL:remove($queryString, 
                                   concat('f[0-9]+-',$field,'=',
