@@ -67,13 +67,12 @@
               <xsl:value-of select="$id4"/> 
 			</identifier>
          </xsl:if>
-
-
+		  
 	  <!-- Makes the document identifier searchable (for Browse Locations). -->
-		<docId xtf:meta="true" xtf:tokenize="no">
+	  <docId xtf:meta="true" xtf:tokenize="no">
 	    <xsl:value-of select="substring-after($docpath,'xtf/data/')"/>
 	  </docId>
-		
+
 		<xsl:if test="FileUtils:exists(concat($targetlink,'target_link'))">
 			<target xtf:meta="true" xtf:tokenize="no">
               <xsl:value-of select="unparsed-text(concat($targetlink,'target_link'))"/> 
@@ -161,10 +160,10 @@
             </xsl:when>
 -->
             <xsl:when test="matches(name(),'publisher')">
-           		<campus xtf:meta="true" xtf:tokenize="no">
+           		<publisher xtf:meta="true" xtf:tokenize="no">
               	<xsl:copy-of select="@*"/>
 				<xsl:call-template name="lookupCampusLabel"><xsl:with-param name="uc-id" select="string(.)"/></xsl:call-template>
-           		</campus>
+           		</publisher>
             </xsl:when>
            
            <!-- Capture the geoLocation data and context. -->
@@ -229,7 +228,7 @@
 <!--         <xsl:apply-templates select="$meta/*:contributor" mode="sort"/> -->
          <xsl:apply-templates select="$meta/*:dc-date[1]" mode="sort"/>
          <xsl:apply-templates select="$meta/*:added[1]" mode="sort"/>
-		 <xsl:apply-templates select="$meta/*:campus" mode="sort"/>
+		 <xsl:apply-templates select="$meta/*:publisher" mode="sort"/>
 
 <!--pw add facet for creator, contributor -->                  
          <!-- Create facets -->
@@ -238,16 +237,15 @@
          <xsl:apply-templates select="$meta/*:creator" mode="facet"/>
          <xsl:apply-templates select="$meta/*:subject" mode="facet"/>
 <!--		 <xsl:apply-templates select="$meta/*:contributor" mode="facet"/> -->
-		 <xsl:apply-templates select="$meta/*:campus" mode="facet"/>
+		 <xsl:apply-templates select="$meta/*:publisher" mode="facet"/>
 		
 <!--pw add browse for creator, contributor -->
 <!--		 <xsl:apply-templates select="$meta/*:contributor" mode="browse"/> -->
          <xsl:apply-templates select="$meta/*:creator" mode="browse"/>
          <xsl:apply-templates select="$meta/*:subject" mode="browse"/>
-         <xsl:apply-templates select="$meta/*:title[1]" mode="browse"/>    
-		 <xsl:apply-templates select="$meta/*:campus" mode="browse"/>
-        <!--<xsl:apply-templates select="$meta/*:geoLocations/geoLocationPlace" mode="browse"/>-->
-        <xsl:apply-templates select="$meta/*:geoLocations" mode="browse"/>
+        <xsl:apply-templates select="$meta/*:title[1]" mode="browse"/>   
+        <xsl:apply-templates select="$meta/*:geoLocations" mode="browse"/> 
+		 <xsl:apply-templates select="$meta/*:publisher" mode="browse"/>
 	 </xtf:meta>
    </xsl:template>
 
@@ -279,10 +277,10 @@
       </sort-contributor>
    </xsl:template>
 
-   <xsl:template match="*:campus" mode="sort">
-      <sort-campus xtf:meta="yes" xtf:tokenize="no">
+   <xsl:template match="*:publisher" mode="sort">
+      <sort-publisher xtf:meta="yes" xtf:tokenize="no">
          <xsl:copy-of select="string(.)"/>
-      </sort-campus>
+      </sort-publisher>
    </xsl:template>
    
    <!-- Generate sort-year (if range, only use first year) -->
@@ -360,16 +358,14 @@
 			<xsl:value-of select="string(.)"/>
 		</facet-contributor>
    </xsl:template>
-   <xsl:template match="*:campus" mode="facet">
-		<facet-campus>
+   <xsl:template match="*:publisher" mode="facet">
+		<facet-publisher>
 			<xsl:attribute name="xtf:meta" select="'true'"/>
 			<xsl:attribute name="xtf:facet" select="'yes'"/>
 			<xsl:value-of select="string(.)"/>
-		</facet-campus>
+		</facet-publisher>
 
-   </xsl:template>	
-  
-  
+	</xsl:template>	
 	<!-- Generate browse-title -->
    <xsl:template match="*:title" mode="browse">
       <browse-title>
@@ -406,29 +402,25 @@
       </browse-contributor>
    </xsl:template>
 
-   <xsl:template match="*:campus" mode="browse">
-      <browse-campus>
+   <xsl:template match="*:publisher" mode="browse">
+      <browse-publisher>
          <xsl:attribute name="xtf:meta" select="'true'"/>
          <xsl:attribute name="xtf:tokenize" select="'no'"/>
 		 <xsl:value-of select="parse:alpha(parse:title(.))"/>
-      </browse-campus>
+      </browse-publisher>
    </xsl:template>
   
    <xsl:template match="*:geoLocations" mode="browse">
-     <!-- If present, geoLocationPlace's text should only match "Orange County 
-       (Calif.)", which signals that the record belongs to the OC Data Portal. -->
-     <xsl:if test="./*:geoLocationPlace[text()='Orange County (Calif.)']">
-       <browse-orangecounty xtf:meta="true">
-         <xsl:text>yes</xsl:text>
-       </browse-orangecounty>
-     </xsl:if>
-     <!-- For the general map browse, we're only interested in features we can 
-       map (read: geoLocationPoints or Boxes). -->
-     <xsl:if test="./*[not(matches(local-name(),'geoLocationPlace'))]">
-       <browse-locations xtf:meta="true">
-         <xsl:text>yes</xsl:text>
-       </browse-locations>
-     </xsl:if>
+      <!-- If present, geoLocationPlace's text should only match "Orange County 
+         (Calif.)", which signals that the record belongs to the OC Data Portal. -->
+     <xsl:if test="descendant::*:geoLocationPlace[text()='Orange County (Calif.)']">
+        <browse-orangecounty xtf:meta="true">yes</browse-orangecounty>
+      </xsl:if>
+      <!-- For geographic interfaces, we're only interested in features we can 
+         map (read: geoLocationPoints or Boxes). -->
+      <xsl:if test="descendant::*[not(*:geoLocationPlace)]">
+        <browse-locations xtf:meta="true">yes</browse-locations>
+      </xsl:if>
    </xsl:template>
 
    

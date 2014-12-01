@@ -93,11 +93,12 @@
    <xsl:param name="description-exclude"/>
    <xsl:param name="description-max"/>
    
-   <xsl:param name="campus"/>
-   <xsl:param name="campus-join"/>
-   <xsl:param name="campus-prox"/>
-   <xsl:param name="campus-exclude"/>
-   <xsl:param name="campus-max"/>
+   <xsl:param name="publisher"/>
+   <xsl:param name="publisher-join"/>
+   <xsl:param name="publisher-prox"/>
+   <xsl:param name="publisher-exclude"/>
+   <xsl:param name="publisher-max"/>
+   <xsl:param name="f1-publisher"/>
    
    <xsl:param name="contributor"/>
    <xsl:param name="f1-contributor"/>
@@ -186,7 +187,7 @@
    <xsl:param name="browse-labs"/>
    <xsl:param name="browse-researcher"/>
    <xsl:param name="browse-researchers"/>
-   <xsl:param name="browse-campus"/>
+   <xsl:param name="browse-publisher"/>
   
    <!-- Parameters specific to the geographic interface. -->
    <xsl:param name="browse-locations"/>
@@ -233,6 +234,7 @@
    <xsl:param name="assets.htmlhead" select="$assets//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="assets.nav-header" select="$assets//nav-header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="assets.nav-footer" select="$assets//nav-footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:param name="assets.uploadbasics" select="$assets//uploadbasics/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
   <xsl:param name="assets.leaflet-map" select="$assets//leaflet-map/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    
    
@@ -270,16 +272,7 @@
    <xsl:param name="servlet.path"/>
    <xsl:param name="root.path"/>
    <xsl:param name="http.x-forwarded-host"/>
-   <xsl:param name="xtfURL">
-     <xsl:choose>
-       <xsl:when test="$http.x-forwarded-host">
-         <xsl:value-of select="concat('http://',$http.x-forwarded-host,'/xtf/')"/>
-       </xsl:when>
-       <xsl:otherwise>
-         <xsl:text>http://localhost:8080/xtf/</xsl:text>
-       </xsl:otherwise>
-     </xsl:choose>
-   </xsl:param>
+   <xsl:param name="xtfURL" select="concat('http://',$http.x-forwarded-host,'/xtf/')"/>
    <xsl:param name="serverURL" select="replace($xtfURL, '(http://.+)[:/].+', '$1/')"/>
    <xsl:param name="crossqueryPath" select="if (matches($servlet.path, 'org.cdlib.xtf.dynaXML.DynaXML')) then 'org.cdlib.xtf.crossQuery.CrossQuery' else 'search'"/>
    <xsl:param name="dynaxmlPath" select="if (matches($servlet.path, 'org.cdlib.xtf.crossQuery.CrossQuery')) then 'org.cdlib.xtf.dynaXML.DynaXML' else 'view'"/>
@@ -515,29 +508,29 @@
    <!-- Author Links                                                           -->
    <!-- ====================================================================== -->
    <xsl:template match="contributor">
-      <!-- amc: Allows URLs to drill down within the different browse interfaces. -->
-      <!--<a href="{$xtfURL}{$crossqueryPath}?f1-contributor={normalize-space(editURL:protectValue(.))}">-->
-      <a>
-          <xsl:attribute name="href">
-            <xsl:value-of select="concat($xtfURL, $crossqueryPath, '?', 
-              editURL:set(editURL:remove($queryString,'browse-all=yes'),
-              'f1-contributor',normalize-space(editURL:protectValue(.))))"/>
-          </xsl:attribute>
-          <xsl:value-of select="replace(string(.),'::', '-')"/>
-      </a>
+     <!-- amc: Allows URLs to drill down within the different browse interfaces. -->
+     <!--<a href="{$xtfURL}{$crossqueryPath}?f1-contributor={normalize-space(editURL:protectValue(.))}">-->
+     <a>
+       <xsl:attribute name="href">
+         <xsl:value-of select="concat($xtfURL, $crossqueryPath, '?', 
+           editURL:set(editURL:remove($queryString,'browse-all=yes'),
+           'f1-contributor',normalize-space(editURL:protectValue(.))))"/>
+       </xsl:attribute>
+       <xsl:value-of select="replace(string(.),'::', '-')"/>
+     </a>
       <xsl:if test="not(position() = last())">
          <xsl:text> | </xsl:text>
       </xsl:if>
   </xsl:template>
 
-   <xsl:template match="campus">
+   <xsl:template match="publisher">
       <!-- amc: Allows URLs to drill down within the different browse interfaces. -->
-      <!--<a href="{$xtfURL}{$crossqueryPath}?f1-campus={normalize-space(editURL:protectValue(.))}">-->
-      <a>
+     <!--<a href="{$xtfURL}{$crossqueryPath}?f1-publisher={normalize-space(editURL:protectValue(.))}">-->
+     <a>
           <xsl:attribute name="href">
             <xsl:value-of select="concat($xtfURL, $crossqueryPath, '?', 
               editURL:set(editURL:remove($queryString,'browse-all=yes'),
-              'f1-campus',normalize-space(editURL:protectValue(.))))"/>
+              'f1-publisher',normalize-space(editURL:protectValue(.))))"/>
           </xsl:attribute>
           <xsl:value-of select="replace(string(.),'::', '-')"/>
       </a>
@@ -653,96 +646,6 @@
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
-   
-   <!-- ====================================================================== -->
-   <!-- Sort Options                                                           -->
-   <!-- ====================================================================== -->
-   
-   <xsl:template name="sort.options">
-      <select size="1" name="sort">
-         <xsl:choose>
-            <xsl:when test="$browse-all='yes'">
-               <xsl:choose>
-                  <xsl:when test="$sort = ''">
-                     <option value="title" selected="selected">title</option>
-                     <option value="creator">author</option>
-                     <option value="year">publication date</option>
-                     <option value="reverse-year">reverse date</option>
-                  </xsl:when>
-                  <xsl:when test="$sort = 'title'">
-                     <option value="title" selected="selected">title</option>
-                     <option value="creator">author</option>
-                     <option value="year">publication date</option>
-                     <option value="reverse-year">reverse date</option>
-                  </xsl:when>
-                  <xsl:when test="$sort = 'creator'">
-                     <option value="title">title</option>
-                     <option value="creator" selected="selected">author</option>
-                     <option value="year">publication date</option>
-                     <option value="reverse-year">reverse date</option>
-                  </xsl:when>
-                  <xsl:when test="$sort = 'year'">
-                     <option value="title">title</option>
-                     <option value="creator">author</option>
-                     <option value="year" selected="selected">publication date</option>
-                     <option value="reverse-year">reverse date</option>
-                  </xsl:when>
-                  <xsl:when test="$sort = 'reverse-year'">
-                     <option value="title">title</option>
-                     <option value="creator">author</option>
-                     <option value="year">publication date</option>
-                     <option value="reverse-year" selected="selected">reverse date</option>
-                  </xsl:when>
-				  <xsl:when test="$sort = 'added'">
-                     <option value="title">title</option>
-                     <option value="creator">author</option>
-                     <option value="year">publication date</option>
-                     <option value="reverse-year">reverse date</option>
-                  </xsl:when>
-               </xsl:choose>
-            </xsl:when>
-            <xsl:otherwise>
-               <xsl:choose>
-                  <xsl:when test="$sort = ''">
-                     <option value="" selected="selected">relevance</option>
-                     <option value="title">title</option>
-                     <option value="creator">author</option>
-                     <option value="year">publication date</option>
-                     <option value="reverse-year">reverse date</option>
-                  </xsl:when>
-                  <xsl:when test="$sort = 'title'">
-                     <option value="">relevance</option>
-                     <option value="title" selected="selected">title</option>
-                     <option value="creator">author</option>
-                     <option value="year">publication date</option>
-                     <option value="reverse-year">reverse date</option>
-                  </xsl:when>
-                  <xsl:when test="$sort = 'creator'">
-                     <option value="">relevance</option>
-                     <option value="title">title</option>
-                     <option value="creator" selected="selected">author</option>
-                     <option value="year">publication date</option>
-                     <option value="reverse-year">reverse date</option>
-                  </xsl:when>
-                  <xsl:when test="$sort = 'year'">
-                     <option value="">relevance</option>
-                     <option value="title">title</option>
-                     <option value="creator">author</option>
-                     <option value="year" selected="selected">publication date</option>
-                     <option value="reverse-year">reverse date</option>
-                  </xsl:when>
-                  <xsl:when test="$sort = 'reverse-year'">
-                     <option value="">relevance</option>
-                     <option value="title">title</option>
-                     <option value="creator">author</option>
-                     <option value="year">publication date</option>
-                     <option value="reverse-year" selected="selected">reverse date</option>
-                  </xsl:when>
-               </xsl:choose>
-            </xsl:otherwise>
-         </xsl:choose>
-      </select>
-   </xsl:template>  
    
    <!-- ====================================================================== -->
    <!-- dynaXML URL Template                                                   -->
@@ -1107,11 +1010,9 @@
       <xsl:variable name="value" select="@value"/>
       <xsl:variable name="nextName" select="editURL:nextFacetParam($queryString, $field)"/>
       
-     <!-- This will not remove "browse-locations" or "-orangecounty" 
+      <!-- This will not remove "browse-locations" or "-orangecounty" 
         parameters, which is good because it allows drilling down into the 
         results within the geographic interface. -->
-     <!-- amc: There is a bug here; "xtfURL" should be "$xtfURL". I'm leaving 
-       it in because it allows the facet links to work in my local environment. -->
       <xsl:variable name="selectLink" select="
          concat($xtfURL, $crossqueryPath, '?',
                 editURL:set(editURL:remove($queryString,'browse-all=yes'), 

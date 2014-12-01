@@ -79,34 +79,31 @@
    
 <xsl:template match="/" exclude-result-prefixes="#all">
 	<xsl:choose>
-		<xsl:when test="$smode = 'aboutPage'">   	 
+		<xsl:when test="$smode = 'aboutPage'">
 			<xsl:call-template name="aboutPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'whyShareDataPage'">   	 
+		<xsl:when test="$smode = 'whyShareDataPage'">
 			<xsl:call-template name="whyShareDataPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'faqPage'">   	 
+		<xsl:when test="$smode = 'faqPage'">
 			<xsl:call-template name="faqPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'metadataBasicsPage'">   	 
+		<xsl:when test="$smode = 'metadataBasicsPage'">
 		 	<xsl:call-template name="metadataBasicsPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'uploadFaqPage'">   	 
+		<xsl:when test="$smode = 'uploadFaqPage'">
 		 	<xsl:call-template name="uploadFaqPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'dataUseAgreementUCSF'">   	 
+		<xsl:when test="$smode = 'dataUseAgreementUCSF'">
 		 	<xsl:call-template name="dataUseAgreementUCSF"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'preparePage'">   	 
+		<xsl:when test="$smode = 'preparePage'">
 			<xsl:call-template name="preparePage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'policiesPage'">   	 
+		<xsl:when test="$smode = 'policiesPage'">
 			<xsl:call-template name="policiesPage"/>
 		</xsl:when>
-		<xsl:when test="$smode = 'rightsPage'">   	 
-			<xsl:call-template name="rightsPage"/>
-		</xsl:when>
-		<xsl:when test="$smode = 'stepsPage'">   	 
+		<xsl:when test="$smode = 'stepsPage'">
 			<xsl:call-template name="stepsPage"/>
 		</xsl:when>
 		<!-- robot response -->
@@ -160,7 +157,7 @@
 			</xsl:call-template>
 		</xsl:when>
 		<!-- browse pages -->
-		<xsl:when test="$browse-title or $browse-creator or $browse-contributor or $browse-keyword or $browse-campus">
+		<xsl:when test="$browse-title or $browse-creator or $browse-contributor or $browse-keyword or $browse-publisher">
 			<xsl:call-template name="translate">
 				<xsl:with-param name="resultTree">
 					<xsl:apply-templates select="crossQueryResult" mode="browse"/>
@@ -333,9 +330,9 @@
                       <tr>
                         <td>
                           <div class="facet">
-                            <xsl:apply-templates select="//facet[@field='facet-campus']"/>
-                            <xsl:apply-templates select="//facet[@field='facet-creator']"/>
-                            <xsl:apply-templates select="//facet[@field='facet-keyword']"/>
+                            <xsl:apply-templates select="facet[@field='facet-publisher']"/>
+                            <xsl:apply-templates select="facet[@field='facet-creator']"/>
+                            <xsl:apply-templates select="facet[@field='facet-keyword']"/>
                           </div>
                         </td>
                       </tr>
@@ -343,27 +340,21 @@
                   </div>
                 </div>
                 <div class="search-results">
-                  <xsl:choose>
-                    <!-- If browsing locations, add the map here. -->
-                    <xsl:when test="$browse-locations or $browse-orangecounty">
-                      <!-- Replace the sort mechanism with a note on collection policy. -->
-                      <div class="search-controls">
-                        <span style="padding:5px">NOTE: Only data with assigned geoLocation values will appear in this map interface.</span>
-                      </div>
-                      <div id="map">
-                        <script>
-                          <xsl:text>initMap();</xsl:text>
-                          <xsl:call-template name="generateMapLayers"/>
-                        </script>
-                      </div>
-                    </xsl:when>
-                    <!-- Otherwise, add the Sorted By bar. -->
-                    <xsl:otherwise>
-                      <xsl:call-template name="search_controls"/>
-                    </xsl:otherwise>
-                  </xsl:choose>
+                  <!-- If browsing locations, add the map here. -->
+                  <xsl:if test="$browse-locations or $browse-orangecounty">
+                    <!-- Replace the sort mechanism with a note on collection policy. -->
+                    <div class="search-controls">
+                      <span style="padding:5px">NOTE: Only data with assigned geoLocation values will appear in this map interface.</span>
+                    </div>
+                    <div id="map">
+                      <script>
+                        <xsl:text>initMap();</xsl:text>
+                        <xsl:call-template name="generateMapLayers"/>
+                      </script>
+                    </div>
+                  </xsl:if>
                   <div class="search-result">
-                    <xsl:apply-templates select="//docHit">
+                    <xsl:apply-templates select="docHit">
                       <xsl:with-param name="browse-type" select="$browse-type"/>
                     </xsl:apply-templates>
                     <xsl:if test="@totalDocs > $docsPerPage">
@@ -507,7 +498,7 @@
 							<xsl:when test="$browse-title">Title</xsl:when>
 							<xsl:when test="$browse-creator">Author</xsl:when>
 							<xsl:when test="$browse-contributor">Contributor</xsl:when>
-							<xsl:when test="$browse-campus">Campus</xsl:when>
+							<xsl:when test="$browse-publisher">Publisher</xsl:when>
 							<xsl:otherwise>All Items</xsl:otherwise>
 						</xsl:choose>
 						</td>
@@ -567,8 +558,8 @@
 								<xsl:when test="$browse-contributor">
 									<xsl:apply-templates select="facet[@field='browse-contributor']/group/docHit"/>
 								</xsl:when>
-								<xsl:when test="$browse-campus">
-									<xsl:apply-templates select="facet[@field='browse-campus']/group/docHit"/>
+								<xsl:when test="$browse-publisher">
+									<xsl:apply-templates select="facet[@field='browse-publisher']/group/docHit"/>
 								</xsl:when>
 							</xsl:choose>
 						</td>
@@ -675,19 +666,7 @@
 			</xsl:when>
 		</xsl:choose>
 	</xsl:variable>
-	<div class="docHit">
-	  <xsl:attribute name="id">
-	    <xsl:choose>
-	      <xsl:when  test="matches($browse-type,'mapPopup')">
-	        <xsl:text>popup_</xsl:text>
-	        <xsl:value-of select="@rank"/>
-	      </xsl:when>
-	      <xsl:otherwise>
-	        <xsl:text>main_</xsl:text>
-	        <xsl:value-of select="@rank"/>
-	      </xsl:otherwise>
-	    </xsl:choose>
-	  </xsl:attribute>
+	<div id="main_{@rank}" class="docHit">     
 		<h3><span class="DC-Title">
 		<a>
 		<xsl:attribute name="href">
@@ -709,7 +688,7 @@
 				</xsl:choose>
 				</span>
 			</li>
-			<li><xsl:text>at </xsl:text>
+			<li>
 				<xsl:choose>
 					<xsl:when test="meta/contributor">
 						<span class="DC-Contributor">
@@ -719,7 +698,7 @@
 					</xsl:when>
 				</xsl:choose>
 			    <span class="DC-Publisher">
-					<xsl:apply-templates select="meta/campus"/>
+					<xsl:apply-templates select="meta/publisher"/>
 				</span>
 			</li>
 		  <xsl:if test="not(matches($browse-type,'mapPopup'))">
@@ -851,33 +830,6 @@
 	</li>
 </xsl:template>
 	
-
-<!-- ====================================================================== -->
-<!-- Search controls Template                                           	-->
-<!-- ====================================================================== -->
-<xsl:template name="search_controls">
-	<div class="search-controls">
-		<div class="search-control-sort">
-			<form method="get" action="{$xtfURL}{$crossqueryPath}" class="navbar-form">
-				<b>Sorted by:&#160;</b>
-				<xsl:call-template name="sort.options"/>
-				<xsl:call-template name="hidden.query">
-					<xsl:with-param name="queryString" select="editURL:remove($queryString, 'sort')"/>
-				</xsl:call-template>
-				<xsl:text>&#160;</xsl:text>
-				<input type="submit" value="Go!" class="btn"/>
-           </form>
-		</div>
-	</div>
-<!--	
-<div class="search-control-sort">Sort by: <a href="./sort=title">Title</a> <a href="#">Researcher</a> <a href="#">Lab/Department</a> <a href="#">Date</a></div>
-</div>
--->
-</xsl:template>
-
-
-
-
 <!-- ====================================================================== -->
 <!-- faqPage Template		                                           		-->
 <!-- ====================================================================== -->
@@ -1050,7 +1002,13 @@
 									  <h1>Access and reuse of data</h1>
 
 									  <h2>Access to data objects</h2>
-									  <p>Data deposited into Dash may have a custom Data Use Agreement, or they may be under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>. According to the terms of the CC-BY license, reuse of the data must include appropriate credit and must indicate if changes were made. The dataset landing page will display the license associated with the dataset. Note that content in Dash is offered "as is." By downloading files, you agree to the <a href="http://www.cdlib.org/about/terms.html">Dash Terms of Use</a>.</p>
+									  <p>Data deposited into Dash may have one of the following:</p>
+										<ol>
+											<li>Custom Data Use Agreement.</li>
+											<li>Made available under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a> (CC-BY-4.0). According to the terms of the CC-BY license, reuse of the data must include appropriate credit and must indicate if changes were made.</li>
+											<li>Released under a <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">Creative Commons Public Domain Dedication Waiver</a> (CC0). This waiver has no restrictions on use and encourages reuse of data for any and all purposes.</li>
+										</ol>
+										<p>The dataset landing page will display the usage information associated with the dataset. Note that content in Dash is offered "as is." By downloading files, you agree to the Dash <a href="http://www.cdlib.org/about/terms.html">Terms of Use</a>.</p>
 
 									  <h2>Tracking users and statistics</h2>
 									  <p>The California Digital Library does not track, collect or retain personal information from users of Dash, except as otherwise provided herein. In order to enhance Dash and monitor traffic, non-personal information such as IP addresses and cookies may be tracked and retained. User provided information, like corrections of metadata or paper claims, will be integrated into the database without displaying its source and may be shared with other services.</p>
@@ -1074,56 +1032,6 @@
 									  <h1>Succession plans</h1>
 									  <p>In case of closure of the repository, reasonable efforts will be made to integrate all content into suitable alternative institutional and/or subject based repositories.</p>
 									  <p>All information is provided "as-is" and the user shall hold the California Digital Library, UC Campus, and information providers supplying data to Dash free and harmless in connection with the use of such information.</p>
-								</div>
-							</div>
-						</div> <!-- end content-->
-						<xsl:copy-of select="$assets.nav-footer"/>
-						<xsl:copy-of select="$brand.footer"/>
-					</div> <!-- end inner container -->
-				</div> <!-- end outer container -->
-			</div>
-		</body>
-	</html>
-</xsl:template>
-
-<!-- ====================================================================== -->
-<!-- rightsPage Template		                                           	-->
-<!-- ====================================================================== -->
-<xsl:template name="rightsPage">
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-		<head>
-			<title>Dash: Rights Information</title>
-			<xsl:copy-of select="$assets.htmlhead"/>
-			<xsl:copy-of select="$brand.googleanalytics"/>
-		</head>
- 		<body>
-			<!-- begin page id -->
-			<div id="prepare-to-submit-page"> 
-				<!-- begin outer container -->  
-				<div id="outer-container"> 
-				    <!-- begin inner container -->
-				    <div id="inner-container"> 
-						<!-- begin content -->
-						<div class="header">
-							<xsl:call-template name="brandheader"/>
-							<div id="navbar">
-								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:call-template name="navheader"/>
-							</div>
-						</div>
-						<div id="banner">
-							<img src="assets/img/banner-home-v8.0.jpg" width="952" height="72" alt="Publish and Download Research Datasets"/>
-						</div>
-						<div id="content"> 	
-							<div class="single-column">
-								<h1>Rights, Ownership and Licensing of Research Data</h1>
-								<div class="text-container">
-									<h2>Ownership</h2> 
-									<p><a href="http://www.ucop.edu/academic-personnel/_files/apm/apm-020.pdf">The University of California Academic Personnel Policy (APM) 020</a> states:
-									<blockquote>"Notebooks and other original records of the research are the property of the University." (II. 5, p.3)</blockquote>
-									which the university interprets as meaning that research data are owned by the university.</p>
-									<h2>Licenses</h2>
-									<p>UCOP General Counsel currently recommends using a Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> license, requiring attribution. Dash supports this recommendation by only offering CC-BY 4.0, but we can support other licenses.</p>
 								</div>
 							</div>
 						</div> <!-- end content-->
@@ -1449,7 +1357,7 @@
 										<h3>UC Curation Center (UC3)</h3>
 										<p>The <a href="http://cdlib.org/uc3">UC3</a> is a creative partnership bringing together the expertise and resources of the CDL, the ten UC campuses, and the broader international curation community. The group fosters collaborative analysis, projects and solutions to ensure the long-term viability and usability of curated digital content. Examples of tools and services include the <a href="https://merritt.cdlib.org">Merritt Repository Service</a>, the <a href="http://was.cdlib.org">Web Archiving Service</a> (WAS), and <a href="https://dmptool.org">Data Management Planning Tool</a> (DMPTool).</p>
 									<h2>Dash Origins</h2>
-									<p>The Dash project began as <a href="http://datashare.ucsf.edu">DataShare</a>, a collaboration between University of California San Francisco's <a href="http://ctsi.ucsf.edu">Clinical &amp; Translational Science Institute</a> (CTSI), the <a href="http://www.library.ucsf.edu/">UCSF Library and Center for Knowledge Management</a>, and <a href="http://cdlib.org/uc3">UC3</a>. CTSI is part of the Clinical and Translational Science Award program funded by the National Center for Advancing Translational Sciences at the National Institutes of Health (Grant Number UL1 TR000004).</p>
+									<p>The Dash project began as <a href="http://datashare.ucsf.edu">DataShare</a>, a collaboration among <a href="http://www.cdlib.org/uc3">UC3</a>, the <a href="http://www.library.ucsf.edu/">University of California San Francisco Library and Center for Knowledge Management</a>, and the <a href="http://ctsi.ucsf.edu/">UCSF Clinical and Translational Science Institute</a> (CTSI). CTSI is part of the Clinical and Translational Science Award program funded by the National Center for Advancing Translational Sciences at the National Institutes of Health (Grant Number UL1 TR000004).</p>
 								</div>
 							</div>
 						</div>

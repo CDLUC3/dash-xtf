@@ -10,9 +10,7 @@
    <googleanalytics>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			ga('create', 'UA-55198916-1', 'auto', {'allowLinker': true});
-			ga('require', 'linker');
-			ga('linker:autoLink', ['ucop.edu', 'uci.edu', 'ucmerced.edu', 'ucla.edu', 'berkeley.edu']);
+			ga('create', 'UA-55198916-1', 'auto');
 			ga('send', 'pageview');
 		</script>
 	</googleanalytics>   
@@ -20,7 +18,7 @@
 	<header>
 		<div id="logout">
 			<p>
-				<img alt="Dash: Open data for the global research community" src="assets/img/dash_dataone_logo.jpg" title="Dash: Open data for the global research community" />
+				<img alt="DataONE Dash: Open data for the global research community" src="assets/img/dash_dataone_logo.jpg" title="Dash: Open data for the global research community" />
 			</p>
 		</div>
 		<br class="clear" />
@@ -119,4 +117,13 @@
 		<h3>DataONE</h3>
 		<p>Data Observation Network for Earth (DataONE) is the foundation of new innovative environmental science through a distributed framework and sustainable cyberinfrastructure that meets the needs of science and society for open, persistent, robust, and secure access to well-described and easily discovered Earth observational data. DataONE will ensure the preservation, access, use and reuse of multi-scale, multi-discipline, and multi-national science data via three primary cyber-infrastructure elements and a broad education and outreach program. Learn more at the <a href="http://dataone.org">DataONE website</a>.</p>
 	</about>
+	<uploadbasics>
+		<ul>
+			<li>See <a href="/xtf/search?smode=policiesPage">Policies</a> for more information on uploading datasets to Dash.</li>
+			<li>All file formats are accepted by Dash, although it is good practice to share data using open formats. See the UK Data Archive for a <a href="http://www.data-archive.ac.uk/create-manage/format/formats-table">list of optimal file formats</a>.</li>
+			<li>Include any files that may help others to use your data. This includes readme files, formal metadata files, or other critical information.</li>
+			<li>All data submitted to DataONE Dash will require a <a href="http://creativecommons.org/publicdomain/zero/1.0/">Creative Commons Public Domain Dedication</a> (CC0 1.0) waiver. This waiver has no restrictions on use and encourages reuse of data for any and all purposes. Read more on why CC0 is best for data at the <a href="https://wiki.creativecommons.org/CC0_use_for_data">Creative Commons wiki</a>.</li>
+			<li>It is your responsibility to ensure your data are being shared responsibly and ethically. Please be careful of sharing sensitive data and ensure you are complying with institutional and governmental regulations.</li>
+		</ul>
+	</uploadbasics>
 </brand>

@@ -25,13 +25,16 @@
 }
 
 /* Browse Orange County page styles */
+#browse-orangecounty-container .search-refine,
+#browse-orangecounty-container .search-refine .search-refine-controls,
+#browse-orangecounty-container .search-results .search-controls {
+  background-color: #E2A051;
+}
 #browse-orangecounty-container .search-refine {
-	background-color: #E2A051;
   margin-top: 0;
   width: 200px;
 }
 #browse-orangecounty-container .search-refine .search-refine-controls {
-  background-color: #E2A051;
   color: #914400;
 }
 #browse-orangecounty-container .search-controls {
@@ -42,6 +45,5 @@
   width: 575px;
 }
 #browse-orangecounty-container .search-results .search-controls {
-	background-color: #E2A051;
 	height: 35px;
 }

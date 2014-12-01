@@ -225,7 +225,7 @@
                   </div>
                   <div id="map">
                     <script>
-                      <xsl:text>initMap();</xsl:text>
+                      <xsl:text>initMap(); </xsl:text>
                       <xsl:call-template name="generateMapLayers"/>
                     </script>
                   </div>
@@ -248,15 +248,17 @@
   
   <!-- Write Javascript to populate the map. -->
   <xsl:template name="generateMapLayers">
-    <!-- Create an array of map features. -->
-    <xsl:text>var resultBounds = []; </xsl:text>
+      <!-- Create an array of map features. -->
+      <xsl:text>var resultBounds = []; </xsl:text>
     <!-- Create array for testing rectangles. -->
-    <xsl:text>var rectangles = [];</xsl:text>
+    <xsl:text>var rectangles = []; </xsl:text>
     <!-- Ignore geoLocationPlace. -->
-    <xsl:apply-templates select="(//geoLocationPoint|//geoLocationBox)"
+    <xsl:apply-templates select="//(geoLocationPoint|geoLocationBox)"
       mode="makeLayers"/>
-    <!-- Fit the map to all its features. -->
-    <xsl:text>map.fitBounds(resultBounds); </xsl:text>
+    <xsl:if test="$browse-locations">
+      <!-- Fit the map to all its features. -->
+      <xsl:text>map.fitBounds(resultBounds); </xsl:text>
+    </xsl:if>
   </xsl:template>
   
   <!-- Build a marker map feature from a geoLocationPoint. -->
@@ -309,7 +311,7 @@
     <xsl:text>resultBounds.push(</xsl:text>
     <xsl:value-of select="$rectBounds"/>
     <xsl:text>); </xsl:text>
-    <xsl:text>var rectBounds = L.latLngBounds(</xsl:text><xsl:value-of select="$rectBounds"/><xsl:text>);</xsl:text>
+    <xsl:text>var rectBounds = L.latLngBounds(</xsl:text><xsl:value-of select="$rectBounds"/><xsl:text>); </xsl:text>
     <!-- Write the Javascript command to populate the map. -->
     <!-- The weight attribute sets the line width of the rectangle's border. -->
     <xsl:text>newRectangle = L.rectangle(rectBounds, { weight: 2 }).addTo(map).bindPopup('</xsl:text>
@@ -319,13 +321,10 @@
     <xsl:text>'); </xsl:text>
     <!-- If this rectangle contains a previously-created rectangle, move it a 
       layer below the older rectangle. -->
-    <xsl:text>for (x in rectangles) { 
-        oldRectangle = rectangles[x]; 
-        if ( rectBounds.contains(oldRectangle.getLatLngs()) ) {
-          newRectangle.bringBelow(oldRectangle); 
-        }
-      };
-    </xsl:text>
+    <xsl:text>for (x in rectangles) { </xsl:text> 
+      <xsl:text> oldRectangle = rectangles[x]; </xsl:text>
+      <xsl:text>if ( rectBounds.contains(oldRectangle.getLatLngs()) ) { </xsl:text>
+      <xsl:text>newRectangle.bringBelow(oldRectangle); } }; </xsl:text>
     <!-- Add the new rectangle to the tracking array. -->
     <xsl:text>rectangles.push(newRectangle); </xsl:text>
   </xsl:template>

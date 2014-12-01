@@ -89,7 +89,6 @@
    <!-- ====================================================================== -->
    <!-- Root Template                                                          -->
    <!-- ====================================================================== -->
-   
 <xsl:template match="/">
 	<xsl:choose>
 		<!-- robot solution -->
@@ -106,13 +105,11 @@
 		</xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
-   
+
    <!-- ====================================================================== -->
    <!-- Frameset Template                                                      -->
    <!-- ====================================================================== -->
-   
 <xsl:template name="frameset">
-	<xsl:message>HTTP Cookie: <xsl:value-of select="$http.cookie"/></xsl:message>
 	<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<title>Dash: <xsl:apply-templates select="//title"/></title>
@@ -139,7 +136,7 @@
 						</div>
 						<div class="content content-dataset" id="content">
 							<div class="single-column">
-								<h1><xsl:apply-templates select="//title"/></h1>
+								<h1><xsl:apply-templates select="/*/*:meta/*:title"/></h1>
 								<div class="dataset-description">
 									<dl>
 									<!-- Citation -->
@@ -157,18 +154,23 @@
 												</xsl:when>
 												<xsl:otherwise>. </xsl:otherwise>
 											</xsl:choose>
-											<xsl:value-of select="normalize-space(/*/*:meta/*:title)"/>.
+											<xsl:value-of select="normalize-space(/*/*:meta/title)"/>.
 											<xsl:if test="/*/*:meta/*:publisher">
 												<xsl:value-of select="/*/*:meta/*:publisher"/>.
 											</xsl:if>
 											<xsl:if test="/*/*:meta/*:resourceType">
 												<xsl:value-of select="/*/*:meta/*:resourceType"/>.
 											</xsl:if>
-											<xsl:value-of select="/*/*:meta/*:doi"/>
+											<xsl:if test="substring(/*/*:meta/*:doi,1,3)='doi'">
+												<xsl:value-of select="/*/*:meta/*:doi"/>
+											</xsl:if>
+											<xsl:if test="substring(/*/*:meta/*:doi,1,3)='ark'">
+												http://n2t.net/<xsl:value-of select="/*/*:meta/*:doi"/>
+											</xsl:if>
 										</dd>
 										<xsl:if test="//title"> 
 											<dt>Title</dt>
-											<dd><span class="DC-Title"><xsl:apply-templates select="//title"/></span></dd>
+											<dd><span class="DC-Title"><xsl:apply-templates select="//*:meta/*:title"/></span></dd>
 										</xsl:if>
 										<xsl:if test="//*/*:meta/*:creator"> 
 											<dt>Creator(s)</dt>
@@ -233,11 +235,14 @@
 												</dd>
 											</xsl:if>
 										</xsl:for-each>
-										<xsl:if test="//*/*:meta/*:type"> 
+										<xsl:if test="//*/*:meta/*:resourceType"> 
 											<dt>Type</dt>
 											<dd>
 												<span class="DC-Type">
-													<xsl:apply-templates select="//*/*:meta/*:type"/>
+													<xsl:if test="//@resourceTypeGeneral">
+														<xsl:apply-templates select="//@resourceTypeGeneral"/>: 
+													</xsl:if>
+													<xsl:apply-templates select="//*/*:meta/*:resourceType"/>
 												</span>
 											</dd>
 										</xsl:if>
@@ -325,13 +330,16 @@
 											<xsl:when test="starts-with(//@rightsURI, 'http://datashare.ucsf.edu/xtf/search')">
 												<xsl:call-template name="ucsf-datashare-dua"/>
 											</xsl:when>
-											<xsl:when test="//campus='UC San Francisco'">
+											<xsl:when test="//publisher='UC San Francisco'">
 												<xsl:call-template name="ucsf-datashare-dua"/>
 											</xsl:when>
 											<xsl:otherwise>
 												<xsl:choose>
 													<xsl:when test="//rightsList!=''">
 														<xsl:value-of select="//rightsList"/>
+													</xsl:when>
+													<xsl:when test="//publisher='DataONE'">
+														<xsl:call-template name="cc-0"/>
 													</xsl:when>
 													<xsl:otherwise>
 														<xsl:call-template name="cc-by-4"/>
