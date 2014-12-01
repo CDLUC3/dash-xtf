@@ -188,6 +188,12 @@
    <xsl:param name="browse-researcher"/>
    <xsl:param name="browse-researchers"/>
    <xsl:param name="browse-publisher"/>
+  
+   <!-- Parameters specific to the geographic interface. -->
+   <xsl:param name="browse-locations"/>
+   <xsl:param name="docId"/>
+   <!-- Parameters specific to the OC Data Portal -->
+   <xsl:param name="browse-orangecounty"/>
 
    <!-- Search and Result Behavior URL Parameters -->
    <xsl:param name="style"/>
@@ -224,12 +230,13 @@
    <xsl:param name="brand.promo-quote" select="$brand.file//promo-quote/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>  
    <xsl:param name="brand.homelink" select="$brand.file//homelink/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.googleanalytics" select="$brand.file//googleanalytics/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-   <xsl:param name="brand.uploadbasics" select="$brand.file//uploadbasics/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    
    <xsl:param name="assets.htmlhead" select="$assets//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="assets.nav-header" select="$assets//nav-header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="assets.nav-footer" select="$assets//nav-footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="assets.uploadbasics" select="$assets//uploadbasics/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+  <xsl:param name="assets.leaflet-map" select="$assets//leaflet-map/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   
    
    <!-- Paging Parameters-->  
    <xsl:param name="startDoc" as="xs:integer" select="1"/>
@@ -481,7 +488,15 @@
    <!-- ====================================================================== -->
    <xsl:template match="*:creator">
 
-	<a href="{$xtfURL}{$crossqueryPath}?f1-creator={editURL:protectValue(.)}">
+  <!-- amc: Allows URLs to drill down within the different browse interfaces. -->
+	<!--<a href="{$xtfURL}{$crossqueryPath}?f1-creator={editURL:protectValue(.)}">-->
+     <a>
+       <xsl:attribute name="href">
+         <xsl:value-of select="concat($xtfURL, $crossqueryPath, '?', 
+           editURL:set(editURL:remove($queryString,'browse-all=yes'),
+           'f1-creator',editURL:protectValue(.)))"/>
+       </xsl:attribute>
+	  
          <xsl:apply-templates/>
       </a>
       <xsl:if test="not(position() = last())">
@@ -493,16 +508,30 @@
    <!-- Author Links                                                           -->
    <!-- ====================================================================== -->
    <xsl:template match="contributor">
-      <a href="{$xtfURL}{$crossqueryPath}?f1-contributor={normalize-space(editURL:protectValue(.))}">
-          <xsl:value-of select="replace(string(.),'::', '-')"/>
-      </a>
+     <!-- amc: Allows URLs to drill down within the different browse interfaces. -->
+     <!--<a href="{$xtfURL}{$crossqueryPath}?f1-contributor={normalize-space(editURL:protectValue(.))}">-->
+     <a>
+       <xsl:attribute name="href">
+         <xsl:value-of select="concat($xtfURL, $crossqueryPath, '?', 
+           editURL:set(editURL:remove($queryString,'browse-all=yes'),
+           'f1-contributor',normalize-space(editURL:protectValue(.))))"/>
+       </xsl:attribute>
+       <xsl:value-of select="replace(string(.),'::', '-')"/>
+     </a>
       <xsl:if test="not(position() = last())">
          <xsl:text> | </xsl:text>
       </xsl:if>
   </xsl:template>
 
    <xsl:template match="publisher">
-      <a href="{$xtfURL}{$crossqueryPath}?f1-publisher={normalize-space(editURL:protectValue(.))}">
+      <!-- amc: Allows URLs to drill down within the different browse interfaces. -->
+     <!--<a href="{$xtfURL}{$crossqueryPath}?f1-publisher={normalize-space(editURL:protectValue(.))}">-->
+     <a>
+          <xsl:attribute name="href">
+            <xsl:value-of select="concat($xtfURL, $crossqueryPath, '?', 
+              editURL:set(editURL:remove($queryString,'browse-all=yes'),
+              'f1-publisher',normalize-space(editURL:protectValue(.))))"/>
+          </xsl:attribute>
           <xsl:value-of select="replace(string(.),'::', '-')"/>
       </a>
       <xsl:if test="not(position() = last())">
@@ -981,14 +1010,17 @@
       <xsl:variable name="value" select="@value"/>
       <xsl:variable name="nextName" select="editURL:nextFacetParam($queryString, $field)"/>
       
+      <!-- This will not remove "browse-locations" or "-orangecounty" 
+        parameters, which is good because it allows drilling down into the 
+        results within the geographic interface. -->
       <xsl:variable name="selectLink" select="
-         concat(xtfURL, $crossqueryPath, '?',
+         concat($xtfURL, $crossqueryPath, '?',
                 editURL:set(editURL:remove($queryString,'browse-all=yes'), 
                             $nextName, $value))">
       </xsl:variable>
       
       <xsl:variable name="clearLink" select="
-         concat(xtfURL, $crossqueryPath, '?',
+         concat($xtfURL, $crossqueryPath, '?',
                 editURL:replaceEmpty(
                    editURL:remove($queryString, 
                                   concat('f[0-9]+-',$field,'=',
@@ -1191,20 +1223,17 @@
 
 <!-- pw modified -->
    <!-- Default template to display the name of a facet. Override to specialize. -->
-	<xsl:template match="facet" mode="facetName" priority="-1">
-		<xsl:choose>
-			<xsl:when test="contains(@field,'creator')">
-				<xsl:value-of select="'Author'"/>
-			</xsl:when>
-			<xsl:when test="contains(@field,'publisher')">
-				<xsl:value-of select="'Publisher'"/>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:variable name="rawName" select="replace(@field, '^facet-', '')"/>
-				<xsl:value-of select="concat(upper-case(substring($rawName, 1, 1)), substring($rawName, 2))"/>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
+   <xsl:template match="facet" mode="facetName" priority="-1">
+       <xsl:choose>
+       <xsl:when test="contains(@field,'creator')">
+              <xsl:value-of select="'Author'"/>
+       </xsl:when>
+       <xsl:otherwise>
+           <xsl:variable name="rawName" select="replace(@field, '^facet-', '')"/>
+           <xsl:value-of select="concat(upper-case(substring($rawName, 1, 1)), substring($rawName, 2))"/>
+       </xsl:otherwise>
+       </xsl:choose>
+   </xsl:template>
 
    <!-- Default template to add data before the name of a facet group. Override to specialize. -->
    <xsl:template match="group" mode="beforeGroupValue" priority="-1">

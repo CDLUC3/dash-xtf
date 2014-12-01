@@ -348,6 +348,17 @@
 											</xsl:otherwise> 
 										</xsl:choose>
 									</div>
+								  <!-- If there is geographic metadata, add a button to 
+								    take the user to the browse interface. -->
+								  <xsl:if test="//geoLocations">
+							      <a>
+							        <xsl:attribute name="href">
+							          <xsl:text>/xtf/search?browse-locations=yes;docId=</xsl:text>
+							          <xsl:value-of select="//docId"/>
+							        </xsl:attribute>
+							        <input type="image" src="assets/img/map-by-record-button.png" alt="View associated geoLocations"/>
+							      </a>
+								  </xsl:if>
 								</div>
 							</div>
 						</div>
