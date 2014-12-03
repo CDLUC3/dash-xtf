@@ -101,11 +101,16 @@
 										<button class="btn btn-success" type="submit" name="submit">Go</button>
 										<!-- <input id="search-go" type="submit" name="submit" value=""></input> -->
 									</form>
-									<p id="or">or</p>
+									<p class="or">or</p>
 									<a href="/xtf/search?browse-all=yes">
 										<button class="btn">Browse all data</button>
 										<!-- <input type="image" src="assets/img/browse.png" id="browse" alt="Browse all data"/> -->
 									</a>
+								  <p class="or">or</p>
+							    <a href="/xtf/search?browse-locations=yes">
+							      <!--<button class="btn">Explore by geoLocation</button>-->
+							      <input type="image" src="assets/img/map-browse-button.png" alt="Explore by geoLocation"/>
+							    </a>
 								</div>
 							</div>
 						</div>
@@ -147,6 +152,10 @@
 			<div id="project_links">
 				<ul>
 					<li><xsl:copy-of select="$brand.homelink"/></li>
+				  <!-- On UCI's site, add link to OC Data Portal. -->
+				  <xsl:if test="matches($brand,'uci')">
+				    <li><xsl:copy-of select="$oc-assets.homelink"/></li>
+				  </xsl:if>
 					<li><a href="/logout">Log Out</a></li>
 				</ul>
 			</div>
