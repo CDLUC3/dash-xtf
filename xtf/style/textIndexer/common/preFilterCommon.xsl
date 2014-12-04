@@ -70,7 +70,7 @@
 		  
 	  <!-- Makes the document identifier searchable (for Browse Locations). -->
 	  <docId xtf:meta="true" xtf:tokenize="no">
-	    <xsl:value-of select="substring-after($docpath,'xtf/data/')"/>
+	    <xsl:value-of select="substring-after($dcpath,'xtf/data/')"/>
 	  </docId>
 
 		<xsl:if test="FileUtils:exists(concat($targetlink,'target_link'))">
@@ -418,7 +418,7 @@
       </xsl:if>
       <!-- For geographic interfaces, we're only interested in features we can 
          map (read: geoLocationPoints or Boxes). -->
-      <xsl:if test="descendant::*[not(*:geoLocationPlace)]">
+      <xsl:if test="descendant::*:geoLocationPoint or descendant::*:geoLocationBox">
         <browse-locations xtf:meta="true">yes</browse-locations>
       </xsl:if>
    </xsl:template>
