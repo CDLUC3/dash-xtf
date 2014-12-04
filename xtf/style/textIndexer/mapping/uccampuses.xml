@@ -123,4 +123,13 @@
 <id>DataONE</id>
 <label>DataONE</label>
 </campus>
+<!--LBL LBNL -->
+<campus>
+<id>LBL</id>
+<label>Lawrence Berkeley National Laboratory</label>
+</campus>
+<campus>
+<id>LBNL</id>
+<label>Lawrence Berkeley National Laboratory</label>
+</campus>
 </campuses>
