@@ -70,7 +70,7 @@
 		  
 	  <!-- Makes the document identifier searchable (for Browse Locations). -->
 	  <docId xtf:meta="true" xtf:tokenize="no">
-	    <xsl:value-of select="substring-after($dcpath,'xtf/data/')"/>
+	    <xsl:value-of select="substring-after($dcpath,'xtf-data/data/')"/>
 	  </docId>
 
 		<xsl:if test="FileUtils:exists(concat($targetlink,'target_link'))">
