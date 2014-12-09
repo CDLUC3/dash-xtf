@@ -55,14 +55,14 @@
       doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" 
       doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" 
       exclude-result-prefixes="#all"
-      omit-xml-declaration="yes"/>
+	  omit-xml-declaration="yes"/>
 
    <xsl:output name="frameset" method="xhtml" indent="no" 
       encoding="UTF-8" media-type="text/html; charset=UTF-8" 
       doctype-public="-//W3C//DTD XHTML 1.0 Frameset//EN" 
       doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd" 
-      omit-xml-declaration="yes"
-      exclude-result-prefixes="#all"/>
+	  omit-xml-declaration="yes"
+	  exclude-result-prefixes="#all"/>
 
    
    <!-- ====================================================================== -->
@@ -76,6 +76,7 @@
       <!-- Normally this is a URL parameter, but in ERC mode it's part of the main URL. -->
       <!-- <xsl:value-of select="replace($http.URL, $ercPat, '$2')"/> -->
    </xsl:param>
+   <xsl:variable name="docIdEncoded" select="replace($docId,'\+','%2b')"/>
    <xsl:param name="http.cookie"/>
 
    <!-- ====================================================================== -->
@@ -354,7 +355,7 @@
 							      <a>
 							        <xsl:attribute name="href">
 							          <xsl:text>/xtf/search?browse-locations=yes;docId=</xsl:text>
-							          <xsl:value-of select="//docId"/>
+							          <xsl:value-of select="$docIdEncoded"/>
 							        </xsl:attribute>
 							        <input type="image" src="assets/img/map-by-record-button.png" alt="View associated geoLocations"/>
 							      </a>
