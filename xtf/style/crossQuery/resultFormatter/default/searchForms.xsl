@@ -162,6 +162,10 @@
 		</xsl:when>
 		<xsl:otherwise>
 			<div id="project_links_no_logout">
+        <!-- On UCI's site, add link to OC Data Portal. -->
+        <xsl:if test="matches($brand,'uci')">
+          <li><xsl:copy-of select="$oc-assets.homelink"/></li>
+        </xsl:if>
 				<xsl:copy-of select="$brand.homelink"/>
 			</div>
 		</xsl:otherwise>
