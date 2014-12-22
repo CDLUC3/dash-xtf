@@ -1155,7 +1155,7 @@
 											<li><span class="title">3. Upload data </span><br />
 											Add your data and metadata to Dash: <a href="/xtf/search?smode=uploadFaqPage">Upload Basics</a></li>
 											<li><span class="title">4. Get confirmation </span><br/>
-											Receive your data citation.</li>
+											Receive notification of successful deposit.</li>
 										</ul>
 									</div>
 									<div class="begin">
