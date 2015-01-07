@@ -380,13 +380,23 @@
 			<div id="project_links">
 				<ul>
 					<li><xsl:copy-of select="$brand.homelink"/></li>
+					<!-- On UCI's site, add link to OC Data Portal. -->
+					<xsl:if test="matches($brand,'uci')">
+						<li><xsl:copy-of select="$oc-assets.homelink"/></li>
+					</xsl:if>
 					<li><a href="/logout">Log Out</a></li>
 				</ul>
 			</div>
 		</xsl:when>
 		<xsl:otherwise>
 			<div id="project_links_no_logout">
-				<xsl:copy-of select="$brand.homelink"/>
+				<ul>
+					<li><xsl:copy-of select="$brand.homelink"/></li>
+					<!-- On UCI's site, add link to OC Data Portal. -->
+					<xsl:if test="matches($brand,'uci')">
+						<li><xsl:copy-of select="$oc-assets.homelink"/></li>
+					</xsl:if>
+				</ul>
 			</div>
 		</xsl:otherwise>
 	</xsl:choose>

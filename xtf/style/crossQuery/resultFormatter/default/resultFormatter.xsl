@@ -278,7 +278,7 @@
             <div id="banner">
               <xsl:choose>
                 <xsl:when test="$browse-orangecounty">
-                  BANNER HERE
+                  <img src="assets/img/data-portal.png" width="952" height="74" alt="Orange-County-banner"/>
                 </xsl:when>
                 <xsl:otherwise>
                   <img width="952" height="72" alt="Publish and Download Research Datasets" src="assets/img/banner-home-v8.0.jpg"></img>
@@ -292,7 +292,7 @@
                 <xsl:attribute name="class">browse-container</xsl:attribute>
                 <xsl:choose>
                   <xsl:when test="$browse-orangecounty">
-                    <h1>Orange County Data Portal</h1>
+                    <h1>Select a Dataset...</h1>
                   </xsl:when>
                   <xsl:otherwise>
                     <h1>Select a Dataset...</h1>

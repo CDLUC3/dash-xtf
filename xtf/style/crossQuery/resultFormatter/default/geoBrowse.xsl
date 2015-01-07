@@ -45,14 +45,14 @@
                 </div>
               </div>
               <div id="banner">
-                BANNER HERE
+                <img src="assets/img/data-portal.png" width="952" height="74" alt="Orange-County-banner"/>
               </div>
               <!-- begin content -->
               <div id="content">
                 <div id="left-column">
                   <div id="search-container">
                     <div class="left">
-                      <img src="assets/img/search.png" width="76" height="75" alt="Search-icon"/>
+                      <img src="assets/img/searchOC.gif" width="76" height="75" alt="Search-icon"/>
                     </div>
                     <div class="right">
                       <h1>Search for Data</h1>
@@ -64,13 +64,13 @@
                       </form>
                       <p class="or">or</p>
                       <a href="/xtf/search?browse-orangecounty=yes">
-                        <button class="btn">Browse all datasets</button>
+                        <button class="btn">Browse OC datasets</button>
                       </a>
                     </div>
                   </div>
                 </div>
                 <div id="right-column">
-                  <div id="publish-data">
+                  <div id="publish-data-oc">
                     <div class="left-publish">
                       <img src="assets/img/world2.gif" width="75" height="73" alt="World-icon"/>
                     </div>
@@ -125,7 +125,7 @@
                 </div>
               </div>
               <div id="banner">
-                BANNER HERE
+                <img src="assets/img/data-portal.png" width="952" height="74" alt="Orange-County-banner"/>
               </div>
               <!-- begin content -->
               <div id="content">
