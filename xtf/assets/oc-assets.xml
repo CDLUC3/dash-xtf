@@ -31,7 +31,7 @@
   </nav-header>
   
   <nav-footer>
-    <div id="footer">
+    <div id="footer-ocdp">
       <div id="footer-container" class="shading">
         <div id="terms"><a href="http://www.cdlib.org/about/terms.html">Terms of Use</a></div>
         <div id="faq-footer"><a href="/xtf/search?smode=faqPage" title="Frequently Asked Questions">FAQ</a></div>
@@ -42,21 +42,24 @@
   </nav-footer>
   
   <about>
-    <h2>Overview</h2>
-    <p>Dash is a new, easy-to-use solution for the effective curation of and access to campus research data. It is designed to be a simple self-service curation tool for researchers to archive and share their datasets.</p>
-    <p>Tasks Dash helps you perform:</p>
+    <p>The Orange County Data Portal features data collected in or pertaining to Orange County, California. All data added to the Orange County Data Portal will also appear in the main UCI Dash interface</p>
+    <h2>UCI Dash</h2>
+    <p>UCI Dash is UC Irvine's custom instance of Dash, an easy-to-use solution for the effective curation of and access to campus research data. It is designed to be a simple self-service curation tool for researchers to archive and share their datasets.</p>
+    <p>Tasks Dash helps researchers perform:</p>
     <ul>
       <li>Prepare data for curation by reviewing best practice guidance for the creation or acquisition of digital research data.</li>
       <li>Select data for curation through local file browse or drag-and-drop operation.</li>
       <li>Describe data in terms of the DataCite metadata schema.</li>
-      <li>Identify data with a persistent DOI for permanent citation and discovery.</li>
-      <li>Preserve, Manage, and Share data by uploading to a public Merritt collection.</li>
+      <li>Identify data with a persistent Digital Object Identifier (DOI) for permanent citation and discovery.</li>
+      <li>Preserve, Manage, and Share data by uploading to a public <a href="https://merritt.cdlib.org">Merritt</a> collection.</li>
       <li>Discover and retrieve data through faceted search and browse.</li>
     </ul>
     <p>See our <a href="/xtf/search?smode=faqPage">Frequently Asked Questions</a> and <a href="/xtf/search?smode=policiesPage">Policies</a> pages for more information. Dash is an ongoing project; for updates and information on how to participate, see our <a href="http://github.com/CDLUC3/dash/wiki">GitHub site</a>.</p>
     <h2>Importance of Data Sharing</h2>
-    <p>Data sharing is critical for the advancement of scientific knowledge. Researchers benefit from increased collaborations, validation, and recognition of their work; institutions and funders benefit from the measurable increase in the impact of their resources and investments; and society benefits from the faster pace at which science can progress and an increased confidence in the integrity of the scientific enterprise. There are several barriers to providing access to data, and currently data sharing is mostly done by large, well funded multi-investigator projects. If these barriers were addressed, allowing individual investigators to share their primary research data quickly and easily, we could create a new culture of transparency and efficiency&#8212;likely resulting in major positive impacts on scientific advancement.</p>
-    <h3>Who We Are</h3>
-    <p>UC Dash is a collaborative project between the <a href="http://libraries.universityofcalifornia.edu">UC Libraries</a> and the <a href="http://cdlib.org/uc3">UC Curation Center</a> (UC3) at the <a href="http://cdlib.org">California Digital Library</a>.</p>
+    <p>Data sharing is critical for the advancement of scientific knowledge. Researchers benefit from increased collaborations, validation, and recognition of their work; institutions and funders benefit from the measurable increase in the impact of their resources and investments; and society benefits from the faster pace at which science can progress and an increased confidence in the integrity of the scientific enterprise. There are several barriers to providing access to data, and currently data sharing is done by large, well funded multi-investigator projects or on an ad hoc basis by individual researchers. If these barriers were addressed, allowing individual investigators to share their primary research data quickly and easily, we could create a new culture of transparency and efficiency&#8212;likely resulting in major positive impacts on scientific advancement.</p>
+    <h2>Who We Are</h2>
+    <p>UC Dash is a collaborative project between the <a href="http://libraries.universityofcalifornia.edu">UC Libraries</a> and the <a href="http://cdlib.org/uc3">UC Curation Center</a> (UC3) at the <a href="http://cdlib.org">California Digital Library</a> (CDL).</p>
+    <h3>UCI Libraries</h3>
+    <p>The UCI Libraries assist UC Irvine's students, faculty, and staff in fulfilling the education, scholarship, patient care, and research goals of the University. We provide user-focused services, research assistance, and access to research collections. We also preserve our collections to ensure their availability for use and their survival as valuable cultural assets. As a major information resource for UC Irvine and its local community, we contribute to creating and sustaining a well-informed and educated society.</p>
   </about>  
 </assets>

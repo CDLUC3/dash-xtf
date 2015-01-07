@@ -5,7 +5,7 @@
 
 /* General Orange County Data Portal styles */
 .ocdp #content {
-	background-color: #E1903D;
+	background-color: #E69438;
 	color: #5F2900;
 }
 .ocdp #nav-common a {
@@ -24,18 +24,28 @@
 	color: #08626B;
 }
 
+#footer-ocdp {
+	width: 952px; 
+	margin: 0 0 0 0;
+	font-size: 80%;
+	color: #E1903D;
+}
+
+
 /* Browse Orange County page styles */
 #browse-orangecounty-container .search-refine,
 #browse-orangecounty-container .search-refine .search-refine-controls,
 #browse-orangecounty-container .search-results .search-controls {
-  background-color: #E2A051;
+  /* background-color: #E2A051; */
+	background-color: #E89E4B;
 }
 #browse-orangecounty-container .search-refine {
   margin-top: 0;
   width: 200px;
 }
 #browse-orangecounty-container .search-refine .search-refine-controls {
-  color: #914400;
+  /* color: #914400; */
+  color: #4C4C4C;
 }
 #browse-orangecounty-container .search-controls {
   text-align: center;
