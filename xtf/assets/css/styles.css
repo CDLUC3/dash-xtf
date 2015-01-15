@@ -402,6 +402,26 @@ height: 49px;
 	margin: 0 23px;
 }
 
+/* Added by MM */
+
+#publish-data-oc h1 {
+	font-size: 223%;
+	margin: 12px 0 0 0;
+}
+.left {
+	float: left;
+}
+
+#publish-data-oc .left-publish {
+	float: left;
+}
+
+#publish-data-oc .right-publish {
+	float: left;
+	overflow: hidden;
+	margin: 0 23px;
+}
+
 #search-form {
 	 margin: 24px 0 0 0;
 	 width: 230px;
@@ -449,6 +469,30 @@ height: 49px;
 
 #publish-data ul li{
 	background-image: url('../img/check-mark2.gif');
+    background-position: 0 5px;
+    background-repeat: no-repeat;
+	font-size: 120%; /* font-size: 18px; */
+	line-height: 150%;
+	padding: 0 0 0 23px;
+}
+
+/* Added by MM */
+#publish-data-oc {
+	padding-top: 30px;
+	margin: 36px auto 0 50px;
+	width: 458px;
+	height: 295px;
+	float:left;
+}
+
+#publish-data-oc ul {
+	list-style-type: none;
+    padding: 0;
+	margin: 9px 0 10px 0;
+}
+
+#publish-data-oc ul li{
+	background-image: url('../img/check-markOC.gif');
     background-position: 0 5px;
     background-repeat: no-repeat;
 	font-size: 120%; /* font-size: 18px; */
