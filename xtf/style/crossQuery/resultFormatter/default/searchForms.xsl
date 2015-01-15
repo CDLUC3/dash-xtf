@@ -39,9 +39,9 @@
       POSSIBILITY OF SUCH DAMAGE.
    -->
    
-   <!-- ====================================================================== -->
+   
    <!-- Global parameters                                                      -->
-   <!-- ====================================================================== -->
+   
    
    <xsl:param name="freeformQuery"/>
    <xsl:param name="http.x-forwarded-host"/>
@@ -49,9 +49,9 @@
    <xsl:variable name="serverName" select="session:getData('server')"/>
    <xsl:param name="http.cookie"/>
    <xsl:variable name="Shib_cookie_name" select="'dash_logged_in'"/>      
-   <!-- ====================================================================== -->
+  
    <!-- Form Templates                                                         -->
-   <!-- ====================================================================== -->
+   
    
    <!-- main form page -->
 <xsl:template match="crossQueryResult" mode="form" exclude-result-prefixes="#all">
@@ -143,9 +143,9 @@
 		</div>
 	</body>
 </xsl:template>
-	<!-- ======================================================================	-->
+	
 	<!-- NavHeader Template	                                                	-->
-	<!-- ======================================================================	-->
+	
 <xsl:template name="navheader">
 	<xsl:choose>
 		<xsl:when test="contains($http.cookie, $Shib_cookie_name)">
@@ -163,14 +163,7 @@
 		<xsl:otherwise>
 			<div id="project_links_no_logout">
 
-<!-- <<<<<<< HEAD
-				<ul>
-					<li><xsl:copy-of select="$brand.homelink"/></li>
-        	<!-- On UCI's site, add link to OC Data Portal. -->
-        	<!-- <xsl:if test="matches($brand,'uci')"> -->
-          <!-- <li><xsl:copy-of select="$oc-assets.homelink"/></li> -->
-        			<!-- </xsl:if> -->
-				<!-- </ul> -->
+
  
 
         <!-- On UCI's site, add link to OC Data Portal. -->
@@ -178,7 +171,7 @@
           <li><xsl:copy-of select="$oc-assets.homelink"/></li>
         </xsl:if>
 				<xsl:copy-of select="$brand.homelink"/>
-<!-- >>>>>>> add oc data portal link for uci brand pages -->
+<!--  add oc data portal link for uci brand pages -->
 			</div>
 		</xsl:otherwise>
 	</xsl:choose>
