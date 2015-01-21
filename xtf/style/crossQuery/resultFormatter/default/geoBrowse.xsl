@@ -72,7 +72,7 @@
                 <div id="right-column">
                   <div id="publish-data-oc">
                     <div class="left-publish">
-                      <img src="assets/img/world2.gif" width="75" height="73" alt="World-icon"/>
+                      <img src="assets/img/worldOC.gif" width="75" height="73" alt="World-icon"/>
                     </div>
                     <div class="right-publish">
                       <h1>Share Data</h1>
