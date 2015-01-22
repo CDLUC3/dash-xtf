@@ -324,8 +324,16 @@ height: 49px;
 
 #project_links_no_logout {
 	float: right;
-	padding-right: 99px;
-	padding-left: 1em;
+	padding-right: 85px; 
+/* 	padding-left: 1em;  */
+}
+
+#project_links_no_logout a {
+	padding: 0 1em;
+}
+
+#project_links_no_logout li:not(:last-child) a {
+	border-right: 1px solid #fff;
 }
 
 /* old nav bar */
