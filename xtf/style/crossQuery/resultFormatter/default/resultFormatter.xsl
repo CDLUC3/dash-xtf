@@ -301,13 +301,15 @@
                 <div class="search-form-area">
                   <!-- No need to display the button+link to Browse Locations 
                     on that page, unless displaying record-specific locations. -->
-                  <xsl:if test="not($browse-locations or $docId or $browse-orangecounty)">
-                    <div class="map-browse-button">
-                      <a href="/xtf/search?browse-locations=yes">
-                        <input type="image" src="assets/img/map-browse-button.png" alt="Explore by geoLocation"/>
-                      </a>
-                    </div>
-                  </xsl:if>
+				  <xsl:if test="matches($brand,'uci')">
+					<xsl:if test="not($browse-locations or $docId or $browse-orangecounty)">
+						<div class="map-browse-button">
+							<a href="/xtf/search?browse-locations=yes">
+								<input type="image" src="assets/img/map-browse-button.png" alt="Explore by geoLocation"/>
+							</a>
+						</div>
+					</xsl:if>
+				  </xsl:if>
                   <form name="navigationSearchForm" action="/xtf/search" method="get" class="navbar-form">
                     <!-- Make sure that searches within a geographic interface 
                       list results within that interface. -->
