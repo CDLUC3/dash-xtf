@@ -352,7 +352,7 @@
 								  <!-- If there is geographic metadata, add a button to 
 								    take the user to the browse interface. -->
 								  <xsl:if test="matches($brand,'uci')">
-									<xsl:if test="//geoLocations">
+									<xsl:if test="//*:geoLocationBox or //*:geoLocationPoint">
 									<a>
 										<xsl:attribute name="href">
 											<xsl:text>/xtf/search?browse-locations=yes;docId=</xsl:text>
