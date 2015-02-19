@@ -51,6 +51,7 @@
    <xsl:import href="../common/resultFormatterCommon.xsl"/>
    <xsl:import href="rss.xsl"/>
    <xsl:include href="searchForms.xsl"/>
+   <xsl:include href="geoBrowse.xsl"/>
    <!-- ====================================================================== -->
    <!-- Output                                                                 -->
    <!-- ====================================================================== -->
@@ -163,6 +164,28 @@
 				</xsl:with-param>
 			</xsl:call-template>
 		</xsl:when>
+	  <!-- Geographic interface -->
+	  <xsl:when test="$browse-locations">
+	    <xsl:call-template name="translate">
+	      <xsl:with-param name="resultTree">
+	        <xsl:apply-templates select="crossQueryResult" mode="browseLocations"/>
+	      </xsl:with-param>
+	    </xsl:call-template>
+	  </xsl:when>
+	  <!-- OC Data Portal -->
+	  <xsl:when test="$smode='orangecounty-home'">
+	    <xsl:call-template name="orangecounty-home"/>
+	  </xsl:when>
+	  <xsl:when test="$smode='about-orangecounty'">
+	    <xsl:call-template name="about-orangecounty"/>
+	  </xsl:when>
+	  <xsl:when test="$browse-orangecounty">
+	    <xsl:call-template name="translate">
+	      <xsl:with-param name="resultTree">
+	        <xsl:apply-templates select="crossQueryResult" mode="browseOC"/>
+	      </xsl:with-param>
+	    </xsl:call-template>
+	  </xsl:when>
 
 		<!-- show results -->
 		<xsl:when test="crossQueryResult/query/*/*">
@@ -184,73 +207,180 @@
 </xsl:template>
 
 <xsl:template match="crossQueryResult" mode="results" exclude-result-prefixes="#all">
-	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-		<head>
-			<title>Dash</title>
-			<xsl:copy-of select="$assets.htmlhead"/>
-			<xsl:copy-of select="$brand.googleanalytics"/>
-		</head>
-		<body>
-			<!-- begin page id -->
-			<div id="browse-all-page"> 
-				<!-- begin outer container -->  
-				<div id="outer-container"> 
-					<!-- begin inner container -->
-					<div id="inner-container"> 
-						<!-- begin header -->
-						<div class="header">
-							<xsl:call-template name="brandheader"/>
-							<div id="navbar">
-								<xsl:copy-of select="$assets.nav-header"/>
-								<xsl:call-template name="navheader"/>
-							</div>
+	<!-- AMC: This now calls the skeleton-browse template to build the HTML. 
+	  This way Browse-Locations can stay updated with Browse-All. -->
+  <xsl:call-template name="skeleton-browse">
+	  <xsl:with-param name="browse-type">all</xsl:with-param>
+	</xsl:call-template>
+</xsl:template>
+  
+<xsl:template name="skeleton-browse">
+  <!-- The "browse-type" parameter is used to generate ID attributes. -->
+  <xsl:param name="browse-type"/>
+  
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+      <title>Dash</title>
+      <!-- If browsing with geographic interface, add Leaflet javascript. -->
+      <xsl:if test="$browse-locations or $browse-orangecounty">
+        <xsl:copy-of select="$assets.leaflet-map"/>
+      </xsl:if>
+      <xsl:choose>
+        <xsl:when test="$browse-orangecounty">
+          <xsl:copy-of select="$oc-assets.htmlhead"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:copy-of select="$assets.htmlhead"/>
+        </xsl:otherwise>
+      </xsl:choose>
+      <!--<xsl:copy-of select="$assets.htmlhead"/>-->
+      <xsl:copy-of select="$brand.googleanalytics"/>
+    </head>
+    <body>
+      <!-- begin page id -->
+      <div>
+        <!-- styles.css now looks for the generalized "browse-page" and 
+          "browse-container" classes instead of specific ID attributes. The IDs
+          are maintained here in case Javascript or other CSS stylesheets 
+          depend upon the IDs. -->
+        <xsl:attribute name="id">browse-<xsl:value-of select="$browse-type"/>-page</xsl:attribute>
+        <xsl:choose>
+          <!-- The Orange County Data Portal makes use of any OCDP-specific 
+            styles. -->
+          <xsl:when test="$browse-orangecounty">
+            <xsl:attribute name="class">browse-page ocdp</xsl:attribute>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:attribute name="class">browse-page</xsl:attribute>
+          </xsl:otherwise>
+        </xsl:choose>
+        <!-- begin outer container -->  
+        <div id="outer-container"> 
+          <!-- begin inner container -->
+          <div id="inner-container"> 
+            <!-- begin header -->
+            <div class="header">
+              <xsl:call-template name="brandheader"/>
+              <div id="navbar">
+                <xsl:choose>
+                  <!-- The Orange County Data Portal has its own assets, which 
+                    should be used here in place of the default ones. -->
+                  <xsl:when test="$browse-orangecounty">
+                    <xsl:copy-of select="$oc-assets.nav-header"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:copy-of select="$assets.nav-header"/>
+                  </xsl:otherwise>
+                </xsl:choose>
+                <xsl:call-template name="navheader"/>
+              </div>
+            </div>
+            <div id="banner">
+              <xsl:choose>
+                <xsl:when test="$browse-orangecounty">
+                  <img src="assets/img/data-portal.png" width="952" height="74" alt="Orange-County-banner"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <img width="952" height="72" alt="Publish and Download Research Datasets" src="assets/img/banner-home-v8.0.jpg"></img>
+                </xsl:otherwise>
+              </xsl:choose>
+            </div>
+            <!-- begin content -->
+            <div id="content">
+              <div>
+                <xsl:attribute name="id">browse-<xsl:value-of select="$browse-type"/>-container</xsl:attribute>
+                <xsl:attribute name="class">browse-container</xsl:attribute>
+                <xsl:choose>
+                  <xsl:when test="$browse-orangecounty">
+                    <h1>Select a Dataset...</h1>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <h1>Select a Dataset...</h1>
+                  </xsl:otherwise>
+                </xsl:choose>
+                <div class="search-form-area">
+                  <!-- No need to display the button+link to Browse Locations 
+                    on that page, unless displaying record-specific locations. -->
+				  <xsl:if test="matches($brand,'uci')">
+					<xsl:if test="not($browse-locations or $docId or $browse-orangecounty)">
+						<div class="map-browse-button">
+							<a href="/xtf/search?browse-locations=yes">
+								<input type="image" src="assets/img/map-browse-button.png" alt="Explore by geoLocation"/>
+							</a>
 						</div>
-						<div id="banner">
-    						<img width="952" height="72" alt="Publish and Download Research Datasets" src="assets/img/banner-home-v8.0.jpg"></img>
-						</div>
-						<!-- begin content -->
-						<div id="content">
-							<div id="browse-all-container">
-								<h1>Select a Dataset...</h1>
-								<div class="search-form-area">
-									<form name="navigationSearchForm" action="/xtf/search" method="get" class="navbar-form">
-										<input type="text" name="keyword" class="searchField cleardefault" value="Search datasets..." title="Search datasets"/>
-										<input type="submit" value="Go!" class="searchButton btn"/>
-									</form>
-									<a class="searchLabel" href="/xtf/search?browse-all=yes">Clear search</a>
-								</div>
-								<div class="search-refine">
-									<div class="search-refine-controls">
-										<table>
-											<tr>
-												<td>
-													<div class="facet">
-														<xsl:apply-templates select="facet[@field='facet-publisher']"/>
-														<xsl:apply-templates select="facet[@field='facet-creator']"/>
-														<xsl:apply-templates select="facet[@field='facet-keyword']"/>
-													</div>
-												</td>
-											</tr>
-										</table>
-									</div>
-								</div>
-								<div class="search-results">
-									<div class="search-result">
-										<xsl:apply-templates select="docHit"/>
-										<xsl:if test="@totalDocs > $docsPerPage">
-											<xsl:call-template name="pages"/>
-										</xsl:if>           
-									</div>
-								</div>
-							</div>
-						</div>
-					<xsl:copy-of select="$assets.nav-footer"/>
-					<xsl:copy-of select="$brand.footer"/>
-					</div>
-				</div>
-			</div>
-		</body>
-	</html>
+					</xsl:if>
+				  </xsl:if>
+                  <form name="navigationSearchForm" action="/xtf/search" method="get" class="navbar-form">
+                    <!-- Make sure that searches within a geographic interface 
+                      list results within that interface. -->
+                    <xsl:if test="$browse-locations or $browse-orangecounty">
+                      <input type="hidden" value="yes">
+                        <xsl:attribute name="name">
+                          <xsl:text>browse-</xsl:text>
+                          <xsl:value-of select="$browse-type"/>
+                        </xsl:attribute>
+                      </input>
+                    </xsl:if>
+                    <input type="text" name="keyword" class="searchField cleardefault" value="Search datasets..." title="Search datasets"/>
+                    <input type="submit" value="Go!" class="searchButton btn"/>
+                  </form>
+                  <a class="searchLabel" href="/xtf/search?browse-all=yes">Clear search</a>
+                </div>
+                <div class="search-refine">
+                  <div class="search-refine-controls">
+                    <table>
+                      <tr>
+                        <td>
+                          <div class="facet">
+                            <xsl:apply-templates select="facet[@field='facet-publisher']"/>
+                            <xsl:apply-templates select="facet[@field='facet-creator']"/>
+                            <xsl:apply-templates select="facet[@field='facet-keyword']"/>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="search-results">
+                  <!-- If browsing locations, add the map here. -->
+                  <xsl:if test="$browse-locations or $browse-orangecounty">
+                    <!-- Replace the sort mechanism with a note on collection policy. -->
+                    <div class="search-controls">
+                      <span style="padding:5px">NOTE: Only data with assigned geoLocation values will appear in this map interface.</span>
+                    </div>
+                    <div id="map">
+                      <script>
+                        <xsl:text>initMap();</xsl:text>
+                        <xsl:call-template name="generateMapLayers"/>
+                      </script>
+                    </div>
+                  </xsl:if>
+                  <div class="search-result">
+                    <xsl:apply-templates select="docHit">
+                      <xsl:with-param name="browse-type" select="$browse-type"/>
+                    </xsl:apply-templates>
+                    <xsl:if test="@totalDocs > $docsPerPage">
+                      <xsl:call-template name="pages"/>
+                    </xsl:if>           
+                  </div>
+                </div>
+              </div>
+            </div>
+            <xsl:choose>
+              <xsl:when test="$browse-orangecounty">
+                <xsl:copy-of select="$oc-assets.nav-footer"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:copy-of select="$assets.nav-footer"/>
+              </xsl:otherwise>
+            </xsl:choose>
+            <!--<xsl:copy-of select="$assets.nav-footer"/>-->
+            <xsl:copy-of select="$brand.footer"/>
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>
 </xsl:template>
 
 
@@ -519,6 +649,7 @@
 <!-- Document Hit Template                                                  -->
 <!-- ====================================================================== -->
 <xsl:template match="docHit" exclude-result-prefixes="#all">
+  <xsl:param name="browse-type"/>
 	<xsl:variable name="path" select="@path"/>
 	<xsl:variable name="identifier" select="meta/identifier[1]"/>
 	<xsl:variable name="quotedID" select="concat('&quot;', $identifier, '&quot;')"/>
@@ -550,7 +681,7 @@
 		</strong></a>
 		</span></h3>
 		<ul>
-			<li>by
+			<li><xsl:text>by </xsl:text>
 				<span class="DC-Creator">
 				<xsl:choose>
 					<xsl:when test="meta/creator">
@@ -565,35 +696,37 @@
 						<span class="DC-Contributor">
 							<xsl:apply-templates select="meta/contributor"/>
 					    </span>
-						, 	
+ 						<xsl:text>,  </xsl:text>
 					</xsl:when>
 				</xsl:choose>
 			    <span class="DC-Publisher">
 					<xsl:apply-templates select="meta/publisher"/>
 				</span>
 			</li>
-			<li>
-				<xsl:choose>
-					<xsl:when test="meta/date">uploaded
-						<span class="DC-Date">	
-							<xsl:apply-templates select="meta/date"/>
-						</span>,						
-					</xsl:when>
-				</xsl:choose>
-				<xsl:choose>
-				  	<xsl:when test="meta/collected">collected
-						<span class="DC-Date">	
-							<xsl:apply-templates select="meta/collected"/>
-						</span>						
-					</xsl:when>
-				</xsl:choose>
-		    </li>
-		    <li class="collapsible">
-				<div class="collapse-control"><span class="indicator"></span> abstract</div>
-				<div class="collapse-content"><span class="DC-Description">
-					<xsl:apply-templates select="meta/description[@descriptionType='Abstract']"/>
-				</span></div>
-			</li>
+		  <xsl:if test="not(matches($browse-type,'mapPopup'))">
+   			<li>
+   				<xsl:choose>
+   					<xsl:when test="meta/date">uploaded
+   						<span class="DC-Date">	
+   							<xsl:apply-templates select="meta/date"/>
+   						</span>,						
+   					</xsl:when>
+   				</xsl:choose>
+   				<xsl:choose>
+   				  	<xsl:when test="meta/collected">collected
+   						<span class="DC-Date">	
+   							<xsl:apply-templates select="meta/collected"/>
+   						</span>						
+   					</xsl:when>
+   				</xsl:choose>
+   	    </li>
+   	    <li class="collapsible">
+     			<div class="collapse-control"><span class="indicator"></span> abstract</div>
+     			<div class="collapse-content"><span class="DC-Description">
+     				<xsl:apply-templates select="meta/description[@descriptionType='Abstract']"/>
+     			</span></div>
+   		  </li>
+		  </xsl:if>
 		</ul>
 	</div>
 	<br/>
@@ -945,14 +1078,14 @@
 							<div class="single-column">
 								<h1>Upload Basics</h1>
 								<div class="text-container">
-									<xsl:choose>
-										<xsl:when test="$brand='dataone'">
-											<xsl:copy-of select="$brand.uploadbasics"/>
-										</xsl:when>
-										<xsl:otherwise>
-											<xsl:copy-of select="$assets.uploadbasics"/>
-										</xsl:otherwise>
-									</xsl:choose>
+									<ul>
+										<li>See <a href="/xtf/search?smode=policiesPage">Policies</a> for more information on uploading datasets to Dash.</li>
+										<li>All file formats are accepted by Dash, although it is good practice to share data using open formats. See the UK Data Archive for a <a href="http://www.data-archive.ac.uk/create-manage/format/formats-table">list of optimal file formats</a>.</li>
+										<li>Include any files that may help others to use your data. This includes readme files, formal metadata files, or other critical information.</li>
+										<li>Any data submitted via Dash will be in the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a> CC-BY 4.0). We do not currently support any other license types, nor do we allow for restrictions on data access or use.</li>
+										<li>It is your responsibility to ensure your data are being shared responsibly and ethically. Please be careful of sharing sensitive data and ensure you are complying with institutional and governmental regulations.</li>
+										<li>There is <a href="/xtf/search?smode=rightsPage">more information</a> on rights and ownership of, and licences for, research data.</li>
+									</ul>
 								</div>
 							</div>
 						</div> <!-- end content-->

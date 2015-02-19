@@ -55,14 +55,14 @@
       doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" 
       doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" 
       exclude-result-prefixes="#all"
-      omit-xml-declaration="yes"/>
+	  omit-xml-declaration="yes"/>
 
    <xsl:output name="frameset" method="xhtml" indent="no" 
       encoding="UTF-8" media-type="text/html; charset=UTF-8" 
       doctype-public="-//W3C//DTD XHTML 1.0 Frameset//EN" 
       doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd" 
-      omit-xml-declaration="yes"
-      exclude-result-prefixes="#all"/>
+	  omit-xml-declaration="yes"
+	  exclude-result-prefixes="#all"/>
 
    
    <!-- ====================================================================== -->
@@ -76,6 +76,7 @@
       <!-- Normally this is a URL parameter, but in ERC mode it's part of the main URL. -->
       <!-- <xsl:value-of select="replace($http.URL, $ercPat, '$2')"/> -->
    </xsl:param>
+   <xsl:variable name="docIdEncoded" select="replace($docId,'\+','%2b')"/>
    <xsl:param name="http.cookie"/>
 
    <!-- ====================================================================== -->
@@ -348,6 +349,19 @@
 											</xsl:otherwise> 
 										</xsl:choose>
 									</div>
+								  <!-- If there is geographic metadata, add a button to 
+								    take the user to the browse interface. -->
+								  <xsl:if test="matches($brand,'uci')">
+									<xsl:if test="//*:geoLocationBox or //*:geoLocationPoint">
+									<a>
+										<xsl:attribute name="href">
+											<xsl:text>/xtf/search?browse-locations=yes;docId=</xsl:text>
+											<xsl:value-of select="$docIdEncoded"/>
+										</xsl:attribute>
+										<input type="image" src="assets/img/map-by-record-button.png" alt="View associated geoLocations"/>
+									</a>
+									</xsl:if>
+								  </xsl:if>
 								</div>
 							</div>
 						</div>
@@ -369,13 +383,23 @@
 			<div id="project_links">
 				<ul>
 					<li><xsl:copy-of select="$brand.homelink"/></li>
+					<!-- On UCI's site, add link to OC Data Portal. -->
+					<xsl:if test="matches($brand,'uci')">
+						<li><xsl:copy-of select="$oc-assets.homelink"/></li>
+					</xsl:if>
 					<li><a href="/logout">Log Out</a></li>
 				</ul>
 			</div>
 		</xsl:when>
 		<xsl:otherwise>
 			<div id="project_links_no_logout">
-				<xsl:copy-of select="$brand.homelink"/>
+				<ul>
+					<li><xsl:copy-of select="$brand.homelink"/></li>
+					<!-- On UCI's site, add link to OC Data Portal. -->
+					<xsl:if test="matches($brand,'uci')">
+						<li><xsl:copy-of select="$oc-assets.homelink"/></li>
+					</xsl:if>
+				</ul>
 			</div>
 		</xsl:otherwise>
 	</xsl:choose>

@@ -149,6 +149,10 @@
    <xsl:variable name="assets">
        <xsl:copy-of select="document('../../../../assets/assets.xml')"/>
    </xsl:variable>
+   <xsl:variable name="oc-assets">
+       <xsl:copy-of select="document('../../../../assets/oc-assets.xml')"/>
+   </xsl:variable>
+
    
    <xsl:param name="brand.links" select="$brand.file//links/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="brand.header" select="$brand.file//header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
@@ -159,7 +163,8 @@
    
    <xsl:param name="assets.htmlhead" select="$assets//htmlhead/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <xsl:param name="assets.nav-header" select="$assets//nav-header/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
-   <xsl:param name="assets.nav-footer" select="$assets//nav-footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>   
+   <xsl:param name="assets.nav-footer" select="$assets//nav-footer/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
+   <xsl:param name="oc-assets.homelink" select="$oc-assets//ocdp-homelink/*" xpath-default-namespace="http://www.w3.org/1999/xhtml"/>
    <!-- Special Robot Parameters -->
    
    <xsl:param name="http.user-agent"/>

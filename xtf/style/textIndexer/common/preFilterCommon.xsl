@@ -67,6 +67,11 @@
               <xsl:value-of select="$id4"/> 
 			</identifier>
          </xsl:if>
+		  
+	  <!-- Makes the document identifier searchable (for Browse Locations). -->
+	  <docId xtf:meta="true" xtf:tokenize="no">
+	    <xsl:value-of select="substring-after($dcpath,'xtf-data/data/')"/>
+	  </docId>
 
 		<xsl:if test="FileUtils:exists(concat($targetlink,'target_link'))">
 			<target xtf:meta="true" xtf:tokenize="no">
@@ -145,22 +150,6 @@
 				</xsl:for-each>
             </xsl:when>
 
-			<xsl:when test="matches(name(),'dataset')">
-				<title xtf:meta="true" xtf:tokenize="no">
-					<xsl:value-of select="*:title"/>
-				</title>
-				<creator xtf:meta="true" xtf:tokenize="no">
-                  	<xsl:value-of select="*:creator/individualName/surName"/>, <xsl:value-of select="*:creator/individualName/givenName"/>
-               	</creator>
-				<publisher xtf:meta="true" xtf:tokenize="no">DataONE</publisher>
-				<publicationYear xtf:meta="true" xtf:tokenize="no">
-					<xsl:value-of select="substring(*:pubDate,1,4)"/>
-				</publicationYear>
-				<description descriptionType="Abstract" xtf:meta="true" xtf:tokenize="no">
-					<xsl:value-of select="*:abstract"/>
-				</description>
-			</xsl:when>
-
 <!--            <xsl:when test="matches(name(),'contributors')">
       			<xsl:for-each select="./*">
                		<contributor xtf:meta="true" xtf:tokenize="no">
@@ -176,6 +165,14 @@
 				<xsl:call-template name="lookupCampusLabel"><xsl:with-param name="uc-id" select="string(.)"/></xsl:call-template>
            		</publisher>
             </xsl:when>
+           
+           <!-- Capture the geoLocation data and context. -->
+           <xsl:when test="matches(name(),'geoLocations')">
+             <geoLocations xtf:meta="true" xtf:tokenize="no">
+               <!-- Strip out "geoLocation" elements but copy their child nodes. -->
+               <xsl:copy-of select="./*/*"/>
+             </geoLocations>
+           </xsl:when>
 
             <xsl:otherwise>
                <xsl:element name="{name()}">
@@ -246,7 +243,8 @@
 <!--		 <xsl:apply-templates select="$meta/*:contributor" mode="browse"/> -->
          <xsl:apply-templates select="$meta/*:creator" mode="browse"/>
          <xsl:apply-templates select="$meta/*:subject" mode="browse"/>
-         <xsl:apply-templates select="$meta/*:title[1]" mode="browse"/>    
+        <xsl:apply-templates select="$meta/*:title[1]" mode="browse"/>   
+        <xsl:apply-templates select="$meta/*:geoLocations" mode="browse"/> 
 		 <xsl:apply-templates select="$meta/*:publisher" mode="browse"/>
 	 </xtf:meta>
    </xsl:template>
@@ -410,6 +408,19 @@
          <xsl:attribute name="xtf:tokenize" select="'no'"/>
 		 <xsl:value-of select="parse:alpha(parse:title(.))"/>
       </browse-publisher>
+   </xsl:template>
+  
+   <xsl:template match="*:geoLocations" mode="browse">
+      <!-- If present, geoLocationPlace's text should only match "Orange County 
+         (Calif.)", which signals that the record belongs to the OC Data Portal. -->
+     <xsl:if test="descendant::*:geoLocationPlace[text()='Orange County (Calif.)']">
+        <browse-orangecounty xtf:meta="true">yes</browse-orangecounty>
+      </xsl:if>
+      <!-- For geographic interfaces, we're only interested in features we can 
+         map (read: geoLocationPoints or Boxes). -->
+      <xsl:if test="descendant::*:geoLocationPoint or descendant::*:geoLocationBox">
+        <browse-locations xtf:meta="true">yes</browse-locations>
+      </xsl:if>
    </xsl:template>
 
    

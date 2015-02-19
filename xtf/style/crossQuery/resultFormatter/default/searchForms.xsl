@@ -39,9 +39,9 @@
       POSSIBILITY OF SUCH DAMAGE.
    -->
    
-   <!-- ====================================================================== -->
+   
    <!-- Global parameters                                                      -->
-   <!-- ====================================================================== -->
+   
    
    <xsl:param name="freeformQuery"/>
    <xsl:param name="http.x-forwarded-host"/>
@@ -49,9 +49,9 @@
    <xsl:variable name="serverName" select="session:getData('server')"/>
    <xsl:param name="http.cookie"/>
    <xsl:variable name="Shib_cookie_name" select="'dash_logged_in'"/>      
-   <!-- ====================================================================== -->
+  
    <!-- Form Templates                                                         -->
-   <!-- ====================================================================== -->
+   
    
    <!-- main form page -->
 <xsl:template match="crossQueryResult" mode="form" exclude-result-prefixes="#all">
@@ -101,11 +101,17 @@
 										<button class="btn btn-success" type="submit" name="submit">Go</button>
 										<!-- <input id="search-go" type="submit" name="submit" value=""></input> -->
 									</form>
-									<p id="or">or</p>
+									<p class="or">or</p>
 									<a href="/xtf/search?browse-all=yes">
 										<button class="btn">Browse all data</button>
 										<!-- <input type="image" src="assets/img/browse.png" id="browse" alt="Browse all data"/> -->
 									</a>
+									<xsl:if test="matches($brand,'uci')">
+										<p class="or">or</p>
+										<a href="/xtf/search?browse-locations=yes">
+										<input type="image" src="assets/img/map-browse-button.png" alt="Explore by geoLocation"/>
+										</a>
+									</xsl:if>
 								</div>
 							</div>
 						</div>
@@ -138,24 +144,36 @@
 		</div>
 	</body>
 </xsl:template>
-	<!-- ======================================================================	-->
+	
 	<!-- NavHeader Template	                                                	-->
-	<!-- ======================================================================	-->
+	
 <xsl:template name="navheader">
 	<xsl:choose>
 		<xsl:when test="contains($http.cookie, $Shib_cookie_name)">
 			<div id="project_links">
 				<ul>
 					<li><xsl:copy-of select="$brand.homelink"/></li>
+				<!-- On UCI's site, add link to OC Data Portal. -->
+				<xsl:if test="matches($brand,'uci')">
+				       <li><xsl:copy-of select="$oc-assets.homelink"/></li>
+				</xsl:if>
 					<li><a href="/logout">Log Out</a></li>
 				</ul>
 			</div>
 		</xsl:when>
 		<xsl:otherwise>
+  
 			<div id="project_links_no_logout">
-				<xsl:copy-of select="$brand.homelink"/>
-			</div>
-		</xsl:otherwise>
+        <ul>
+          <li><xsl:copy-of select="$brand.homelink"/></li>
+          <!-- On UCI's site, add link to OC Data Portal. -->
+          <xsl:if test="matches($brand,'uci')">
+            <li><xsl:copy-of select="$oc-assets.homelink"/></li>
+          </xsl:if>
+        </ul>
+      </div>
+		
+    </xsl:otherwise>
 	</xsl:choose>
 </xsl:template> 
 <xsl:template name="brandheader">
