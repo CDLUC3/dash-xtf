@@ -523,6 +523,14 @@
 					<xsl:value-of select="."/>
 				</a>
 			</xsl:when>
+			<xsl:when test="./@relatedIdentifierType='PURL'">
+				<a class="dataset-action-download">
+					<xsl:attribute name="href">
+						<xsl:value-of select="."/>
+					</xsl:attribute> 
+					<xsl:value-of select="."/>
+				</a>
+			</xsl:when>
 			<xsl:when test="./@relatedIdentifierType='PMID'">
 				<xsl:value-of select="./@relatedIdentifierType"/>
 				<xsl:text>: </xsl:text>
