@@ -167,13 +167,19 @@
             </xsl:when>
            
            <!-- Capture the geoLocation data and context. -->
-           <xsl:when test="matches(name(),'geoLocations')">
-             <geoLocations xtf:meta="true" xtf:tokenize="no">
-               <!-- Strip out "geoLocation" elements but copy their child nodes. -->
-               <xsl:copy-of select="./*/*"/>
-             </geoLocations>
-           </xsl:when>
+			<xsl:when test="matches(name(),'geoLocations')">
+				<geoLocations xtf:meta="true" xtf:tokenize="no">
+				<!-- Strip out "geoLocation" elements but copy their child nodes. -->
+				<xsl:copy-of select="./*/*"/>
+				</geoLocations>
+			</xsl:when>
 
+			<xsl:when test="matches(name(),'relatedIdentifiers')">
+				<relatedIdentifiers xtf:meta="true" xtf:tokenize="no">
+					<!-- Strip out "relatedIdentifiers" parent element but copy child nodes. -->
+					<xsl:copy-of select="*"/>
+				</relatedIdentifiers>
+			</xsl:when>
             <xsl:otherwise>
                <xsl:element name="{name()}">
                   <xsl:attribute name="xtf:meta" select="'true'"/>

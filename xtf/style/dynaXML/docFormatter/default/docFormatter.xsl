@@ -299,6 +299,18 @@
 												</span>
 											</dd>
 										</xsl:if>
+										<xsl:if test="//*/*:meta/*:relatedIdentifiers!=''">
+											<dt>Related Identifier</dt>
+											<dd>
+											<span class="DC-Identifier">
+											<ul>
+												<xsl:for-each select="//*/*:meta/*:relatedIdentifiers/*:relatedIdentifier">
+													<xsl:call-template name="relatedIdentifier"/> 
+												</xsl:for-each>
+											</ul> 
+											</span>
+											</dd>
+										</xsl:if>
 									</dl>
 								</div>
 								<div class="dataset-actions">
@@ -409,6 +421,126 @@
 	<xsl:message>x-forwarded-host: <xsl:value-of select="$http.x-forwarded-host"/></xsl:message>
 	<a href="{$serverName}"><img src="assets/img/dash_cdl_logo.png" alt="Dash: Data sharing made easy" class="your-logo"/></a>
 	<xsl:copy-of select="$brand.header"/>
+</xsl:template>
+
+<xsl:template name="relatedIdentifier">
+	<li>
+	<xsl:value-of select="*"/>
+		<xsl:text>This dataset </xsl:text> 
+		<xsl:choose>
+			<xsl:when test="./@relationType='IsCitedBy'">
+				<xsl:text>is cited by: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='Cites'">
+				<xsl:text>cites: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='IsSupplementTo'">
+				<xsl:text>is supplement to: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='IsSupplementedBy'">
+				<xsl:text>is supplemented by: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='IsContinuedBy'">
+				<xsl:text>is continued by: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='Continues'">
+				<xsl:text>continues: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='HasMetadata'">
+				<xsl:text>has metadata: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='IsMetadataFor'">
+				<xsl:text>is metadata for: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='IsNewVersionOf'">
+				<xsl:text>is new version of: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='IsPreviousVersionOf'">
+				<xsl:text>is previous version of: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='IsPartOf'">
+				<xsl:text>is part of: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='HasPart'">
+				<xsl:text>has part: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='IsReferencedBy'">
+				<xsl:text>is referenced by: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='References'">
+				<xsl:text>references: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='IsDocumentedBy'">
+				<xsl:text>is documented by: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='Documents'">
+				<xsl:text>documents: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='IsCompiledBy'">
+				<xsl:text>is compiled by: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='Compiles'">
+				<xsl:text>compiles: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='IsVariantFormOf'">
+				<xsl:text>is variant form of: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='IsOriginalFormOf'">
+				<xsl:text>is original form of: </xsl:text>
+			</xsl:when>
+			<xsl:when test="./@relationType='IsIdenticalTo'">
+				<xsl:text>is identical to: </xsl:text>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:text>references: </xsl:text>
+			</xsl:otherwise>
+		</xsl:choose>
+		<xsl:choose>
+			<xsl:when test="./@relatedIdentifierType='DOI'">
+				<a class="dataset-action-download">
+					<xsl:attribute name="href">
+						<xsl:text>http://dx.doi.org/</xsl:text>
+						<xsl:value-of select="."/>
+					</xsl:attribute> 
+					<xsl:text>doi:</xsl:text>
+					<xsl:value-of select="."/>
+				</a>
+			</xsl:when>
+			<xsl:when test="./@relatedIdentifierType='ARK'">
+				<a class="dataset-action-download">
+					<xsl:attribute name="href">
+						<xsl:text>http://n2t.net/</xsl:text>
+						<xsl:value-of select="."/>
+					</xsl:attribute> 
+					<xsl:value-of select="."/>
+				</a>
+			</xsl:when>
+			<xsl:when test="./@relatedIdentifierType='URL'">
+				<a class="dataset-action-download">
+					<xsl:attribute name="href">
+						<xsl:value-of select="."/>
+					</xsl:attribute> 
+					<xsl:value-of select="."/>
+				</a>
+			</xsl:when>
+			<xsl:when test="./@relatedIdentifierType='PMID'">
+				<xsl:value-of select="./@relatedIdentifierType"/>
+				<xsl:text>: </xsl:text>
+				<a class="dataset-action-download">
+					<xsl:attribute name="href">
+						<xsl:text>http://www.ncbi.nlm.nih.gov/pubmed/</xsl:text>
+						<xsl:value-of select="."/>
+					</xsl:attribute> 
+					<xsl:value-of select="."/>
+				</a>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="./@relatedIdentifierType"/>
+				<xsl:text>: </xsl:text>
+				<xsl:value-of select="."/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</li>
 </xsl:template>
 
 </xsl:stylesheet>
