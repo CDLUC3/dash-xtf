@@ -497,12 +497,12 @@
 		</xsl:choose>
 		<xsl:choose>
 			<xsl:when test="./@relatedIdentifierType='DOI'">
+				<xsl:text>DOI:</xsl:text>
 				<a class="dataset-action-download">
 					<xsl:attribute name="href">
 						<xsl:text>http://dx.doi.org/</xsl:text>
 						<xsl:value-of select="."/>
 					</xsl:attribute> 
-					<xsl:text>doi:</xsl:text>
 					<xsl:value-of select="."/>
 				</a>
 			</xsl:when>
