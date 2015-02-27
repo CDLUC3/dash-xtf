@@ -150,6 +150,22 @@
 				</xsl:for-each>
             </xsl:when>
 
+			<!--indexing for DataONE DataUp EML metadata -->
+			<xsl:when test="matches(name(),'dataset')">
+-				<title xtf:meta="true" xtf:tokenize="no">
+-					<xsl:value-of select="*:title"/>
+-				</title>
+-				<creator xtf:meta="true" xtf:tokenize="no">
+-                  	<xsl:value-of select="*:creator/individualName/surName"/>, <xsl:value-of select="*:creator/individualName/givenName"/>
+-               	</creator>
+-				<publisher xtf:meta="true" xtf:tokenize="no">DataONE</publisher>
+-				<publicationYear xtf:meta="true" xtf:tokenize="no">
+-					<xsl:value-of select="substring(*:pubDate,1,4)"/>
+-				</publicationYear>
+-				<description descriptionType="Abstract" xtf:meta="true" xtf:tokenize="no">
+-					<xsl:value-of select="*:abstract"/>
+-				</description>
+-			</xsl:when>			
 <!--            <xsl:when test="matches(name(),'contributors')">
       			<xsl:for-each select="./*">
                		<contributor xtf:meta="true" xtf:tokenize="no">
