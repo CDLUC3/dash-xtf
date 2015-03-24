@@ -426,7 +426,7 @@
 <xsl:template name="relatedIdentifier">
 	<li>
 	<xsl:value-of select="*"/>
-		<xsl:text>This dataset </xsl:text> 
+		<xsl:text>This dataset </xsl:text>
 		<xsl:choose>
 			<xsl:when test="./@relationType='IsCitedBy'">
 				<xsl:text>is cited by: </xsl:text>
@@ -497,7 +497,9 @@
 		</xsl:choose>
 		<xsl:choose>
 			<xsl:when test="./@relatedIdentifierType='DOI'">
-				<xsl:text>DOI:</xsl:text>
+				<xsl:if test="not(starts-with(.,'doi:'))"> 
+					<xsl:text>DOI:</xsl:text>
+				</xsl:if>
 				<a class="dataset-action-download">
 					<xsl:attribute name="href">
 						<xsl:text>http://dx.doi.org/</xsl:text>
@@ -518,6 +520,9 @@
 			<xsl:when test="./@relatedIdentifierType='URL'">
 				<a class="dataset-action-download">
 					<xsl:attribute name="href">
+						<xsl:if test="not(starts-with(.,'http://'))"> 
+							<xsl:text>http://</xsl:text>
+						</xsl:if>
 						<xsl:value-of select="."/>
 					</xsl:attribute> 
 					<xsl:value-of select="."/>
@@ -526,6 +531,9 @@
 			<xsl:when test="./@relatedIdentifierType='PURL'">
 				<a class="dataset-action-download">
 					<xsl:attribute name="href">
+						<xsl:if test="not(starts-with(.,'http://'))"> 
+							<xsl:text>http://</xsl:text>
+						</xsl:if>
 						<xsl:value-of select="."/>
 					</xsl:attribute> 
 					<xsl:value-of select="."/>
