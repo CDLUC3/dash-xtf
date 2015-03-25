@@ -65,7 +65,7 @@
    <xsl:when test="contains($http.x-forwarded-host, 'berkeley.edu')">
 		<xsl:value-of select="session:setData('brand', 'berkeley')"/>
 	</xsl:when>
-<!-- UCLA -->
+<!-- Los Angeles -->
 	<xsl:when test="contains($http.x-forwarded-host, 'ucla.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucla')"/>
 	</xsl:when>
@@ -78,7 +78,6 @@
 	<xsl:when test="contains($http.x-forwarded-host, 'dash-ucla.cdlib.org')">
 		<xsl:value-of select="session:setData('brand', 'ucla')"/>
 	</xsl:when>
-
 <!-- Irvine -->
 	<xsl:when test="contains($http.x-forwarded-host, 'uci.edu')">
 		<xsl:value-of select="session:setData('brand', 'uci')"/>
@@ -87,7 +86,22 @@
 	<xsl:when test="contains($http.x-forwarded-host, 'ucmerced.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucmerced')"/>	
 	</xsl:when>
-<!-- campuses to add -->
+<!-- Santa Cruz -->
+	<xsl:when test="contains($http.x-forwarded-host, 'ucsc.edu')">
+		<xsl:value-of select="session:setData('brand', 'ucsc')"/>
+	</xsl:when>
+<!-- San Francisco -->
+	<xsl:when test="contains($http.x-forwarded-host, 'ucsf.edu')">
+		<xsl:value-of select="session:setData('brand', 'ucsf')"/>
+	</xsl:when>
+
+<!-- Berkeley Lab -->
+	<xsl:when test="contains($http.x-forwarded-host, 'lbl.gov')">
+		<xsl:value-of select="session:setData('brand', 'lbnl')"/>
+	</xsl:when>
+
+	
+	<!-- campuses to add -->
 <!--
 	<xsl:when test="contains($http.x-forwarded-host, 'ucr.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucr')"/>
@@ -95,11 +109,7 @@
 	<xsl:when test="contains($http.x-forwarded-host, 'ucsb.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucsb')"/>
 	</xsl:when>
--->
-	<xsl:when test="contains($http.x-forwarded-host, 'ucsc.edu')">
-		<xsl:value-of select="session:setData('brand', 'ucsc')"/>
-	</xsl:when>
-<!--
+
 	<xsl:when test="contains($http.x-forwarded-host, 'ucdavis.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucdavis')"/>
 	</xsl:when>
@@ -107,13 +117,7 @@
 		<xsl:value-of select="session:setData('brand', 'ucsd')"/>
 	</xsl:when>
 -->
-	<xsl:when test="contains($http.x-forwarded-host, 'ucsf.edu')">
-		<xsl:value-of select="session:setData('brand', 'ucsf')"/>
-	</xsl:when>
 
-	<xsl:when test="contains($http.x-forwarded-host, 'lbl.gov')">
-		<xsl:value-of select="session:setData('brand', 'lbnl')"/>
-	</xsl:when>
 	<xsl:otherwise>
 		<xsl:value-of select="session:setData('brand', 'default')"/>
 	</xsl:otherwise>
