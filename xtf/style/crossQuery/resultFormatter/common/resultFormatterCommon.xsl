@@ -274,7 +274,7 @@
    <xsl:param name="http.x-forwarded-host"/>
    <xsl:param name="xtfURL">
 	<xsl:choose>
-		<xsl:when test="contains($http.x-forwarded-host, 'ucla')">
+		<xsl:when test="contains($http.x-forwarded-host, ',')">
 			<xsl:value-of select="concat('http://',(substring-before($http.x-forwarded-host,',')),'/xtf/')"/>
 		</xsl:when>
 		<xsl:otherwise>
