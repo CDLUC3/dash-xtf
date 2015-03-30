@@ -272,7 +272,16 @@
    <xsl:param name="servlet.path"/>
    <xsl:param name="root.path"/>
    <xsl:param name="http.x-forwarded-host"/>
-   <xsl:param name="xtfURL" select="concat('http://',$http.x-forwarded-host,'/xtf/')"/>
+   <xsl:param name="xtfURL">
+	<xsl:choose>
+		<xsl:when test="contains($http.x-forwarded-host, 'ucla')">
+			<xsl:value-of select="concat('http://',(substring-before($http.x-forwarded-host,',')),'/xtf/')"/>
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:value-of select="concat('http://',$http.x-forwarded-host,'/xtf/')"/>
+		</xsl:otherwise>
+	</xsl:choose>
+   </xsl:param>
    <xsl:param name="serverURL" select="replace($xtfURL, '(http://.+)[:/].+', '$1/')"/>
    <xsl:param name="crossqueryPath" select="if (matches($servlet.path, 'org.cdlib.xtf.dynaXML.DynaXML')) then 'org.cdlib.xtf.crossQuery.CrossQuery' else 'search'"/>
    <xsl:param name="dynaxmlPath" select="if (matches($servlet.path, 'org.cdlib.xtf.crossQuery.CrossQuery')) then 'org.cdlib.xtf.dynaXML.DynaXML' else 'view'"/>
