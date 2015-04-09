@@ -240,9 +240,11 @@
 											<dt>Type</dt>
 											<dd>
 												<span class="DC-Type">
-													<xsl:if test="//@resourceTypeGeneral">
-														<xsl:apply-templates select="//@resourceTypeGeneral"/>: 
-													</xsl:if>
+													<!--removing resourceTypeGeneral attribute from display because the	-->
+													<!-- value is duplicated in resourceType element					-->
+													<!-- <xsl:if test="//@resourceTypeGeneral">
+															<xsl:apply-templates select="//@resourceTypeGeneral"/>: 
+														</xsl:if> 														-->
 													<xsl:apply-templates select="//*/*:meta/*:resourceType"/>
 												</span>
 											</dd>
