@@ -985,7 +985,7 @@
 									  <p>All formats are allowed.</p>
 
 									  <h2>Volume and size limitations</h2>
-									  <p>10GB per file size constraint. Quotas are likely to be introduced at a later stage. All data files are stored in the Merritt Repository. More information about the Merritt Repository Service is available in the white paper "<a href="https://merritt.cdlib.org/d/ark%3A%2F13030%2Fm52f7p63/2/producer%2FUC3-Merritt-preservation-latest.pdf">UC3, Merritt and Long-term Preservation</a>."</p>
+									  <p>There is a limit of 10GB per dataset. All data files are stored in the Merritt Repository. More information about the Merritt Repository Service is available in the white paper "<a href="https://merritt.cdlib.org/d/ark%3A%2F13030%2Fm52f7p63/2/producer%2FUC3-Merritt-preservation-latest.pdf">UC3, Merritt and Long-term Preservation</a>."</p>
 
 									  <h2>Data quality</h2>
 									  <p>All information is provided "as-is" and the user shall hold Dash and information providers supplying data to Dash free and harmless in connection with the use of such information.</p>

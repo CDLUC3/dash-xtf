@@ -81,7 +81,7 @@
 			<p class="para">Yes, you can add new versions of your data.</p>
 			
 			<h2 class="title">How will someone find my data?</h2>
-			<p class="para">Metadata will be indexed by the <a href="http://wokinfo.com/products_tools/multidisciplinary/dci/about/">Thomson-Reuters Data Citation Index</a> and <a href="http://www.elsevier.com/online-tools/scopus">Scopus</a>.  All datasets in Dash are given a unique Digital Object Identifier or DOI. Entering the DOI URL in any browser will take the user to the dataset's landing page in Dash. Dash also provides a faceted search and browse capability for direct discovery.</p>
+			<p class="para">Metadata will be indexed by the <a href="http://wokinfo.com/products_tools/multidisciplinary/dci/about/">Thomson-Reuters Data Citation Index</a> and <a href="http://www.elsevier.com/online-tools/scopus">Scopus</a>.  All datasets in Dash are given a unique Digital Object Identifier or DOI. Entering the DOI URL in any browser will take the user to the dataset's landing page in Merritt. Dash also provides a faceted search and browse capability for direct discovery.</p>
 			
 			<h2 class="title">Do the data have to be associated with a publication?</h2>
 			<p class="para">No. Dash accepts all quality data, regardless of whether they have been used to publish a paper.</p>
@@ -109,13 +109,14 @@
 				<li>Discover and retrieve data through faceted search and browse.</li>
 			</ul>
 		<h2>There are two versions of Dash: UC Dash and DataONE Dash</h2>
-		<p><strong>UC Dash</strong> is targeted for use by the 10 University of California campuses. There are currently five live instances of UC Dash:</p>
+		<p><strong>UC Dash</strong> is targeted for use by the 10 University of California campuses. There are currently six live instances of UC Dash:</p>
 		<ul>
 			<li><a href="https://dash.berkeley.edu">UC Berkeley</a></li>
 			<li><a href="https://dash.lib.uci.edu">UC Irvine</a></li>
 			<li><a href="https://dash.ucla.edu">UCLA</a></li>
 			<li><a href="https://dash.ucmerced.edu">UC Merced</a></li>
 			<li><a href="https://dash.ucop.edu">UC Office of the President</a></li>
+			<li><a href="https://dash.ucsc.edu">UC Santa Cruz</a></li>
 		</ul>
 		<p><a href="https://oneshare.cdlib.org"><strong>DataONE Dash</strong></a> is a separate service, operated by CDL in collaboration with the <a href="http://dataone.org">DataONE project</a>, that is open to the non-UC research community. ONEShare is the name of the curation repository underlying DataONE Dash.</p>
 		<h2>Project Links</h2>
