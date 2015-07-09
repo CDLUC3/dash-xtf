@@ -1004,13 +1004,14 @@
 									  <h1>Access and reuse of data</h1>
 
 									  <h2>Access to data objects</h2>
-									  <p>Data deposited into Dash may have one of the following:</p>
+									  <p>Data found in Dash may be associated with any of the following licensing terms:</p>
 										<ol>
 											<li>Custom Data Use Agreement.</li>
-											<li>Made available under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a> (CC-BY-4.0). According to the terms of the CC-BY license, reuse of the data must include appropriate credit and must indicate if changes were made.</li>
-											<li>Released under a <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">Creative Commons Public Domain Dedication Waiver</a> (CC0). This waiver has no restrictions on use and encourages reuse of data for any and all purposes.</li>
+											<li><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a> (CC-BY-4.0). According to the terms of the CC-BY license, reuse of the data must include appropriate credit and must indicate if changes were made.</li>
+											<li><a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">Creative Commons Public Domain Dedication Waiver</a> (CC0). This waiver has no restrictions on use and encourages reuse of data for any and all purposes.</li>
 										</ol>
-										<p>The dataset landing page will display the usage information associated with the dataset. Note that content in Dash is offered "as is." By downloading files, you agree to the Dash <a href="http://www.cdlib.org/about/terms.html">Terms of Use</a>.</p>
+										<p>All new data intended for Dash's ONEShare instance must be submitted under the terms of the CC0 license; data intended for any of the UC campus instances must be submitted under the terms of the CC-BY license. (Data contributed before Dash's standardization to these two licensing regimes retain their original licensing terms.)</p>
+										<p>A dataset landing page will display the usage information associated with the dataset. Note that content in Dash is offered "as is." By downloading files, you agree to the Dash <a href="http://www.cdlib.org/about/terms.html">Terms of Use</a>.</p>
 
 									  <h2>Tracking users and statistics</h2>
 									  <p>The California Digital Library does not track, collect or retain personal information from users of Dash, except as otherwise provided herein. In order to enhance Dash and monitor traffic, non-personal information such as IP addresses and cookies may be tracked and retained. User provided information, like corrections of metadata or paper claims, will be integrated into the database without displaying its source and may be shared with other services.</p>
