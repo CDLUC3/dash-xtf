@@ -42,7 +42,7 @@
   </nav-footer>
   
   <about>
-    <p>The Orange County Data Portal features data collected in or pertaining to Orange County, California. All data added to the Orange County Data Portal will also appear in the main UCI Dash interface. The data portal is inspired by UCI's Ecological Data Portal which documented data collected in and around Orange County. This content is now incorporated into the OC Data Portal. <strong>For current statistics on Orange County from the U.S. Census Bureau, see</strong>: <a href="http://censusreporter.org/profiles/05000US06059-orange-county-ca/">Census Reporter for Orange County</a></p>
+    <p>The Orange County Data Portal features data collected in or pertaining to Orange County, California. All data added to the Orange County Data Portal will also appear in the main UCI Dash interface. The data portal is inspired by UCI's Ecological Data Portal which documented data collected in and around Orange County. This content is now incorporated into the OC Data Portal. For current statistics on Orange County from the U.S. Census Bureau, see: <a href="http://censusreporter.org/profiles/05000US06059-orange-county-ca/">Census Reporter for Orange County</a></p>
     <h2>UCI Dash</h2>
     <p>UCI Dash is UC Irvine's custom instance of Dash, an easy-to-use solution for the effective curation of and access to campus research data. It is designed to be a simple self-service curation tool for researchers to archive and share their datasets.</p>
     <p>Tasks Dash helps researchers perform:</p>
