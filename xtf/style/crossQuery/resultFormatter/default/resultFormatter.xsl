@@ -304,7 +304,7 @@
 				  <xsl:if test="matches($brand,'uci')">
 					<xsl:if test="not($browse-locations or $docId or $browse-orangecounty)">
 						<div class="map-browse-button">
-							<a href="/xtf/search?browse-locations=yes">
+							<a href="/xtf/search?browse-locations=yes;docsPerPage=200">
 								<input type="image" src="assets/img/map-browse-button.png" alt="Explore by geoLocation"/>
 							</a>
 						</div>
