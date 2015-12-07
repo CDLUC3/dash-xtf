@@ -86,6 +86,10 @@
 	<xsl:when test="contains($http.x-forwarded-host, 'ucmerced.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucmerced')"/>	
 	</xsl:when>
+<!-- Riverside -->
+	<xsl:when test="contains($http.x-forwarded-host, 'ucr.edu')">
+		<xsl:value-of select="session:setData('brand', 'ucr')"/>	
+	</xsl:when>
 <!-- Santa Cruz -->
 	<xsl:when test="contains($http.x-forwarded-host, 'ucsc.edu')">
 		<xsl:value-of select="session:setData('brand', 'ucsc')"/>

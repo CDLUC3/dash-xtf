@@ -45,7 +45,7 @@
 			<p class="para">You will need UC Santa Cruz credentials to log into the system and deposit data. You can, however, add your collaborators to the authors' section of the metadata. Although only researchers logged in with UC Santa Cruz credentials can deposit data, anyone can search, view and download datasets in Dash.</p>
 
 			<h2 class="title">Who can access these datasets?</h2>
-			<p class="para">Data submitted to UC Santa Cruz Dash is released under the terms of the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC-BY-4.0). This means anyone can access the datasets, download them, and use them provided they give proper attribution. Although many researchers would prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read the <a href="http://pantonprinciples.org/">Panton Principles for Open Data in Science</a> for more information.</p>
+			<p class="para">Data submitted to UC Santa Cruz Dash are released under the terms of the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC-BY-4.0). This means anyone can access the datasets, download them, and use them provided they give proper attribution. Although many researchers would prefer to maintain more control over who downloads and uses their data, we believe that having data that are fully open is the best way to enable academic advancement. Read the <a href="http://pantonprinciples.org/">Panton Principles for Open Data in Science</a> for more information.</p>
 
 			<h2 class="title">Do you support data embargoes or restricted access?</h2>
 			<p class="para">Not at this time. We do, however, have plans to expand the Dash functionality to include both. If you have specific requests for functionality, please add it to our <a href="http://github.com/cdluc3/dash/issues">GitHub Issues page</a>.</p>
@@ -72,7 +72,7 @@
 			</ul>
 
 			<h2 class="title">For how long will the data be available?</h2>
-			<p class="para">Once you have deposited data, it is permanently archived and available through the California Digital Library’s <a href="http://merritt.cdlib.org/">Merritt Repository</a>. See our <a href="/xtf/search?smode=policiesPage">Policies page</a> for more information.</p>
+			<p class="para">Once you have deposited a dataset, it is permanently archived and available through the California Digital Library’s <a href="http://merritt.cdlib.org/">Merritt Repository</a>. See our <a href="/xtf/search?smode=policiesPage">Policies page</a> for more information.</p>
 
 			<h2 class="title">Can I update my data?</h2>
 			<p class="para">Yes, you can add new versions of your data.</p>
