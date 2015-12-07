@@ -63,7 +63,7 @@
                         <button class="btn btn-success" type="submit" value="submit">Go</button>
                       </form>
                       <p class="or">or</p>
-                      <a href="/xtf/search?browse-orangecounty=yes">
+                      <a href="/xtf/search?browse-orangecounty=yes;docsPerPage=200">
                         <button class="btn">Browse OC datasets</button>
                       </a>
                     </div>
@@ -211,7 +211,7 @@
                           <!-- The Browse Locations button moves to the 
                             left-hand sidebar. -->
                           <div class="map-browse-button">
-                            <a href="/xtf/search?browse-locations=yes">
+                            <a href="/xtf/search?browse-locations=yes;docsPerPage=200">
                               <input type="image" src="assets/img/map-browse-button.png" alt="Explore by geoLocation"/>
                             </a>
                           </div>
