@@ -108,7 +108,7 @@
 									</a>
 									<xsl:if test="matches($brand,'uci')">
 										<p class="or">or</p>
-										<a href="/xtf/search?browse-locations=yes">
+										<a href="/xtf/search?browse-locations=yes;docsPerPage=200">
 										<input type="image" src="assets/img/map-browse-button.png" alt="Explore by geoLocation"/>
 										</a>
 									</xsl:if>
