@@ -49,6 +49,7 @@
    <!-- ====================================================================== -->
    
    <xsl:import href="../common/resultFormatterCommon.xsl"/>
+   <xsl:import href="../siteMap/resultFormatter.xsl"/>
    <xsl:import href="rss.xsl"/>
    <xsl:include href="searchForms.xsl"/>
    <xsl:include href="geoBrowse.xsl"/>
@@ -79,6 +80,9 @@
    
 <xsl:template match="/" exclude-result-prefixes="#all">
 	<xsl:choose>
+		<xsl:when test="$smode = 'siteMap'">
+			<xsl:apply-templates select="crossQueryResult" mode="siteMap"/>
+		</xsl:when>
 		<xsl:when test="$smode = 'aboutPage'">
 			<xsl:call-template name="aboutPage"/>
 		</xsl:when>

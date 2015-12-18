@@ -174,10 +174,10 @@
          <Identify>
             <repositoryName>XTF Sample Repository</repositoryName>
             <!-- CHANGE -->
-            <baseURL>http://www.server.org/default/oai</baseURL>
+            <baseURL>http://dash.ucop.edu/xtf/oai</baseURL>
             <protocolVersion>2.0</protocolVersion>
             <!-- CHANGE -->
-            <adminEmail>admin@server.org</adminEmail>
+            <adminEmail>uc3@ucop.edu</adminEmail>
             <earliestDatestamp>
                <xsl:value-of select="$earliestDateStamp"/>
             </earliestDatestamp>
