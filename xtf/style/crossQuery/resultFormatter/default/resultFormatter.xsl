@@ -49,7 +49,6 @@
    <!-- ====================================================================== -->
    
    <xsl:import href="../common/resultFormatterCommon.xsl"/>
-   <xsl:import href="../siteMap/resultFormatter.xsl"/>
    <xsl:import href="rss.xsl"/>
    <xsl:include href="searchForms.xsl"/>
    <xsl:include href="geoBrowse.xsl"/>

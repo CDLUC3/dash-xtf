@@ -40,8 +40,12 @@
 
       <xsl:variable name="identifier" select="meta/identifier"/>
       <xsl:variable name="id" select="replace(@path,'^default:','')"/>
-      <xsl:variable name="loc" select="concat($xtfURL,'view?docId=',$id)"/>
-
+	  <xsl:variable name="docview"> 
+		<xsl:call-template name="dynaxml.url">
+				<xsl:with-param name="path" select="@path"/>
+			</xsl:call-template>
+	  </xsl:variable>
+      <xsl:variable name="loc" select="concat($xtfURL,$docview)"/> 
       <url xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
          <loc xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <xsl:value-of select="$loc"/>
