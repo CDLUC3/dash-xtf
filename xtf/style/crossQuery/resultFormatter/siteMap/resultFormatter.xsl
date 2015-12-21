@@ -1,4 +1,5 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+   xmlns:xtf="http://cdlib.org/xtf"
    exclude-result-prefixes="#all" version="2.0">
 
    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -52,7 +53,7 @@
          </loc>
          <changefreq xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">monthly</changefreq>
          <lastmod xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-            <xsl:value-of select="meta/dateStamp"/>
+            <xsl:value-of select=".//dateStamp"/>
          </lastmod>
       </url>
 
