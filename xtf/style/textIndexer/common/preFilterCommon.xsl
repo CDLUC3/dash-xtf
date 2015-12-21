@@ -57,7 +57,7 @@
 	  <xsl:variable name="targetlink" select="replace($docpath,'(.*)/(.*?).xml$','$1/')"/>
 	  <xsl:variable name="objectsize" select="replace($docpath,'(.*)/(.*?).xml$','$1/')"/>
 	  <xsl:variable name="doilink" select="replace($docpath,'(.*)/(.*?).xml$','$1/')"/>
-	
+	  <xsl:variable name="lastmod" select="replace($docpath,'(.*)/(.*?).xml$','$1/')"/>
 	
 		<xsl:if test="FileUtils:exists($dcpath)">
 
@@ -91,6 +91,12 @@
 			<doi xtf:meta="true" xtf:tokenize="no">
               <xsl:value-of select="unparsed-text(concat($doilink,'doi'))"/> 
 			</doi>
+        </xsl:if>
+
+		<xsl:if test="FileUtils:exists(concat($lastmod,'lastMod'))">
+			<dateStamp xtf:meta="true" xtf:tokenize="no">
+              <xsl:value-of select="unparsed-text(concat($lastmod,'lastMod'))"/> 
+			</dateStamp>
         </xsl:if>
 		
 
