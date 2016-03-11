@@ -136,4 +136,8 @@
 <id>LBNL</id>
 <label>Lawrence Berkeley National Laboratory</label>
 </campus>
+<campus>
+<id>
+<label>Southern Sierra Critical Zone Observatory, UC Merced</label>
+</campus>
 </campuses>
