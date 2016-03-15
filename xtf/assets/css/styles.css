@@ -79,6 +79,7 @@ h3 {
 	/*padding: 20px 0 14px 0; */
 	text-align: left;
 	/* border: 1px green solid; */	
+	word-wrap: break-word
 }
 
 #header {
