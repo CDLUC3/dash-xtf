@@ -61,7 +61,7 @@
 			<p class="para">No. Files of any type are acceptable for deposit. Ideally, file types will be non-proprietary. If you have files of a specialized or proprietary nature, be sure they are accompanied by any pertinent information that would allow the proper viewing and/or usage of the file. This information could be stored in a separate 'Readme' document within the dataset files.</p>
 
 			<h2 class="title">What best practices can I follow for data preparation?</h2>
-			<p class="para">UC Berkeley Libraries provides data management support through <a href="http://www.lib.berkeley.edu/sciences/data/guide">online tutorials</a> and <a href="https://sites.google.com/site/managescientificdata/">guides</a>. Questions about the use of data management can be sent to the data consultation list (data-consult at lists dot berkeley dot edu).</p>
+			<p class="para">UC Berkeley Libraries provides data management support through <a href="http://www.lib.berkeley.edu/sciences/data/guide">online tutorials</a> and <a href="https://sites.google.com/site/managescientificdata/">guides</a>. Questions about the use of data management can be sent to the data consultation list (researchdata at berkeley dot edu).</p>
 			<p class="para">There are a variety of best practices depending on your field of research. For generic help, see the <a href="https://www.dataone.org/sites/all/documents/DataONE_BP_Primer_020212.pdf">DataONE Primer on Data Management Best Practices</a> (PDF). Generally,</p>
 			<ul>
 				<li>Ensure data files are the most up-to-date and complete versions</li>
@@ -88,7 +88,7 @@
 			<p class="para">During the pilot project the library will cover costs of publishing data.</p>
 
 			<h2 class="title">What if I have questions about the data?</h2>
-			<p class="para">Please contact us at data-consult at lists dot berkeley dot edu with any questions about the data. Your message will be directed to an appropriate source to answer any questions about the data.</p>
+			<p class="para">Please contact us at researchdata at berkeley dot edu with any questions about the data. Your message will be directed to an appropriate source to answer any questions about the data.</p>
 		</div>
 	</faq>
 
