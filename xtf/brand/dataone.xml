@@ -109,7 +109,7 @@
 		</ul>
  
 		<h2>ONEShare Repository</h2>
-		<p>ONEShare is a free, open data repository that allows anyone to deposit research data. It is a <a href="http://dataone.org">DataONE</a> member node, which means datasets deposited in ONEShare via Dash are indexed by DataONE and available for discovery and use by the public in the <a href="http://cn.dataone.org/onemercury">ONEMercury search interface</a>. All data in ONEShare are also available for discovery in the larger <a href="http://dash.ucop.edu">Dash</a> network.</p>
+		<p>ONEShare is a free, open data repository that allows anyone to deposit research data. It is a <a href="http://dataone.org">DataONE</a> member node, which means datasets deposited in ONEShare via Dash are indexed by DataONE and available for discovery and use by the public in the <a href="https://search.dataone.org/#data/page/0">DataONE Search interface</a>. All data in ONEShare are also available for discovery in the larger <a href="http://dash.ucop.edu">Dash</a> network.</p>
 
 		<h2>Who We Are</h2>
 		<p>DataONE Dash is a collaborative project between <a href="http://dataone.org">DataONE</a> and the <a href="http://cdlib.org/uc3">UC Curation Center</a> (UC3) at the <a href="http://cdlib.org">California Digital Library</a>, with funding from the <a href="http://nsf.gov">National Science Foundation</a> (Grant No. 0830944).</p>
